@@ -1,0 +1,737 @@
+Started by user [8mha:////4CA5kL0r8XoTT3PdnVI1PoGEnxCwKlCoPhe73Uyy/FdkAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgZu/dLi1CL9xLzSrEQAtdxjnMAAAAA=[0manuja somthankar
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\Hydrotek-CICD-Pipeline
+[Hydrotek-CICD-Pipeline] $ "C:\Program Files\Git\bin\sh.exe" -xe C:\Users\anuja\AppData\Local\Temp\jenkins17956611146758342088.sh
++ echo 'Hydrotek CICD'
+Hydrotek CICD
++ echo 'CI selected Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation'
+CI selected Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation
++ echo 'CD selected Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation'
+CD selected Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation
++ BRANCH=pestclassification-tcet
++ IMAGE_TAG=release
++ SELECTED_APP_CI_ARRAY=Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation
++ SELECTED_APP_CD_ARRAY=Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ DEPLOYMENT=hydrotekapp-deployment
++ NAMESPACE=dev
++ NETWORKTYPE=LoadBalancer
++ PORTNUM=5000
++ DIR=/c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ echo 'CI/CD Pipeline Started'
+CI/CD Pipeline Started
++ '[' -z Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation ']'
++ mainCI
++ echo 'MAIN CI'
+MAIN CI
++ a=(${SELECTED_APP_CI_ARRAY[0]})
++ echo Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation
+Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation
++ '[' Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation == All ']'
++ IFS=', '
++ read -r -a arr
++ for i in "${arr[@]}"
++ temp=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ temp=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ echo Hydrotek-22-PestDetection/pest-detection/pest-detection
+Hydrotek-22-PestDetection/pest-detection/pest-detection
++ i=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ case "$i" in
++ echo Hydrotek-22-PestDetection/pest-detection/pest-detection
+Hydrotek-22-PestDetection/pest-detection/pest-detection
++ SELECTED_APP_CI=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ CI_DIR=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=pestdetection2022
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ genericCI Hydrotek-22-PestDetection/pest-detection/pest-detection Hydrotek-22-PestDetection/pest-detection/pest-detection hydro-ai-usecases pestdetection2022 ./hydrotek/cicdbuild/ gcr.io/hydrotek-286213 release
++ SELECTED_APP_CI=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ CI_DIR=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=pestdetection2022
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ echo 'GENERIC CI'
+GENERIC CI
++ echo 'Begining Integration of Hydrotek-22-PestDetection/pest-detection/pest-detection'
+Begining Integration of Hydrotek-22-PestDetection/pest-detection/pest-detection
++ mkdir -p ./hydrotek/cicdbuild/
++ cd ./hydrotek/cicdbuild/
++ '[' -d hydro-ai-usecases ']'
++ cd hydro-ai-usecases
++ git pull
+Already up to date.
++ gcloud auth print-access-token
++ docker login -u oauth2accesstoken --password-stdin https://gcr.io
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+Login Succeeded
++ cd Hydrotek-22-PestDetection/pest-detection/pest-detection
++ echo 'Docker Build gcr.io/hydrotek-286213/pestdetection2022:release '
+Docker Build gcr.io/hydrotek-286213/pestdetection2022:release 
++ docker build -t gcr.io/hydrotek-286213/pestdetection2022:release .
+#1 [internal] load build definition from Dockerfile
+#1 sha256:6f33b0fff20a77b29217e990a02e13d52110c43d3a7c3cffab5f36174ff4b71b
+#1 transferring dockerfile: 32B done
+#1 DONE 0.0s
+
+#2 [internal] load .dockerignore
+#2 sha256:ffe7362d698e7c024278ef53cc4c69eb508f71a091515d34b18629a434fea7b7
+#2 transferring context: 2B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.8-slim
+#3 sha256:a94c831f6b826f8ffd4325edd7e9f6408caa85fd7f03e2b107cc6a9d249f7065
+#3 DONE 2.3s
+
+#4 [1/8] FROM docker.io/library/python:3.8-slim@sha256:a43e1e26c4fbbe9b5d983533c094547d67f0325148f27dd85a0f8b7f0aced23e
+#4 sha256:f1da7f2acee77f4e72252ff48c8d23a562a0004f34bea6972ad0fe9fe14786ad
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 sha256:fc8b4b3dd1f2e3e8db95f32bda257abad97ac9d937ab5077f99921a01bbc238a
+#5 transferring context: 8.21kB done
+#5 DONE 0.0s
+
+#9 [5/8] RUN pip install -r requirements.txt
+#9 sha256:ab3619619ac952b929fcd0a183fcc7dc2ec439a652428f6a44c25aa5edbb707b
+#9 CACHED
+
+#11 [7/8] COPY googleserviceAcc.json /root/googleserviceAcc.json
+#11 sha256:184d4c60177810e15633235b7c0875b07f4f18886a19f8d38521e2c89ee3e2c5
+#11 CACHED
+
+#6 [2/8] COPY . /pest-detection
+#6 sha256:1f9fb8abdab63ce0cd3e19948ff0639c8b2c89f9947a26d0e66c083b0837c178
+#6 CACHED
+
+#7 [3/8] WORKDIR /pest-detection
+#7 sha256:e99280679a38ee33ff5e538a0023431f6865f1337d83e1b6ba973129cd0464be
+#7 CACHED
+
+#10 [6/8] RUN curl -sSL https://sdk.cloud.google.com | bash
+#10 sha256:ca526bf39e9001b486f2edb5552f9776bc4716ddfdd23d7d96c792d25dfbd5bc
+#10 CACHED
+
+#8 [4/8] RUN apt-get update     && DEBIAN_FRONTEND=noninteractive        apt-get -y --quiet --fix-missing install python3-opencv     && apt-get -y autoremove     && apt-get clean autoclean
+#8 sha256:c272050e111a0c8e9cf20007f8a8c42d1219d6956dc98adfb9bf5154dcc07c22
+#8 CACHED
+
+#12 [8/8] COPY boto.txt /root/.boto
+#12 sha256:3217cc02e62c16d750a5ff522ae17dea3445488190e53d47e6cc95736844a96e
+#12 CACHED
+
+#13 exporting to image
+#13 sha256:e8c613e07b0b7ff33893b694f7759a10d42e180f2b4dc349fb57dc6b71dcab00
+#13 exporting layers done
+#13 writing image sha256:c65a1c69754f85d0bf2e8bffbcb741246d17f27c9096ec8034887691c8fdff96
+#13 writing image sha256:c65a1c69754f85d0bf2e8bffbcb741246d17f27c9096ec8034887691c8fdff96 done
+#13 naming to gcr.io/hydrotek-286213/pestdetection2022:release done
+#13 DONE 0.0s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
++ echo 'Docker Push gcr.io/hydrotek-286213/pestdetection2022:release'
+Docker Push gcr.io/hydrotek-286213/pestdetection2022:release
++ docker push gcr.io/hydrotek-286213/pestdetection2022:release
+The push refers to repository [gcr.io/hydrotek-286213/pestdetection2022]
+e27defe50712: Preparing
+9768755bfd96: Preparing
+ada32333571b: Preparing
+401111b04fd6: Preparing
+df9322017e54: Preparing
+5f70bf18a086: Preparing
+3a06e22503d1: Preparing
+87ea2744abf2: Preparing
+51f094ff7b94: Preparing
+1a40cb2669f8: Preparing
+32034715e5d4: Preparing
+7d0ebbe3f5d2: Preparing
+5f70bf18a086: Waiting
+3a06e22503d1: Waiting
+87ea2744abf2: Waiting
+1a40cb2669f8: Waiting
+32034715e5d4: Waiting
+7d0ebbe3f5d2: Waiting
+ada32333571b: Layer already exists
+9768755bfd96: Layer already exists
+e27defe50712: Layer already exists
+df9322017e54: Layer already exists
+3a06e22503d1: Layer already exists
+5f70bf18a086: Layer already exists
+51f094ff7b94: Layer already exists
+87ea2744abf2: Layer already exists
+32034715e5d4: Layer already exists
+1a40cb2669f8: Layer already exists
+7d0ebbe3f5d2: Layer already exists
+401111b04fd6: Retrying in 5 seconds
+401111b04fd6: Retrying in 4 seconds
+401111b04fd6: Retrying in 3 seconds
+401111b04fd6: Retrying in 2 seconds
+401111b04fd6: Retrying in 1 second
+401111b04fd6: Retrying in 10 seconds
+401111b04fd6: Retrying in 9 seconds
+401111b04fd6: Retrying in 8 seconds
+401111b04fd6: Retrying in 7 seconds
+401111b04fd6: Retrying in 6 seconds
+401111b04fd6: Retrying in 5 seconds
+401111b04fd6: Retrying in 4 seconds
+401111b04fd6: Retrying in 3 seconds
+401111b04fd6: Retrying in 2 seconds
+401111b04fd6: Retrying in 1 second
+401111b04fd6: Pushed
+release: digest: sha256:680b0b11c6e9d01f7e62ef0c06c75641347a3a5514e198134c26dc87e77269d7 size: 2836
++ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ for i in "${arr[@]}"
++ temp=Hydrotek-22-PestDetection/training-automation/training-automation
++ temp=Hydrotek-22-PestDetection/training-automation/training-automation
++ echo Hydrotek-22-PestDetection/training-automation/training-automation
+Hydrotek-22-PestDetection/training-automation/training-automation
++ i=Hydrotek-22-PestDetection/training-automation/training-automation
++ case "$i" in
++ SELECTED_APP_CI=Hydrotek-22-PestDetection/training-automation/training-automation
++ CI_DIR=Hydrotek-22-PestDetection/training-automation/training-automation
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=trainingautomation2022
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ genericCI Hydrotek-22-PestDetection/training-automation/training-automation Hydrotek-22-PestDetection/training-automation/training-automation hydro-ai-usecases trainingautomation2022 ./hydrotek/cicdbuild/ gcr.io/hydrotek-286213 release
++ SELECTED_APP_CI=Hydrotek-22-PestDetection/training-automation/training-automation
++ CI_DIR=Hydrotek-22-PestDetection/training-automation/training-automation
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=trainingautomation2022
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ echo 'GENERIC CI'
+GENERIC CI
++ echo 'Begining Integration of Hydrotek-22-PestDetection/training-automation/training-automation'
+Begining Integration of Hydrotek-22-PestDetection/training-automation/training-automation
++ mkdir -p ./hydrotek/cicdbuild/
++ cd ./hydrotek/cicdbuild/
++ '[' -d hydro-ai-usecases ']'
++ cd hydro-ai-usecases
++ git pull
+Already up to date.
++ gcloud auth print-access-token
++ docker login -u oauth2accesstoken --password-stdin https://gcr.io
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+Login Succeeded
++ cd Hydrotek-22-PestDetection/training-automation/training-automation
++ echo 'Docker Build gcr.io/hydrotek-286213/trainingautomation2022:release '
+Docker Build gcr.io/hydrotek-286213/trainingautomation2022:release 
++ docker build -t gcr.io/hydrotek-286213/trainingautomation2022:release .
+#1 [internal] load build definition from Dockerfile
+#1 sha256:b3fc90d3bde0ee53bf1d9a1b0b7827065e2b1594fc62aebfa682c363baaa44a1
+#1 transferring dockerfile: 395B done
+#1 DONE 0.0s
+
+#2 [internal] load .dockerignore
+#2 sha256:73674dd07bd10821759e249cdeaea212e967cddd7db97d852ca55cd32c11ceda
+#2 transferring context: 2B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.8-slim
+#3 sha256:a94c831f6b826f8ffd4325edd7e9f6408caa85fd7f03e2b107cc6a9d249f7065
+#3 DONE 2.6s
+
+#4 [ 1/10] FROM docker.io/library/python:3.8-slim@sha256:a43e1e26c4fbbe9b5d983533c094547d67f0325148f27dd85a0f8b7f0aced23e
+#4 sha256:f1da7f2acee77f4e72252ff48c8d23a562a0004f34bea6972ad0fe9fe14786ad
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 sha256:deac51360db498deaf05d72f616240cdd6bacb4509344ea0dc76f9be414fc9b4
+#5 transferring context: 30.53MB 0.2s done
+#5 DONE 0.2s
+
+#6 [ 2/10] COPY . /app
+#6 sha256:9d2878ea01b3dd43a88f3954e3c289a93d7dbae7bb105ef23a95112accc2248c
+#6 CACHED
+
+#7 [ 3/10] WORKDIR /app
+#7 sha256:25dae7f888b8a585fa3504248ca966095a42e0c2f2fd55e8576e84f8e272a7f0
+#7 CACHED
+
+#8 [ 4/10] RUN apt-get update
+#8 sha256:7276c4fb551f2517c5bfaec6e028048525a12455c8ae4dfe341e54c2b76f4542
+#8 CACHED
+
+#9 [ 5/10] RUN apt-get install -y python3-opencv
+#9 sha256:eede095a696d7d23b41fc9014ac23a4bcc2ad09107cfc85f23ef386ed6f7243e
+#9 CACHED
+
+#10 [ 6/10] RUN pip install -r requirements.txt
+#10 sha256:3dcc3c9ff3da0c993f0dc88b862ec028c0c7359d9a2aa3247d995b0c1a52e1f8
+#10 1.737 Collecting matplotlib>=3.2.2
+#10 1.806   Downloading matplotlib-3.5.1-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.whl (11.3 MB)
+#10 5.793 Collecting numpy>=1.18.5
+#10 5.802   Downloading numpy-1.22.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.8 MB)
+#10 11.38 Collecting opencv-python>=4.1.2
+#10 11.39   Downloading opencv_python-4.5.5.62-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (60.4 MB)
+#10 31.16 Collecting Pillow>=7.1.2
+#10 31.17   Downloading Pillow-9.0.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.3 MB)
+#10 32.55 Collecting PyYAML>=5.3.1
+#10 32.56   Downloading PyYAML-6.0-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (701 kB)
+#10 32.76 Collecting requests>=2.23.0
+#10 32.77   Downloading requests-2.27.1-py2.py3-none-any.whl (63 kB)
+#10 33.07 Collecting scipy>=1.4.1
+#10 33.08   Downloading scipy-1.8.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (41.6 MB)
+#10 46.95 Collecting torch>=1.7.0
+#10 46.96   Downloading torch-1.10.2-cp38-cp38-manylinux1_x86_64.whl (881.9 MB)
+#10 337.2 Collecting torchvision>=0.8.1
+#10 337.2   Downloading torchvision-0.11.3-cp38-cp38-manylinux1_x86_64.whl (23.2 MB)
+#10 344.7 Collecting tqdm>=4.41.0
+#10 344.7   Downloading tqdm-4.62.3-py2.py3-none-any.whl (76 kB)
+#10 344.8 Collecting Flask==2.0.2
+#10 344.8   Downloading Flask-2.0.2-py3-none-any.whl (95 kB)
+#10 344.8 Collecting Flask-RESTful==0.3.9
+#10 344.9   Downloading Flask_RESTful-0.3.9-py2.py3-none-any.whl (25 kB)
+#10 345.1 Collecting torchaudio==0.10.1
+#10 345.1   Downloading torchaudio-0.10.1-cp38-cp38-manylinux1_x86_64.whl (2.9 MB)
+#10 346.0 Collecting tensorboard>=2.4.1
+#10 346.0   Downloading tensorboard-2.8.0-py3-none-any.whl (5.8 MB)
+#10 348.1 Collecting pandas>=1.1.4
+#10 348.1   Downloading pandas-1.4.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.7 MB)
+#10 351.8 Collecting seaborn>=0.11.0
+#10 351.9   Downloading seaborn-0.11.2-py3-none-any.whl (292 kB)
+#10 352.0 Collecting coremltools
+#10 352.1   Downloading coremltools-5.1.0-cp38-none-manylinux1_x86_64.whl (1.6 MB)
+#10 352.5 Collecting ipywidgets
+#10 352.5   Downloading ipywidgets-7.6.5-py2.py3-none-any.whl (121 kB)
+#10 352.7 Collecting onnx
+#10 352.7   Downloading onnx-1.10.2-cp38-cp38-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (12.7 MB)
+#10 356.7 Collecting gsutil
+#10 356.8   Downloading gsutil-5.6.tar.gz (2.9 MB)
+#10 358.3 Collecting subprocess.run
+#10 358.3   Downloading subprocess.run-0.0.8.tar.gz (4.1 kB)
+#10 358.5 Collecting Werkzeug>=2.0
+#10 358.5   Downloading Werkzeug-2.0.3-py3-none-any.whl (289 kB)
+#10 358.6 Collecting Jinja2>=3.0
+#10 358.6   Downloading Jinja2-3.0.3-py3-none-any.whl (133 kB)
+#10 358.7 Collecting itsdangerous>=2.0
+#10 358.7   Downloading itsdangerous-2.0.1-py3-none-any.whl (18 kB)
+#10 358.7 Collecting click>=7.1.2
+#10 358.7   Downloading click-8.0.3-py3-none-any.whl (97 kB)
+#10 358.8 Collecting six>=1.3.0
+#10 358.8   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+#10 358.8 Collecting aniso8601>=0.82
+#10 358.8   Downloading aniso8601-9.0.1-py2.py3-none-any.whl (52 kB)
+#10 359.0 Collecting pytz
+#10 359.0   Downloading pytz-2021.3-py2.py3-none-any.whl (503 kB)
+#10 359.1 Collecting torch>=1.7.0
+#10 359.1   Downloading torch-1.10.1-cp38-cp38-manylinux1_x86_64.whl (881.9 MB)
+#10 652.1 Collecting typing-extensions
+#10 652.1   Downloading typing_extensions-4.1.1-py3-none-any.whl (26 kB)
+#10 652.2 Collecting fonttools>=4.22.0
+#10 652.2   Downloading fonttools-4.29.1-py3-none-any.whl (895 kB)
+#10 652.4 Collecting packaging>=20.0
+#10 652.5   Downloading packaging-21.3-py3-none-any.whl (40 kB)
+#10 652.5 Collecting cycler>=0.10
+#10 652.5   Downloading cycler-0.11.0-py3-none-any.whl (6.4 kB)
+#10 652.6 Collecting python-dateutil>=2.7
+#10 652.6   Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
+#10 652.7 Collecting pyparsing>=2.2.1
+#10 652.7   Downloading pyparsing-3.0.7-py3-none-any.whl (98 kB)
+#10 652.8 Collecting kiwisolver>=1.0.1
+#10 652.8   Downloading kiwisolver-1.3.2-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.2 MB)
+#10 653.2 Collecting charset-normalizer~=2.0.0
+#10 653.2   Downloading charset_normalizer-2.0.12-py3-none-any.whl (39 kB)
+#10 653.3 Collecting urllib3<1.27,>=1.21.1
+#10 653.3   Downloading urllib3-1.26.8-py2.py3-none-any.whl (138 kB)
+#10 653.4 Collecting certifi>=2017.4.17
+#10 653.4   Downloading certifi-2021.10.8-py2.py3-none-any.whl (149 kB)
+#10 653.5 Collecting idna<4,>=2.5
+#10 653.5   Downloading idna-3.3-py3-none-any.whl (61 kB)
+#10 653.5 Collecting torchvision>=0.8.1
+#10 653.5   Downloading torchvision-0.11.2-cp38-cp38-manylinux1_x86_64.whl (23.3 MB)
+#10 661.0 Collecting markdown>=2.6.8
+#10 661.0   Downloading Markdown-3.3.6-py3-none-any.whl (97 kB)
+#10 661.1 Requirement already satisfied: wheel>=0.26 in /usr/local/lib/python3.8/site-packages (from tensorboard>=2.4.1->-r requirements.txt (line 18)) (0.37.1)
+#10 661.1 Collecting absl-py>=0.4
+#10 661.1   Downloading absl_py-1.0.0-py3-none-any.whl (126 kB)
+#10 661.5 Collecting protobuf>=3.6.0
+#10 661.6   Downloading protobuf-3.19.4-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.1 MB)
+#10 661.9 Collecting tensorboard-plugin-wit>=1.6.0
+#10 661.9   Downloading tensorboard_plugin_wit-1.8.1-py3-none-any.whl (781 kB)
+#10 662.1 Collecting tensorboard-data-server<0.7.0,>=0.6.0
+#10 662.1   Downloading tensorboard_data_server-0.6.1-py3-none-manylinux2010_x86_64.whl (4.9 MB)
+#10 663.7 Requirement already satisfied: setuptools>=41.0.0 in /usr/local/lib/python3.8/site-packages (from tensorboard>=2.4.1->-r requirements.txt (line 18)) (57.5.0)
+#10 663.7 Collecting google-auth-oauthlib<0.5,>=0.4.1
+#10 663.7   Downloading google_auth_oauthlib-0.4.6-py2.py3-none-any.whl (18 kB)
+#10 664.6 Collecting grpcio>=1.24.3
+#10 664.6   Downloading grpcio-1.43.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.1 MB)
+#10 665.9 Collecting google-auth<3,>=1.6.3
+#10 666.0   Downloading google_auth-2.6.0-py2.py3-none-any.whl (156 kB)
+#10 666.1 Collecting sympy
+#10 666.1   Downloading sympy-1.9-py3-none-any.whl (6.2 MB)
+#10 668.1 Collecting jupyterlab-widgets>=1.0.0
+#10 668.1   Downloading jupyterlab_widgets-1.0.2-py3-none-any.whl (243 kB)
+#10 668.2 Collecting ipykernel>=4.5.1
+#10 668.2   Downloading ipykernel-6.9.1-py3-none-any.whl (128 kB)
+#10 668.3 Collecting traitlets>=4.3.1
+#10 668.3   Downloading traitlets-5.1.1-py3-none-any.whl (102 kB)
+#10 668.4 Collecting widgetsnbextension~=3.5.0
+#10 668.4   Downloading widgetsnbextension-3.5.2-py2.py3-none-any.whl (1.6 MB)
+#10 668.9 Collecting ipython-genutils~=0.2.0
+#10 668.9   Downloading ipython_genutils-0.2.0-py2.py3-none-any.whl (26 kB)
+#10 669.0 Collecting ipython>=4.0.0
+#10 669.0   Downloading ipython-8.0.1-py3-none-any.whl (747 kB)
+#10 669.2 Collecting nbformat>=4.2.0
+#10 669.2   Downloading nbformat-5.1.3-py3-none-any.whl (178 kB)
+#10 669.3 Collecting argcomplete>=1.9.4
+#10 669.3   Downloading argcomplete-2.0.0-py2.py3-none-any.whl (37 kB)
+#10 669.4 Collecting crcmod>=1.7
+#10 669.4   Downloading crcmod-1.7.tar.gz (89 kB)
+#10 669.6 Collecting fasteners>=0.14.1
+#10 669.6   Downloading fasteners-0.17.3-py3-none-any.whl (18 kB)
+#10 669.7 Collecting gcs-oauth2-boto-plugin>=3.0
+#10 669.7   Downloading gcs-oauth2-boto-plugin-3.0.tar.gz (20 kB)
+#10 670.1 Collecting google-apitools>=0.5.32
+#10 670.1   Downloading google_apitools-0.5.32-py3-none-any.whl (135 kB)
+#10 670.4 Collecting httplib2>=0.18
+#10 670.4   Downloading httplib2-0.20.4-py3-none-any.whl (96 kB)
+#10 670.5 Collecting google-reauth>=0.1.0
+#10 670.5   Downloading google_reauth-0.1.1-py2.py3-none-any.whl (17 kB)
+#10 670.5 Collecting monotonic>=1.4
+#10 670.5   Downloading monotonic-1.6-py2.py3-none-any.whl (8.2 kB)
+#10 670.6 Collecting pyOpenSSL>=0.13
+#10 670.6   Downloading pyOpenSSL-22.0.0-py2.py3-none-any.whl (55 kB)
+#10 670.8 Collecting retry_decorator>=1.0.0
+#10 670.9   Downloading retry_decorator-1.1.1.tar.gz (3.9 kB)
+#10 671.1 Collecting rsa==4.7.2
+#10 671.1   Downloading rsa-4.7.2-py3-none-any.whl (34 kB)
+#10 671.2 Collecting boto>=2.29.1
+#10 671.2   Downloading boto-2.49.0-py2.py3-none-any.whl (1.4 MB)
+#10 671.6 Collecting oauth2client>=2.2.0
+#10 671.6   Downloading oauth2client-4.1.3-py2.py3-none-any.whl (98 kB)
+#10 671.7 Collecting pyasn1>=0.1.3
+#10 671.7   Downloading pyasn1-0.4.8-py2.py3-none-any.whl (77 kB)
+#10 671.8 Collecting cachetools<6.0,>=2.0.0
+#10 671.8   Downloading cachetools-5.0.0-py3-none-any.whl (9.1 kB)
+#10 671.9 Collecting pyasn1-modules>=0.2.1
+#10 671.9   Downloading pyasn1_modules-0.2.8-py2.py3-none-any.whl (155 kB)
+#10 672.0 Collecting requests-oauthlib>=0.7.0
+#10 672.0   Downloading requests_oauthlib-1.3.1-py2.py3-none-any.whl (23 kB)
+#10 672.1 Collecting pyu2f
+#10 672.1   Downloading pyu2f-0.1.5.tar.gz (27 kB)
+#10 672.3 Collecting matplotlib-inline<0.2.0,>=0.1.0
+#10 672.3   Downloading matplotlib_inline-0.1.3-py3-none-any.whl (8.2 kB)
+#10 672.4 Collecting jupyter-client<8.0
+#10 672.4   Downloading jupyter_client-7.1.2-py3-none-any.whl (130 kB)
+#10 672.6 Collecting tornado<7.0,>=4.2
+#10 672.6   Downloading tornado-6.1-cp38-cp38-manylinux2010_x86_64.whl (427 kB)
+#10 672.7 Collecting nest-asyncio
+#10 672.8   Downloading nest_asyncio-1.5.4-py3-none-any.whl (5.1 kB)
+#10 673.0 Collecting debugpy<2.0,>=1.0.0
+#10 673.0   Downloading debugpy-1.5.1-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (1.9 MB)
+#10 673.6 Collecting pygments
+#10 673.6   Downloading Pygments-2.11.2-py3-none-any.whl (1.1 MB)
+#10 674.0 Collecting jedi>=0.16
+#10 674.0   Downloading jedi-0.18.1-py2.py3-none-any.whl (1.6 MB)
+#10 674.6 Collecting backcall
+#10 674.6   Downloading backcall-0.2.0-py2.py3-none-any.whl (11 kB)
+#10 674.7 Collecting pexpect>4.3
+#10 674.7   Downloading pexpect-4.8.0-py2.py3-none-any.whl (59 kB)
+#10 674.7 Collecting pickleshare
+#10 674.8   Downloading pickleshare-0.7.5-py2.py3-none-any.whl (6.9 kB)
+#10 674.8 Collecting black
+#10 674.8   Downloading black-22.1.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.5 MB)
+#10 675.2 Collecting decorator
+#10 675.2   Downloading decorator-5.1.1-py3-none-any.whl (9.1 kB)
+#10 675.3 Collecting stack-data
+#10 675.3   Downloading stack_data-0.2.0-py3-none-any.whl (21 kB)
+#10 675.4 Collecting prompt-toolkit!=3.0.0,!=3.0.1,<3.1.0,>=2.0.0
+#10 675.4   Downloading prompt_toolkit-3.0.28-py3-none-any.whl (380 kB)
+#10 675.8 Collecting parso<0.9.0,>=0.8.0
+#10 675.8   Downloading parso-0.8.3-py2.py3-none-any.whl (100 kB)
+#10 676.4 Collecting MarkupSafe>=2.0
+#10 676.4   Downloading MarkupSafe-2.0.1-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (30 kB)
+#10 676.6 Collecting entrypoints
+#10 676.6   Downloading entrypoints-0.4-py3-none-any.whl (5.3 kB)
+#10 676.9 Collecting pyzmq>=13
+#10 676.9   Downloading pyzmq-22.3.0-cp38-cp38-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (1.1 MB)
+#10 677.3 Collecting jupyter-core>=4.6.0
+#10 677.3   Downloading jupyter_core-4.9.2-py3-none-any.whl (86 kB)
+#10 677.5 Collecting importlib-metadata>=4.4
+#10 677.5   Downloading importlib_metadata-4.11.1-py3-none-any.whl (17 kB)
+#10 677.6 Collecting zipp>=0.5
+#10 677.6   Downloading zipp-3.7.0-py3-none-any.whl (5.3 kB)
+#10 677.7 Collecting jsonschema!=2.5.0,>=2.4
+#10 677.7   Downloading jsonschema-4.4.0-py3-none-any.whl (72 kB)
+#10 677.8 Collecting attrs>=17.4.0
+#10 677.8   Downloading attrs-21.4.0-py2.py3-none-any.whl (60 kB)
+#10 678.0 Collecting importlib-resources>=1.4.0
+#10 678.0   Downloading importlib_resources-5.4.0-py3-none-any.whl (28 kB)
+#10 678.4 Collecting pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,>=0.14.0
+#10 678.5   Downloading pyrsistent-0.18.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (119 kB)
+#10 679.0 Collecting ptyprocess>=0.5
+#10 679.2   Downloading ptyprocess-0.7.0-py2.py3-none-any.whl (13 kB)
+#10 679.2 Collecting wcwidth
+#10 679.2   Downloading wcwidth-0.2.5-py2.py3-none-any.whl (30 kB)
+#10 679.7 Collecting cryptography>=35.0
+#10 679.8   Downloading cryptography-36.0.1-cp36-abi3-manylinux_2_24_x86_64.whl (3.6 MB)
+#10 683.8 Collecting cffi>=1.12
+#10 683.8   Downloading cffi-1.15.0-cp38-cp38-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (446 kB)
+#10 684.1 Collecting pycparser
+#10 684.1   Downloading pycparser-2.21-py2.py3-none-any.whl (118 kB)
+#10 684.3 Collecting oauthlib>=3.0.0
+#10 684.3   Downloading oauthlib-3.2.0-py3-none-any.whl (151 kB)
+#10 684.6 Collecting notebook>=4.4.1
+#10 684.6   Downloading notebook-6.4.8-py3-none-any.whl (9.9 MB)
+#10 687.9 Collecting terminado>=0.8.3
+#10 687.9   Downloading terminado-0.13.1-py3-none-any.whl (14 kB)
+#10 688.0 Collecting nbconvert
+#10 688.0   Downloading nbconvert-6.4.2-py3-none-any.whl (558 kB)
+#10 688.2 Collecting argon2-cffi
+#10 688.2   Downloading argon2_cffi-21.3.0-py3-none-any.whl (14 kB)
+#10 688.3 Collecting Send2Trash>=1.8.0
+#10 688.3   Downloading Send2Trash-1.8.0-py3-none-any.whl (18 kB)
+#10 688.3 Collecting prometheus-client
+#10 688.4   Downloading prometheus_client-0.13.1-py3-none-any.whl (57 kB)
+#10 688.5 Collecting argon2-cffi-bindings
+#10 688.5   Downloading argon2_cffi_bindings-21.2.0-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (86 kB)
+#10 688.6 Collecting tomli>=1.1.0
+#10 688.6   Downloading tomli-2.0.1-py3-none-any.whl (12 kB)
+#10 688.7 Collecting mypy-extensions>=0.4.3
+#10 688.7   Downloading mypy_extensions-0.4.3-py2.py3-none-any.whl (4.5 kB)
+#10 688.7 Collecting platformdirs>=2
+#10 688.7   Downloading platformdirs-2.5.0-py3-none-any.whl (14 kB)
+#10 688.7 Collecting pathspec>=0.9.0
+#10 688.8   Downloading pathspec-0.9.0-py2.py3-none-any.whl (31 kB)
+#10 688.9 Collecting nbclient<0.6.0,>=0.5.0
+#10 688.9   Downloading nbclient-0.5.11-py3-none-any.whl (71 kB)
+#10 689.0 Collecting bleach
+#10 689.0   Downloading bleach-4.1.0-py2.py3-none-any.whl (157 kB)
+#10 689.1 Collecting testpath
+#10 689.1   Downloading testpath-0.5.0-py3-none-any.whl (84 kB)
+#10 689.2 Collecting mistune<2,>=0.8.1
+#10 689.2   Downloading mistune-0.8.4-py2.py3-none-any.whl (16 kB)
+#10 689.2 Collecting defusedxml
+#10 689.2   Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+#10 689.2 Collecting jupyterlab-pygments
+#10 689.3   Downloading jupyterlab_pygments-0.1.2-py2.py3-none-any.whl (4.6 kB)
+#10 689.3 Collecting pandocfilters>=1.4.1
+#10 689.3   Downloading pandocfilters-1.5.0-py2.py3-none-any.whl (8.7 kB)
+#10 689.4 Collecting webencodings
+#10 689.4   Downloading webencodings-0.5.1-py2.py3-none-any.whl (11 kB)
+#10 689.6 Collecting asttokens
+#10 689.6   Downloading asttokens-2.0.5-py2.py3-none-any.whl (20 kB)
+#10 689.6 Collecting pure-eval
+#10 689.6   Downloading pure_eval-0.2.2-py3-none-any.whl (11 kB)
+#10 689.7 Collecting executing
+#10 689.7   Downloading executing-0.8.2-py2.py3-none-any.whl (16 kB)
+#10 689.8 Collecting mpmath>=0.19
+#10 689.8   Downloading mpmath-1.2.1-py3-none-any.whl (532 kB)
+#10 689.9 Building wheels for collected packages: gsutil, subprocess.run, crcmod, gcs-oauth2-boto-plugin, retry-decorator, pyu2f
+#10 689.9   Building wheel for gsutil (setup.py): started
+#10 690.9   Building wheel for gsutil (setup.py): finished with status 'done'
+#10 690.9   Created wheel for gsutil: filename=gsutil-5.6-py3-none-any.whl size=3718400 sha256=fc865172e945232d2f1b39ad3b7a0b64323b736c9adb42bad9a717aee96afabd
+#10 690.9   Stored in directory: /root/.cache/pip/wheels/21/eb/c7/e79e4705ff1e08c74f753bc868c50345fec6d308b87ee612cc
+#10 690.9   Building wheel for subprocess.run (setup.py): started
+#10 691.0   Building wheel for subprocess.run (setup.py): finished with status 'done'
+#10 691.0   Created wheel for subprocess.run: filename=subprocess.run-0.0.8-py3-none-any.whl size=5358 sha256=cd24d6a4f060d342175f7dbd7e69a4ed08603addff8756cd24fbe2ab9b1eb9a3
+#10 691.0   Stored in directory: /root/.cache/pip/wheels/aa/e1/f3/7faf41abf731e0c3d4181da2f81ead4280d65517f23f6534e3
+#10 691.0   Building wheel for crcmod (setup.py): started
+#10 691.2   Building wheel for crcmod (setup.py): finished with status 'done'
+#10 691.2   Created wheel for crcmod: filename=crcmod-1.7-py3-none-any.whl size=18850 sha256=d74f69a0586bf2e41d88213096788381c8780ee13e73b6866583920541f9c140
+#10 691.2   Stored in directory: /root/.cache/pip/wheels/ca/5a/02/f3acf982a026f3319fb3e798a8dca2d48fafee7761788562e9
+#10 691.2   Building wheel for gcs-oauth2-boto-plugin (setup.py): started
+#10 691.4   Building wheel for gcs-oauth2-boto-plugin (setup.py): finished with status 'done'
+#10 691.4   Created wheel for gcs-oauth2-boto-plugin: filename=gcs_oauth2_boto_plugin-3.0-py3-none-any.whl size=23221 sha256=26b62cc0259039379e7bb18a82ce6f8fc6858f52894811408aab2471ddccb457
+#10 691.4   Stored in directory: /root/.cache/pip/wheels/c2/ff/00/10b85e9e1b43efc461153dca75aa47e4640ef41d291b3666a1
+#10 691.4   Building wheel for retry-decorator (setup.py): started
+#10 691.6   Building wheel for retry-decorator (setup.py): finished with status 'done'
+#10 691.6   Created wheel for retry-decorator: filename=retry_decorator-1.1.1-py2.py3-none-any.whl size=3658 sha256=dc4bd1e5532dcb72ac1bf3c8860cfd3dc29aa04e8fd4fc251e2aa075e1538ed2
+#10 691.6   Stored in directory: /root/.cache/pip/wheels/1e/bb/cb/5d7a05561d7ec60b8c0dc65f156a33909a3eb5c56340959fa9
+#10 691.6   Building wheel for pyu2f (setup.py): started
+#10 691.7   Building wheel for pyu2f (setup.py): finished with status 'done'
+#10 691.7   Created wheel for pyu2f: filename=pyu2f-0.1.5-py3-none-any.whl size=39404 sha256=28afcca31e15bfbd6ad6f17640fa55fc7a0b15fe61a1f9f3bc4d539d991347e7
+#10 691.7   Stored in directory: /root/.cache/pip/wheels/8d/38/8f/378b4491d760a176f261d56310fcb051e53090a894534acbf0
+#10 691.7 Successfully built gsutil subprocess.run crcmod gcs-oauth2-boto-plugin retry-decorator pyu2f
+#10 692.3 Installing collected packages: zipp, traitlets, six, pyrsistent, importlib-resources, attrs, wcwidth, typing-extensions, tornado, tomli, pyzmq, python-dateutil, pyparsing, pycparser, pure-eval, ptyprocess, platformdirs, pathspec, parso, nest-asyncio, mypy-extensions, jupyter-core, jsonschema, ipython-genutils, executing, entrypoints, click, asttokens, webencodings, stack-data, pygments, prompt-toolkit, pickleshare, pexpect, packaging, nbformat, matplotlib-inline, MarkupSafe, jupyter-client, jedi, decorator, cffi, black, backcall, urllib3, testpath, pyasn1, pandocfilters, nbclient, mistune, jupyterlab-pygments, Jinja2, ipython, idna, defusedxml, debugpy, charset-normalizer, certifi, bleach, argon2-cffi-bindings, terminado, Send2Trash, rsa, requests, pyu2f, pyasn1-modules, prometheus-client, oauthlib, nbconvert, ipykernel, httplib2, cryptography, cachetools, argon2-cffi, Werkzeug, retry-decorator, requests-oauthlib, pytz, pyOpenSSL, Pillow, oauth2client, numpy, notebook, mpmath, kiwisolver, itsdangerous, importlib-metadata, google-reauth, google-auth, fonttools, fasteners, cycler, boto, widgetsnbextension, tqdm, torch, tensorboard-plugin-wit, tensorboard-data-server, sympy, scipy, protobuf, pandas, monotonic, matplotlib, markdown, jupyterlab-widgets, grpcio, google-auth-oauthlib, google-apitools, gcs-oauth2-boto-plugin, Flask, crcmod, argcomplete, aniso8601, absl-py, torchvision, torchaudio, tensorboard, subprocess.run, seaborn, PyYAML, opencv-python, onnx, ipywidgets, gsutil, Flask-RESTful, coremltools
+#10 727.0 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#10 727.0 Successfully installed Flask-2.0.2 Flask-RESTful-0.3.9 Jinja2-3.0.3 MarkupSafe-2.0.1 Pillow-9.0.1 PyYAML-6.0 Send2Trash-1.8.0 Werkzeug-2.0.3 absl-py-1.0.0 aniso8601-9.0.1 argcomplete-2.0.0 argon2-cffi-21.3.0 argon2-cffi-bindings-21.2.0 asttokens-2.0.5 attrs-21.4.0 backcall-0.2.0 black-22.1.0 bleach-4.1.0 boto-2.49.0 cachetools-5.0.0 certifi-2021.10.8 cffi-1.15.0 charset-normalizer-2.0.12 click-8.0.3 coremltools-5.1.0 crcmod-1.7 cryptography-36.0.1 cycler-0.11.0 debugpy-1.5.1 decorator-5.1.1 defusedxml-0.7.1 entrypoints-0.4 executing-0.8.2 fasteners-0.17.3 fonttools-4.29.1 gcs-oauth2-boto-plugin-3.0 google-apitools-0.5.32 google-auth-2.6.0 google-auth-oauthlib-0.4.6 google-reauth-0.1.1 grpcio-1.43.0 gsutil-5.6 httplib2-0.20.4 idna-3.3 importlib-metadata-4.11.1 importlib-resources-5.4.0 ipykernel-6.9.1 ipython-8.0.1 ipython-genutils-0.2.0 ipywidgets-7.6.5 itsdangerous-2.0.1 jedi-0.18.1 jsonschema-4.4.0 jupyter-client-7.1.2 jupyter-core-4.9.2 jupyterlab-pygments-0.1.2 jupyterlab-widgets-1.0.2 kiwisolver-1.3.2 markdown-3.3.6 matplotlib-3.5.1 matplotlib-inline-0.1.3 mistune-0.8.4 monotonic-1.6 mpmath-1.2.1 mypy-extensions-0.4.3 nbclient-0.5.11 nbconvert-6.4.2 nbformat-5.1.3 nest-asyncio-1.5.4 notebook-6.4.8 numpy-1.22.2 oauth2client-4.1.3 oauthlib-3.2.0 onnx-1.10.2 opencv-python-4.5.5.62 packaging-21.3 pandas-1.4.1 pandocfilters-1.5.0 parso-0.8.3 pathspec-0.9.0 pexpect-4.8.0 pickleshare-0.7.5 platformdirs-2.5.0 prometheus-client-0.13.1 prompt-toolkit-3.0.28 protobuf-3.19.4 ptyprocess-0.7.0 pure-eval-0.2.2 pyOpenSSL-22.0.0 pyasn1-0.4.8 pyasn1-modules-0.2.8 pycparser-2.21 pygments-2.11.2 pyparsing-3.0.7 pyrsistent-0.18.1 python-dateutil-2.8.2 pytz-2021.3 pyu2f-0.1.5 pyzmq-22.3.0 requests-2.27.1 requests-oauthlib-1.3.1 retry-decorator-1.1.1 rsa-4.7.2 scipy-1.8.0 seaborn-0.11.2 six-1.16.0 stack-data-0.2.0 subprocess.run-0.0.8 sympy-1.9 tensorboard-2.8.0 tensorboard-data-server-0.6.1 tensorboard-plugin-wit-1.8.1 terminado-0.13.1 testpath-0.5.0 tomli-2.0.1 torch-1.10.1 torchaudio-0.10.1 torchvision-0.11.2 tornado-6.1 tqdm-4.62.3 traitlets-5.1.1 typing-extensions-4.1.1 urllib3-1.26.8 wcwidth-0.2.5 webencodings-0.5.1 widgetsnbextension-3.5.2 zipp-3.7.0
+#10 727.4 WARNING: You are using pip version 21.2.4; however, version 22.0.3 is available.
+#10 727.4 You should consider upgrading via the '/usr/local/bin/python -m pip install --upgrade pip' command.
+#10 DONE 728.3s
+
+#11 [ 7/10] RUN curl -sSL https://sdk.cloud.google.com | bash
+#11 sha256:78d7b7f16454d1da12f25ec080f76197855897c7e2841126731d067a208547f7
+#11 0.438 /bin/sh: 1: curl: not found
+#11 DONE 0.5s
+
+#12 [ 8/10] COPY googleserviceAcc.json /root/googleserviceAcc.json
+#12 sha256:dbbac379ba5788f68805a1b4d0463ddb590b2b02980da6f205ce3cfa8898bda9
+#12 DONE 0.0s
+
+#13 [ 9/10] COPY boto.txt /root/.boto
+#13 sha256:43c7dadc6a0ae111a75de9ca02bdac1ec8b6a34f2b7be1e87cca30ca9beba6a5
+#13 DONE 0.0s
+
+#14 [10/10] WORKDIR /app/yolov5/yolov5
+#14 sha256:13155d737989cc1e6498e3d5c6eb4f66612ffcbb6191ef69b447dc82aad24e60
+#14 DONE 0.0s
+
+#15 exporting to image
+#15 sha256:e8c613e07b0b7ff33893b694f7759a10d42e180f2b4dc349fb57dc6b71dcab00
+#15 exporting layers
+#15 exporting layers 17.6s done
+#15 writing image sha256:482bbe82af546d4a4866eff989cbace127496715bb5d9b22e40aa8b8e4828843
+#15 writing image sha256:482bbe82af546d4a4866eff989cbace127496715bb5d9b22e40aa8b8e4828843 done
+#15 naming to gcr.io/hydrotek-286213/trainingautomation2022:release done
+#15 DONE 17.6s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
++ echo 'Docker Push gcr.io/hydrotek-286213/trainingautomation2022:release'
+Docker Push gcr.io/hydrotek-286213/trainingautomation2022:release
++ docker push gcr.io/hydrotek-286213/trainingautomation2022:release
+The push refers to repository [gcr.io/hydrotek-286213/trainingautomation2022]
+5f70bf18a086: Preparing
+e190c1255e94: Preparing
+a9634ec3839e: Preparing
+4835c06f5e88: Preparing
+a65f7c2d944b: Preparing
+10bb0cc11b34: Preparing
+00a437e44700: Preparing
+5f70bf18a086: Preparing
+18a2735dbd13: Preparing
+87ea2744abf2: Preparing
+51f094ff7b94: Preparing
+1a40cb2669f8: Preparing
+32034715e5d4: Preparing
+7d0ebbe3f5d2: Preparing
+18a2735dbd13: Waiting
+87ea2744abf2: Waiting
+51f094ff7b94: Waiting
+1a40cb2669f8: Waiting
+32034715e5d4: Waiting
+7d0ebbe3f5d2: Waiting
+10bb0cc11b34: Waiting
+00a437e44700: Waiting
+5f70bf18a086: Layer already exists
+e190c1255e94: Pushed
+4835c06f5e88: Pushed
+a9634ec3839e: Pushed
+87ea2744abf2: Layer already exists
+51f094ff7b94: Layer already exists
+1a40cb2669f8: Layer already exists
+32034715e5d4: Layer already exists
+7d0ebbe3f5d2: Layer already exists
+00a437e44700: Pushed
+18a2735dbd13: Pushed
+10bb0cc11b34: Pushed
+a65f7c2d944b: Pushed
+release: digest: sha256:311940dc24c138acb399b3b3f459e4a77bb0b3104fe77876f0174c7183e52184 size: 3254
++ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ '[' -z Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation ']'
++ mainCD
++ echo 'MAIN CD'
+MAIN CD
++ a=(${SELECTED_APP_CD_ARRAY[0]})
++ echo Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation
+Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation
++ '[' Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation == All ']'
++ IFS=', '
++ read -r -a arr
++ for i in "${arr[@]}"
++ temp=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ temp=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ echo Hydrotek-22-PestDetection/pest-detection/pest-detection
+Hydrotek-22-PestDetection/pest-detection/pest-detection
++ i=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ case "$i" in
++ echo Hydrotek-22-PestDetection/pest-detection/pest-detection
+Hydrotek-22-PestDetection/pest-detection/pest-detection
++ SELECTED_APP_CI=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ DEPLOYMENT=pestdetection2022
++ NAMESPACE=dev
++ CONTAINERNAME=pestdetection2022
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ PORTNUM=5001
++ genericCD Hydrotek-22-PestDetection/pest-detection/pest-detection pestdetection2022 dev pestdetection2022 gcr.io/hydrotek-286213 release 5001
++ SELECTED_APP_CD=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ DEPLOYMENT=pestdetection2022
++ NAMESPACE=dev
++ CONTAINERNAME=pestdetection2022
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ PORTNUM=5001
++ echo 'GENERIC CD'
+GENERIC CD
++ echo 'Begining Deployment of Hydrotek-22-PestDetection/pest-detection/pest-detection'
+Begining Deployment of Hydrotek-22-PestDetection/pest-detection/pest-detection
++ gcloud container clusters get-credentials autopilot-cluster-1 --region us-central1 --project hydrotek-286213
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+Fetching cluster endpoint and auth data.
+kubeconfig entry generated for autopilot-cluster-1.
++ kubectl get deployments pestdetection2022 --namespace dev
++ grep -q pestdetection2022
++ echo 'Updating the deployment with latest version'
+Updating the deployment with latest version
++ SELECTED_IMAGE=gcr.io/hydrotek-286213/pestdetection2022:release
++ echo 'Selected Image gcr.io/hydrotek-286213/pestdetection2022:release'
+Selected Image gcr.io/hydrotek-286213/pestdetection2022:release
++ echo 'kubectl set image deployment/pestdetection2022 pestdetection2022=gcr.io/hydrotek-286213/pestdetection2022:release --namespace dev'
+kubectl set image deployment/pestdetection2022 pestdetection2022=gcr.io/hydrotek-286213/pestdetection2022:release --namespace dev
++ kubectl set image deployment/pestdetection2022 pestdetection2022=gcr.io/hydrotek-286213/pestdetection2022:release --namespace dev
++ echo 'kubectl rollout restart deployment pestdetection2022 --namespace dev'
+kubectl rollout restart deployment pestdetection2022 --namespace dev
++ kubectl rollout restart deployment pestdetection2022 --namespace dev
+deployment.apps/pestdetection2022 restarted
++ echo 'Updated Deployment'
+Updated Deployment
++ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ for i in "${arr[@]}"
++ temp=Hydrotek-22-PestDetection/training-automation/training-automation
++ temp=Hydrotek-22-PestDetection/training-automation/training-automation
++ echo Hydrotek-22-PestDetection/training-automation/training-automation
+Hydrotek-22-PestDetection/training-automation/training-automation
++ i=Hydrotek-22-PestDetection/training-automation/training-automation
++ case "$i" in
++ echo Hydrotek-22-PestDetection/training-automation/training-automation
+Hydrotek-22-PestDetection/training-automation/training-automation
++ SELECTED_APP_CI=Hydrotek-22-PestDetection/training-automation/training-automation
++ DEPLOYMENT=trainingautomation2022
++ NAMESPACE=dev
++ CONTAINERNAME=trainingautomation2022
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ PORTNUM=6000
++ genericCD Hydrotek-22-PestDetection/training-automation/training-automation trainingautomation2022 dev trainingautomation2022 gcr.io/hydrotek-286213 release 6000
++ SELECTED_APP_CD=Hydrotek-22-PestDetection/training-automation/training-automation
++ DEPLOYMENT=trainingautomation2022
++ NAMESPACE=dev
++ CONTAINERNAME=trainingautomation2022
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ PORTNUM=6000
++ echo 'GENERIC CD'
+GENERIC CD
++ echo 'Begining Deployment of Hydrotek-22-PestDetection/training-automation/training-automation'
+Begining Deployment of Hydrotek-22-PestDetection/training-automation/training-automation
++ gcloud container clusters get-credentials autopilot-cluster-1 --region us-central1 --project hydrotek-286213
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+Fetching cluster endpoint and auth data.
+kubeconfig entry generated for autopilot-cluster-1.
++ kubectl get deployments trainingautomation2022 --namespace dev
++ grep -q trainingautomation2022
+Error from server (NotFound): deployments.apps "trainingautomation2022" not found
++ echo 'New deployemnt'
+New deployemnt
++ echo 'kubectl create deployment trainingautomation2022 --image=gcr.io/hydrotek-286213/trainingautomation2022:release --namespace dev'
+kubectl create deployment trainingautomation2022 --image=gcr.io/hydrotek-286213/trainingautomation2022:release --namespace dev
++ kubectl create deployment trainingautomation2022 --image=gcr.io/hydrotek-286213/trainingautomation2022:release --namespace dev
+Warning: Autopilot set default resource requests for Deployment dev/trainingautomation2022, as resource requests were not specified. See http://g.co/gke/autopilot-defaults.
+deployment.apps/trainingautomation2022 created
++ echo 'kubectl expose deployment trainingautomation2022 --type=LoadBalancer --port 6000 --namespace dev'
+kubectl expose deployment trainingautomation2022 --type=LoadBalancer --port 6000 --namespace dev
++ kubectl expose deployment trainingautomation2022 --type=LoadBalancer --port 6000 --namespace dev
+service/trainingautomation2022 exposed
++ sleep 15
++ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
+Finished: SUCCESS

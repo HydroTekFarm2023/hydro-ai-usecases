@@ -1,0 +1,473 @@
+openapi: 3.0.0
+info:
+  version: release
+  title: Hydrotek API Documentation
+  description: Documentation of Hydrotek API
+servers:
+  - url: http://35.193.229.177:5001/ 
+paths:
+
+
+
+
+  /v1/pestdetection/treatment:
+    post:
+      tags:
+      - Pest Detection
+      summary: Performs Pest detection and returns treatment for the same
+      operationId: pestdetection
+      description: Performs Pest detection and returns treatment for the same
+      servers:
+        - url: http://35.193.229.177:5001/ 
+      parameters:
+        - in: query
+          name: source
+          required: true
+          description: Bucket of Source image
+          schema:
+            type: string
+            default: hydrotek-2022
+        - in: query
+          name: imageName
+          required: true
+          description: Image Name
+          schema:
+            type: string
+            default: t1.jpg
+        - in: query
+          name: dest
+          required: true
+          description: Bucket Location of Output Image
+          schema:
+            type: string
+            default: hydrotek-2022
+      responses:
+        '200':
+          description: Result returned
+        '500':
+          description: Error returned
+
+
+
+
+  /v1/fungalclassification/treatment:
+    post:
+      tags:
+      - Fungal Classification
+      summary: Performs Fungal Classification and returns treatment for the same.
+      operationId: fungalclassification
+      description: Performs Fungal Classification and returns treatment for the same.
+      servers:
+        - url: http://35.188.146.244:5001/ 
+      parameters:
+        - in: query
+          name: imageName
+          required: true
+          description: Name of the image
+          schema:
+            type: string
+            default: t1.jpg
+        - in: query
+          name: source
+          required: true
+          description: Bucket where the image is stored
+          schema:
+            type: string
+            default: hydrotek-2022
+        - in: query
+          name: model_name
+          required: true
+          description: The name of the model on which classification has to be done
+          schema:
+            type: string
+            default: tomato
+        - in: query
+          name: model_path
+          required: true
+          description: Bucket where the model is stored
+          allowReserved: True
+          schema:
+            type: string
+            default: hydrotek-2022/fungal-models
+        - in: query
+          name: dest
+          required: true
+          description: Bucket where the output image has to be stored
+          schema:
+            type: string
+            default: hydrotek-2022
+      responses:
+        '200':
+          description: Result returned
+        '500':
+          description: Error Returned
+
+
+
+  /v1/scraping/dataset:
+    post:
+      tags:
+      - Dataset Scraping
+      summary: Performs image scraping for dataset
+      operationId: scraping
+      description: Performs image scraping for dataset
+      servers:
+        - url: http://35.222.255.77:5001/ 
+      parameters:
+        - in: query
+          name: plant
+          required: true
+          description: Name of the plant of which data has to be scraped
+          allowReserved: True
+          schema:
+            type: string
+            default: apple
+        - in: query
+          name: destination
+          required: true
+          description: Bucket where the image dataset has to be stored
+          allowReserved: True
+          schema:
+            type: string
+            default: hydrotek-2022/fungal-datasets
+        - in: query
+          name: classes
+          required: true
+          description: Classes of the data to be scraped
+          allowReserved: True
+          schema:
+            type: string
+            default: Anthracnose,Leaf drop,Powdery mildew,Septoria leaf spot,healthy plant
+        - in: query
+          name: n
+          required: true
+          description: Number of images per Class
+          allowReserved: True
+          schema:
+            type: integer
+            default: 10
+
+      responses:
+        '200':
+          description: Result returned
+        '500':
+          description: Error Returned
+
+
+
+
+
+  /v1/fungaltrainingautomation/train:
+    post:
+      tags:
+      - Fungal Classification
+      summary: Performs Training automation for Fungal Classification.
+      operationId: fungaltrainingautomation
+      description: Performs Training automation for Fungal Classification.
+      servers:
+        - url: http://34.70.21.82:5001/ 
+      parameters:
+        - in: query
+          name: datasetName
+          required: true
+          description: Name of the Dataset 
+          schema:
+            type: string
+            default: strawberry-fungal
+        - in: query
+          name: epochs
+          required: true
+          description: Number of epochs for model 
+          schema:
+            type: integer
+            default: 1
+        - in: query
+          name: source_loc
+          required: true
+          description: The name of the model on which classification has to be done
+          allowReserved: True
+          schema:
+            type: string
+            default: hydrotek-2022/fungal-datasets
+        - in: query
+          name: dest_loc
+          required: true
+          description: Bucket where the model will be saved
+          allowReserved: True
+          schema:
+            type: string
+            default: hydrotek-2022/fungal-models
+        - in: query
+          name: from_scratch
+          required: true
+          description: 1 if train model from scratch and 0 to train from existing model
+          schema:
+            type: integer
+            default: 1
+        - in: query
+          name: weight_loc
+          required: false
+          description: Bucket of the Model Weights
+          schema:
+            type: integer
+        - in: query
+          name: model_name
+          required: false
+          description: Name of Model which has to be used for pretraining
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Result returned
+        '500':
+          description: Error Returned
+
+
+  /v1/pesttraining/train:
+    post:
+      tags:
+      - Pest Detection
+      summary: Performs Training automation for Pest Detection
+      operationId: pesttrainingautomation
+      description: Performs Training automation for Pest Detection
+      servers:
+        - url: http://34.122.93.198:5001/ 
+      parameters:
+        - in: query
+          name: datasetName
+          required: true
+          description: Name of the Dataset 
+          schema:
+            type: string
+            default: PestsV2-Small
+        - in: query
+          name: epochs
+          required: true
+          description: Number of epochs for model 
+          schema:
+            type: integer
+            default: 10
+        - in: query
+          name: source_loc
+          required: true
+          description: The name of the model on which classification has to be done
+          allowReserved: True
+          schema:
+            type: string
+            default: hydrotek-2022
+        - in: query
+          name: dest_loc
+          required: true
+          description: Bucket where the model will be saved
+          allowReserved: True
+          schema:
+            type: string
+            default: hydrotek-2022
+        - in: query
+          name: from_scratch
+          required: true
+          description: 1 if train model from scratch and 0 to train from existing model
+          schema:
+            type: integer
+            default: 1
+      responses:
+        '200':
+          description: Result returned
+        '500':
+          description: Error Returned
+
+
+  /thermalanalysis:
+    get:
+      tags:
+      - Thermal Analysis
+      summary: Performs Thermal Analysis
+      operationId: thermalanalysis
+      description: Performs Thermal Analysis      
+      servers:
+        - url: http://35.226.53.51:6005/ 
+      parameters:
+        - in: query
+          name: ImagePath
+          required: true
+          allowReserved: True
+          description: path of the image
+          schema:
+            type: string
+            default: hydrotekai/thermal_images/cropped_leaf.jpg
+        - in: query
+          name: X
+          required: true
+          description: X
+          schema:
+            type: integer
+            default: 9
+        - in: query
+          name: Y
+          required: true
+          description: Y
+          schema:
+            type: integer
+            default: 10
+        - in: query
+          name: Height
+          required: true
+          description: Height
+          schema:
+            type: integer
+            default: 170
+        - in: query
+          name: Width
+          required: true
+          description: Width
+          schema:
+            type: integer
+            default: 201
+        - in: query
+          name: Threshold
+          required: true
+          description: Threshold for thermal analysis
+          schema:
+            type: integer
+            default: 120
+        - in: query
+          name: PlantType
+          required: true
+          description: Type of the Plant
+          allowReserved: True
+          schema:
+            type: string
+            default: lettuce
+        - in: query
+          name: apitype
+          required: true
+          description: Type of the API
+          allowReserved: True
+          schema:
+            type: string
+            default: devtest
+        - in: query
+          name: CustomerDb
+          required: true
+          description: MongoDB Collection Name
+          schema:
+            type: string
+            default: hydrotek
+      responses:
+        '200':
+          description: Result returned
+        '500':
+          description: Error Returned
+
+
+
+  /PlantGrowth:
+    get:
+      tags:
+      - Plant Growth
+      summary: Performs Plant Growth Analysis
+      operationId: plantGrowth
+      description: Performs Plant Growth Analysis
+      servers:
+      - url: http://34.71.125.6:6003/ 
+      parameters:
+        - in: query
+          name: ImagePath
+          required: true
+          allowReserved: True
+          description: path of the imaage
+          schema:
+            type: string
+            default: hydrotekai/HeightAnalysis/NFTtest2.jpg
+        - in: query
+          name: system
+          required: true
+          description: system
+          schema:
+            type: string
+            default: NFT
+        - in: query
+          name: PlantId
+          required: true
+          description: PlantId
+          schema:
+            type: integer
+            default: 1
+        - in: query
+          name: apitype
+          required: true
+          description: apitype
+          schema:
+            type: string
+            default: devtest
+        - in: query
+          name: CustomerDb
+          required: true
+          description: Name of the MongoDB collection where the api data has to be stored
+          schema:
+            type: string
+            default: hydrotek
+      responses:
+        '200':
+          description: Result returned
+        '500':
+          description: Error Returned
+
+  /v1/fungalclassify:
+    get:
+      tags:
+      - Controller
+      summary: Controller for Fungal Classification
+      operationId: fungalclassify
+      description: Controller for Fungal Classification
+      servers:
+      - url: http://35.222.63.156:3000/ 
+      responses:
+        '200':
+          description: Result returned
+        '500':
+          description: Error Returned
+
+  /v1/pestdetect:
+    get:
+      tags:
+      - Controller
+      summary: Controller for Pest Detection
+      operationId: pestdetect
+      description: Controller for Pest Detection
+      servers:
+      - url: http://35.222.63.156:3000/ 
+      responses:
+        '200':
+          description: Result returned
+        '500':
+          description: Error Returned
+  /v1/growth:
+    get:
+      tags:
+      - Controller
+      summary: Controller for Plant Growth
+      operationId: growth
+      description: Controller for Plant Growth
+      servers:
+      - url: http://35.222.63.156:3000/ 
+      responses:
+        '200':
+          description: Result returned
+        '500':
+          description: Error Returned
+
+  /v1/thermal:
+    get:
+      tags:
+      - Controller
+      summary: Controller for Thermal analysis
+      operationId: thermal
+      description: Controller for Thermal Analysis
+      servers:
+      - url: http://35.222.63.156:3000/ 
+      responses:
+        '200':
+          description: Result returned
+        '500':
+          description: Error Returned

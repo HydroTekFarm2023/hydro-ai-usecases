@@ -1,0 +1,158 @@
+Started by user [8mha:////4CA5kL0r8XoTT3PdnVI1PoGEnxCwKlCoPhe73Uyy/FdkAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgZu/dLi1CL9xLzSrEQAtdxjnMAAAAA=[0manuja somthankar
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\Hydrotek-CICD-Pipeline
+[Hydrotek-CICD-Pipeline] $ "C:\Program Files\Git\bin\sh.exe" -xe C:\Users\anuja\AppData\Local\Temp\jenkins11896866130682703222.sh
++ echo 'Hydrotek CICD'
+Hydrotek CICD
++ echo 'CI selected Hydrotek-22-PestDetection/pest-detection/pest-detection'
+CI selected Hydrotek-22-PestDetection/pest-detection/pest-detection
++ echo 'CD selected Hydrotek-22-PestDetection/pest-detection/pest-detection'
+CD selected Hydrotek-22-PestDetection/pest-detection/pest-detection
++ BRANCH=master
++ IMAGE_TAG=release
++ SELECTED_APP_CI_ARRAY=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ SELECTED_APP_CD_ARRAY=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ DEPLOYMENT=hydrotekapp-deployment
++ NAMESPACE=dev
++ NETWORKTYPE=LoadBalancer
++ PORTNUM=5000
++ DIR=/c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ echo 'CI/CD Pipeline Started'
+CI/CD Pipeline Started
++ '[' -z Hydrotek-22-PestDetection/pest-detection/pest-detection ']'
++ mainCI
++ echo 'MAIN CI'
+MAIN CI
++ a=(${SELECTED_APP_CI_ARRAY[0]})
++ echo Hydrotek-22-PestDetection/pest-detection/pest-detection
+Hydrotek-22-PestDetection/pest-detection/pest-detection
++ '[' Hydrotek-22-PestDetection/pest-detection/pest-detection == All ']'
++ IFS=', '
++ read -r -a arr
++ for i in "${arr[@]}"
++ temp=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ temp=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ echo Hydrotek-22-PestDetection/pest-detection/pest-detection
+Hydrotek-22-PestDetection/pest-detection/pest-detection
++ i=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ case "$i" in
++ echo Hydrotek-22-PestDetection/pest-detection/pest-detection
+Hydrotek-22-PestDetection/pest-detection/pest-detection
++ SELECTED_APP_CI=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ CI_DIR=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=pestdetection2022
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ genericCI Hydrotek-22-PestDetection/pest-detection/pest-detection Hydrotek-22-PestDetection/pest-detection/pest-detection hydro-ai-usecases pestdetection2022 ./hydrotek/cicdbuild/ gcr.io/hydrotek-286213 release
++ SELECTED_APP_CI=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ CI_DIR=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=pestdetection2022
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ echo 'GENERIC CI'
+GENERIC CI
++ echo 'Begining Integration of Hydrotek-22-PestDetection/pest-detection/pest-detection'
+Begining Integration of Hydrotek-22-PestDetection/pest-detection/pest-detection
++ mkdir -p ./hydrotek/cicdbuild/
++ cd ./hydrotek/cicdbuild/
++ '[' -d hydro-ai-usecases ']'
++ cd hydro-ai-usecases
++ git pull
+Already up to date.
++ cd Hydrotek-22-PestDetection/pest-detection/pest-detection
++ echo 'Docker Build gcr.io/hydrotek-286213/pestdetection2022:release '
+Docker Build gcr.io/hydrotek-286213/pestdetection2022:release 
++ docker build -t gcr.io/hydrotek-286213/pestdetection2022:release .
+#1 [internal] load build definition from Dockerfile
+#1 sha256:d3935b79058bc66f8fce50d0575f8d1661e73a0394c1877621e79b6e101c00cb
+#1 transferring dockerfile: 650B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load .dockerignore
+#2 sha256:4cad0ef237dcf078c540904eec43aef7b3cdffcad63a46620a2829d7ddfbda00
+#2 transferring context: 2B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.8-slim
+#3 sha256:a94c831f6b826f8ffd4325edd7e9f6408caa85fd7f03e2b107cc6a9d249f7065
+#3 DONE 3.0s
+
+#4 [1/8] FROM docker.io/library/python:3.8-slim@sha256:a43e1e26c4fbbe9b5d983533c094547d67f0325148f27dd85a0f8b7f0aced23e
+#4 sha256:f1da7f2acee77f4e72252ff48c8d23a562a0004f34bea6972ad0fe9fe14786ad
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 sha256:c7d0fdd78f1850e1896792444843b6c40a9f0639cf17a752bd81d3c633aa3f9c
+#5 transferring context: 14.35MB 0.1s done
+#5 DONE 0.1s
+
+#9 [5/8] RUN pip install -r requirements.txt
+#9 sha256:0752c7f6451a812482372e46e993a6c579e11c2c68b901f721409a82fbb124d7
+#9 CACHED
+
+#11 [7/8] COPY googleserviceAcc.json /root/googleserviceAcc.json
+#11 sha256:226d1c5a4f436b8cb4825813ddbfc44a7b8a0fc11180632242ae8d992d6d1f8c
+#11 CACHED
+
+#6 [2/8] COPY . /pest-detection
+#6 sha256:ef047e1477804d0f57429c7941256a94fdc545b6a4a783bf66e258ba7aef9987
+#6 CACHED
+
+#7 [3/8] WORKDIR /pest-detection
+#7 sha256:8d73b1e9601adccd1da5243a460c5b1bb8715969568caac84e079e74503f34b9
+#7 CACHED
+
+#10 [6/8] RUN curl -sSL https://sdk.cloud.google.com | bash
+#10 sha256:64b1e0e52ec1fda07a3b54e4822ee6698916a9b5b0c4c370501c6980dad8beac
+#10 CACHED
+
+#8 [4/8] RUN apt-get update     && DEBIAN_FRONTEND=noninteractive        apt-get -y --quiet --fix-missing install python3-opencv     && apt-get -y autoremove     && apt-get clean autoclean
+#8 sha256:7b3d8fc8d3aa33a9e88b070713f30ca5171b11f5ed4fc14a161da931f4b14990
+#8 CACHED
+
+#12 [8/8] COPY boto.txt /root/.boto
+#12 sha256:8c2382446e79299cab34bfeee0b49735d69df84f0a66ccd223103864bfc4487d
+#12 CACHED
+
+#13 exporting to image
+#13 sha256:e8c613e07b0b7ff33893b694f7759a10d42e180f2b4dc349fb57dc6b71dcab00
+#13 exporting layers done
+#13 writing image sha256:78488df519c270e9afc3718cdccc09ed4b58763bc8bb111e3145aa90fcc780e3
+#13 writing image sha256:78488df519c270e9afc3718cdccc09ed4b58763bc8bb111e3145aa90fcc780e3 done
+#13 naming to gcr.io/hydrotek-286213/pestdetection2022:release done
+#13 DONE 0.0s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
++ echo 'Docker Push gcr.io/hydrotek-286213/pestdetection2022:release'
+Docker Push gcr.io/hydrotek-286213/pestdetection2022:release
++ docker push gcr.io/hydrotek-286213/pestdetection2022:release
+The push refers to repository [gcr.io/hydrotek-286213/pestdetection2022]
+c337ff6b8012: Preparing
+73a271b64fcf: Preparing
+4dcd986bfff5: Preparing
+5cd3ed298fbf: Preparing
+884a19665a38: Preparing
+5f70bf18a086: Preparing
+f79b5b8c612d: Preparing
+87ea2744abf2: Preparing
+51f094ff7b94: Preparing
+1a40cb2669f8: Preparing
+32034715e5d4: Preparing
+7d0ebbe3f5d2: Preparing
+87ea2744abf2: Waiting
+51f094ff7b94: Waiting
+1a40cb2669f8: Waiting
+32034715e5d4: Waiting
+7d0ebbe3f5d2: Waiting
+5f70bf18a086: Waiting
+f79b5b8c612d: Waiting
+unauthorized: You don't have the needed permissions to perform this operation, and you may have invalid credentials. To authenticate your request, follow the steps in: https://cloud.google.com/container-registry/docs/advanced-authentication
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

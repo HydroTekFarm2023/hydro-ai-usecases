@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "1bd8a597-c42a-4bb9-a470-97493cac2ce6",
+		"name": "train-collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "gcp-fungal-train",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status code is 200', function() {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"var schema = {\r",
+							"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+							"  \"type\": \"object\",\r",
+							"  \"properties\": {\r",
+							"    \"accuracy\": {\r",
+							"      \"type\": \"array\"\r",
+							"    },\r",
+							"    \"epoch\": {\r",
+							"        \"type\": \"array\"\r",
+							"      },\r",
+							"    \"time\": {\r",
+							"    \"type\": \"array\"\r",
+							"    },\r",
+							"    \"train_loss\": {\r",
+							"    \"type\": \"array\"\r",
+							"    },\r",
+							"    \"valid_loss\": {\r",
+							"    \"type\": \"array\"\r",
+							"    }\r",
+							"      ,\r",
+							"  \"required\": [\r",
+							"    \"accuracy\",\r",
+							"    \"epoch\",\r",
+							"    \"time\",\r",
+							"    \"train_loss\",\r",
+							"    \"valid_loss\"\r",
+							"  ]\r",
+							"}}\r",
+							"var json = pm.response.json()\r",
+							"pm.test('Schema is valid', function() {\r",
+							"    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{fungal-train-host}}:{{fungal-train-port}}/v1/fungaltrainingautomation/train?datasetName=strawberry-fungal&epochs=1&source_loc=hydrotek-2022/fungal-datasets&dest_loc=hydrotek-2022/fungal-models&from_scratch=0&weight_loc=hydrotek-2022/fungal-models&model_name=strawberry-fungal-model",
+					"protocol": "http",
+					"host": [
+						"{{fungal-train-host}}"
+					],
+					"port": "{{fungal-train-port}}",
+					"path": [
+						"v1",
+						"fungaltrainingautomation",
+						"train"
+					],
+					"query": [
+						{
+							"key": "datasetName",
+							"value": "strawberry-fungal"
+						},
+						{
+							"key": "epochs",
+							"value": "1"
+						},
+						{
+							"key": "source_loc",
+							"value": "hydrotek-2022/fungal-datasets"
+						},
+						{
+							"key": "dest_loc",
+							"value": "hydrotek-2022/fungal-models"
+						},
+						{
+							"key": "from_scratch",
+							"value": "0"
+						},
+						{
+							"key": "weight_loc",
+							"value": "hydrotek-2022/fungal-models"
+						},
+						{
+							"key": "model_name",
+							"value": "strawberry-fungal-model"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "gcp-pest-train",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status code is 200', function() {\r",
+							"  pm.response.to.have.status(200);\r",
+							"})\r",
+							"var schema = {\r",
+							"\"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+							"\"type\": \"object\",\r",
+							"\"properties\": {\r",
+							"  \"               epoch\": {\r",
+							"    \"type\": \"array\"\r",
+							"  },\r",
+							"  \"               x/lr0\": {\r",
+							"      \"type\": \"array\"\r",
+							"    },\r",
+							"  \"               x/lr1\": {\r",
+							"  \"type\": \"array\"\r",
+							"  },\r",
+							"  \"               x/lr2\": {\r",
+							"  \"type\": \"array\"\r",
+							"  },\r",
+							"  \"        val/box_loss\": {\r",
+							"  \"type\": \"array\"\r",
+							"  },\r",
+							"  \"        val/cls_loss\": {\r",
+							"  \"type\": \"array\"\r",
+							"  },\r",
+							"   \"        val/obj_loss\": {\r",
+							"  \"type\": \"array\"\r",
+							"  },\r",
+							"   \"      metrics/recall\": {\r",
+							"  \"type\": \"array\"\r",
+							"  },\r",
+							"   \"      train/box_loss\": {\r",
+							"  \"type\": \"array\"\r",
+							"  },\r",
+							"   \"      train/obj_loss\": {\r",
+							"  \"type\": \"array\"\r",
+							"  },\r",
+							"   \"     metrics/mAP_0.5\": {\r",
+							"  \"type\": \"array\"\r",
+							"  },\r",
+							"   \"metrics/mAP_0.5:0.95\": {\r",
+							"  \"type\": \"array\"\r",
+							"  },\r",
+							"\"required\": [\r",
+							"  \"accuracy\",\r",
+							"  \"epoch\",\r",
+							"  \"time\",\r",
+							"  \"train_loss\",\r",
+							"  \"valid_loss\"\r",
+							"]\r",
+							"}}\r",
+							"var json = pm.response.json()\r",
+							"pm.test('Schema is valid', function() {\r",
+							"  pm.expect(tv4.validate(json, schema)).to.be.true;\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{pest-train-host}}:{{pest-train-port}}/v1/pesttraining/train?datasetName=PestsV2-Small&epochs=10&source_loc=hydrotek-2022&dest_loc=hydrotek-2022&from_scratch=0",
+					"protocol": "http",
+					"host": [
+						"{{pest-train-host}}"
+					],
+					"port": "{{pest-train-port}}",
+					"path": [
+						"v1",
+						"pesttraining",
+						"train"
+					],
+					"query": [
+						{
+							"key": "datasetName",
+							"value": "PestsV2-Small"
+						},
+						{
+							"key": "epochs",
+							"value": "10"
+						},
+						{
+							"key": "source_loc",
+							"value": "hydrotek-2022"
+						},
+						{
+							"key": "dest_loc",
+							"value": "hydrotek-2022"
+						},
+						{
+							"key": "from_scratch",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

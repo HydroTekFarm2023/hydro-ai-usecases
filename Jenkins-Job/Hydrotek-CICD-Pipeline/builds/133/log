@@ -1,0 +1,79 @@
+Started by user [8mha:////4CA5kL0r8XoTT3PdnVI1PoGEnxCwKlCoPhe73Uyy/FdkAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgZu/dLi1CL9xLzSrEQAtdxjnMAAAAA=[0manuja somthankar
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\Hydrotek-CICD-Pipeline
+[Hydrotek-CICD-Pipeline] $ "C:\Program Files\Git\bin\sh.exe" -xe C:\Users\anuja\AppData\Local\Temp\jenkins11535067616926192605.sh
++ echo 'Hydrotek CICD'
+Hydrotek CICD
++ echo 'CI selected '
+CI selected 
++ echo 'CD selected '
+CD selected 
++ echo 'Tag selected release'
+Tag selected release
++ BRANCH=pestclassification-tcet
++ IMAGE_TAG=release
++ SELECTED_APP_CI_ARRAY=
++ SELECTED_APP_CD_ARRAY=
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ TEST_DIR=Postman-Tests
++ NAMESPACE=dev
++ NETWORKTYPE=LoadBalancer
++ PORTNUM=5000
++ DIR=/c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ echo 'CI/CD Pipeline Started'
+CI/CD Pipeline Started
++ '[' -z dev ']'
++ setenv
++ echo dev
+dev
++ [[ dev == \d\e\v\c\l\o\u\d ]]
++ echo 'Env = Other'
+Env = Other
++ '[' -z '' ']'
++ echo 'No project was selected for integration'
+No project was selected for integration
++ '[' -z '' ']'
++ echo 'No project was selected for deployment'
+No project was selected for deployment
++ '[' -z pest-detection,ThermalLeafDetection-New,plant-growth,ControllerApp,fungal-classification ']'
++ maintest
++ echo 'MAIN Test'
+MAIN Test
++ a=(${SELECTED_APP_TEST_ARRAY[0]})
++ echo pest-detection,ThermalLeafDetection-New,plant-growth,ControllerApp,fungal-classification
+pest-detection,ThermalLeafDetection-New,plant-growth,ControllerApp,fungal-classification
++ '[' pest-detection,ThermalLeafDetection-New,plant-growth,ControllerApp,fungal-classification == All ']'
++ IFS=', '
++ read -r -a arr
++ for i in "${arr[@]}"
++ temp=pest-detection
++ temp=pest-detection
++ echo pest-detection
+pest-detection
++ i=pest-detection
++ case "$i" in
++ echo pest-detection
+pest-detection
++ json_name=detect-collection.postman_collection.json
++ api=gcp-detect
++ generictest detect-collection.postman_collection.json gcp-detect
++ cd ./hydrotek/cicdbuild/
++ '[' -d hydro-ai-usecases ']'
++ cd hydro-ai-usecases
++ git pull
+Already up to date.
++ cd Postman-Tests
++ COLLECTION=detect-collection.postman_collection.json
++ TEST=gcp-detect
++ echo detect-collection.postman_collection.json
+detect-collection.postman_collection.json
++ echo gcp-detect
+gcp-detect
++ newman run detect-collection.postman_collection.json --environment --folder gcp-detect
+error: could not load environment
+  ENOENT: no such file or directory, open 'C:\ProgramData\Jenkins\.jenkins\workspace\Hydrotek-CICD-Pipeline\hydrotek\cicdbuild\hydro-ai-usecases\Postman-Tests\--folder'
+
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

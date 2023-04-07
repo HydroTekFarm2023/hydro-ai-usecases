@@ -1,0 +1,34 @@
+Started by user [8mha:////4CA5kL0r8XoTT3PdnVI1PoGEnxCwKlCoPhe73Uyy/FdkAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgZu/dLi1CL9xLzSrEQAtdxjnMAAAAA=[0manuja somthankar
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\Hydrotek-CICD-Pipeline
+[Hydrotek-CICD-Pipeline] $ "C:\Program Files\Git\bin\sh.exe" -xe C:\Users\anuja\AppData\Local\Temp\jenkins16146943989447464066.sh
++ BRANCH=master
++ IMAGE_TAG=release
++ SELECTED_APP_CI=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ SELECTED_APP_CD=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ DEPLOYMENT=hydrotekapp-deployment
++ NAMESPACE=dev
++ NETWORKTYPE=LoadBalancer
++ PORTNUM=5000
++ echo 'CI/CD Pipeline Started'
+CI/CD Pipeline Started
++ '[' -z Hydrotek-22-PestDetection/pest-detection/pest-detection ']'
++ continous_integration_server
++ echo 'Begining Integration of Hydrotek-22-PestDetection/pest-detection/pest-detection'
+Begining Integration of Hydrotek-22-PestDetection/pest-detection/pest-detection
++ mkdir -p ./hydrotek/cicdbuild/
++ cd ./hydrotek/cicdbuild/
++ '[' -d hydro-ai-usecases ']'
++ git clone -b master https://gitlab.com/hydrotek-ai-grp/hydro-ai-usecases.git
+Cloning into 'hydro-ai-usecases'...
+Updating files:  72% (159/218)Updating files:  73% (160/218)Updating files:  74% (162/218)Updating files:  75% (164/218)Updating files:  76% (166/218)Updating files:  77% (168/218)Updating files:  78% (171/218)Updating files:  79% (173/218)Updating files:  80% (175/218)Updating files:  81% (177/218)Updating files:  82% (179/218)Updating files:  83% (181/218)Updating files:  84% (184/218)Updating files:  85% (186/218)Updating files:  86% (188/218)Updating files:  87% (190/218)Updating files:  88% (192/218)Updating files:  89% (195/218)Updating files:  89% (196/218)Updating files:  90% (197/218)Updating files:  91% (199/218)Updating files:  92% (201/218)Updating files:  93% (203/218)Updating files:  94% (205/218)Updating files:  95% (208/218)Updating files:  96% (210/218)Updating files:  97% (212/218)Updating files:  98% (214/218)Updating files:  99% (216/218)Updating files: 100% (218/218)Updating files: 100% (218/218), done.
++ cd hydro-ai-usecases
++ gcloud auth print-access-token
++ docker login -u oauth2accesstoken --password-stdin https://gcr.io
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+error during connect: In the default daemon configuration on Windows, the docker client must be run with elevated privileges to connect.: Post "http://%2F%2F.%2Fpipe%2Fdocker_engine/v1.24/auth": open //./pipe/docker_engine: The system cannot find the file specified.
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

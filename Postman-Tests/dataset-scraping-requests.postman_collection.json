@@ -1,0 +1,61 @@
+{
+	"info": {
+		"_postman_id": "5d1be281-8c14-416b-aac0-396ab6a79347",
+		"name": "dataset-scraping-requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "gcp-scraping",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200, Dataset has been uploaded\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{dataset-scraping-host}}:{{dataset-scraping-port}}/v1/scraping/dataset?plant=apple&destination=hydrotek-2022/fungal-datasets&classes=Anthracnose,Leaf drop,Powdery mildew,Septoria leaf spot,healthy plant&n=10",
+					"protocol": "http",
+					"host": [
+						"{{dataset-scraping-host}}"
+					],
+					"port": "{{dataset-scraping-port}}",
+					"path": [
+						"v1",
+						"scraping",
+						"dataset"
+					],
+					"query": [
+						{
+							"key": "plant",
+							"value": "apple"
+						},
+						{
+							"key": "destination",
+							"value": "hydrotek-2022/fungal-datasets"
+						},
+						{
+							"key": "classes",
+							"value": "Anthracnose,Leaf drop,Powdery mildew,Septoria leaf spot,healthy plant"
+						},
+						{
+							"key": "n",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

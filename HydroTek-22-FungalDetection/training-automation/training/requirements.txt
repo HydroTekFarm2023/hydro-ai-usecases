@@ -1,0 +1,6 @@
+flask
+fastai
+flask_restful
+subprocess.run
+pytest-shutil
+gsutil

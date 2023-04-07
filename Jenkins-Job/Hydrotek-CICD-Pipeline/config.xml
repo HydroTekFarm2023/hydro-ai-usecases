@@ -1,0 +1,616 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition plugin="extended-choice-parameter@0.82">
+          <name>ENV</name>
+          <quoteValue>false</quoteValue>
+          <saveJSONParameterToFile>false</saveJSONParameterToFile>
+          <visibleItemCount>1</visibleItemCount>
+          <type>PT_SINGLE_SELECT</type>
+          <value>devcloud</value>
+          <multiSelectDelimiter>,</multiSelectDelimiter>
+          <projectName>Hydrotek-CICD-Pipeline</projectName>
+        </com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>IMAGETAG</name>
+          <defaultValue>release</defaultValue>
+          <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
+        <com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition plugin="extended-choice-parameter@0.82">
+          <name>CI</name>
+          <quoteValue>false</quoteValue>
+          <saveJSONParameterToFile>false</saveJSONParameterToFile>
+          <visibleItemCount>9</visibleItemCount>
+          <type>PT_CHECKBOX</type>
+          <value>swagger,pest-detection,pest-training-automation,ThermalLeafDetection-New,plant-growth,ControllerApp,dataset-scraping,fungal-training-automation,fungal-classification</value>
+          <multiSelectDelimiter>,</multiSelectDelimiter>
+          <projectName>Hydrotek-CICD-Pipeline</projectName>
+        </com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
+        <com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition plugin="extended-choice-parameter@0.82">
+          <name>CD</name>
+          <quoteValue>false</quoteValue>
+          <saveJSONParameterToFile>false</saveJSONParameterToFile>
+          <visibleItemCount>9</visibleItemCount>
+          <type>PT_CHECKBOX</type>
+          <value>swagger,pest-detection,pest-training-automation,ThermalLeafDetection-New,plant-growth,ControllerApp,dataset-scraping,fungal-training-automation,fungal-classification</value>
+          <multiSelectDelimiter>,</multiSelectDelimiter>
+          <projectName>Hydrotek-CICD-Pipeline</projectName>
+        </com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
+        <com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition plugin="extended-choice-parameter@0.82">
+          <name>SELECTED_APP_TEST_ARRAY</name>
+          <quoteValue>false</quoteValue>
+          <saveJSONParameterToFile>false</saveJSONParameterToFile>
+          <visibleItemCount>8</visibleItemCount>
+          <type>PT_CHECKBOX</type>
+          <value>pest-detection,pest-training-automation,ThermalLeafDetection-New,plant-growth,ControllerApp,dataset-scraping,fungal-training-automation,fungal-classification</value>
+          <multiSelectDelimiter>,</multiSelectDelimiter>
+          <projectName>Hydrotek-CICD-Pipeline</projectName>
+        </com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>echo &quot;Hydrotek CICD&quot; 
+echo &quot;CI selected $CI&quot;
+echo &quot;CD selected $CD&quot;
+echo &quot;Tag selected $IMAGETAG&quot;
+
+BRANCH=&quot;master&quot;
+IMAGE_TAG=$IMAGETAG
+SELECTED_APP_CI_ARRAY=$CI
+SELECTED_APP_CD_ARRAY=$CD
+REPOSITORY_DIR=&quot;hydro-ai-usecases&quot;
+CONTAINER_REGISTRY=gcr.io/hydrotek-286213
+CI_WORK_DIR=&quot;./hydrotek/cicdbuild/&quot;
+TEST_DIR=&quot;Postman-Tests&quot;
+NAMESPACE=dev
+NETWORKTYPE=LoadBalancer
+PORTNUM=5000
+DIR=$PWD
+
+
+
+
+
+genericCI() {
+
+    SELECTED_APP_CI=$1
+    CI_DIR=$2
+    REPOSITORY_DIR=$3
+    CONTAINERNAME=$4
+    CI_WORK_DIR=$5
+    CONTAINER_REGISTRY=$6
+    IMAGE_TAG=$IMAGETAG
+
+    echo &quot;GENERIC CI&quot;
+    echo &quot;Beginning Integration of $SELECTED_APP_CI&quot;
+
+    mkdir -p $CI_WORK_DIR
+    cd $CI_WORK_DIR
+
+    # Check if repos is already cloned
+    if [ -d &quot;$REPOSITORY_DIR&quot; ]; then
+    
+        cd $REPOSITORY_DIR
+        git pull
+
+    else 
+    
+        git clone -b $BRANCH git@gitlab.com:hydrotek-ai-grp/hydro-ai-usecases.git
+        cd $REPOSITORY_DIR
+    
+    fi
+    
+        # Build and Push image to GCR
+        gcloud auth print-access-token |docker login -u oauth2accesstoken --password-stdin https://gcr.io
+        
+        cd $SELECTED_APP_CI
+        echo &quot;Docker Build ${CONTAINER_REGISTRY}/${CONTAINERNAME}:${IMAGE_TAG} &quot;
+        docker build --no-cache -t ${CONTAINER_REGISTRY}/${CONTAINERNAME}:${IMAGE_TAG} .
+        echo &quot;Docker Push ${CONTAINER_REGISTRY}/${CONTAINERNAME}:${IMAGE_TAG}&quot;
+        docker push ${CONTAINER_REGISTRY}/${CONTAINERNAME}:${IMAGE_TAG}
+    cd &quot;$DIR&quot;
+}
+genericCD() {
+    
+    SELECTED_APP_CD=$1
+    DEPLOYMENT=$2
+    NAMESPACE=$3
+    CONTAINERNAME=$4
+    CONTAINER_REGISTRY=$5
+    IMAGE_TAG=$IMAGETAG
+    PORTNUM=$7
+
+    echo &quot;GENERIC CD&quot;
+    echo &quot;Begining Deployment of $SELECTED_APP_CD&quot;
+    
+
+    # S et correct gcloud configuration
+
+    # Check if deployment is already created
+    if kubectl get deployments $DEPLOYMENT --namespace $NAMESPACE | grep -q $DEPLOYMENT; then
+
+        echo &quot;Updating the deployment with latest version&quot;
+        
+        SELECTED_IMAGE=${CONTAINER_REGISTRY}/${CONTAINERNAME}:${IMAGE_TAG}
+        echo &quot;Selected Image $SELECTED_IMAGE&quot;
+
+        echo &quot;kubectl set image deployment/$DEPLOYMENT $CONTAINERNAME=$SELECTED_IMAGE --namespace $NAMESPACE&quot;
+        kubectl set image deployment/$DEPLOYMENT $CONTAINERNAME=$SELECTED_IMAGE --namespace $NAMESPACE
+        echo &quot;kubectl rollout restart deployment $DEPLOYMENT --namespace $NAMESPACE&quot;
+        kubectl rollout restart deployment $DEPLOYMENT --namespace $NAMESPACE
+        echo &quot;Updated Deployment&quot;
+
+    else 
+
+        echo &quot;New deployemnt&quot;
+        
+        echo &quot;kubectl create deployment $DEPLOYMENT --image=${CONTAINER_REGISTRY}/$CONTAINERNAME:${IMAGE_TAG} --namespace $NAMESPACE&quot;
+        kubectl create deployment $DEPLOYMENT --image=${CONTAINER_REGISTRY}/$CONTAINERNAME:${IMAGE_TAG} --namespace $NAMESPACE
+        echo &quot;kubectl expose deployment $DEPLOYMENT --type=$NETWORKTYPE --port $PORTNUM --namespace $NAMESPACE&quot;
+        kubectl expose deployment $DEPLOYMENT --type=$NETWORKTYPE --port $PORTNUM --namespace $NAMESPACE
+        if [[ $DEPLOYMENT == &quot;fungaltrainingautomation&quot; ]]; then    
+            echo &quot;Updated memory configs&quot;
+            cd $CI_WORK_DIR
+            cd $REPOSITORY_DIR
+            cd $SELECTED_APP_CD
+            echo &quot;$PWD&quot;
+            kubectl apply -f FungalMemoryConfig.yaml -n $NAMESPACE
+        fi
+        if [[ $DEPLOYMENT == &quot;pesttrainingautomation&quot; ]]; then    
+            echo &quot;Updated memory configs&quot;
+            cd $CI_WORK_DIR
+            cd $REPOSITORY_DIR
+            cd $SELECTED_APP_CD
+            echo &quot;$PWD&quot;
+            kubectl apply -f PestTrainingMemoryConfig.yaml -n $NAMESPACE
+        fi
+        sleep 15
+
+    fi
+    
+    echo &quot;kubectl set env -n $NAMESPACE --from=secret/mongocredentials$ENV deployment/$DEPLOYMENT&quot;
+    kubectl set env -n $NAMESPACE --from=secret/mongocredentials$ENV deployment/$DEPLOYMENT
+    cd &quot;$DIR&quot;
+    }
+
+setenv() {
+        echo &quot;$ENV&quot;
+        if [[ $ENV == &quot;devcloud&quot; ]]; 
+        then
+                echo &quot;Dev Cloud&quot;
+                ENVFILE=&quot;hydroTek-Dev-Cloud.postman_environment.json&quot;    
+                echo &quot;dev cloud&quot;
+                gcloud container clusters get-credentials autopilot-cluster-1 --region us-central1 --project hydrotek-286213
+                echo &quot;Cluster Name: kt-ai-autopilot-cluster1&quot;
+                NETWORKTYPE=LoadBalancer    
+        else 
+                echo &quot;Env = Other&quot;
+        fi
+}
+
+  
+   
+
+
+mainCI(){
+
+    echo &quot;MAIN CI&quot;
+    a=( ${SELECTED_APP_CI_ARRAY[0]} ); echo ${a}
+    if [ $a == &quot;All&quot; ]; then
+            declare -a arr=(&quot;swagger&quot;,&quot;pest-detection&quot;,&quot;pest-training-automation&quot;,&quot;ThermalLeafDetection-New&quot;,&quot;plant-growth&quot;,&quot;ControllerApp&quot;,&quot;dataset-scraping&quot;,&quot;fungal-training-automation&quot;,&quot;fungal-classification&quot;)
+            echo &quot;True: $arr&quot;
+    else
+            IFS=&apos;, &apos; read -r -a arr &lt;&lt;&lt; &quot;$SELECTED_APP_CI_ARRAY&quot;
+    fi
+
+
+    for i in &quot;${arr[@]}&quot;
+    do
+        #removing quotes from the Component name
+        temp=&quot;${i%\&quot;}&quot;
+        temp=&quot;${temp#\&quot;}&quot;
+        echo &quot;$temp&quot;
+        i=$temp
+
+        case &quot;$i&quot; in
+
+    &apos;all&apos;)
+        echo &quot;ALL&quot;
+        ;;
+    &quot;swagger&quot;)
+        echo $i
+        SELECTED_APP_CI=&apos;Swagger&apos;
+        CI_DIR=$i
+        REPOSITORY_DIR=hydro-ai-usecases
+        CONTAINERNAME=hydrotekswagger
+        CI_WORK_DIR=./hydrotek/cicdbuild/
+        CONTAINER_REGISTRY=gcr.io/hydrotek-286213
+        IMAGE_TAG=release
+        genericCI $SELECTED_APP_CI $CI_DIR $REPOSITORY_DIR $CONTAINERNAME $CI_WORK_DIR $CONTAINER_REGISTRY $IMAGE_TAG
+        ;;
+    &quot;pest-detection&quot;)
+        echo $i
+        SELECTED_APP_CI=&apos;Hydrotek-22-PestDetection/pest-detection/pest-detection&apos;
+        CI_DIR=$i
+        REPOSITORY_DIR=hydro-ai-usecases
+        CONTAINERNAME=pestdetect2022
+        CI_WORK_DIR=./hydrotek/cicdbuild/
+        CONTAINER_REGISTRY=gcr.io/hydrotek-286213
+        IMAGE_TAG=release
+        genericCI $SELECTED_APP_CI $CI_DIR $REPOSITORY_DIR $CONTAINERNAME $CI_WORK_DIR $CONTAINER_REGISTRY $IMAGE_TAG
+        ;;
+    &quot;pest-training-automation&quot;)
+        SELECTED_APP_CI=&apos;Hydrotek-22-PestDetection/training-automation/training-automation&apos;
+        CI_DIR=$i
+        REPOSITORY_DIR=hydro-ai-usecases
+        CONTAINERNAME=pesttrainingautomation
+        CI_WORK_DIR=./hydrotek/cicdbuild/
+        CONTAINER_REGISTRY=gcr.io/hydrotek-286213
+        IMAGE_TAG=release
+        genericCI $SELECTED_APP_CI $CI_DIR $REPOSITORY_DIR $CONTAINERNAME $CI_WORK_DIR $CONTAINER_REGISTRY $IMAGE_TAG
+        ;;
+    &quot;ThermalLeafDetection-New&quot;)
+        SELECTED_APP_CI=$i
+        CI_DIR=$i
+        REPOSITORY_DIR=hydro-ai-usecases
+        CONTAINERNAME=thermaldetectionnew
+        CI_WORK_DIR=./hydrotek/cicdbuild/
+        CONTAINER_REGISTRY=gcr.io/hydrotek-286213
+        IMAGE_TAG=release
+        genericCI $SELECTED_APP_CI $CI_DIR $REPOSITORY_DIR $CONTAINERNAME $CI_WORK_DIR $CONTAINER_REGISTRY $IMAGE_TAG
+        ;;
+    &quot;plant-growth&quot;)
+        SELECTED_APP_CI=&apos;plant-growth/src&apos;
+        CI_DIR=$i
+        REPOSITORY_DIR=hydro-ai-usecases
+        CONTAINERNAME=plantgrowth
+        CI_WORK_DIR=./hydrotek/cicdbuild/
+        CONTAINER_REGISTRY=gcr.io/hydrotek-286213
+        IMAGE_TAG=release
+        genericCI $SELECTED_APP_CI $CI_DIR $REPOSITORY_DIR $CONTAINERNAME $CI_WORK_DIR $CONTAINER_REGISTRY $IMAGE_TAG
+        ;;
+
+    &quot;ControllerApp&quot;)
+        SELECTED_APP_CI=$i
+        CI_DIR=$i
+        REPOSITORY_DIR=hydro-ai-usecases
+        CONTAINERNAME=controller
+        CI_WORK_DIR=./hydrotek/cicdbuild/
+        CONTAINER_REGISTRY=gcr.io/hydrotek-286213
+        IMAGE_TAG=release
+        genericCI $SELECTED_APP_CI $CI_DIR $REPOSITORY_DIR $CONTAINERNAME $CI_WORK_DIR $CONTAINER_REGISTRY $IMAGE_TAG
+        ;;
+    &quot;dataset-scraping&quot;)
+        SELECTED_APP_CI=&apos;HydroTek-22-FungalDetection/scraping/dataset-scraping&apos;
+        CI_DIR=$i
+        REPOSITORY_DIR=hydro-ai-usecases
+        CONTAINERNAME=datasetscraping
+        CI_WORK_DIR=./hydrotek/cicdbuild/
+        CONTAINER_REGISTRY=gcr.io/hydrotek-286213
+        IMAGE_TAG=release
+        genericCI $SELECTED_APP_CI $CI_DIR $REPOSITORY_DIR $CONTAINERNAME $CI_WORK_DIR $CONTAINER_REGISTRY $IMAGE_TAG
+        ;;
+    &quot;fungal-training-automation&quot;)
+        SELECTED_APP_CI=&apos;HydroTek-22-FungalDetection/training-automation/training&apos;
+        CI_DIR=$i
+        REPOSITORY_DIR=hydro-ai-usecases
+        CONTAINERNAME=fungaltrainingautomation
+        CI_WORK_DIR=./hydrotek/cicdbuild/
+        CONTAINER_REGISTRY=gcr.io/hydrotek-286213
+        IMAGE_TAG=release
+        genericCI $SELECTED_APP_CI $CI_DIR $REPOSITORY_DIR $CONTAINERNAME $CI_WORK_DIR $CONTAINER_REGISTRY $IMAGE_TAG
+        ;;
+    &quot;fungal-classification&quot;)
+        SELECTED_APP_CI=&apos;HydroTek-22-FungalDetection/fungal-classification/classification&apos;
+        CI_DIR=$i
+        REPOSITORY_DIR=hydro-ai-usecases
+        CONTAINERNAME=fungalclassification
+        CI_WORK_DIR=./hydrotek/cicdbuild/
+        CONTAINER_REGISTRY=gcr.io/hydrotek-286213
+        IMAGE_TAG=release
+        genericCI $SELECTED_APP_CI $CI_DIR $REPOSITORY_DIR $CONTAINERNAME $CI_WORK_DIR $CONTAINER_REGISTRY $IMAGE_TAG
+        ;;
+        *) echo &quot;Invalid Component&quot;
+        ;;
+        esac
+    done
+    }
+
+mainCD(){
+
+    echo &quot;MAIN CD&quot;
+    a=( ${SELECTED_APP_CD_ARRAY[0]} ); echo ${a}
+    if [ $a == &quot;All&quot; ]; then
+            declare -a arr=(&quot;swagger&quot;,&quot;pest-detection&quot;,&quot;pest-training-automation&quot;,&quot;ThermalLeafDetection-New&quot;,&quot;plant-growth&quot;,&quot;ControllerApp&quot;,&quot;dataset-scraping&quot;,&quot;fungal-training-automation&quot;,&quot;fungal-classification&quot;)
+            echo &quot;True: $arr&quot;
+    else
+            IFS=&apos;, &apos; read -r -a arr &lt;&lt;&lt; &quot;$SELECTED_APP_CD_ARRAY&quot;
+    fi
+
+
+    for i in &quot;${arr[@]}&quot;
+    do
+        #removing quotes from the Component name
+        temp=&quot;${i%\&quot;}&quot;
+        temp=&quot;${temp#\&quot;}&quot;
+        echo &quot;$temp&quot;
+        i=$temp
+
+        case &quot;$i&quot; in
+
+    &apos;all&apos;)
+        echo &quot;ALL&quot;
+        ;;
+    &quot;swagger&quot;)
+        echo $i
+        SELECTED_APP_CI=&apos;Swagger&apos;
+        DEPLOYMENT=hydrotekswagger
+        NAMESPACE=dev
+        CONTAINERNAME=hydrotekswagger
+        CONTAINER_REGISTRY=gcr.io/hydrotek-286213
+        IMAGE_TAG=release
+        PORTNUM=8080
+        genericCD $SELECTED_APP_CI $DEPLOYMENT $NAMESPACE $CONTAINERNAME $CONTAINER_REGISTRY $IMAGE_TAG $PORTNUM
+        ;;
+    &quot;pest-detection&quot;)
+        echo $i
+        SELECTED_APP_CI=&apos;Hydrotek-22-PestDetection/pest-detection/pest-detection&apos;
+        DEPLOYMENT=pestdetect2022
+        NAMESPACE=dev
+        CONTAINERNAME=pestdetect2022
+        CONTAINER_REGISTRY=gcr.io/hydrotek-286213
+        IMAGE_TAG=release
+        PORTNUM=5001
+        genericCD $SELECTED_APP_CI $DEPLOYMENT $NAMESPACE $CONTAINERNAME $CONTAINER_REGISTRY $IMAGE_TAG $PORTNUM
+        ;;
+    &quot;pest-training-automation&quot;)
+        echo $i
+        SELECTED_APP_CI=&apos;Hydrotek-22-PestDetection/training-automation/training-automation&apos;
+        DEPLOYMENT=pesttrainingautomation
+        NAMESPACE=dev
+        CONTAINERNAME=pesttrainingautomation
+        CONTAINER_REGISTRY=gcr.io/hydrotek-286213
+        IMAGE_TAG=release
+        PORTNUM=5001
+        genericCD $SELECTED_APP_CI $DEPLOYMENT $NAMESPACE $CONTAINERNAME $CONTAINER_REGISTRY $IMAGE_TAG $PORTNUM
+        ;;
+    &quot;ThermalLeafDetection-New&quot;)
+        echo $i
+        SELECTED_APP_CI=$i
+        DEPLOYMENT=thermaldetectionnew
+        NAMESPACE=dev
+        CONTAINERNAME=thermaldetectionnew
+        CONTAINER_REGISTRY=gcr.io/hydrotek-286213
+        IMAGE_TAG=release
+        PORTNUM=6005
+        genericCD $SELECTED_APP_CI $DEPLOYMENT $NAMESPACE $CONTAINERNAME $CONTAINER_REGISTRY $IMAGE_TAG $PORTNUM
+        ;;
+    &quot;plant-growth&quot;)
+        echo $i
+        SELECTED_APP_CI=&apos;plant-growth/src&apos;
+        DEPLOYMENT=plantgrowth
+        NAMESPACE=dev
+        CONTAINERNAME=plantgrowth
+        CONTAINER_REGISTRY=gcr.io/hydrotek-286213
+        IMAGE_TAG=release
+        PORTNUM=6003
+        genericCD $SELECTED_APP_CI $DEPLOYMENT $NAMESPACE $CONTAINERNAME $CONTAINER_REGISTRY $IMAGE_TAG $PORTNUM
+        ;;
+    &quot;ControllerApp&quot;)
+        echo $i
+        SELECTED_APP_CI=$i
+        DEPLOYMENT=controller
+        NAMESPACE=dev
+        CONTAINERNAME=controller
+        CONTAINER_REGISTRY=gcr.io/hydrotek-286213
+        IMAGE_TAG=release
+        PORTNUM=3000
+        genericCD $SELECTED_APP_CI $DEPLOYMENT $NAMESPACE $CONTAINERNAME $CONTAINER_REGISTRY $IMAGE_TAG $PORTNUM
+        ;;
+    &quot;dataset-scraping&quot;)
+        echo $i
+        SELECTED_APP_CI=&apos;HydroTek-22-FungalDetection/scraping/dataset-scraping&apos;
+        DEPLOYMENT=datasetscraping
+        NAMESPACE=dev
+        CONTAINERNAME=datasetscraping
+        CONTAINER_REGISTRY=gcr.io/hydrotek-286213
+        IMAGE_TAG=release
+        PORTNUM=5001
+        genericCD $SELECTED_APP_CI $DEPLOYMENT $NAMESPACE $CONTAINERNAME $CONTAINER_REGISTRY $IMAGE_TAG $PORTNUM
+        ;;
+    &quot;fungal-training-automation&quot;)
+        echo $i
+        SELECTED_APP_CI=&apos;HydroTek-22-FungalDetection/training-automation/training&apos;
+        DEPLOYMENT=fungaltrainingautomation
+        NAMESPACE=dev
+        CONTAINERNAME=fungaltrainingautomation
+        CONTAINER_REGISTRY=gcr.io/hydrotek-286213
+        IMAGE_TAG=release
+        PORTNUM=5001
+        genericCD $SELECTED_APP_CI $DEPLOYMENT $NAMESPACE $CONTAINERNAME $CONTAINER_REGISTRY $IMAGE_TAG $PORTNUM
+        ;;
+    &quot;fungal-classification&quot;)
+        echo $i
+        SELECTED_APP_CI=&apos;HydroTek-22-FungalDetection/fungal-classification/classification&apos;
+        DEPLOYMENT=fungalclassification
+        NAMESPACE=dev
+        CONTAINERNAME=fungalclassification
+        CONTAINER_REGISTRY=gcr.io/hydrotek-286213
+        IMAGE_TAG=release
+        PORTNUM=5001
+        genericCD $SELECTED_APP_CI $DEPLOYMENT $NAMESPACE $CONTAINERNAME $CONTAINER_REGISTRY $IMAGE_TAG $PORTNUM
+        ;;
+        *) echo &quot;Invalid Component&quot;
+        ;;
+        esac
+    done
+    }
+
+generictest() {
+        
+        cd $CI_WORK_DIR
+
+        if [ -d &quot;$REPOSITORY_DIR&quot; ]; then
+    
+            cd $REPOSITORY_DIR
+            git pull
+
+        else 
+    
+            git clone -b $BRANCH git@gitlab.com:hydrotek-ai-grp/hydro-ai-usecases.git
+            cd $REPOSITORY_DIR
+    
+        fi
+        cd $TEST_DIR
+        COLLECTION=$1
+        TEST=$2
+        echo $COLLECTION
+        echo $TEST
+        newman run $COLLECTION --environment $ENVFILE --folder $TEST
+        cd &quot;$DIR&quot;
+        
+}
+
+
+maintest(){
+
+    echo &quot;MAIN Test&quot;
+
+    a=( ${SELECTED_APP_TEST_ARRAY[0]} ); echo ${a}
+    if [ $a == &quot;All&quot; ]; then
+            declare -a arr=(&quot;pest-detection&quot;,&quot;pest-training-automation&quot;,&quot;ThermalLeafDetection-New&quot;,&quot;plant-growth&quot;,&quot;ControllerApp&quot;,&quot;dataset-scraping&quot;,&quot;fungal-training-automation&quot;,&quot;fungal-classification&quot;)
+            echo &quot;True: $arr&quot;
+    else
+            IFS=&apos;, &apos; read -r -a arr &lt;&lt;&lt; &quot;$SELECTED_APP_TEST_ARRAY&quot;
+    fi
+
+
+
+
+    for i in &quot;${arr[@]}&quot;
+    do
+        #removing quotes from the Component name
+        temp=&quot;${i%\&quot;}&quot;
+        temp=&quot;${temp#\&quot;}&quot;
+        echo &quot;$temp&quot;
+        i=$temp
+
+        case &quot;$i&quot; in
+
+    &apos;all&apos;)
+        echo &quot;ALL&quot;
+        ;;
+    &quot;pest-detection&quot;)
+        echo $i
+        json_name=detect-collection.postman_collection.json
+        api=gcp-detect
+        generictest $json_name $api
+        ;;
+    &quot;pest-training-automation&quot;)
+        echo $i
+        json_name=train-collection.postman_collection.json
+        api=gcp-pest-train
+        generictest $json_name $api
+        ;;
+    &quot;ThermalLeafDetection-New&quot;)
+        echo $i
+        json_name=detect-collection.postman_collection.json
+        api=gcp-thermal-analysis
+        generictest $json_name $api
+        ;;
+    &quot;plant-growth&quot;)
+        echo $i
+        json_name=detect-collection.postman_collection.json
+        api=gcp-plant-growth
+        generictest $json_name $api
+        ;;
+    &quot;ControllerApp&quot;)
+        echo $i
+        json_name=controller-requests.postman_collection.json
+        api=gcp-controller-detect
+        generictest $json_name $api
+        json_name1=controller-requests.postman_collection.json
+        api1=gcp-controller-classify
+        generictest $json_name1 $api1
+        json_name2=controller-requests.postman_collection.json
+        api2=gcp-controller-plant-growth
+        generictest $json_name2 $api2
+        json_name3=controller-requests.postman_collection.json
+        api3=gcp-controller-thermal
+        generictest $json_name3 $api3
+        ;;
+    &quot;dataset-scraping&quot;)
+        echo $i
+        json_name=dataset-scraping-requests.postman_collection.json
+        api=gcp-scraping
+        generictest $json_name $api
+        ;;
+    &quot;fungal-training-automation&quot;)
+        echo $i
+        json_name=train-collection.postman_collection.json
+        api=gcp-fungal-train
+        generictest $json_name $api
+        ;;
+    &quot;fungal-classification&quot;)
+        echo $i
+        json_name=detect-collection.postman_collection.json
+        api=gcp-classify
+        generictest $json_name $api
+        ;;
+        *) echo &quot;Invalid Component&quot;
+        ;;
+        esac
+    done
+    }
+
+
+
+echo &quot;CI/CD Pipeline Started&quot;
+
+
+if [ -z &quot;$ENV&quot; ]
+then
+      echo &quot;No environment was selected for integration&quot;
+else
+      setenv
+fi
+
+if [ -z &quot;$SELECTED_APP_CI_ARRAY&quot; ]
+then
+      echo &quot;No project was selected for integration&quot;
+else
+      mainCI
+fi
+
+if [ -z &quot;$SELECTED_APP_CD_ARRAY&quot; ]
+then
+      echo &quot;No project was selected for deployment&quot;
+else
+      mainCD
+fi
+if [ -z &quot;$SELECTED_APP_TEST_ARRAY&quot; ]
+then
+      echo &quot;No project was selected for testing&quot;
+else
+      maintest
+fi</command>
+      <configuredLocalRules/>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>

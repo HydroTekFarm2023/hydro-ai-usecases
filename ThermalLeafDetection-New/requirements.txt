@@ -1,0 +1,9 @@
+pandas
+plantcv
+flask
+flask_restful
+gsutil
+opencv-python
+uuid
+dnspython
+pymongo[srv]

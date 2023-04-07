@@ -1,0 +1,469 @@
+Started by user [8mha:////4CA5kL0r8XoTT3PdnVI1PoGEnxCwKlCoPhe73Uyy/FdkAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgZu/dLi1CL9xLzSrEQAtdxjnMAAAAA=[0manuja somthankar
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\Hydrotek-CICD-Pipeline
+[Hydrotek-CICD-Pipeline] $ "C:\Program Files\Git\bin\sh.exe" -xe C:\Users\anuja\AppData\Local\Temp\jenkins10356652029993006522.sh
++ echo 'Hydrotek CICD'
+Hydrotek CICD
++ echo 'CI selected '
+CI selected 
++ echo 'CD selected '
+CD selected 
++ echo 'Tag selected v1'
+Tag selected v1
++ BRANCH=pestclassification-tcet
++ IMAGE_TAG=v1
++ SELECTED_APP_CI_ARRAY=
++ SELECTED_APP_CD_ARRAY=
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ TEST_DIR=Postman-Tests
++ NAMESPACE=dev
++ NETWORKTYPE=LoadBalancer
++ PORTNUM=5000
++ DIR=/c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ echo 'CI/CD Pipeline Started'
+CI/CD Pipeline Started
++ '[' -z devcloud ']'
++ setenv
++ echo devcloud
+devcloud
++ [[ devcloud == \d\e\v\c\l\o\u\d ]]
++ echo 'Dev Cloud'
+Dev Cloud
++ ENVFILE=hydroTek-Dev-Cloud.postman_environment.json
++ echo 'dev cloud'
+dev cloud
++ gcloud container clusters get-credentials autopilot-cluster-1 --region us-central1 --project hydrotek-286213
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+Fetching cluster endpoint and auth data.
+kubeconfig entry generated for autopilot-cluster-1.
++ echo 'Cluster Name: kt-ai-autopilot-cluster1'
+Cluster Name: kt-ai-autopilot-cluster1
++ NETWORKTYPE=LoadBalancer
++ '[' -z '' ']'
++ echo 'No project was selected for integration'
+No project was selected for integration
++ '[' -z '' ']'
++ echo 'No project was selected for deployment'
+No project was selected for deployment
++ '[' -z pest-detection,ThermalLeafDetection-New,plant-growth,ControllerApp,fungal-classification ']'
++ maintest
++ echo 'MAIN Test'
+MAIN Test
++ a=(${SELECTED_APP_TEST_ARRAY[0]})
++ echo pest-detection,ThermalLeafDetection-New,plant-growth,ControllerApp,fungal-classification
+pest-detection,ThermalLeafDetection-New,plant-growth,ControllerApp,fungal-classification
++ '[' pest-detection,ThermalLeafDetection-New,plant-growth,ControllerApp,fungal-classification == All ']'
++ IFS=', '
++ read -r -a arr
++ for i in "${arr[@]}"
++ temp=pest-detection
++ temp=pest-detection
++ echo pest-detection
+pest-detection
++ i=pest-detection
++ case "$i" in
++ echo pest-detection
+pest-detection
++ json_name=detect-collection.postman_collection.json
++ api=gcp-detect
++ generictest detect-collection.postman_collection.json gcp-detect
++ cd ./hydrotek/cicdbuild/
++ '[' -d hydro-ai-usecases ']'
++ cd hydro-ai-usecases
++ git pull
+Already up to date.
++ cd Postman-Tests
++ COLLECTION=detect-collection.postman_collection.json
++ TEST=gcp-detect
++ echo detect-collection.postman_collection.json
+detect-collection.postman_collection.json
++ echo gcp-detect
+gcp-detect
++ newman run detect-collection.postman_collection.json --environment hydroTek-Dev-Cloud.postman_environment.json --folder gcp-detect
+newman
+
+detect-collection
+
+→ gcp-detect
+  POST http://35.193.229.177:5001/v1/pestdetection/predict?source=hydrotek-2022&imageName=t1.jpg&dest=hydrotek-2022 [200 OK, 481B, 6.1s]
+  √  Status code is 200
+  √  Schema is valid
+  √  Detection-Test
+
+┌─────────────────────────┬──────────────────┬──────────────────┐
+│                         │         executed │           failed │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│              iterations │                1 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│                requests │                1 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│            test-scripts │                1 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│      prerequest-scripts │                0 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│              assertions │                3 │                0 │
+├─────────────────────────┴──────────────────┴──────────────────┤
+│ total run duration: 6.2s                                      │
+├───────────────────────────────────────────────────────────────┤
+│ total data received: 302B (approx)                            │
+├───────────────────────────────────────────────────────────────┤
+│ average response time: 6.1s [min: 6.1s, max: 6.1s, s.d.: 0µs] │
+└───────────────────────────────────────────────────────────────┘
++ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ for i in "${arr[@]}"
++ temp=ThermalLeafDetection-New
++ temp=ThermalLeafDetection-New
++ echo ThermalLeafDetection-New
+ThermalLeafDetection-New
++ i=ThermalLeafDetection-New
++ case "$i" in
++ echo ThermalLeafDetection-New
+ThermalLeafDetection-New
++ json_name=detect-collection.postman_collection.json
++ api=gcp-thermal-analysis
++ generictest detect-collection.postman_collection.json gcp-thermal-analysis
++ cd ./hydrotek/cicdbuild/
++ '[' -d hydro-ai-usecases ']'
++ cd hydro-ai-usecases
++ git pull
+Already up to date.
++ cd Postman-Tests
++ COLLECTION=detect-collection.postman_collection.json
++ TEST=gcp-thermal-analysis
++ echo detect-collection.postman_collection.json
+detect-collection.postman_collection.json
++ echo gcp-thermal-analysis
+gcp-thermal-analysis
++ newman run detect-collection.postman_collection.json --environment hydroTek-Dev-Cloud.postman_environment.json --folder gcp-thermal-analysis
+newman
+
+detect-collection
+
+→ gcp-thermal-analysis
+  GET http://35.226.53.51:6005/thermalanalysis?ImagePath=hydrotekai/thermal_images/cropped_leaf.jpg&X=9&Y=10&Height=170&Width=201&Threshold=20&PlantType=lettuce&apitype=devtest&CustomerDb=hydrotek [200 OK, 562B, 6.1s]
+  √  Status code is 200
+  √  Schema is valid
+  √  Values match
+
+┌─────────────────────────┬──────────────────┬──────────────────┐
+│                         │         executed │           failed │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│              iterations │                1 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│                requests │                1 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│            test-scripts │                1 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│      prerequest-scripts │                0 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│              assertions │                3 │                0 │
+├─────────────────────────┴──────────────────┴──────────────────┤
+│ total run duration: 6.2s                                      │
+├───────────────────────────────────────────────────────────────┤
+│ total data received: 383B (approx)                            │
+├───────────────────────────────────────────────────────────────┤
+│ average response time: 6.1s [min: 6.1s, max: 6.1s, s.d.: 0µs] │
+└───────────────────────────────────────────────────────────────┘
++ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ for i in "${arr[@]}"
++ temp=plant-growth
++ temp=plant-growth
++ echo plant-growth
+plant-growth
++ i=plant-growth
++ case "$i" in
++ echo plant-growth
+plant-growth
++ json_name=detect-collection.postman_collection.json
++ api=gcp-plant-growth
++ generictest detect-collection.postman_collection.json gcp-plant-growth
++ cd ./hydrotek/cicdbuild/
++ '[' -d hydro-ai-usecases ']'
++ cd hydro-ai-usecases
++ git pull
+Already up to date.
++ cd Postman-Tests
++ COLLECTION=detect-collection.postman_collection.json
++ TEST=gcp-plant-growth
++ echo detect-collection.postman_collection.json
+detect-collection.postman_collection.json
++ echo gcp-plant-growth
+gcp-plant-growth
++ newman run detect-collection.postman_collection.json --environment hydroTek-Dev-Cloud.postman_environment.json --folder gcp-plant-growth
+newman
+
+detect-collection
+
+→ gcp-plant-growth
+  GET http://34.71.125.6:6003/PlantGrowth?ImagePath=hydrotekai/HeightAnalysis/NFTtest2.jpg&system=NFT&PlantId=1&apitype=devtest&CustomerDb=hydrotek [200 OK, 485B, 3.8s]
+  √  Status code is 200
+  √  Schema is valid
+  √  Values match
+
+┌─────────────────────────┬──────────────────┬──────────────────┐
+│                         │         executed │           failed │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│              iterations │                1 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│                requests │                1 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│            test-scripts │                1 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│      prerequest-scripts │                0 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│              assertions │                3 │                0 │
+├─────────────────────────┴──────────────────┴──────────────────┤
+│ total run duration: 3.9s                                      │
+├───────────────────────────────────────────────────────────────┤
+│ total data received: 306B (approx)                            │
+├───────────────────────────────────────────────────────────────┤
+│ average response time: 3.8s [min: 3.8s, max: 3.8s, s.d.: 0µs] │
+└───────────────────────────────────────────────────────────────┘
++ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ for i in "${arr[@]}"
++ temp=ControllerApp
++ temp=ControllerApp
++ echo ControllerApp
+ControllerApp
++ i=ControllerApp
++ case "$i" in
++ echo ControllerApp
+ControllerApp
++ json_name=controller-requests.postman_collection.json
++ api=gcp-controller-detect
++ generictest controller-requests.postman_collection.json gcp-controller-detect
++ cd ./hydrotek/cicdbuild/
++ '[' -d hydro-ai-usecases ']'
++ cd hydro-ai-usecases
++ git pull
+Already up to date.
++ cd Postman-Tests
++ COLLECTION=controller-requests.postman_collection.json
++ TEST=gcp-controller-detect
++ echo controller-requests.postman_collection.json
+controller-requests.postman_collection.json
++ echo gcp-controller-detect
+gcp-controller-detect
++ newman run controller-requests.postman_collection.json --environment hydroTek-Dev-Cloud.postman_environment.json --folder gcp-controller-detect
+newman
+
+controller-requests
+
+→ gcp-controller-detect
+  GET http://35.222.63.156:3000/v1/pestdetect/ [200 OK, 805B, 8.7s]
+  √  Status code is 200
+  √  Schema is valid
+
+┌─────────────────────────┬──────────────────┬──────────────────┐
+│                         │         executed │           failed │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│              iterations │                1 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│                requests │                1 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│            test-scripts │                1 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│      prerequest-scripts │                0 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│              assertions │                2 │                0 │
+├─────────────────────────┴──────────────────┴──────────────────┤
+│ total run duration: 8.9s                                      │
+├───────────────────────────────────────────────────────────────┤
+│ total data received: 543B (approx)                            │
+├───────────────────────────────────────────────────────────────┤
+│ average response time: 8.7s [min: 8.7s, max: 8.7s, s.d.: 0µs] │
+└───────────────────────────────────────────────────────────────┘
++ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ json_name1=controller-requests.postman_collection.json
++ api1=gcp-controller-classify
++ generictest controller-requests.postman_collection.json gcp-controller-classify
++ cd ./hydrotek/cicdbuild/
++ '[' -d hydro-ai-usecases ']'
++ cd hydro-ai-usecases
++ git pull
+Already up to date.
++ cd Postman-Tests
++ COLLECTION=controller-requests.postman_collection.json
++ TEST=gcp-controller-classify
++ echo controller-requests.postman_collection.json
+controller-requests.postman_collection.json
++ echo gcp-controller-classify
+gcp-controller-classify
++ newman run controller-requests.postman_collection.json --environment hydroTek-Dev-Cloud.postman_environment.json --folder gcp-controller-classify
+newman
+
+controller-requests
+
+→ gcp-controller-classify
+  GET http://35.222.63.156:3000/v1/fungalclassify/ [200 OK, 460B, 14.2s]
+  √  Status code is 200
+  √  Schema is valid
+
+┌─────────────────────────┬────────────────────┬───────────────────┐
+│                         │           executed │            failed │
+├─────────────────────────┼────────────────────┼───────────────────┤
+│              iterations │                  1 │                 0 │
+├─────────────────────────┼────────────────────┼───────────────────┤
+│                requests │                  1 │                 0 │
+├─────────────────────────┼────────────────────┼───────────────────┤
+│            test-scripts │                  1 │                 0 │
+├─────────────────────────┼────────────────────┼───────────────────┤
+│      prerequest-scripts │                  0 │                 0 │
+├─────────────────────────┼────────────────────┼───────────────────┤
+│              assertions │                  2 │                 0 │
+├─────────────────────────┴────────────────────┴───────────────────┤
+│ total run duration: 14.4s                                        │
+├──────────────────────────────────────────────────────────────────┤
+│ total data received: 192B (approx)                               │
+├──────────────────────────────────────────────────────────────────┤
+│ average response time: 14.2s [min: 14.2s, max: 14.2s, s.d.: 0µs] │
+└──────────────────────────────────────────────────────────────────┘
++ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ json_name2=controller-requests.postman_collection.json
++ api2=gcp-controller-plant-growth
++ generictest controller-requests.postman_collection.json gcp-controller-plant-growth
++ cd ./hydrotek/cicdbuild/
++ '[' -d hydro-ai-usecases ']'
++ cd hydro-ai-usecases
++ git pull
+Already up to date.
++ cd Postman-Tests
++ COLLECTION=controller-requests.postman_collection.json
++ TEST=gcp-controller-plant-growth
++ echo controller-requests.postman_collection.json
+controller-requests.postman_collection.json
++ echo gcp-controller-plant-growth
+gcp-controller-plant-growth
++ newman run controller-requests.postman_collection.json --environment hydroTek-Dev-Cloud.postman_environment.json --folder gcp-controller-plant-growth
+newman
+
+controller-requests
+
+→ gcp-controller-plant-growth
+  GET http://35.222.63.156:3000/v1/growth/ [200 OK, 537B, 6.4s]
+  √  Status code is 200
+  √  Schema is valid
+
+┌─────────────────────────┬──────────────────┬──────────────────┐
+│                         │         executed │           failed │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│              iterations │                1 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│                requests │                1 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│            test-scripts │                1 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│      prerequest-scripts │                0 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│              assertions │                2 │                0 │
+├─────────────────────────┴──────────────────┴──────────────────┤
+│ total run duration: 6.5s                                      │
+├───────────────────────────────────────────────────────────────┤
+│ total data received: 268B (approx)                            │
+├───────────────────────────────────────────────────────────────┤
+│ average response time: 6.4s [min: 6.4s, max: 6.4s, s.d.: 0µs] │
+└───────────────────────────────────────────────────────────────┘
++ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ json_name3=controller-requests.postman_collection.json
++ api3=gcp-controller-thermal
++ generictest controller-requests.postman_collection.json gcp-controller-thermal
++ cd ./hydrotek/cicdbuild/
++ '[' -d hydro-ai-usecases ']'
++ cd hydro-ai-usecases
++ git pull
+Already up to date.
++ cd Postman-Tests
++ COLLECTION=controller-requests.postman_collection.json
++ TEST=gcp-controller-thermal
++ echo controller-requests.postman_collection.json
+controller-requests.postman_collection.json
++ echo gcp-controller-thermal
+gcp-controller-thermal
++ newman run controller-requests.postman_collection.json --environment hydroTek-Dev-Cloud.postman_environment.json --folder gcp-controller-thermal
+newman
+
+controller-requests
+
+→ gcp-controller-thermal
+  GET http://35.222.63.156:3000/v1/thermal/ [200 OK, 636B, 10.7s]
+  √  Status code is 200
+  √  Schema is valid
+
+┌─────────────────────────┬────────────────────┬───────────────────┐
+│                         │           executed │            failed │
+├─────────────────────────┼────────────────────┼───────────────────┤
+│              iterations │                  1 │                 0 │
+├─────────────────────────┼────────────────────┼───────────────────┤
+│                requests │                  1 │                 0 │
+├─────────────────────────┼────────────────────┼───────────────────┤
+│            test-scripts │                  1 │                 0 │
+├─────────────────────────┼────────────────────┼───────────────────┤
+│      prerequest-scripts │                  0 │                 0 │
+├─────────────────────────┼────────────────────┼───────────────────┤
+│              assertions │                  2 │                 0 │
+├─────────────────────────┴────────────────────┴───────────────────┤
+│ total run duration: 10.8s                                        │
+├──────────────────────────────────────────────────────────────────┤
+│ total data received: 367B (approx)                               │
+├──────────────────────────────────────────────────────────────────┤
+│ average response time: 10.7s [min: 10.7s, max: 10.7s, s.d.: 0µs] │
+└──────────────────────────────────────────────────────────────────┘
++ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ for i in "${arr[@]}"
++ temp=fungal-classification
++ temp=fungal-classification
++ echo fungal-classification
+fungal-classification
++ i=fungal-classification
++ case "$i" in
++ echo fungal-classification
+fungal-classification
++ json_name=detect-collection.postman_collection.json
++ api=gcp-classify
++ generictest detect-collection.postman_collection.json gcp-classify
++ cd ./hydrotek/cicdbuild/
++ '[' -d hydro-ai-usecases ']'
++ cd hydro-ai-usecases
++ git pull
+Already up to date.
++ cd Postman-Tests
++ COLLECTION=detect-collection.postman_collection.json
++ TEST=gcp-classify
++ echo detect-collection.postman_collection.json
+detect-collection.postman_collection.json
++ echo gcp-classify
+gcp-classify
++ newman run detect-collection.postman_collection.json --environment hydroTek-Dev-Cloud.postman_environment.json --folder gcp-classify
+newman
+
+detect-collection
+
+→ gcp-classify
+  POST http://35.188.146.244:5001/v1/fungalclassification/treatment?imageName=tomato.jpg&source=hydrotek-2022&model_name=tomato&model_path=hydrotek-2022/fungal-models&dest=hydrotek-2022 [200 OK, 451B, 12.4s]
+  √  Status code is 200
+  √  Schema is valid
+  √  Classification Test
+
+┌─────────────────────────┬────────────────────┬───────────────────┐
+│                         │           executed │            failed │
+├─────────────────────────┼────────────────────┼───────────────────┤
+│              iterations │                  1 │                 0 │
+├─────────────────────────┼────────────────────┼───────────────────┤
+│                requests │                  1 │                 0 │
+├─────────────────────────┼────────────────────┼───────────────────┤
+│            test-scripts │                  1 │                 0 │
+├─────────────────────────┼────────────────────┼───────────────────┤
+│      prerequest-scripts │                  0 │                 0 │
+├─────────────────────────┼────────────────────┼───────────────────┤
+│              assertions │                  3 │                 0 │
+├─────────────────────────┴────────────────────┴───────────────────┤
+│ total run duration: 12.5s                                        │
+├──────────────────────────────────────────────────────────────────┤
+│ total data received: 272B (approx)                               │
+├──────────────────────────────────────────────────────────────────┤
+│ average response time: 12.4s [min: 12.4s, max: 12.4s, s.d.: 0µs] │
+└──────────────────────────────────────────────────────────────────┘
++ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
+Finished: SUCCESS

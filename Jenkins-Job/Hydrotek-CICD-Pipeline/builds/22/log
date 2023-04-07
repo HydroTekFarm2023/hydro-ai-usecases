@@ -1,0 +1,271 @@
+Started by user [8mha:////4CA5kL0r8XoTT3PdnVI1PoGEnxCwKlCoPhe73Uyy/FdkAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgZu/dLi1CL9xLzSrEQAtdxjnMAAAAA=[0manuja somthankar
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\Hydrotek-CICD-Pipeline
+[Hydrotek-CICD-Pipeline] $ "C:\Program Files\Git\bin\sh.exe" -xe C:\Users\anuja\AppData\Local\Temp\jenkins805876075732786348.sh
++ echo 'Hydrotek CICD'
+Hydrotek CICD
++ echo 'CI selected Hydrotek-22-PestDetection/pest-detection/pest-detection'
+CI selected Hydrotek-22-PestDetection/pest-detection/pest-detection
++ echo 'CD selected '
+CD selected 
++ BRANCH=master
++ IMAGE_TAG=release
++ SELECTED_APP_CI_ARRAY=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ SELECTED_APP_CD_ARRAY=
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ DEPLOYMENT=hydrotekapp-deployment
++ NAMESPACE=dev
++ NETWORKTYPE=LoadBalancer
++ PORTNUM=5000
++ DIR=/c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ echo 'CI/CD Pipeline Started'
+CI/CD Pipeline Started
++ '[' -z Hydrotek-22-PestDetection/pest-detection/pest-detection ']'
++ mainCI
++ echo 'MAIN CI'
+MAIN CI
++ a=(${SELECTED_APP_CI_ARRAY[0]})
++ echo Hydrotek-22-PestDetection/pest-detection/pest-detection
+Hydrotek-22-PestDetection/pest-detection/pest-detection
++ '[' Hydrotek-22-PestDetection/pest-detection/pest-detection == All ']'
++ IFS=', '
++ read -r -a arr
++ for i in "${arr[@]}"
++ temp=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ temp=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ echo Hydrotek-22-PestDetection/pest-detection/pest-detection
+Hydrotek-22-PestDetection/pest-detection/pest-detection
++ i=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ case "$i" in
++ echo Hydrotek-22-PestDetection/pest-detection/pest-detection
+Hydrotek-22-PestDetection/pest-detection/pest-detection
++ SELECTED_APP_CI=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ CI_DIR=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=pestdetection2022
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ genericCI Hydrotek-22-PestDetection/pest-detection/pest-detection Hydrotek-22-PestDetection/pest-detection/pest-detection hydro-ai-usecases pestdetection2022 ./hydrotek/cicdbuild/ gcr.io/hydrotek-286213 release
++ SELECTED_APP_CI=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ CI_DIR=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=pestdetection2022
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ echo 'GENERIC CI'
+GENERIC CI
++ echo 'Begining Integration of Hydrotek-22-PestDetection/pest-detection/pest-detection'
+Begining Integration of Hydrotek-22-PestDetection/pest-detection/pest-detection
++ mkdir -p ./hydrotek/cicdbuild/
++ cd ./hydrotek/cicdbuild/
++ '[' -d hydro-ai-usecases ']'
++ cd hydro-ai-usecases
++ git pull
+Already up to date.
++ gcloud auth print-access-token
++ docker login -u oauth2accesstoken --password-stdin https://gcr.io
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+Login Succeeded
++ cd Hydrotek-22-PestDetection/pest-detection/pest-detection
++ echo 'Docker Build gcr.io/hydrotek-286213/pestdetection2022:release '
+Docker Build gcr.io/hydrotek-286213/pestdetection2022:release 
++ docker build -t gcr.io/hydrotek-286213/pestdetection2022:release .
+#1 [internal] load build definition from Dockerfile
+#1 sha256:d993e3ed3f640174e9bcb310f59d1ebf4c363567f459d06e98b31edc5b3f6ff8
+#1 transferring dockerfile: 32B done
+#1 DONE 0.0s
+
+#2 [internal] load .dockerignore
+#2 sha256:0532662b04a19c746c59d91bcc87f072ee78f3fe45841d59d596fae8f6a6531f
+#2 transferring context: 2B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.8-slim
+#3 sha256:a94c831f6b826f8ffd4325edd7e9f6408caa85fd7f03e2b107cc6a9d249f7065
+#3 DONE 1.3s
+
+#4 [1/8] FROM docker.io/library/python:3.8-slim@sha256:a43e1e26c4fbbe9b5d983533c094547d67f0325148f27dd85a0f8b7f0aced23e
+#4 sha256:f1da7f2acee77f4e72252ff48c8d23a562a0004f34bea6972ad0fe9fe14786ad
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 sha256:c6ca2a1ee675dfa034c6af57d5619729703427b2a0670a10620cfe44b2c7fa45
+#5 transferring context: 334B done
+#5 DONE 0.0s
+
+#11 [7/8] COPY googleserviceAcc.json /root/googleserviceAcc.json
+#11 sha256:2611f7641a4be8d2b285a9999c6ddd8d0b2ec8ce3b23ff9a4be0aa466b6cdecf
+#11 CACHED
+
+#8 [4/8] RUN apt-get update     && DEBIAN_FRONTEND=noninteractive        apt-get -y --quiet --fix-missing install python3-opencv     && apt-get -y autoremove     && apt-get clean autoclean
+#8 sha256:88dacfcd6abbf8261153c46bd32044c9724babf177b4307583d16cc724fe2c77
+#8 CACHED
+
+#9 [5/8] RUN pip install -r requirements.txt
+#9 sha256:11c6a0409aa666aea32abc0cacc23a7806c1368d32f4257a36fa2a86b71c9dde
+#9 CACHED
+
+#10 [6/8] RUN curl -sSL https://sdk.cloud.google.com | bash
+#10 sha256:92598b7f7409b6e16b2cfe07b9687bc452c665929fafa7abbd4a07170fa888e1
+#10 CACHED
+
+#6 [2/8] COPY . /pest-detection
+#6 sha256:5122e13a2a7f55300c7a8c1839f02e8c4fc2b0c8ea3d40cbcdb1786dedf184f7
+#6 CACHED
+
+#7 [3/8] WORKDIR /pest-detection
+#7 sha256:52a44c6df8fec8fd550d670e262dd6eccfeffc7e0be28d2b5ff017224b0fa8d7
+#7 CACHED
+
+#12 [8/8] COPY boto.txt /root/.boto
+#12 sha256:86a735d6340ad3a16efb01bec843c5bc8a4239185a56bb89148bcdce58ae3ea4
+#12 CACHED
+
+#13 exporting to image
+#13 sha256:e8c613e07b0b7ff33893b694f7759a10d42e180f2b4dc349fb57dc6b71dcab00
+#13 exporting layers done
+#13 writing image sha256:78488df519c270e9afc3718cdccc09ed4b58763bc8bb111e3145aa90fcc780e3 done
+#13 naming to gcr.io/hydrotek-286213/pestdetection2022:release done
+#13 DONE 0.0s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
++ echo 'Docker Push gcr.io/hydrotek-286213/pestdetection2022:release'
+Docker Push gcr.io/hydrotek-286213/pestdetection2022:release
++ docker push gcr.io/hydrotek-286213/pestdetection2022:release
+The push refers to repository [gcr.io/hydrotek-286213/pestdetection2022]
+c337ff6b8012: Preparing
+73a271b64fcf: Preparing
+4dcd986bfff5: Preparing
+5cd3ed298fbf: Preparing
+884a19665a38: Preparing
+5f70bf18a086: Preparing
+f79b5b8c612d: Preparing
+87ea2744abf2: Preparing
+51f094ff7b94: Preparing
+1a40cb2669f8: Preparing
+32034715e5d4: Preparing
+7d0ebbe3f5d2: Preparing
+f79b5b8c612d: Waiting
+87ea2744abf2: Waiting
+51f094ff7b94: Waiting
+1a40cb2669f8: Waiting
+32034715e5d4: Waiting
+7d0ebbe3f5d2: Waiting
+5f70bf18a086: Waiting
+4dcd986bfff5: Layer already exists
+c337ff6b8012: Layer already exists
+73a271b64fcf: Layer already exists
+f79b5b8c612d: Layer already exists
+5f70bf18a086: Layer already exists
+87ea2744abf2: Layer already exists
+32034715e5d4: Layer already exists
+1a40cb2669f8: Layer already exists
+51f094ff7b94: Layer already exists
+7d0ebbe3f5d2: Layer already exists
+884a19665a38: Retrying in 5 seconds
+5cd3ed298fbf: Retrying in 5 seconds
+884a19665a38: Retrying in 4 seconds
+5cd3ed298fbf: Retrying in 4 seconds
+884a19665a38: Retrying in 3 seconds
+5cd3ed298fbf: Retrying in 3 seconds
+884a19665a38: Retrying in 2 seconds
+5cd3ed298fbf: Retrying in 2 seconds
+884a19665a38: Retrying in 1 second
+5cd3ed298fbf: Retrying in 1 second
+5cd3ed298fbf: Retrying in 10 seconds
+884a19665a38: Retrying in 10 seconds
+884a19665a38: Retrying in 9 seconds
+5cd3ed298fbf: Retrying in 9 seconds
+884a19665a38: Retrying in 8 seconds
+5cd3ed298fbf: Retrying in 8 seconds
+884a19665a38: Retrying in 7 seconds
+5cd3ed298fbf: Retrying in 7 seconds
+884a19665a38: Retrying in 6 seconds
+5cd3ed298fbf: Retrying in 6 seconds
+884a19665a38: Retrying in 5 seconds
+5cd3ed298fbf: Retrying in 5 seconds
+884a19665a38: Retrying in 4 seconds
+5cd3ed298fbf: Retrying in 4 seconds
+884a19665a38: Retrying in 3 seconds
+5cd3ed298fbf: Retrying in 3 seconds
+884a19665a38: Retrying in 2 seconds
+5cd3ed298fbf: Retrying in 2 seconds
+884a19665a38: Retrying in 1 second
+5cd3ed298fbf: Retrying in 1 second
+884a19665a38: Retrying in 15 seconds
+5cd3ed298fbf: Retrying in 15 seconds
+884a19665a38: Retrying in 14 seconds
+5cd3ed298fbf: Retrying in 14 seconds
+884a19665a38: Retrying in 13 seconds
+5cd3ed298fbf: Retrying in 13 seconds
+5cd3ed298fbf: Retrying in 12 seconds
+884a19665a38: Retrying in 12 seconds
+884a19665a38: Retrying in 11 seconds
+5cd3ed298fbf: Retrying in 11 seconds
+884a19665a38: Retrying in 10 seconds
+5cd3ed298fbf: Retrying in 10 seconds
+884a19665a38: Retrying in 9 seconds
+5cd3ed298fbf: Retrying in 9 seconds
+5cd3ed298fbf: Retrying in 8 seconds
+884a19665a38: Retrying in 8 seconds
+884a19665a38: Retrying in 7 seconds
+5cd3ed298fbf: Retrying in 7 seconds
+5cd3ed298fbf: Retrying in 6 seconds
+884a19665a38: Retrying in 6 seconds
+884a19665a38: Retrying in 5 seconds
+5cd3ed298fbf: Retrying in 5 seconds
+884a19665a38: Retrying in 4 seconds
+5cd3ed298fbf: Retrying in 4 seconds
+5cd3ed298fbf: Retrying in 3 seconds
+884a19665a38: Retrying in 3 seconds
+884a19665a38: Retrying in 2 seconds
+5cd3ed298fbf: Retrying in 2 seconds
+5cd3ed298fbf: Retrying in 1 second
+884a19665a38: Retrying in 1 second
+884a19665a38: Retrying in 20 seconds
+5cd3ed298fbf: Retrying in 20 seconds
+5cd3ed298fbf: Retrying in 19 seconds
+884a19665a38: Retrying in 19 seconds
+5cd3ed298fbf: Retrying in 18 seconds
+884a19665a38: Retrying in 18 seconds
+884a19665a38: Retrying in 17 seconds
+5cd3ed298fbf: Retrying in 17 seconds
+5cd3ed298fbf: Retrying in 16 seconds
+884a19665a38: Retrying in 16 seconds
+5cd3ed298fbf: Retrying in 15 seconds
+884a19665a38: Retrying in 15 seconds
+884a19665a38: Retrying in 14 seconds
+5cd3ed298fbf: Retrying in 14 seconds
+884a19665a38: Retrying in 13 seconds
+5cd3ed298fbf: Retrying in 13 seconds
+884a19665a38: Retrying in 12 seconds
+5cd3ed298fbf: Retrying in 12 seconds
+5cd3ed298fbf: Retrying in 11 seconds
+884a19665a38: Retrying in 11 seconds
+884a19665a38: Retrying in 10 seconds
+5cd3ed298fbf: Retrying in 10 seconds
+884a19665a38: Retrying in 9 seconds
+5cd3ed298fbf: Retrying in 9 seconds
+884a19665a38: Retrying in 8 seconds
+5cd3ed298fbf: Retrying in 8 seconds
+5cd3ed298fbf: Retrying in 7 seconds
+884a19665a38: Retrying in 7 seconds
+5cd3ed298fbf: Retrying in 6 seconds
+884a19665a38: Retrying in 6 seconds
+5cd3ed298fbf: Retrying in 5 seconds
+884a19665a38: Retrying in 5 seconds
+5cd3ed298fbf: Retrying in 4 seconds
+884a19665a38: Retrying in 4 seconds
+884a19665a38: Retrying in 3 seconds
+5cd3ed298fbf: Retrying in 3 seconds
+884a19665a38: Retrying in 2 seconds
+5cd3ed298fbf: Retrying in 2 seconds
+5cd3ed298fbf: Retrying in 1 second
+884a19665a38: Retrying in 1 second
+write tcp 192.168.65.3:53576->74.125.68.82:443: use of closed network connection
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

@@ -1,0 +1,93 @@
+Started by user [8mha:////4CA5kL0r8XoTT3PdnVI1PoGEnxCwKlCoPhe73Uyy/FdkAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgZu/dLi1CL9xLzSrEQAtdxjnMAAAAA=[0manuja somthankar
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\Hydrotek-CICD-Pipeline
+[Hydrotek-CICD-Pipeline] $ "C:\Program Files\Git\bin\sh.exe" -xe C:\Users\anuja\AppData\Local\Temp\jenkins1873721607353884628.sh
++ echo 'Hydrotek CICD'
+Hydrotek CICD
++ echo 'CI selected ThermalLeafDetection-New,plant-growth'
+CI selected ThermalLeafDetection-New,plant-growth
++ echo 'CD selected ThermalLeafDetection-New,plant-growth'
+CD selected ThermalLeafDetection-New,plant-growth
++ echo 'Tag selected v1'
+Tag selected v1
++ BRANCH=pestclassification-tcet
++ IMAGE_TAG=v1
++ SELECTED_APP_CI_ARRAY=ThermalLeafDetection-New,plant-growth
++ SELECTED_APP_CD_ARRAY=ThermalLeafDetection-New,plant-growth
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ TEST_DIR=Postman-Tests
++ NAMESPACE=dev
++ NETWORKTYPE=LoadBalancer
++ PORTNUM=5000
++ DIR=/c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ echo 'CI/CD Pipeline Started'
+CI/CD Pipeline Started
++ '[' -z devcloud ']'
++ setenv
++ echo devcloud
+devcloud
++ [[ devcloud == \d\e\v\c\l\o\u\d ]]
++ echo 'Dev Cloud'
+Dev Cloud
++ ENVFILE=hydroTek-Dev-Cloud.postman_environment.json
++ echo 'dev cloud'
+dev cloud
++ gcloud container clusters get-credentials autopilot-cluster-1 --region us-central1 --project hydrotek-286213
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+Fetching cluster endpoint and auth data.
+kubeconfig entry generated for autopilot-cluster-1.
++ echo 'Cluster Name: kt-ai-autopilot-cluster1'
+Cluster Name: kt-ai-autopilot-cluster1
++ NETWORKTYPE=LoadBalancer
++ '[' -z ThermalLeafDetection-New,plant-growth ']'
++ mainCI
++ echo 'MAIN CI'
+MAIN CI
++ a=(${SELECTED_APP_CI_ARRAY[0]})
++ echo ThermalLeafDetection-New,plant-growth
+ThermalLeafDetection-New,plant-growth
++ '[' ThermalLeafDetection-New,plant-growth == All ']'
++ IFS=', '
++ read -r -a arr
++ for i in "${arr[@]}"
++ temp=ThermalLeafDetection-New
++ temp=ThermalLeafDetection-New
++ echo ThermalLeafDetection-New
+ThermalLeafDetection-New
++ i=ThermalLeafDetection-New
++ case "$i" in
++ SELECTED_APP_CI=ThermalLeafDetection-New
++ CI_DIR=ThermalLeafDetection-New
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=thermaldetectionnew
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ genericCI ThermalLeafDetection-New ThermalLeafDetection-New hydro-ai-usecases thermaldetectionnew ./hydrotek/cicdbuild/ gcr.io/hydrotek-286213 release
++ SELECTED_APP_CI=ThermalLeafDetection-New
++ CI_DIR=ThermalLeafDetection-New
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=thermaldetectionnew
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=v1
++ echo 'GENERIC CI'
+GENERIC CI
++ echo 'Beginning Integration of ThermalLeafDetection-New'
+Beginning Integration of ThermalLeafDetection-New
++ mkdir -p ./hydrotek/cicdbuild/
++ cd ./hydrotek/cicdbuild/
++ '[' -d hydro-ai-usecases ']'
++ cd hydro-ai-usecases
++ git pull
+From gitlab.com:hydrotek-ai-grp/hydro-ai-usecases
+   498b35f1..6b83ceef  pestclassification-tcet -> origin/pestclassification-tcet
+error: Your local changes to the following files would be overwritten by merge:
+	ControllerApp/app/growth.js
+Please commit your changes or stash them before you merge.
+Updating 498b35f1..6b83ceef
+Aborting
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

@@ -1,0 +1,100 @@
+Started by user [8mha:////4CA5kL0r8XoTT3PdnVI1PoGEnxCwKlCoPhe73Uyy/FdkAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgZu/dLi1CL9xLzSrEQAtdxjnMAAAAA=[0manuja somthankar
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\Hydrotek-CICD-Pipeline
+[Hydrotek-CICD-Pipeline] $ "C:\Program Files\Git\bin\sh.exe" -xe C:\Users\anuja\AppData\Local\Temp\jenkins11613346428774549207.sh
++ echo 'Hydrotek CICD'
+Hydrotek CICD
++ echo 'CI selected fungal-training-automation'
+CI selected fungal-training-automation
++ echo 'CD selected fungal-training-automation'
+CD selected fungal-training-automation
++ echo 'Tag selected v2'
+Tag selected v2
++ BRANCH=pestclassification-tcet
++ IMAGE_TAG=v2
++ SELECTED_APP_CI_ARRAY=fungal-training-automation
++ SELECTED_APP_CD_ARRAY=fungal-training-automation
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ DEPLOYMENT=hydrotekapp-deployment
++ NAMESPACE=dev
++ NETWORKTYPE=LoadBalancer
++ PORTNUM=5000
++ DIR=/c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ echo 'CI/CD Pipeline Started'
+CI/CD Pipeline Started
++ '[' -z devcloud ']'
++ setenv
++ echo devcloud
+devcloud
++ [[ devcloud == \d\e\v ]]
++ [[ devcloud == \d\e\v\c\l\o\u\d ]]
++ echo 'dev cloud'
+dev cloud
++ gcloud container clusters get-credentials autopilot-cluster-1 --region us-central1 --project hydrotek-286213
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+Fetching cluster endpoint and auth data.
+kubeconfig entry generated for autopilot-cluster-1.
++ echo 'Cluster Name: kt-ai-autopilot-cluster1'
+Cluster Name: kt-ai-autopilot-cluster1
++ NETWORKTYPE=LoadBalancer
++ '[' -z fungal-training-automation ']'
++ mainCI
++ echo 'MAIN CI'
+MAIN CI
++ a=(${SELECTED_APP_CI_ARRAY[0]})
++ echo fungal-training-automation
+fungal-training-automation
++ '[' fungal-training-automation == All ']'
++ IFS=', '
++ read -r -a arr
++ for i in "${arr[@]}"
++ temp=fungal-training-automation
++ temp=fungal-training-automation
++ echo fungal-training-automation
+fungal-training-automation
++ i=fungal-training-automation
++ case "$i" in
++ SELECTED_APP_CI=HydroTek-22-FungalDetection/training-automation/training
++ CI_DIR=fungal-training-automation
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=fungaltrainingautomation
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ genericCI HydroTek-22-FungalDetection/training-automation/training fungal-training-automation hydro-ai-usecases fungaltrainingautomation ./hydrotek/cicdbuild/ gcr.io/hydrotek-286213 release
++ SELECTED_APP_CI=HydroTek-22-FungalDetection/training-automation/training
++ CI_DIR=fungal-training-automation
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=fungaltrainingautomation
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=
++ echo 'GENERIC CI'
+GENERIC CI
++ echo 'Beginning Integration of HydroTek-22-FungalDetection/training-automation/training'
+Beginning Integration of HydroTek-22-FungalDetection/training-automation/training
++ mkdir -p ./hydrotek/cicdbuild/
++ cd ./hydrotek/cicdbuild/
++ '[' -d hydro-ai-usecases ']'
++ cd hydro-ai-usecases
++ git pull
+From gitlab.com:hydrotek-ai-grp/hydro-ai-usecases
+   97ae489..4983892  pestclassification-tcet -> origin/pestclassification-tcet
+Updating 97ae489..4983892
+Fast-forward
+ HydroTek-22-FungalDetection/training-automation/training/train_api.py | 1 +
+ 1 file changed, 1 insertion(+)
++ gcloud auth print-access-token
++ docker login -u oauth2accesstoken --password-stdin https://gcr.io
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+Login Succeeded
++ cd HydroTek-22-FungalDetection/training-automation/training
++ echo 'Docker Build gcr.io/hydrotek-286213/fungaltrainingautomation: '
+Docker Build gcr.io/hydrotek-286213/fungaltrainingautomation: 
++ docker build -t gcr.io/hydrotek-286213/fungaltrainingautomation: .
+invalid argument "gcr.io/hydrotek-286213/fungaltrainingautomation:" for "-t, --tag" flag: invalid reference format
+See 'docker build --help'.
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

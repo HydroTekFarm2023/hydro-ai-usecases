@@ -1,0 +1,7 @@
+flask
+fastai
+flask_restful
+subprocess.run
+pymongo[srv]
+fastbook
+gsutil
