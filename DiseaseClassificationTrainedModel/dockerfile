@@ -1,0 +1,18 @@
+FROM python:3.8-slim
+USER root
+ENV LANG C.UTF-8
+WORKDIR /training_model
+EXPOSE 6005
+RUN pip install pandas
+RUN pip install fastai
+#RUN apt-get update
+RUN pip install flask
+RUN pip install flask_restful
+RUN pip install gsutil
+RUN pip install uuid
+RUN pip install 'pymongo[srv]'
+RUN pip install dnspython
+COPY boto-hydrotek.txt /root/.boto
+COPY hydrotek-serviceAcc.json /root
+COPY . /training_model
+CMD ["python", "-u", "model_train_api.py"]
