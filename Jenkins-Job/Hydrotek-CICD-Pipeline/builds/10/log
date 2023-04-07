@@ -1,216 +1,0 @@
-Started by user [8mha:////4CA5kL0r8XoTT3PdnVI1PoGEnxCwKlCoPhe73Uyy/FdkAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgZu/dLi1CL9xLzSrEQAtdxjnMAAAAA=[0manuja somthankar
-Running as SYSTEM
-Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\Hydrotek-CICD-Pipeline
-[Hydrotek-CICD-Pipeline] $ "C:\Program Files\Git\bin\sh.exe" -xe C:\Users\anuja\AppData\Local\Temp\jenkins13061616038692516297.sh
-+ echo 'Hydrotek CICD'
-Hydrotek CICD
-+ echo 'CI selected Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation'
-CI selected Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation
-+ echo 'CD selected Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation'
-CD selected Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation
-+ BRANCH=master
-+ IMAGE_TAG=release
-+ SELECTED_APP_CI_ARRAY=Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation
-+ SELECTED_APP_CD_ARRAY=Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation
-+ REPOSITORY_DIR=hydro-ai-usecases
-+ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
-+ CI_WORK_DIR=./hydrotek/cicdbuild/
-+ DEPLOYMENT=hydrotekapp-deployment
-+ NAMESPACE=dev
-+ NETWORKTYPE=LoadBalancer
-+ PORTNUM=5000
-+ DIR=/c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
-+ echo 'CI/CD Pipeline Started'
-CI/CD Pipeline Started
-+ '[' -z Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation ']'
-+ mainCI
-+ echo 'MAIN CI'
-MAIN CI
-+ a=(${SELECTED_APP_CI_ARRAY[0]})
-+ echo Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation
-Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation
-+ '[' Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation == All ']'
-+ IFS=', '
-+ read -r -a arr
-+ for i in "${arr[@]}"
-+ temp=Hydrotek-22-PestDetection/pest-detection/pest-detection
-+ temp=Hydrotek-22-PestDetection/pest-detection/pest-detection
-+ echo Hydrotek-22-PestDetection/pest-detection/pest-detection
-Hydrotek-22-PestDetection/pest-detection/pest-detection
-+ i=Hydrotek-22-PestDetection/pest-detection/pest-detection
-+ case "$i" in
-+ echo Hydrotek-22-PestDetection/pest-detection/pest-detection
-Hydrotek-22-PestDetection/pest-detection/pest-detection
-+ SELECTED_APP_CI=Hydrotek-22-PestDetection/pest-detection/pest-detection
-+ CI_DIR=Hydrotek-22-PestDetection/pest-detection/pest-detection
-+ REPOSITORY_DIR=hydro-ai-usecases
-+ CONTAINERNAME=pestdetection2022
-+ CI_WORK_DIR=./hydrotek/cicdbuild/
-+ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
-+ IMAGE_TAG=release
-+ genericCI Hydrotek-22-PestDetection/pest-detection/pest-detection Hydrotek-22-PestDetection/pest-detection/pest-detection hydro-ai-usecases pestdetection2022 ./hydrotek/cicdbuild/ gcr.io/hydrotek-286213 release
-+ SELECTED_APP_CI=Hydrotek-22-PestDetection/pest-detection/pest-detection
-+ CI_DIR=Hydrotek-22-PestDetection/pest-detection/pest-detection
-+ REPOSITORY_DIR=hydro-ai-usecases
-+ CONTAINERNAME=pestdetection2022
-+ CI_WORK_DIR=./hydrotek/cicdbuild/
-+ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
-+ IMAGE_TAG=release
-+ echo 'GENERIC CI'
-GENERIC CI
-+ echo 'Begining Integration of Hydrotek-22-PestDetection/pest-detection/pest-detection'
-Begining Integration of Hydrotek-22-PestDetection/pest-detection/pest-detection
-+ mkdir -p ./hydrotek/cicdbuild/
-+ cd ./hydrotek/cicdbuild/
-+ '[' -d hydro-ai-usecases ']'
-+ git clone -b master git@gitlab.com:hydrotek-ai-grp/hydro-ai-usecases.git
-Cloning into 'hydro-ai-usecases'...
-Updating files:  73% (160/219)Updating files:  74% (163/219)Updating files:  75% (165/219)Updating files:  76% (167/219)Updating files:  77% (169/219)Updating files:  78% (171/219)Updating files:  79% (174/219)Updating files:  80% (176/219)Updating files:  81% (178/219)Updating files:  82% (180/219)Updating files:  83% (182/219)Updating files:  84% (184/219)Updating files:  85% (187/219)Updating files:  86% (189/219)Updating files:  87% (191/219)Updating files:  88% (193/219)Updating files:  89% (195/219)Updating files:  89% (197/219)Updating files:  90% (198/219)Updating files:  91% (200/219)Updating files:  92% (202/219)Updating files:  93% (204/219)Updating files:  94% (206/219)Updating files:  95% (209/219)Updating files:  96% (211/219)Updating files:  97% (213/219)Updating files:  98% (215/219)Updating files:  99% (217/219)Updating files: 100% (219/219)Updating files: 100% (219/219), done.
-+ cd hydro-ai-usecases
-+ cd Hydrotek-22-PestDetection/pest-detection/pest-detection
-+ echo 'Docker Build gcr.io/hydrotek-286213/pestdetection2022:release '
-Docker Build gcr.io/hydrotek-286213/pestdetection2022:release 
-+ echo 'Docker Push gcr.io/hydrotek-286213/pestdetection2022:release'
-Docker Push gcr.io/hydrotek-286213/pestdetection2022:release
-+ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
-+ for i in "${arr[@]}"
-+ temp=Hydrotek-22-PestDetection/training-automation/training-automation
-+ temp=Hydrotek-22-PestDetection/training-automation/training-automation
-+ echo Hydrotek-22-PestDetection/training-automation/training-automation
-Hydrotek-22-PestDetection/training-automation/training-automation
-+ i=Hydrotek-22-PestDetection/training-automation/training-automation
-+ case "$i" in
-+ SELECTED_APP_CI=Hydrotek-22-PestDetection/training-automation/training-automation
-+ CI_DIR=Hydrotek-22-PestDetection/training-automation/training-automation
-+ REPOSITORY_DIR=hydro-ai-usecases
-+ CONTAINERNAME=trainingautomation2022
-+ CI_WORK_DIR=./hydrotek/cicdbuild/
-+ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
-+ IMAGE_TAG=release
-+ genericCI Hydrotek-22-PestDetection/training-automation/training-automation Hydrotek-22-PestDetection/training-automation/training-automation hydro-ai-usecases trainingautomation2022 ./hydrotek/cicdbuild/ gcr.io/hydrotek-286213 release
-+ SELECTED_APP_CI=Hydrotek-22-PestDetection/training-automation/training-automation
-+ CI_DIR=Hydrotek-22-PestDetection/training-automation/training-automation
-+ REPOSITORY_DIR=hydro-ai-usecases
-+ CONTAINERNAME=trainingautomation2022
-+ CI_WORK_DIR=./hydrotek/cicdbuild/
-+ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
-+ IMAGE_TAG=release
-+ echo 'GENERIC CI'
-GENERIC CI
-+ echo 'Begining Integration of Hydrotek-22-PestDetection/training-automation/training-automation'
-Begining Integration of Hydrotek-22-PestDetection/training-automation/training-automation
-+ mkdir -p ./hydrotek/cicdbuild/
-+ cd ./hydrotek/cicdbuild/
-+ '[' -d hydro-ai-usecases ']'
-+ cd hydro-ai-usecases
-+ git pull
-Already up to date.
-+ cd Hydrotek-22-PestDetection/training-automation/training-automation
-+ echo 'Docker Build gcr.io/hydrotek-286213/trainingautomation2022:release '
-Docker Build gcr.io/hydrotek-286213/trainingautomation2022:release 
-+ echo 'Docker Push gcr.io/hydrotek-286213/trainingautomation2022:release'
-Docker Push gcr.io/hydrotek-286213/trainingautomation2022:release
-+ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
-+ '[' -z Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation ']'
-+ mainCD
-+ echo 'MAIN CD'
-MAIN CD
-+ a=(${SELECTED_APP_CD_ARRAY[0]})
-+ echo Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation
-Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation
-+ '[' Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation == All ']'
-+ IFS=', '
-+ read -r -a arr
-+ for i in "${arr[@]}"
-+ temp=Hydrotek-22-PestDetection/pest-detection/pest-detection
-+ temp=Hydrotek-22-PestDetection/pest-detection/pest-detection
-+ echo Hydrotek-22-PestDetection/pest-detection/pest-detection
-Hydrotek-22-PestDetection/pest-detection/pest-detection
-+ i=Hydrotek-22-PestDetection/pest-detection/pest-detection
-+ case "$i" in
-+ echo Hydrotek-22-PestDetection/pest-detection/pest-detection
-Hydrotek-22-PestDetection/pest-detection/pest-detection
-+ SELECTED_APP_CI=Hydrotek-22-PestDetection/pest-detection/pest-detection
-+ DEPLOYMENT=hydrotekapp-deployment
-+ NAMESPACE=dev
-+ CONTAINERNAME=pestdetection2022
-+ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
-+ IMAGE_TAG=release
-+ PORTNUM=5001
-+ genericCD Hydrotek-22-PestDetection/pest-detection/pest-detection hydrotekapp-deployment dev pestdetection2022 gcr.io/hydrotek-286213 release 5001
-+ SELECTED_APP_CD=Hydrotek-22-PestDetection/pest-detection/pest-detection
-+ DEPLOYMENT=hydrotekapp-deployment
-+ NAMESPACE=dev
-+ CONTAINERNAME=pestdetection2022
-+ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
-+ IMAGE_TAG=release
-+ PORTNUM=5001
-+ echo 'GENERIC CD'
-GENERIC CD
-+ echo 'Begining Deployment of Hydrotek-22-PestDetection/pest-detection/pest-detection'
-Begining Deployment of Hydrotek-22-PestDetection/pest-detection/pest-detection
-+ gcloud container clusters get-credentials autopilot-cluster-1 --region us-central1 --project hydrotek-286213
-Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
-Fetching cluster endpoint and auth data.
-kubeconfig entry generated for autopilot-cluster-1.
-+ kubectl get deployments hydrotekapp-deployment --namespace dev
-+ grep -q hydrotekapp-deployment
-+ echo 'Updating the deployment with latest version'
-Updating the deployment with latest version
-+ SELECTED_IMAGE=gcr.io/hydrotek-286213/pestdetection2022:release
-+ echo 'Selected Image gcr.io/hydrotek-286213/pestdetection2022:release'
-Selected Image gcr.io/hydrotek-286213/pestdetection2022:release
-+ echo 'Kubectl Set image deployment/hydrotekapp-deployment hydroapiserver=gcr.io/hydrotek-286213/pestdetection2022:release --namespace dev'
-Kubectl Set image deployment/hydrotekapp-deployment hydroapiserver=gcr.io/hydrotek-286213/pestdetection2022:release --namespace dev
-+ echo 'Kubectl Rollout restart deployment hydrotekapp-deployment --namespace dev'
-Kubectl Rollout restart deployment hydrotekapp-deployment --namespace dev
-+ echo 'Updated Deployment'
-Updated Deployment
-+ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
-+ for i in "${arr[@]}"
-+ temp=Hydrotek-22-PestDetection/training-automation/training-automation
-+ temp=Hydrotek-22-PestDetection/training-automation/training-automation
-+ echo Hydrotek-22-PestDetection/training-automation/training-automation
-Hydrotek-22-PestDetection/training-automation/training-automation
-+ i=Hydrotek-22-PestDetection/training-automation/training-automation
-+ case "$i" in
-+ echo Hydrotek-22-PestDetection/training-automation/training-automation
-Hydrotek-22-PestDetection/training-automation/training-automation
-+ SELECTED_APP_CI=Hydrotek-22-PestDetection/training-automation/training-automation
-+ DEPLOYMENT=hydrotekapp-deployment
-+ NAMESPACE=dev
-+ CONTAINERNAME=trainingautomation2022
-+ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
-+ IMAGE_TAG=release
-+ PORTNUM=6000
-+ genericCD Hydrotek-22-PestDetection/training-automation/training-automation hydrotekapp-deployment dev trainingautomation2022 gcr.io/hydrotek-286213 release 6000
-+ SELECTED_APP_CD=Hydrotek-22-PestDetection/training-automation/training-automation
-+ DEPLOYMENT=hydrotekapp-deployment
-+ NAMESPACE=dev
-+ CONTAINERNAME=trainingautomation2022
-+ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
-+ IMAGE_TAG=release
-+ PORTNUM=6000
-+ echo 'GENERIC CD'
-GENERIC CD
-+ echo 'Begining Deployment of Hydrotek-22-PestDetection/training-automation/training-automation'
-Begining Deployment of Hydrotek-22-PestDetection/training-automation/training-automation
-+ gcloud container clusters get-credentials autopilot-cluster-1 --region us-central1 --project hydrotek-286213
-Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
-Fetching cluster endpoint and auth data.
-kubeconfig entry generated for autopilot-cluster-1.
-+ kubectl get deployments hydrotekapp-deployment --namespace dev
-+ grep -q hydrotekapp-deployment
-+ echo 'Updating the deployment with latest version'
-Updating the deployment with latest version
-+ SELECTED_IMAGE=gcr.io/hydrotek-286213/trainingautomation2022:release
-+ echo 'Selected Image gcr.io/hydrotek-286213/trainingautomation2022:release'
-Selected Image gcr.io/hydrotek-286213/trainingautomation2022:release
-+ echo 'Kubectl Set image deployment/hydrotekapp-deployment hydroapiserver=gcr.io/hydrotek-286213/trainingautomation2022:release --namespace dev'
-Kubectl Set image deployment/hydrotekapp-deployment hydroapiserver=gcr.io/hydrotek-286213/trainingautomation2022:release --namespace dev
-+ echo 'Kubectl Rollout restart deployment hydrotekapp-deployment --namespace dev'
-Kubectl Rollout restart deployment hydrotekapp-deployment --namespace dev
-+ echo 'Updated Deployment'
-Updated Deployment
-+ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
-Finished: SUCCESS
