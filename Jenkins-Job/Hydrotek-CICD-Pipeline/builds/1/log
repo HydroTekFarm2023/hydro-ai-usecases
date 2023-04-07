@@ -1,9 +1,0 @@
-Started by user [8mha:////4CA5kL0r8XoTT3PdnVI1PoGEnxCwKlCoPhe73Uyy/FdkAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgZu/dLi1CL9xLzSrEQAtdxjnMAAAAA=[0manuja somthankar
-Running as SYSTEM
-Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\Hydrotek-CICD-Pipeline
-[Hydrotek-CICD-Pipeline] $ "C:\Program Files\Git\bin\sh.exe" -xe C:\Users\anuja\AppData\Local\Temp\jenkins6490229136922024880.sh
-+ echo Hydrotek-22-PestDetection/pest-detection/pest-detection
-Hydrotek-22-PestDetection/pest-detection/pest-detection
-+ echo Hydrotek-22-PestDetection/pest-detection/pest-detection
-Hydrotek-22-PestDetection/pest-detection/pest-detection
-Finished: SUCCESS
