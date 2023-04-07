@@ -1,0 +1,23 @@
+FROM python:3.8-slim
+USER root
+ENV LANG C.UTF-8
+WORKDIR /Plant_Growth
+EXPOSE 6003
+RUN apt-get update
+RUN apt install libgl1-mesa-glx
+#RUN pip install datetime
+RUN pip install numpy
+RUN pip install scipy
+RUN pip install opencv-python
+RUN pip install plantcv
+RUN pip install imutils
+RUN apt-get update
+RUN pip install flask
+RUN pip install flask_restful
+RUN pip install gsutil
+RUN pip install 'pymongo[srv]'
+RUN pip install dnspython
+#COPY boto-hydrotek.txt /root/.boto
+#COPY hydrotek-serviceAcc.json /root
+COPY . /Plant_Growth
+CMD ["python","apiflask.py"]
