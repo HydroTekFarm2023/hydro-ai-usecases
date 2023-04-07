@@ -1,2 +1,0 @@
-docker build . -t training-automation:v1
-docker run --ipc=host -p 5000:5000 training-automation:v1
