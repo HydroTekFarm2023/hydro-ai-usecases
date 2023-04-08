@@ -1,0 +1,236 @@
+Started by user [8mha:////4CA5kL0r8XoTT3PdnVI1PoGEnxCwKlCoPhe73Uyy/FdkAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgZu/dLi1CL9xLzSrEQAtdxjnMAAAAA=[0manuja somthankar
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\Hydrotek-CICD-Pipeline
+[Hydrotek-CICD-Pipeline] $ "C:\Program Files\Git\bin\sh.exe" -xe C:\Users\anuja\AppData\Local\Temp\jenkins18093793733273933334.sh
++ echo 'Hydrotek CICD'
+Hydrotek CICD
++ echo 'CI selected Hydrotek-22-PestDetection/pest-detection/pest-detection,ControllerApp'
+CI selected Hydrotek-22-PestDetection/pest-detection/pest-detection,ControllerApp
++ echo 'CD selected Hydrotek-22-PestDetection/pest-detection/pest-detection,ControllerApp'
+CD selected Hydrotek-22-PestDetection/pest-detection/pest-detection,ControllerApp
++ BRANCH=pestclassification-tcet
++ IMAGE_TAG=release
++ SELECTED_APP_CI_ARRAY=Hydrotek-22-PestDetection/pest-detection/pest-detection,ControllerApp
++ SELECTED_APP_CD_ARRAY=Hydrotek-22-PestDetection/pest-detection/pest-detection,ControllerApp
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ DEPLOYMENT=hydrotekapp-deployment
++ NAMESPACE=dev
++ NETWORKTYPE=LoadBalancer
++ PORTNUM=5000
++ DIR=/c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ echo 'CI/CD Pipeline Started'
+CI/CD Pipeline Started
++ '[' -z devcloud ']'
++ setenv
++ echo devcloud
+devcloud
++ [[ devcloud == \d\e\v ]]
++ [[ devcloud == \d\e\v\c\l\o\u\d ]]
++ echo 'dev cloud'
+dev cloud
++ gcloud container clusters get-credentials autopilot-cluster-1 --region us-central1 --project hydrotek-286213
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+Fetching cluster endpoint and auth data.
+kubeconfig entry generated for autopilot-cluster-1.
++ echo 'Cluster Name: kt-ai-autopilot-cluster1'
+Cluster Name: kt-ai-autopilot-cluster1
++ NETWORKTYPE=LoadBalancer
++ '[' -z Hydrotek-22-PestDetection/pest-detection/pest-detection,ControllerApp ']'
++ mainCI
++ echo 'MAIN CI'
+MAIN CI
++ a=(${SELECTED_APP_CI_ARRAY[0]})
++ echo Hydrotek-22-PestDetection/pest-detection/pest-detection,ControllerApp
+Hydrotek-22-PestDetection/pest-detection/pest-detection,ControllerApp
++ '[' Hydrotek-22-PestDetection/pest-detection/pest-detection,ControllerApp == All ']'
++ IFS=', '
++ read -r -a arr
++ for i in "${arr[@]}"
++ temp=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ temp=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ echo Hydrotek-22-PestDetection/pest-detection/pest-detection
+Hydrotek-22-PestDetection/pest-detection/pest-detection
++ i=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ case "$i" in
++ echo Hydrotek-22-PestDetection/pest-detection/pest-detection
+Hydrotek-22-PestDetection/pest-detection/pest-detection
++ SELECTED_APP_CI=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ CI_DIR=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=pestdetect2022
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ genericCI Hydrotek-22-PestDetection/pest-detection/pest-detection Hydrotek-22-PestDetection/pest-detection/pest-detection hydro-ai-usecases pestdetect2022 ./hydrotek/cicdbuild/ gcr.io/hydrotek-286213 release
++ SELECTED_APP_CI=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ CI_DIR=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=pestdetect2022
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ echo 'GENERIC CI'
+GENERIC CI
++ echo 'Begining Integration of Hydrotek-22-PestDetection/pest-detection/pest-detection'
+Begining Integration of Hydrotek-22-PestDetection/pest-detection/pest-detection
++ mkdir -p ./hydrotek/cicdbuild/
++ cd ./hydrotek/cicdbuild/
++ '[' -d hydro-ai-usecases ']'
++ cd hydro-ai-usecases
++ git pull
+From gitlab.com:hydrotek-ai-grp/hydro-ai-usecases
+   d19fca2..032bb2f  pestclassification-tcet -> origin/pestclassification-tcet
+Updating d19fca2..032bb2f
+Fast-forward
+ ControllerApp/app/detection.js | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
++ gcloud auth print-access-token
++ docker login -u oauth2accesstoken --password-stdin https://gcr.io
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+Login Succeeded
++ cd Hydrotek-22-PestDetection/pest-detection/pest-detection
++ echo 'Docker Build gcr.io/hydrotek-286213/pestdetect2022:release '
+Docker Build gcr.io/hydrotek-286213/pestdetect2022:release 
++ docker build -t gcr.io/hydrotek-286213/pestdetect2022:release .
+#1 [internal] load build definition from Dockerfile
+#1 sha256:e1d18390edcd6ea24362b9b9d9a6baf22ade111d1e474a5ca2a40c6e3634636a
+#1 transferring dockerfile: 656B 0.0s done
+#1 DONE 0.1s
+
+#2 [internal] load .dockerignore
+#2 sha256:9e8acc62ec47824eda3bdadecc09d4a2a4afd2851ce1939b0ca658e5f083dfd8
+#2 transferring context: 2B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.8-slim
+#3 sha256:a94c831f6b826f8ffd4325edd7e9f6408caa85fd7f03e2b107cc6a9d249f7065
+#3 DONE 2.4s
+
+#12 [1/8] FROM docker.io/library/python:3.8-slim@sha256:09919e06ecceca5cca99ab3622758b11f52abe7dcfc9bdb945d6bfe7482a0e82
+#12 sha256:9a7e451acdc534477bfbac245184b5528132b8b08b5f60dc4d4716ac4133ae48
+#12 DONE 0.0s
+
+#4 [internal] load build context
+#4 sha256:f902e435be420c2e1a85bbf4a080aa97a1e06699cfef41851273ee0c6e4215a3
+#4 transferring context: 30.83MB 1.9s done
+#4 DONE 2.0s
+
+#6 [3/8] WORKDIR /pest-detection
+#6 sha256:b965ab3c5d957a6891bda5b86564094855d9dbc0e3f13c38892ed3048f92f3eb
+#6 CACHED
+
+#7 [4/8] RUN apt-get update     && DEBIAN_FRONTEND=noninteractive        apt-get -y --quiet --fix-missing install python3-opencv     && apt-get -y autoremove     && apt-get clean autoclean
+#7 sha256:501d851eb4e72ba74ec29184c8e1ddec0d730d228351a5653ef7adf3731f05f6
+#7 CACHED
+
+#8 [5/8] RUN pip install -r requirements.txt
+#8 sha256:e284d74b950e37f2b6afeefcfab6f25d7e8dc079a4b80fcd1f914e5a8e12dcf7
+#8 CACHED
+
+#9 [6/8] RUN curl -sSL https://sdk.cloud.google.com | bash
+#9 sha256:4cd1df3f9db5e612abf52605c9fd2bc02f02e81988276cf09c1ea1f5f1c4fb63
+#9 CACHED
+
+#10 [7/8] COPY googleserviceAcc.json /root/googleserviceAcc.json
+#10 sha256:87138c5ccb60d1f75b25d3f6dd08149c83376ad49b8156b6e5da251082d7c92b
+#10 CACHED
+
+#5 [2/8] COPY . /pest-detection
+#5 sha256:f10a69fc26e7252dd9d045e66722bbeab781a1361ed011ffaa2d722d4adfe7ea
+#5 CACHED
+
+#11 [8/8] COPY boto.txt /root/.boto
+#11 sha256:baa817da0425d9bd1a897f9080cfac95c397f225179b6955937c2ad5ae38794d
+#11 CACHED
+
+#13 exporting to image
+#13 sha256:e8c613e07b0b7ff33893b694f7759a10d42e180f2b4dc349fb57dc6b71dcab00
+#13 exporting layers done
+#13 writing image sha256:805e28cf0b3a1d73a5f04cac948a1bd2fe0941b16c7051aae270556d5979e7fb 0.0s done
+#13 naming to gcr.io/hydrotek-286213/pestdetect2022:release done
+#13 DONE 0.1s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
++ echo 'Docker Push gcr.io/hydrotek-286213/pestdetect2022:release'
+Docker Push gcr.io/hydrotek-286213/pestdetect2022:release
++ docker push gcr.io/hydrotek-286213/pestdetect2022:release
+The push refers to repository [gcr.io/hydrotek-286213/pestdetect2022]
+bb5f116a1e15: Preparing
+53c0493404e7: Preparing
+ce0862873d75: Preparing
+bc2740cbead9: Preparing
+c2af32394718: Preparing
+5f70bf18a086: Preparing
+6fc62e359331: Preparing
+45f940692788: Preparing
+566d397da0c7: Preparing
+6fc62e359331: Waiting
+5f70bf18a086: Waiting
+45f940692788: Waiting
+566d397da0c7: Waiting
+14adb77cbfd6: Preparing
+2032d4408823: Preparing
+14adb77cbfd6: Waiting
+2032d4408823: Waiting
+3a626bb08c24: Preparing
+3a626bb08c24: Waiting
+ce0862873d75: Layer already exists
+c2af32394718: Layer already exists
+bc2740cbead9: Layer already exists
+53c0493404e7: Layer already exists
+bb5f116a1e15: Layer already exists
+45f940692788: Layer already exists
+566d397da0c7: Layer already exists
+14adb77cbfd6: Layer already exists
+6fc62e359331: Layer already exists
+2032d4408823: Layer already exists
+3a626bb08c24: Layer already exists
+5f70bf18a086: Layer already exists
+release: digest: sha256:669e741294ab04e53b86debc04a16d2a3e9254b2230e23d50166723d14b08790 size: 2836
++ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ for i in "${arr[@]}"
++ temp=ControllerApp
++ temp=ControllerApp
++ echo ControllerApp
+ControllerApp
++ i=ControllerApp
++ case "$i" in
++ SELECTED_APP_CI=ControllerApp
++ CI_DIR=ControllerApp
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=ControllerApp
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ genericCI ControllerApp ControllerApp hydro-ai-usecases ControllerApp ./hydrotek/cicdbuild/ gcr.io/hydrotek-286213 release
++ SELECTED_APP_CI=ControllerApp
++ CI_DIR=ControllerApp
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=ControllerApp
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ echo 'GENERIC CI'
+GENERIC CI
++ echo 'Begining Integration of ControllerApp'
+Begining Integration of ControllerApp
++ mkdir -p ./hydrotek/cicdbuild/
++ cd ./hydrotek/cicdbuild/
++ '[' -d hydro-ai-usecases ']'
++ cd hydro-ai-usecases
++ git pull
+Already up to date.
++ gcloud auth print-access-token
++ docker login -u oauth2accesstoken --password-stdin https://gcr.io
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+Login Succeeded
++ cd ControllerApp
++ echo 'Docker Build gcr.io/hydrotek-286213/ControllerApp:release '
+Docker Build gcr.io/hydrotek-286213/ControllerApp:release 
++ docker build -t gcr.io/hydrotek-286213/ControllerApp:release .
+invalid argument "gcr.io/hydrotek-286213/ControllerApp:release" for "-t, --tag" flag: invalid reference format: repository name must be lowercase
+See 'docker build --help'.
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

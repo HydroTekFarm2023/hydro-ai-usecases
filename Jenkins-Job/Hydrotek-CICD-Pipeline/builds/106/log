@@ -1,0 +1,819 @@
+Started by user [8mha:////4CA5kL0r8XoTT3PdnVI1PoGEnxCwKlCoPhe73Uyy/FdkAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgZu/dLi1CL9xLzSrEQAtdxjnMAAAAA=[0manuja somthankar
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\Hydrotek-CICD-Pipeline
+[Hydrotek-CICD-Pipeline] $ "C:\Program Files\Git\bin\sh.exe" -xe C:\Users\anuja\AppData\Local\Temp\jenkins13919793952381722781.sh
++ echo 'Hydrotek CICD'
+Hydrotek CICD
++ echo 'CI selected ThermalLeafDetection-New,plant-growth'
+CI selected ThermalLeafDetection-New,plant-growth
++ echo 'CD selected ThermalLeafDetection-New,plant-growth'
+CD selected ThermalLeafDetection-New,plant-growth
++ echo 'Tag selected v1'
+Tag selected v1
++ BRANCH=pestclassification-tcet
++ IMAGE_TAG=v1
++ SELECTED_APP_CI_ARRAY=ThermalLeafDetection-New,plant-growth
++ SELECTED_APP_CD_ARRAY=ThermalLeafDetection-New,plant-growth
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ NAMESPACE=dev
++ NETWORKTYPE=LoadBalancer
++ PORTNUM=5000
++ DIR=/c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ echo 'CI/CD Pipeline Started'
+CI/CD Pipeline Started
++ '[' -z devcloud ']'
++ setenv
++ echo devcloud
+devcloud
++ [[ devcloud == \d\e\v ]]
++ [[ devcloud == \d\e\v\c\l\o\u\d ]]
++ echo 'dev cloud'
+dev cloud
++ gcloud container clusters get-credentials autopilot-cluster-1 --region us-central1 --project hydrotek-286213
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+Fetching cluster endpoint and auth data.
+kubeconfig entry generated for autopilot-cluster-1.
++ echo 'Cluster Name: kt-ai-autopilot-cluster1'
+Cluster Name: kt-ai-autopilot-cluster1
++ NETWORKTYPE=LoadBalancer
++ '[' -z ThermalLeafDetection-New,plant-growth ']'
++ mainCI
++ echo 'MAIN CI'
+MAIN CI
++ a=(${SELECTED_APP_CI_ARRAY[0]})
++ echo ThermalLeafDetection-New,plant-growth
+ThermalLeafDetection-New,plant-growth
++ '[' ThermalLeafDetection-New,plant-growth == All ']'
++ IFS=', '
++ read -r -a arr
++ for i in "${arr[@]}"
++ temp=ThermalLeafDetection-New
++ temp=ThermalLeafDetection-New
++ echo ThermalLeafDetection-New
+ThermalLeafDetection-New
++ i=ThermalLeafDetection-New
++ case "$i" in
++ SELECTED_APP_CI=ThermalLeafDetection-New
++ CI_DIR=ThermalLeafDetection-New
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=thermaldetectionnew
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ genericCI ThermalLeafDetection-New ThermalLeafDetection-New hydro-ai-usecases thermaldetectionnew ./hydrotek/cicdbuild/ gcr.io/hydrotek-286213 release
++ SELECTED_APP_CI=ThermalLeafDetection-New
++ CI_DIR=ThermalLeafDetection-New
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=thermaldetectionnew
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=v1
++ echo 'GENERIC CI'
+GENERIC CI
++ echo 'Beginning Integration of ThermalLeafDetection-New'
+Beginning Integration of ThermalLeafDetection-New
++ mkdir -p ./hydrotek/cicdbuild/
++ cd ./hydrotek/cicdbuild/
++ '[' -d hydro-ai-usecases ']'
++ cd hydro-ai-usecases
++ git pull
+From gitlab.com:hydrotek-ai-grp/hydro-ai-usecases
+   0e2976c..f6f5375  pestclassification-tcet -> origin/pestclassification-tcet
+Updating 0e2976c..f6f5375
+Fast-forward
+ ThermalLeafDetection-New/PlantCV_API_Final.py      |  12 +--
+ .../__pycache__/PlantCV_Final.cpython-38.pyc       | Bin 0 -> 3895 bytes
+ ...output_7a0dbabb-b5c9-11ec-b515-6c02e07c9d1e.csv | 105 +++++++++++++++++++++
+ ...output_9a70f4fd-b5c9-11ec-b32b-6c02e07c9d1e.csv | 105 +++++++++++++++++++++
+ .../src/__pycache__/actual_hydro.cpython-38.pyc    | Bin 0 -> 4610 bytes
+ plant-growth/src/apiflask.py                       |   2 +-
+ 6 files changed, 217 insertions(+), 7 deletions(-)
+ create mode 100644 ThermalLeafDetection-New/__pycache__/PlantCV_Final.cpython-38.pyc
+ create mode 100644 ThermalLeafDetection-New/output_7a0dbabb-b5c9-11ec-b515-6c02e07c9d1e.csv
+ create mode 100644 ThermalLeafDetection-New/output_9a70f4fd-b5c9-11ec-b32b-6c02e07c9d1e.csv
+ create mode 100644 plant-growth/src/__pycache__/actual_hydro.cpython-38.pyc
++ gcloud auth print-access-token
++ docker login -u oauth2accesstoken --password-stdin https://gcr.io
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+Login Succeeded
++ cd ThermalLeafDetection-New
++ echo 'Docker Build gcr.io/hydrotek-286213/thermaldetectionnew:v1 '
+Docker Build gcr.io/hydrotek-286213/thermaldetectionnew:v1 
++ docker build -t gcr.io/hydrotek-286213/thermaldetectionnew:v1 .
+#2 [internal] load .dockerignore
+#2 sha256:b0dc4ef3ee98da46298646faeef5038ce58ca9dc5ed581835dad912a40d70872
+#2 transferring context: 2B done
+#2 DONE 0.0s
+
+#1 [internal] load build definition from Dockerfile
+#1 sha256:27d54da881329ae0d14a7f6ff9c07ba1179b25d52c7b57658e5a99d6f4dd56af
+#1 transferring dockerfile: 381B 0.0s done
+#1 DONE 0.1s
+
+#3 [internal] load metadata for docker.io/library/python:3.7-slim
+#3 sha256:576eff89510cc9dab877be3284ab0265a765bba7f64805aeb347711cab5ba2e4
+#3 DONE 2.6s
+
+#4 [1/8] FROM docker.io/library/python:3.7-slim@sha256:675065b89ddf179449bfbd71fdd9c7a7ea91ec2613382f44e8d1131851931bb6
+#4 sha256:913b6c97e0622c002084f4e27ae67f8088423be6a866d2f346395cfb32dd9d18
+#4 DONE 0.0s
+
+#8 [internal] load build context
+#8 sha256:74c12d8be2b3e15efe68a8e51b4320cf428a507f3e22703a8660dee11b3e935a
+#8 transferring context: 37.76kB 0.6s done
+#8 DONE 0.7s
+
+#5 [2/8] WORKDIR /PlantCV
+#5 sha256:6a5ac5969695ca8d108e327a3f593d9b6ed1406f7b26b39575f27af9f390541c
+#5 CACHED
+
+#6 [3/8] RUN apt-get update
+#6 sha256:0e8f218e3b59958ccae6a41cc6ad0a2caeb56da3249253ef6684205a7d66c998
+#6 CACHED
+
+#7 [4/8] RUN apt-get install ffmpeg libsm6 libxext6  -y
+#7 sha256:0769f6a8d9356529285c5c06affc2ba7f3417cfa3f08e46521f627f5f8be9676
+#7 CACHED
+
+#9 [5/8] COPY boto-hydrotek.txt /root/.boto
+#9 sha256:1de16de4126c08f8807b0b176c27972c665e59055c7d8309da896d437029f1d8
+#9 CACHED
+
+#10 [6/8] COPY hydrotek-serviceAcc.json /root
+#10 sha256:2ab41944e4424f239ad040ffe48a55943f48f0bb7ee9ba278a2293dd2b9e5039
+#10 CACHED
+
+#11 [7/8] COPY . /PlantCV
+#11 sha256:14a3bc6a1675ec17ef54d2f3cc9c74d85bc3191d3a5fcf1602db9e1af7cbe216
+#11 DONE 0.1s
+
+#12 [8/8] RUN pip install -r requirements.txt
+#12 sha256:b3d0a683a9cfa3cdfc1d9d2f77368260b39c7a07d1f7ac60d557836895c59248
+#12 5.220 Collecting pandas
+#12 5.279   Downloading pandas-1.3.5-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.3 MB)
+#12 8.128      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.3/11.3 MB 3.9 MB/s eta 0:00:00
+#12 8.197 Collecting plantcv
+#12 8.209   Downloading plantcv-3.13.4-py3-none-any.whl (230 kB)
+#12 8.272      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 230.7/230.7 KB 3.8 MB/s eta 0:00:00
+#12 8.313 Collecting flask
+#12 8.336   Downloading Flask-2.1.1-py3-none-any.whl (95 kB)
+#12 8.360      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 95.2/95.2 KB 4.1 MB/s eta 0:00:00
+#12 8.391 Collecting flask_restful
+#12 8.406   Downloading Flask_RESTful-0.3.9-py2.py3-none-any.whl (25 kB)
+#12 8.676 Collecting gsutil
+#12 8.698   Downloading gsutil-5.8.tar.gz (2.9 MB)
+#12 9.221      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 MB 5.6 MB/s eta 0:00:00
+#12 10.50   Preparing metadata (setup.py): started
+#12 11.19   Preparing metadata (setup.py): finished with status 'done'
+#12 11.40 Collecting opencv-python
+#12 11.42   Downloading opencv_python-4.5.5.64-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (60.5 MB)
+#12 22.22      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.5/60.5 MB 5.2 MB/s eta 0:00:00
+#12 22.31 Collecting uuid
+#12 22.32   Downloading uuid-1.30.tar.gz (5.8 kB)
+#12 22.34   Preparing metadata (setup.py): started
+#12 22.50   Preparing metadata (setup.py): finished with status 'done'
+#12 22.57 Collecting dnspython
+#12 22.58   Downloading dnspython-2.2.1-py3-none-any.whl (269 kB)
+#12 22.65      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 269.1/269.1 KB 4.0 MB/s eta 0:00:00
+#12 23.15 Collecting pymongo[srv]
+#12 23.16   Downloading pymongo-4.1.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (462 kB)
+#12 23.25      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 462.8/462.8 KB 5.2 MB/s eta 0:00:00
+#12 23.30 Collecting python-dateutil>=2.7.3
+#12 23.32   Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
+#12 23.36      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 247.7/247.7 KB 5.5 MB/s eta 0:00:00
+#12 23.46 Collecting pytz>=2017.3
+#12 23.48   Downloading pytz-2022.1-py2.py3-none-any.whl (503 kB)
+#12 23.57      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 503.5/503.5 KB 5.7 MB/s eta 0:00:00
+#12 23.91 Collecting numpy>=1.17.3
+#12 23.92   Downloading numpy-1.21.5-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.7 MB)
+#12 26.63      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.7/15.7 MB 5.7 MB/s eta 0:00:00
+#12 26.85 Collecting scikit-learn
+#12 26.86   Downloading scikit_learn-1.0.2-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (24.8 MB)
+#12 31.05      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 24.8/24.8 MB 5.8 MB/s eta 0:00:00
+#12 31.31 Collecting scipy
+#12 31.32   Downloading scipy-1.7.3-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (38.1 MB)
+#12 42.84      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 38.1/38.1 MB 1.5 MB/s eta 0:00:00
+#12 42.96 Collecting statsmodels
+#12 42.98   Downloading statsmodels-0.13.2-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (9.8 MB)
+#12 44.75      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.8/9.8 MB 5.6 MB/s eta 0:00:00
+#12 44.86 Collecting dask
+#12 44.88   Downloading dask-2022.2.0-py3-none-any.whl (1.1 MB)
+#12 45.08      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 5.3 MB/s eta 0:00:00
+#12 45.32 Collecting plotnine
+#12 45.33   Downloading plotnine-0.8.0-py3-none-any.whl (4.7 MB)
+#12 46.17      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 5.5 MB/s eta 0:00:00
+#12 46.28 Collecting scikit-image>=0.13
+#12 46.29   Downloading scikit_image-0.19.2-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (13.5 MB)
+#12 49.15      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.5/13.5 MB 4.6 MB/s eta 0:00:00
+#12 49.38 Collecting matplotlib>=1.5
+#12 49.40   Downloading matplotlib-3.5.1-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (11.2 MB)
+#12 51.60      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.2/11.2 MB 5.0 MB/s eta 0:00:00
+#12 51.65 Collecting dask-jobqueue
+#12 51.67   Downloading dask_jobqueue-0.7.3-py2.py3-none-any.whl (40 kB)
+#12 51.68      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.1/40.1 KB 4.1 MB/s eta 0:00:00
+#12 51.74 Collecting Werkzeug>=2.0
+#12 51.76   Downloading Werkzeug-2.1.1-py3-none-any.whl (224 kB)
+#12 51.80      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 224.7/224.7 KB 5.3 MB/s eta 0:00:00
+#12 51.88 Collecting importlib-metadata>=3.6.0
+#12 51.89   Downloading importlib_metadata-4.11.3-py3-none-any.whl (18 kB)
+#12 51.95 Collecting click>=8.0
+#12 51.97   Downloading click-8.1.2-py3-none-any.whl (96 kB)
+#12 51.99      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.6/96.6 KB 4.7 MB/s eta 0:00:00
+#12 52.03 Collecting itsdangerous>=2.0
+#12 52.04   Downloading itsdangerous-2.1.2-py3-none-any.whl (15 kB)
+#12 52.08 Collecting Jinja2>=3.0
+#12 52.10   Downloading Jinja2-3.1.1-py3-none-any.whl (132 kB)
+#12 52.13      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 132.6/132.6 KB 4.8 MB/s eta 0:00:00
+#12 52.18 Collecting aniso8601>=0.82
+#12 52.20   Downloading aniso8601-9.0.1-py2.py3-none-any.whl (52 kB)
+#12 52.22      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 52.8/52.8 KB 2.5 MB/s eta 0:00:00
+#12 52.27 Collecting six>=1.3.0
+#12 52.29   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+#12 52.37 Collecting argcomplete>=1.9.4
+#12 52.38   Downloading argcomplete-2.0.0-py2.py3-none-any.whl (37 kB)
+#12 52.43 Collecting crcmod>=1.7
+#12 52.44   Downloading crcmod-1.7.tar.gz (89 kB)
+#12 52.46      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 89.7/89.7 KB 5.6 MB/s eta 0:00:00
+#12 52.49   Preparing metadata (setup.py): started
+#12 52.93   Preparing metadata (setup.py): finished with status 'done'
+#12 52.97 Collecting fasteners>=0.14.1
+#12 52.98   Downloading fasteners-0.17.3-py3-none-any.whl (18 kB)
+#12 53.23 Collecting gcs-oauth2-boto-plugin>=3.0
+#12 53.40   Downloading gcs-oauth2-boto-plugin-3.0.tar.gz (20 kB)
+#12 53.43   Preparing metadata (setup.py): started
+#12 53.93   Preparing metadata (setup.py): finished with status 'done'
+#12 53.98 Collecting google-apitools>=0.5.32
+#12 54.00   Downloading google_apitools-0.5.32-py3-none-any.whl (135 kB)
+#12 54.02      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 135.7/135.7 KB 6.1 MB/s eta 0:00:00
+#12 54.09 Collecting httplib2>=0.20.4
+#12 54.12   Downloading httplib2-0.20.4-py3-none-any.whl (96 kB)
+#12 54.14      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.6/96.6 KB 6.2 MB/s eta 0:00:00
+#12 54.16 Collecting google-reauth>=0.1.0
+#12 54.17   Downloading google_reauth-0.1.1-py2.py3-none-any.whl (17 kB)
+#12 54.20 Collecting monotonic>=1.4
+#12 54.21   Downloading monotonic-1.6-py2.py3-none-any.whl (8.2 kB)
+#12 54.28 Collecting pyOpenSSL>=0.13
+#12 54.29   Downloading pyOpenSSL-22.0.0-py2.py3-none-any.whl (55 kB)
+#12 54.31      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 55.8/55.8 KB 2.9 MB/s eta 0:00:00
+#12 54.58 Collecting retry_decorator>=1.0.0
+#12 54.59   Downloading retry_decorator-1.1.1.tar.gz (3.9 kB)
+#12 54.60   Preparing metadata (setup.py): started
+#12 54.83   Preparing metadata (setup.py): finished with status 'done'
+#12 54.93 Collecting google-auth[aiohttp]>=2.5.0
+#12 54.94   Downloading google_auth-2.6.2-py2.py3-none-any.whl (156 kB)
+#12 54.98      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 156.5/156.5 KB 4.5 MB/s eta 0:00:00
+#12 55.11 Collecting rsa==4.7.2
+#12 55.12   Downloading rsa-4.7.2-py3-none-any.whl (34 kB)
+#12 55.19 Collecting boto>=2.29.1
+#12 55.21   Downloading boto-2.49.0-py2.py3-none-any.whl (1.4 MB)
+#12 55.45      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 5.8 MB/s eta 0:00:00
+#12 55.52 Collecting oauth2client>=2.2.0
+#12 55.55   Downloading oauth2client-4.1.3-py2.py3-none-any.whl (98 kB)
+#12 55.58      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.2/98.2 KB 3.7 MB/s eta 0:00:00
+#12 55.64 Collecting pyasn1>=0.1.3
+#12 55.65   Downloading pyasn1-0.4.8-py2.py3-none-any.whl (77 kB)
+#12 55.67      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 77.1/77.1 KB 5.0 MB/s eta 0:00:00
+#12 55.76 Collecting pyasn1-modules>=0.2.1
+#12 55.77   Downloading pyasn1_modules-0.2.8-py2.py3-none-any.whl (155 kB)
+#12 55.80      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 155.3/155.3 KB 5.9 MB/s eta 0:00:00
+#12 55.84 Collecting cachetools<6.0,>=2.0.0
+#12 55.85   Downloading cachetools-5.0.0-py3-none-any.whl (9.1 kB)
+#12 56.25 Collecting aiohttp<4.0.0dev,>=3.6.2
+#12 56.26   Downloading aiohttp-3.8.1-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (1.1 MB)
+#12 56.50      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 4.8 MB/s eta 0:00:00
+#12 56.58 Collecting requests<3.0.0dev,>=2.20.0
+#12 56.59   Downloading requests-2.27.1-py2.py3-none-any.whl (63 kB)
+#12 56.61      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.1/63.1 KB 4.0 MB/s eta 0:00:00
+#12 56.86 Collecting pyu2f
+#12 56.87   Downloading pyu2f-0.1.5.tar.gz (27 kB)
+#12 56.90   Preparing metadata (setup.py): started
+#12 57.37   Preparing metadata (setup.py): finished with status 'done'
+#12 57.48 Collecting pyparsing!=3.0.0,!=3.0.1,!=3.0.2,!=3.0.3,<4,>=2.4.2
+#12 57.49   Downloading pyparsing-3.0.7-py3-none-any.whl (98 kB)
+#12 57.52      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.0/98.0 KB 3.4 MB/s eta 0:00:00
+#12 57.59 Collecting zipp>=0.5
+#12 57.61   Downloading zipp-3.8.0-py3-none-any.whl (5.4 kB)
+#12 57.65 Collecting typing-extensions>=3.6.4
+#12 57.66   Downloading typing_extensions-4.1.1-py3-none-any.whl (26 kB)
+#12 57.76 Collecting MarkupSafe>=2.0
+#12 57.77   Downloading MarkupSafe-2.1.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (25 kB)
+#12 57.89 Collecting fonttools>=4.22.0
+#12 57.91   Downloading fonttools-4.31.2-py3-none-any.whl (899 kB)
+#12 58.07      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 899.5/899.5 KB 5.6 MB/s eta 0:00:00
+#12 58.12 Collecting packaging>=20.0
+#12 58.13   Downloading packaging-21.3-py3-none-any.whl (40 kB)
+#12 58.16      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.8/40.8 KB 1.8 MB/s eta 0:00:00
+#12 58.23 Collecting kiwisolver>=1.0.1
+#12 58.25   Downloading kiwisolver-1.4.2-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.1 MB)
+#12 58.45      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 5.7 MB/s eta 0:00:00
+#12 58.49 Collecting cycler>=0.10
+#12 58.50   Downloading cycler-0.11.0-py3-none-any.whl (6.4 kB)
+#12 58.85 Collecting pillow>=6.2.0
+#12 58.87   Downloading Pillow-9.1.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.3 MB)
+#12 59.70      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 5.2 MB/s eta 0:00:00
+#12 60.07 Collecting cryptography>=35.0
+#12 60.11   Downloading cryptography-36.0.2-cp36-abi3-manylinux_2_24_x86_64.whl (3.6 MB)
+#12 60.86      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.6/3.6 MB 4.8 MB/s eta 0:00:00
+#12 60.99 Collecting PyWavelets>=1.1.1
+#12 61.01   Downloading PyWavelets-1.3.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (6.4 MB)
+#12 62.29      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.4/6.4 MB 5.0 MB/s eta 0:00:00
+#12 62.34 Collecting networkx>=2.2
+#12 62.36   Downloading networkx-2.6.3-py3-none-any.whl (1.9 MB)
+#12 62.74      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 5.0 MB/s eta 0:00:00
+#12 62.81 Collecting imageio>=2.4.1
+#12 62.82   Downloading imageio-2.16.1-py3-none-any.whl (3.3 MB)
+#12 63.60      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 4.3 MB/s eta 0:00:00
+#12 63.67 Collecting tifffile>=2019.7.26
+#12 63.69   Downloading tifffile-2021.11.2-py3-none-any.whl (178 kB)
+#12 63.74      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 178.9/178.9 KB 4.3 MB/s eta 0:00:00
+#12 63.89 Collecting pyyaml>=5.3.1
+#12 63.90   Downloading PyYAML-6.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (596 kB)
+#12 64.02      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 596.3/596.3 KB 5.0 MB/s eta 0:00:00
+#12 64.07 Collecting fsspec>=0.6.0
+#12 64.08   Downloading fsspec-2022.3.0-py3-none-any.whl (136 kB)
+#12 64.12      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 136.1/136.1 KB 4.5 MB/s eta 0:00:00
+#12 64.16 Collecting cloudpickle>=1.1.1
+#12 64.17   Downloading cloudpickle-2.0.0-py3-none-any.whl (25 kB)
+#12 64.21 Collecting toolz>=0.8.2
+#12 64.23   Downloading toolz-0.11.2-py3-none-any.whl (55 kB)
+#12 64.25      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 55.8/55.8 KB 3.3 MB/s eta 0:00:00
+#12 64.28 Collecting partd>=0.3.10
+#12 64.29   Downloading partd-1.2.0-py3-none-any.whl (19 kB)
+#12 64.46 Collecting distributed>=2.19
+#12 64.48   Downloading distributed-2022.2.0-py3-none-any.whl (837 kB)
+#12 64.65      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 837.0/837.0 KB 5.0 MB/s eta 0:00:00
+#12 64.71 Collecting patsy>=0.5.1
+#12 64.72   Downloading patsy-0.5.2-py2.py3-none-any.whl (233 kB)
+#12 64.77      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 233.7/233.7 KB 5.4 MB/s eta 0:00:00
+#12 65.06 Collecting mizani>=0.7.3
+#12 65.07   Downloading mizani-0.7.3-py3-none-any.whl (63 kB)
+#12 65.10      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.1/63.1 KB 3.2 MB/s eta 0:00:00
+#12 65.33 Collecting descartes>=1.1.0
+#12 65.35   Downloading descartes-1.1.0-py3-none-any.whl (5.8 kB)
+#12 65.49 Collecting threadpoolctl>=2.0.0
+#12 65.50   Downloading threadpoolctl-3.1.0-py3-none-any.whl (14 kB)
+#12 65.60 Collecting joblib>=0.11
+#12 65.62   Downloading joblib-1.1.0-py2.py3-none-any.whl (306 kB)
+#12 65.69      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 307.0/307.0 KB 4.6 MB/s eta 0:00:00
+#12 65.80 Collecting charset-normalizer<3.0,>=2.0
+#12 65.81   Downloading charset_normalizer-2.0.12-py3-none-any.whl (39 kB)
+#12 66.24 Collecting multidict<7.0,>=4.5
+#12 66.25   Downloading multidict-6.0.2-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (94 kB)
+#12 66.28      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 94.8/94.8 KB 4.6 MB/s eta 0:00:00
+#12 66.32 Collecting attrs>=17.3.0
+#12 66.33   Downloading attrs-21.4.0-py2.py3-none-any.whl (60 kB)
+#12 66.37      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.6/60.6 KB 1.7 MB/s eta 0:00:00
+#12 66.43 Collecting aiosignal>=1.1.2
+#12 66.45   Downloading aiosignal-1.2.0-py3-none-any.whl (8.2 kB)
+#12 66.67 Collecting yarl<2.0,>=1.0
+#12 66.69   Downloading yarl-1.7.2-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (271 kB)
+#12 66.76      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 271.8/271.8 KB 4.3 MB/s eta 0:00:00
+#12 66.80 Collecting asynctest==0.13.0
+#12 66.81   Downloading asynctest-0.13.0-py3-none-any.whl (26 kB)
+#12 66.93 Collecting frozenlist>=1.1.1
+#12 66.94   Downloading frozenlist-1.3.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (144 kB)
+#12 66.97      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 144.8/144.8 KB 5.3 MB/s eta 0:00:00
+#12 67.00 Collecting async-timeout<5.0,>=4.0.0a3
+#12 67.01   Downloading async_timeout-4.0.2-py3-none-any.whl (5.8 kB)
+#12 67.38 Collecting cffi>=1.12
+#12 67.40   Downloading cffi-1.15.0-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (427 kB)
+#12 67.48      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 427.1/427.1 KB 5.7 MB/s eta 0:00:00
+#12 67.54 Collecting zict>=0.1.3
+#12 67.55   Downloading zict-2.1.0-py3-none-any.whl (11 kB)
+#12 67.56 Requirement already satisfied: setuptools in /usr/local/lib/python3.7/site-packages (from distributed>=2.19->dask-jobqueue->plantcv->-r requirements.txt (line 2)) (57.5.0)
+#12 67.61 Collecting sortedcontainers!=2.0.0,!=2.0.1
+#12 67.62   Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl (29 kB)
+#12 67.69 Collecting tornado>=5
+#12 67.72   Downloading tornado-6.1-cp37-cp37m-manylinux2010_x86_64.whl (428 kB)
+#12 67.80      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 428.5/428.5 KB 5.0 MB/s eta 0:00:00
+#12 68.04 Collecting psutil>=5.0
+#12 68.06   Downloading psutil-5.9.0-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (280 kB)
+#12 68.13      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 280.7/280.7 KB 4.0 MB/s eta 0:00:00
+#12 68.17 Collecting tblib>=1.6.0
+#12 68.19   Downloading tblib-1.7.0-py2.py3-none-any.whl (12 kB)
+#12 68.27 Collecting msgpack>=0.6.0
+#12 68.28   Downloading msgpack-1.0.3-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (299 kB)
+#12 68.34      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 299.4/299.4 KB 4.7 MB/s eta 0:00:00
+#12 68.59 Collecting palettable
+#12 68.61   Downloading palettable-3.3.0-py2.py3-none-any.whl (111 kB)
+#12 68.64      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 111.8/111.8 KB 3.7 MB/s eta 0:00:00
+#12 68.76 Collecting locket
+#12 68.77   Downloading locket-0.2.1-py2.py3-none-any.whl (4.1 kB)
+#12 68.98 Collecting urllib3<1.27,>=1.21.1
+#12 69.00   Downloading urllib3-1.26.9-py2.py3-none-any.whl (138 kB)
+#12 69.03      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 139.0/139.0 KB 3.8 MB/s eta 0:00:00
+#12 69.09 Collecting certifi>=2017.4.17
+#12 69.12   Downloading certifi-2021.10.8-py2.py3-none-any.whl (149 kB)
+#12 69.15      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 149.2/149.2 KB 4.5 MB/s eta 0:00:00
+#12 69.18 Collecting idna<4,>=2.5
+#12 69.21   Downloading idna-3.3-py3-none-any.whl (61 kB)
+#12 69.23      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.2/61.2 KB 2.9 MB/s eta 0:00:00
+#12 69.49 Collecting pycparser
+#12 69.50   Downloading pycparser-2.21-py2.py3-none-any.whl (118 kB)
+#12 69.53      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 118.7/118.7 KB 4.4 MB/s eta 0:00:00
+#12 69.78 Collecting heapdict
+#12 69.79   Downloading HeapDict-1.0.1-py3-none-any.whl (3.9 kB)
+#12 69.90 Building wheels for collected packages: gsutil, uuid, crcmod, gcs-oauth2-boto-plugin, retry_decorator, pyu2f
+#12 69.90   Building wheel for gsutil (setup.py): started
+#12 72.74   Building wheel for gsutil (setup.py): finished with status 'done'
+#12 72.75   Created wheel for gsutil: filename=gsutil-5.8-py3-none-any.whl size=3742629 sha256=187e9550b156d24f9aca3873eabe18fbdca9133ce80f1d61b54d90bcfd45f300
+#12 72.75   Stored in directory: /root/.cache/pip/wheels/7b/6a/11/148f5c318da3bc44d0b2be91b35e6b94ac8dbd62feb8b99413
+#12 72.76   Building wheel for uuid (setup.py): started
+#12 73.00   Building wheel for uuid (setup.py): finished with status 'done'
+#12 73.00   Created wheel for uuid: filename=uuid-1.30-py3-none-any.whl size=6503 sha256=dca33388056cdebd3a420975d3cffa6b552ab913142d9ce5f3e115003809d5e8
+#12 73.00   Stored in directory: /root/.cache/pip/wheels/2a/ea/87/dd57f1ecb4f0752f3e1dbf958ebf8b36d920d190425bcdc24d
+#12 73.01   Building wheel for crcmod (setup.py): started
+#12 73.25   Building wheel for crcmod (setup.py): finished with status 'done'
+#12 73.25   Created wheel for crcmod: filename=crcmod-1.7-py3-none-any.whl size=18850 sha256=7f42bb31723d3b2ce44b45b052c6cf3d88cef3d232af01292b7d74e59b39cacf
+#12 73.25   Stored in directory: /root/.cache/pip/wheels/dc/9a/e9/49e627353476cec8484343c4ab656f1e0d783ee77b9dde2d1f
+#12 73.26   Building wheel for gcs-oauth2-boto-plugin (setup.py): started
+#12 73.50   Building wheel for gcs-oauth2-boto-plugin (setup.py): finished with status 'done'
+#12 73.50   Created wheel for gcs-oauth2-boto-plugin: filename=gcs_oauth2_boto_plugin-3.0-py3-none-any.whl size=23221 sha256=3c83cb0069ce87b4c9cc26dcc27473d39adb89730a9a0181b35b77b8657afa19
+#12 73.50   Stored in directory: /root/.cache/pip/wheels/2a/93/86/cb2140365b10150dbdba338da385c7c18c7cbd9e592e3421db
+#12 73.51   Building wheel for retry_decorator (setup.py): started
+#12 73.72   Building wheel for retry_decorator (setup.py): finished with status 'done'
+#12 73.72   Created wheel for retry_decorator: filename=retry_decorator-1.1.1-py2.py3-none-any.whl size=3658 sha256=04f2deebb96110b764fd74a79fd706f1b5dfa6794f69e63732ba34f9f52445a9
+#12 73.72   Stored in directory: /root/.cache/pip/wheels/91/39/dc/7359c639e34d9c388a1b3e1dc444363905194afc70f57eb9a5
+#12 73.73   Building wheel for pyu2f (setup.py): started
+#12 73.96   Building wheel for pyu2f (setup.py): finished with status 'done'
+#12 73.96   Created wheel for pyu2f: filename=pyu2f-0.1.5-py3-none-any.whl size=39404 sha256=1d97af028927db4531cbbb670cb2cef45f6e1b5e68bbf64ea52e9e6f341773fc
+#12 73.96   Stored in directory: /root/.cache/pip/wheels/b3/84/c6/ee8093bf96e2224aca3a9bfa074aa3c86c39208f91055fd60f
+#12 73.96 Successfully built gsutil uuid crcmod gcs-oauth2-boto-plugin retry_decorator pyu2f
+#12 74.55 Installing collected packages: uuid, sortedcontainers, retry_decorator, pytz, pyasn1, palettable, msgpack, monotonic, heapdict, crcmod, certifi, boto, aniso8601, zipp, zict, Werkzeug, urllib3, typing-extensions, tornado, toolz, threadpoolctl, tblib, six, rsa, pyyaml, pyparsing, pymongo, pycparser, pyasn1-modules, psutil, pillow, numpy, networkx, multidict, MarkupSafe, locket, joblib, itsdangerous, idna, fsspec, frozenlist, fonttools, fasteners, dnspython, cycler, cloudpickle, charset-normalizer, cachetools, attrs, asynctest, yarl, tifffile, scipy, requests, PyWavelets, pyu2f, python-dateutil, patsy, partd, packaging, opencv-python, kiwisolver, Jinja2, importlib-metadata, imageio, httplib2, google-auth, cffi, async-timeout, aiosignal, scikit-learn, scikit-image, pandas, oauth2client, matplotlib, google-reauth, dask, cryptography, click, argcomplete, aiohttp, statsmodels, pyOpenSSL, mizani, google-apitools, flask, distributed, descartes, plotnine, gcs-oauth2-boto-plugin, flask_restful, dask-jobqueue, plantcv, gsutil
+#12 122.8 Successfully installed Jinja2-3.1.1 MarkupSafe-2.1.1 PyWavelets-1.3.0 Werkzeug-2.1.1 aiohttp-3.8.1 aiosignal-1.2.0 aniso8601-9.0.1 argcomplete-2.0.0 async-timeout-4.0.2 asynctest-0.13.0 attrs-21.4.0 boto-2.49.0 cachetools-5.0.0 certifi-2021.10.8 cffi-1.15.0 charset-normalizer-2.0.12 click-8.1.2 cloudpickle-2.0.0 crcmod-1.7 cryptography-36.0.2 cycler-0.11.0 dask-2022.2.0 dask-jobqueue-0.7.3 descartes-1.1.0 distributed-2022.2.0 dnspython-2.2.1 fasteners-0.17.3 flask-2.1.1 flask_restful-0.3.9 fonttools-4.31.2 frozenlist-1.3.0 fsspec-2022.3.0 gcs-oauth2-boto-plugin-3.0 google-apitools-0.5.32 google-auth-2.6.2 google-reauth-0.1.1 gsutil-5.8 heapdict-1.0.1 httplib2-0.20.4 idna-3.3 imageio-2.16.1 importlib-metadata-4.11.3 itsdangerous-2.1.2 joblib-1.1.0 kiwisolver-1.4.2 locket-0.2.1 matplotlib-3.5.1 mizani-0.7.3 monotonic-1.6 msgpack-1.0.3 multidict-6.0.2 networkx-2.6.3 numpy-1.21.5 oauth2client-4.1.3 opencv-python-4.5.5.64 packaging-21.3 palettable-3.3.0 pandas-1.3.5 partd-1.2.0 patsy-0.5.2 pillow-9.1.0 plantcv-3.13.4 plotnine-0.8.0 psutil-5.9.0 pyOpenSSL-22.0.0 pyasn1-0.4.8 pyasn1-modules-0.2.8 pycparser-2.21 pymongo-4.1.0 pyparsing-3.0.7 python-dateutil-2.8.2 pytz-2022.1 pyu2f-0.1.5 pyyaml-6.0 requests-2.27.1 retry_decorator-1.1.1 rsa-4.7.2 scikit-image-0.19.2 scikit-learn-1.0.2 scipy-1.7.3 six-1.16.0 sortedcontainers-2.4.0 statsmodels-0.13.2 tblib-1.7.0 threadpoolctl-3.1.0 tifffile-2021.11.2 toolz-0.11.2 tornado-6.1 typing-extensions-4.1.1 urllib3-1.26.9 uuid-1.30 yarl-1.7.2 zict-2.1.0 zipp-3.8.0
+#12 122.8 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#12 DONE 124.5s
+
+#13 exporting to image
+#13 sha256:e8c613e07b0b7ff33893b694f7759a10d42e180f2b4dc349fb57dc6b71dcab00
+#13 exporting layers
+#13 exporting layers 6.3s done
+#13 writing image sha256:c7469c7feb6416b1215cfa792ee65b21c2004a2bac757e29abd44b66cf6c60e2 done
+#13 naming to gcr.io/hydrotek-286213/thermaldetectionnew:v1 done
+#13 DONE 6.3s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
++ echo 'Docker Push gcr.io/hydrotek-286213/thermaldetectionnew:v1'
+Docker Push gcr.io/hydrotek-286213/thermaldetectionnew:v1
++ docker push gcr.io/hydrotek-286213/thermaldetectionnew:v1
+The push refers to repository [gcr.io/hydrotek-286213/thermaldetectionnew]
+88cca6bac795: Preparing
+5b5dcdda8fac: Preparing
+2916b40f9795: Preparing
+40c513f58ddf: Preparing
+84a33c15c6ed: Preparing
+3c139111680d: Preparing
+eaad3a5e3192: Preparing
+895649e1b108: Preparing
+8a3623ec7487: Preparing
+aece107b718b: Preparing
+8a3623ec7487: Waiting
+895649e1b108: Waiting
+eaad3a5e3192: Waiting
+43140e0754dc: Preparing
+608f3a074261: Preparing
+aece107b718b: Waiting
+43140e0754dc: Waiting
+608f3a074261: Waiting
+2916b40f9795: Layer already exists
+84a33c15c6ed: Layer already exists
+40c513f58ddf: Layer already exists
+3c139111680d: Layer already exists
+895649e1b108: Layer already exists
+eaad3a5e3192: Layer already exists
+8a3623ec7487: Layer already exists
+aece107b718b: Layer already exists
+43140e0754dc: Layer already exists
+608f3a074261: Layer already exists
+5b5dcdda8fac: Pushed
+88cca6bac795: Pushed
+v1: digest: sha256:58b04840364d1ddbbe2b3b0cff3f6527f2bf4d73901c67f5518dbc779ceae097 size: 2839
++ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ for i in "${arr[@]}"
++ temp=plant-growth
++ temp=plant-growth
++ echo plant-growth
+plant-growth
++ i=plant-growth
++ case "$i" in
++ SELECTED_APP_CI=plant-growth/src
++ CI_DIR=plant-growth
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=plant-growth
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ genericCI plant-growth/src plant-growth hydro-ai-usecases plant-growth ./hydrotek/cicdbuild/ gcr.io/hydrotek-286213 release
++ SELECTED_APP_CI=plant-growth/src
++ CI_DIR=plant-growth
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=plant-growth
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=v1
++ echo 'GENERIC CI'
+GENERIC CI
++ echo 'Beginning Integration of plant-growth/src'
+Beginning Integration of plant-growth/src
++ mkdir -p ./hydrotek/cicdbuild/
++ cd ./hydrotek/cicdbuild/
++ '[' -d hydro-ai-usecases ']'
++ cd hydro-ai-usecases
++ git pull
+Already up to date.
++ gcloud auth print-access-token
++ docker login -u oauth2accesstoken --password-stdin https://gcr.io
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+Login Succeeded
++ cd plant-growth/src
++ echo 'Docker Build gcr.io/hydrotek-286213/plant-growth:v1 '
+Docker Build gcr.io/hydrotek-286213/plant-growth:v1 
++ docker build -t gcr.io/hydrotek-286213/plant-growth:v1 .
+#1 [internal] load build definition from Dockerfile
+#1 sha256:0e5d2dfc9e9283c96c5f8a40b191e26392ff7c271ce50d4012f711740bfaa42f
+#1 transferring dockerfile: 727B done
+#1 DONE 0.0s
+
+#2 [internal] load .dockerignore
+#2 sha256:d72186fc6cfe512c234bb6d8c2de325ecc3a1768abe1a42b0ef087a84e2b2e80
+#2 transferring context: 2B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.7-slim
+#3 sha256:576eff89510cc9dab877be3284ab0265a765bba7f64805aeb347711cab5ba2e4
+#3 DONE 1.0s
+
+#4 [ 1/20] FROM docker.io/library/python:3.7-slim@sha256:675065b89ddf179449bfbd71fdd9c7a7ea91ec2613382f44e8d1131851931bb6
+#4 sha256:913b6c97e0622c002084f4e27ae67f8088423be6a866d2f346395cfb32dd9d18
+#4 DONE 0.0s
+
+#21 [internal] load build context
+#21 sha256:42ebbe27374a92ba2bef0d385437e2f9c4dd54dfbcae1758a1146705a0bdcd0d
+#21 transferring context: 489.85kB 0.0s done
+#21 DONE 0.0s
+
+#16 [13/20] RUN pip install flask
+#16 sha256:9ee25c727864bfc98ac5d1a623c88340f35a2852f5e79eb2835b11407c66214f
+#16 CACHED
+
+#6 [ 3/20] RUN apt-get update
+#6 sha256:50d3897da959f030e168b6b8cea49e902f1233623b4e7d35fc13d0b367820218
+#6 CACHED
+
+#10 [ 7/20] RUN pip install uuid
+#10 sha256:38a52f054ab49fc8549d52003a9dfcab5c509ac608bee3ff0f8566e8ee78f501
+#10 CACHED
+
+#14 [11/20] RUN pip install plantcv
+#14 sha256:8a6d167c4e99c7772400fc5f1d15d4472dc86829bc5b2a59f7059ad5d147a5e1
+#14 CACHED
+
+#11 [ 8/20] RUN pip install numpy
+#11 sha256:3e61b46c9b8bf0dbdf7ddcd5a74ab59568861c4eb0740e6a56d24e4bcdcddae9
+#11 CACHED
+
+#22 [18/20] COPY boto-hydrotek.txt /root/.boto
+#22 sha256:84a0b8689e6fe15e8ef62cd798c95a7c3388a7cc1b482762f3d36c8ee0d8b58a
+#22 CACHED
+
+#9 [ 6/20] RUN pip install datetime
+#9 sha256:adb488b109aca85360d2a24294bbfa983174c748f0e59a3c5143985546f1fdec
+#9 CACHED
+
+#18 [15/20] RUN pip install gsutil
+#18 sha256:7a098a203907143a7c9bb2b98dd20ee8ca6de197be621b79c1369e893a00684c
+#18 CACHED
+
+#19 [16/20] RUN pip install 'pymongo[srv]'
+#19 sha256:023f6f81018b9d005343774c440722e86d90043994360e5b3a7000bf76733034
+#19 CACHED
+
+#20 [17/20] RUN pip install dnspython
+#20 sha256:0fc9655f6e8365b1fc33f1d91d31d354cf377b64e6d8655cacde94752f9896e3
+#20 CACHED
+
+#12 [ 9/20] RUN pip install scipy
+#12 sha256:6fc1f5cb56d05a956d8746a5150532c831069d0e776ec90c7bce3cc8b955b834
+#12 CACHED
+
+#8 [ 5/20] RUN apt install -y libgl1-mesa-glx
+#8 sha256:63fbac14e8a9973e401208ea03cf32cfc62de1c477d050f717fa54665c1d09fa
+#8 CACHED
+
+#15 [12/20] RUN pip install imutils
+#15 sha256:b0ae24e124e2b6a27acf17a2d6472ae20ede7884a029a289586363680c073f6a
+#15 CACHED
+
+#5 [ 2/20] WORKDIR /Plant_Growth
+#5 sha256:8d80c2707130e6facb10bb6dc743c64f13782b14df952f29c2cf7a07d7af98d4
+#5 CACHED
+
+#13 [10/20] RUN pip install opencv-python
+#13 sha256:73d79aa7d4c5e4b7ccfcadeb3c1634df9bb036d4ba76a654453e2d377bde09c5
+#13 CACHED
+
+#17 [14/20] RUN pip install flask_restful
+#17 sha256:bf5113ef00683d62d15876d69d37c3d2ec12aba063caa48e614922a7df88d3c3
+#17 CACHED
+
+#7 [ 4/20] RUN apt-get install -y libglib2.0-0
+#7 sha256:c37cd19661e4aaf747cac5c8e847553aecfa7602788d1dfa7074fc826f9eccd9
+#7 CACHED
+
+#23 [19/20] COPY hydrotek-serviceAcc.json /root
+#23 sha256:6f57fde8cc1bc6847de697146251f38beaa05db7ee064264541f5f2863c1a27d
+#23 CACHED
+
+#24 [20/20] COPY . /Plant_Growth
+#24 sha256:db1adc946104d0f9d3e7ed5d8650d56a4689bc6860085eb32b0e4836c1950b78
+#24 DONE 0.1s
+
+#25 exporting to image
+#25 sha256:e8c613e07b0b7ff33893b694f7759a10d42e180f2b4dc349fb57dc6b71dcab00
+#25 exporting layers 0.0s done
+#25 writing image sha256:c225755c6eae2a82188458cbd7b96e71394acf9551c23bbeda254d7dd3ba35d9 done
+#25 naming to gcr.io/hydrotek-286213/plant-growth:v1 done
+#25 DONE 0.1s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
++ echo 'Docker Push gcr.io/hydrotek-286213/plant-growth:v1'
+Docker Push gcr.io/hydrotek-286213/plant-growth:v1
++ docker push gcr.io/hydrotek-286213/plant-growth:v1
+The push refers to repository [gcr.io/hydrotek-286213/plant-growth]
+b6be46592e55: Preparing
+f95e1aaeaa47: Preparing
+18c8969269fc: Preparing
+12a6e434828f: Preparing
+bb1d700f89fd: Preparing
+9c6b12eec8af: Preparing
+b40e18115023: Preparing
+b10c5c2796d5: Preparing
+354f3c67698e: Preparing
+8be0fd11a28e: Preparing
+c42d8b04ad3b: Preparing
+8af66876d2da: Preparing
+c19fad9173d7: Preparing
+5ff483bb8d7a: Preparing
+be6b16602474: Preparing
+7627e1938f4c: Preparing
+22a9bf48febf: Preparing
+9c6b12eec8af: Waiting
+b40e18115023: Waiting
+b10c5c2796d5: Waiting
+354f3c67698e: Waiting
+8be0fd11a28e: Waiting
+8af66876d2da: Waiting
+c42d8b04ad3b: Waiting
+c19fad9173d7: Waiting
+be6b16602474: Waiting
+7627e1938f4c: Waiting
+5ff483bb8d7a: Waiting
+c96c18da1ca1: Preparing
+22a9bf48febf: Waiting
+27faa7f17302: Preparing
+895649e1b108: Preparing
+8a3623ec7487: Preparing
+27faa7f17302: Waiting
+895649e1b108: Waiting
+8a3623ec7487: Waiting
+aece107b718b: Preparing
+43140e0754dc: Preparing
+608f3a074261: Preparing
+aece107b718b: Waiting
+43140e0754dc: Waiting
+608f3a074261: Waiting
+18c8969269fc: Layer already exists
+f95e1aaeaa47: Layer already exists
+bb1d700f89fd: Layer already exists
+12a6e434828f: Layer already exists
+9c6b12eec8af: Layer already exists
+b10c5c2796d5: Layer already exists
+b40e18115023: Layer already exists
+354f3c67698e: Layer already exists
+c42d8b04ad3b: Layer already exists
+8be0fd11a28e: Layer already exists
+c19fad9173d7: Layer already exists
+8af66876d2da: Layer already exists
+5ff483bb8d7a: Layer already exists
+7627e1938f4c: Layer already exists
+be6b16602474: Layer already exists
+22a9bf48febf: Layer already exists
+c96c18da1ca1: Layer already exists
+27faa7f17302: Layer already exists
+895649e1b108: Layer already exists
+8a3623ec7487: Layer already exists
+aece107b718b: Layer already exists
+43140e0754dc: Layer already exists
+608f3a074261: Layer already exists
+b6be46592e55: Pushed
+v1: digest: sha256:271fd0a1eefdd70c042c0f4e2a46024ad65eb65b0deb3f6e3996223d7fc67549 size: 5370
++ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ '[' -z ThermalLeafDetection-New,plant-growth ']'
++ mainCD
++ echo 'MAIN CD'
+MAIN CD
++ a=(${SELECTED_APP_CD_ARRAY[0]})
++ echo ThermalLeafDetection-New,plant-growth
+ThermalLeafDetection-New,plant-growth
++ '[' ThermalLeafDetection-New,plant-growth == All ']'
++ IFS=', '
++ read -r -a arr
++ for i in "${arr[@]}"
++ temp=ThermalLeafDetection-New
++ temp=ThermalLeafDetection-New
++ echo ThermalLeafDetection-New
+ThermalLeafDetection-New
++ i=ThermalLeafDetection-New
++ case "$i" in
++ echo ThermalLeafDetection-New
+ThermalLeafDetection-New
++ SELECTED_APP_CI=ThermalLeafDetection-New
++ DEPLOYMENT=thermaldetectionnew
++ NAMESPACE=dev
++ CONTAINERNAME=thermaldetectionnew
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ PORTNUM=6005
++ genericCD ThermalLeafDetection-New thermaldetectionnew dev thermaldetectionnew gcr.io/hydrotek-286213 release 6005
++ SELECTED_APP_CD=ThermalLeafDetection-New
++ DEPLOYMENT=thermaldetectionnew
++ NAMESPACE=dev
++ CONTAINERNAME=thermaldetectionnew
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=v1
++ PORTNUM=6005
++ echo 'GENERIC CD'
+GENERIC CD
++ echo 'Begining Deployment of ThermalLeafDetection-New'
+Begining Deployment of ThermalLeafDetection-New
++ kubectl get deployments thermaldetectionnew --namespace dev
++ grep -q thermaldetectionnew
++ echo 'Updating the deployment with latest version'
+Updating the deployment with latest version
++ SELECTED_IMAGE=gcr.io/hydrotek-286213/thermaldetectionnew:v1
++ echo 'Selected Image gcr.io/hydrotek-286213/thermaldetectionnew:v1'
+Selected Image gcr.io/hydrotek-286213/thermaldetectionnew:v1
++ echo 'kubectl set image deployment/thermaldetectionnew thermaldetectionnew=gcr.io/hydrotek-286213/thermaldetectionnew:v1 --namespace dev'
+kubectl set image deployment/thermaldetectionnew thermaldetectionnew=gcr.io/hydrotek-286213/thermaldetectionnew:v1 --namespace dev
++ kubectl set image deployment/thermaldetectionnew thermaldetectionnew=gcr.io/hydrotek-286213/thermaldetectionnew:v1 --namespace dev
++ echo 'kubectl rollout restart deployment thermaldetectionnew --namespace dev'
+kubectl rollout restart deployment thermaldetectionnew --namespace dev
++ kubectl rollout restart deployment thermaldetectionnew --namespace dev
+deployment.apps/thermaldetectionnew restarted
++ echo 'Updated Deployment'
+Updated Deployment
++ echo 'kubectl set env -n dev --from=secret/mongocredentialsdevcloud deployment/thermaldetectionnew'
+kubectl set env -n dev --from=secret/mongocredentialsdevcloud deployment/thermaldetectionnew
++ kubectl set env -n dev --from=secret/mongocredentialsdevcloud deployment/thermaldetectionnew
++ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ for i in "${arr[@]}"
++ temp=plant-growth
++ temp=plant-growth
++ echo plant-growth
+plant-growth
++ i=plant-growth
++ case "$i" in
++ echo plant-growth
+plant-growth
++ SELECTED_APP_CI=plant-growth/src
++ DEPLOYMENT=plant-growth
++ NAMESPACE=dev
++ CONTAINERNAME=plant-growth
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ PORTNUM=6003
++ genericCD plant-growth/src plant-growth dev plant-growth gcr.io/hydrotek-286213 release 6003
++ SELECTED_APP_CD=plant-growth/src
++ DEPLOYMENT=plant-growth
++ NAMESPACE=dev
++ CONTAINERNAME=plant-growth
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=v1
++ PORTNUM=6003
++ echo 'GENERIC CD'
+GENERIC CD
++ echo 'Begining Deployment of plant-growth/src'
+Begining Deployment of plant-growth/src
++ kubectl get deployments plant-growth --namespace dev
++ grep -q plant-growth
++ echo 'Updating the deployment with latest version'
+Updating the deployment with latest version
++ SELECTED_IMAGE=gcr.io/hydrotek-286213/plant-growth:v1
++ echo 'Selected Image gcr.io/hydrotek-286213/plant-growth:v1'
+Selected Image gcr.io/hydrotek-286213/plant-growth:v1
++ echo 'kubectl set image deployment/plant-growth plant-growth=gcr.io/hydrotek-286213/plant-growth:v1 --namespace dev'
+kubectl set image deployment/plant-growth plant-growth=gcr.io/hydrotek-286213/plant-growth:v1 --namespace dev
++ kubectl set image deployment/plant-growth plant-growth=gcr.io/hydrotek-286213/plant-growth:v1 --namespace dev
++ echo 'kubectl rollout restart deployment plant-growth --namespace dev'
+kubectl rollout restart deployment plant-growth --namespace dev
++ kubectl rollout restart deployment plant-growth --namespace dev
+deployment.apps/plant-growth restarted
++ echo 'Updated Deployment'
+Updated Deployment
++ echo 'kubectl set env -n dev --from=secret/mongocredentialsdevcloud deployment/plant-growth'
+kubectl set env -n dev --from=secret/mongocredentialsdevcloud deployment/plant-growth
++ kubectl set env -n dev --from=secret/mongocredentialsdevcloud deployment/plant-growth
++ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
+Finished: SUCCESS

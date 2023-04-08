@@ -1,0 +1,360 @@
+Started by user [8mha:////4CA5kL0r8XoTT3PdnVI1PoGEnxCwKlCoPhe73Uyy/FdkAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgZu/dLi1CL9xLzSrEQAtdxjnMAAAAA=[0manuja somthankar
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\Hydrotek-CICD-Pipeline
+[Hydrotek-CICD-Pipeline] $ "C:\Program Files\Git\bin\sh.exe" -xe C:\Users\anuja\AppData\Local\Temp\jenkins4102771771318662217.sh
++ echo 'Hydrotek CICD'
+Hydrotek CICD
++ echo 'CI selected ControllerApp'
+CI selected ControllerApp
++ echo 'CD selected ControllerApp'
+CD selected ControllerApp
++ echo 'Tag selected v1'
+Tag selected v1
++ BRANCH=pestclassification-tcet
++ IMAGE_TAG=v1
++ SELECTED_APP_CI_ARRAY=ControllerApp
++ SELECTED_APP_CD_ARRAY=ControllerApp
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ NAMESPACE=dev
++ NETWORKTYPE=LoadBalancer
++ PORTNUM=5000
++ DIR=/c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ echo 'CI/CD Pipeline Started'
+CI/CD Pipeline Started
++ '[' -z devcloud ']'
++ setenv
++ echo devcloud
+devcloud
++ [[ devcloud == \d\e\v ]]
++ [[ devcloud == \d\e\v\c\l\o\u\d ]]
++ echo 'dev cloud'
+dev cloud
++ gcloud container clusters get-credentials autopilot-cluster-1 --region us-central1 --project hydrotek-286213
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+Fetching cluster endpoint and auth data.
+kubeconfig entry generated for autopilot-cluster-1.
++ echo 'Cluster Name: kt-ai-autopilot-cluster1'
+Cluster Name: kt-ai-autopilot-cluster1
++ NETWORKTYPE=LoadBalancer
++ '[' -z ControllerApp ']'
++ mainCI
++ echo 'MAIN CI'
+MAIN CI
++ a=(${SELECTED_APP_CI_ARRAY[0]})
++ echo ControllerApp
+ControllerApp
++ '[' ControllerApp == All ']'
++ IFS=', '
++ read -r -a arr
++ for i in "${arr[@]}"
++ temp=ControllerApp
++ temp=ControllerApp
++ echo ControllerApp
+ControllerApp
++ i=ControllerApp
++ case "$i" in
++ SELECTED_APP_CI=ControllerApp
++ CI_DIR=ControllerApp
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=controller
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ genericCI ControllerApp ControllerApp hydro-ai-usecases controller ./hydrotek/cicdbuild/ gcr.io/hydrotek-286213 release
++ SELECTED_APP_CI=ControllerApp
++ CI_DIR=ControllerApp
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=controller
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=v1
++ echo 'GENERIC CI'
+GENERIC CI
++ echo 'Beginning Integration of ControllerApp'
+Beginning Integration of ControllerApp
++ mkdir -p ./hydrotek/cicdbuild/
++ cd ./hydrotek/cicdbuild/
++ '[' -d hydro-ai-usecases ']'
++ cd hydro-ai-usecases
++ git pull
+From gitlab.com:hydrotek-ai-grp/hydro-ai-usecases
+   38318c3..f584dd3  pestclassification-tcet -> origin/pestclassification-tcet
+Updating 38318c3..f584dd3
+Fast-forward
+ .../training-automation/training-automation/yolov5/yolov5/train_api.py  | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
++ gcloud auth print-access-token
++ docker login -u oauth2accesstoken --password-stdin https://gcr.io
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+Login Succeeded
++ cd ControllerApp
++ echo 'Docker Build gcr.io/hydrotek-286213/controller:v1 '
+Docker Build gcr.io/hydrotek-286213/controller:v1 
++ docker build -t gcr.io/hydrotek-286213/controller:v1 .
+#1 [internal] load build definition from Dockerfile
+#1 sha256:092fac6e73eaecb903b6726e7ea85387963d22cbcf34bad94af7ee28fb14811a
+#1 transferring dockerfile: 417B 0.0s done
+#1 DONE 0.1s
+
+#2 [internal] load .dockerignore
+#2 sha256:85963f5362d54eca6427d7e83b78dc7b46825fd46d52a54cff44294b605a250b
+#2 transferring context: 2B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/node:16
+#3 sha256:fcebe6595ccabc9db4d2477733f2265fb18ca302607dd9a9e445f4ebdfd1189a
+#3 DONE 3.2s
+
+#7 [1/3] FROM docker.io/library/node:16@sha256:ffe804d6fcced29bcfc3477de079d03a9c2b0e4917e44bfeafb1a6b0f875e383
+#7 sha256:bc31ad4563208bbf10475628f9d494c225b44a4f8f94780595a5cf41ee2eb2a0
+#7 resolve docker.io/library/node:16@sha256:ffe804d6fcced29bcfc3477de079d03a9c2b0e4917e44bfeafb1a6b0f875e383 0.0s done
+#7 sha256:ffe804d6fcced29bcfc3477de079d03a9c2b0e4917e44bfeafb1a6b0f875e383 1.21kB / 1.21kB done
+#7 sha256:481d28c3890e832ec54b73ec5ea74d91b91af111ec06ae3a3bcb5a81e91892f0 2.21kB / 2.21kB done
+#7 sha256:424bc28f998d512fbb17ec0a55140383b43948861f3aed94ac26b94aee85ae2c 7.65kB / 7.65kB done
+#7 sha256:b281ebec60d2630a225601bd58a4681375a31b7316263b64d3b149f49694c3fe 0B / 50.44MB 0.2s
+#7 sha256:74dae484504b039004d1f23b1777be24e9e8d0f126ee1f38b97544d6343fb9fa 0B / 7.86MB 0.2s
+#7 sha256:21739e3ef21a7c9983fdfc82d5a3837c633779965fb0b2cd7b746ec9c260664b 0B / 10.00MB 0.2s
+#7 sha256:21739e3ef21a7c9983fdfc82d5a3837c633779965fb0b2cd7b746ec9c260664b 1.05MB / 10.00MB 1.0s
+#7 sha256:b281ebec60d2630a225601bd58a4681375a31b7316263b64d3b149f49694c3fe 3.15MB / 50.44MB 1.4s
+#7 sha256:74dae484504b039004d1f23b1777be24e9e8d0f126ee1f38b97544d6343fb9fa 1.05MB / 7.86MB 1.5s
+#7 sha256:21739e3ef21a7c9983fdfc82d5a3837c633779965fb0b2cd7b746ec9c260664b 2.10MB / 10.00MB 1.7s
+#7 sha256:74dae484504b039004d1f23b1777be24e9e8d0f126ee1f38b97544d6343fb9fa 2.10MB / 7.86MB 1.8s
+#7 sha256:74dae484504b039004d1f23b1777be24e9e8d0f126ee1f38b97544d6343fb9fa 3.15MB / 7.86MB 2.1s
+#7 sha256:74dae484504b039004d1f23b1777be24e9e8d0f126ee1f38b97544d6343fb9fa 4.13MB / 7.86MB 2.3s
+#7 sha256:21739e3ef21a7c9983fdfc82d5a3837c633779965fb0b2cd7b746ec9c260664b 3.15MB / 10.00MB 2.3s
+#7 sha256:74dae484504b039004d1f23b1777be24e9e8d0f126ee1f38b97544d6343fb9fa 5.24MB / 7.86MB 2.6s
+#7 sha256:74dae484504b039004d1f23b1777be24e9e8d0f126ee1f38b97544d6343fb9fa 6.29MB / 7.86MB 3.0s
+#7 sha256:21739e3ef21a7c9983fdfc82d5a3837c633779965fb0b2cd7b746ec9c260664b 4.19MB / 10.00MB 3.1s
+#7 sha256:74dae484504b039004d1f23b1777be24e9e8d0f126ee1f38b97544d6343fb9fa 7.34MB / 7.86MB 3.2s
+#7 sha256:74dae484504b039004d1f23b1777be24e9e8d0f126ee1f38b97544d6343fb9fa 7.86MB / 7.86MB 3.3s done
+#7 sha256:e98d6bb51c7ccadb2f72a1498db713088ec7c3f449b3c810d95dbca6ba7511ba 0B / 51.84MB 3.3s
+#7 sha256:21739e3ef21a7c9983fdfc82d5a3837c633779965fb0b2cd7b746ec9c260664b 5.24MB / 10.00MB 3.6s
+#7 ...
+
+#6 [internal] load build context
+#6 sha256:f3ff641f540821b25e9e0cce3d9cb670e702cecda84f5441c025809b36567a17
+#6 transferring context: 138.72MB 3.9s done
+#6 DONE 4.0s
+
+#7 [1/3] FROM docker.io/library/node:16@sha256:ffe804d6fcced29bcfc3477de079d03a9c2b0e4917e44bfeafb1a6b0f875e383
+#7 sha256:bc31ad4563208bbf10475628f9d494c225b44a4f8f94780595a5cf41ee2eb2a0
+#7 sha256:b281ebec60d2630a225601bd58a4681375a31b7316263b64d3b149f49694c3fe 6.29MB / 50.44MB 4.4s
+#7 sha256:21739e3ef21a7c9983fdfc82d5a3837c633779965fb0b2cd7b746ec9c260664b 6.29MB / 10.00MB 4.5s
+#7 sha256:e98d6bb51c7ccadb2f72a1498db713088ec7c3f449b3c810d95dbca6ba7511ba 3.15MB / 51.84MB 4.5s
+#7 sha256:21739e3ef21a7c9983fdfc82d5a3837c633779965fb0b2cd7b746ec9c260664b 7.34MB / 10.00MB 5.4s
+#7 sha256:e98d6bb51c7ccadb2f72a1498db713088ec7c3f449b3c810d95dbca6ba7511ba 6.29MB / 51.84MB 5.4s
+#7 sha256:e98d6bb51c7ccadb2f72a1498db713088ec7c3f449b3c810d95dbca6ba7511ba 9.44MB / 51.84MB 6.1s
+#7 sha256:21739e3ef21a7c9983fdfc82d5a3837c633779965fb0b2cd7b746ec9c260664b 8.39MB / 10.00MB 6.6s
+#7 sha256:e98d6bb51c7ccadb2f72a1498db713088ec7c3f449b3c810d95dbca6ba7511ba 12.58MB / 51.84MB 6.9s
+#7 sha256:b281ebec60d2630a225601bd58a4681375a31b7316263b64d3b149f49694c3fe 9.44MB / 50.44MB 7.2s
+#7 sha256:e98d6bb51c7ccadb2f72a1498db713088ec7c3f449b3c810d95dbca6ba7511ba 15.73MB / 51.84MB 7.5s
+#7 sha256:21739e3ef21a7c9983fdfc82d5a3837c633779965fb0b2cd7b746ec9c260664b 9.44MB / 10.00MB 8.1s
+#7 sha256:e98d6bb51c7ccadb2f72a1498db713088ec7c3f449b3c810d95dbca6ba7511ba 18.87MB / 51.84MB 8.3s
+#7 sha256:21739e3ef21a7c9983fdfc82d5a3837c633779965fb0b2cd7b746ec9c260664b 10.00MB / 10.00MB 8.6s done
+#7 sha256:517ebafd9747d2829907c94c586a296ef74a55250cef7b8230a7f844e08a3659 0B / 192.49MB 8.7s
+#7 sha256:e98d6bb51c7ccadb2f72a1498db713088ec7c3f449b3c810d95dbca6ba7511ba 22.02MB / 51.84MB 9.2s
+#7 sha256:b281ebec60d2630a225601bd58a4681375a31b7316263b64d3b149f49694c3fe 12.58MB / 50.44MB 9.5s
+#7 sha256:e98d6bb51c7ccadb2f72a1498db713088ec7c3f449b3c810d95dbca6ba7511ba 25.17MB / 51.84MB 9.9s
+#7 sha256:e98d6bb51c7ccadb2f72a1498db713088ec7c3f449b3c810d95dbca6ba7511ba 28.31MB / 51.84MB 10.8s
+#7 sha256:b281ebec60d2630a225601bd58a4681375a31b7316263b64d3b149f49694c3fe 15.73MB / 50.44MB 11.0s
+#7 sha256:e98d6bb51c7ccadb2f72a1498db713088ec7c3f449b3c810d95dbca6ba7511ba 31.46MB / 51.84MB 11.8s
+#7 sha256:b281ebec60d2630a225601bd58a4681375a31b7316263b64d3b149f49694c3fe 18.87MB / 50.44MB 12.7s
+#7 sha256:e98d6bb51c7ccadb2f72a1498db713088ec7c3f449b3c810d95dbca6ba7511ba 34.60MB / 51.84MB 13.1s
+#7 sha256:517ebafd9747d2829907c94c586a296ef74a55250cef7b8230a7f844e08a3659 5.24MB / 192.49MB 13.8s
+#7 sha256:e98d6bb51c7ccadb2f72a1498db713088ec7c3f449b3c810d95dbca6ba7511ba 37.75MB / 51.84MB 14.2s
+#7 sha256:b281ebec60d2630a225601bd58a4681375a31b7316263b64d3b149f49694c3fe 22.02MB / 50.44MB 14.5s
+#7 sha256:e98d6bb51c7ccadb2f72a1498db713088ec7c3f449b3c810d95dbca6ba7511ba 40.89MB / 51.84MB 15.4s
+#7 sha256:b281ebec60d2630a225601bd58a4681375a31b7316263b64d3b149f49694c3fe 25.17MB / 50.44MB 16.1s
+#7 sha256:e98d6bb51c7ccadb2f72a1498db713088ec7c3f449b3c810d95dbca6ba7511ba 43.82MB / 51.84MB 16.4s
+#7 sha256:b281ebec60d2630a225601bd58a4681375a31b7316263b64d3b149f49694c3fe 28.31MB / 50.44MB 17.5s
+#7 sha256:e98d6bb51c7ccadb2f72a1498db713088ec7c3f449b3c810d95dbca6ba7511ba 47.19MB / 51.84MB 17.7s
+#7 sha256:b281ebec60d2630a225601bd58a4681375a31b7316263b64d3b149f49694c3fe 31.46MB / 50.44MB 18.8s
+#7 sha256:517ebafd9747d2829907c94c586a296ef74a55250cef7b8230a7f844e08a3659 12.58MB / 192.49MB 18.9s
+#7 sha256:e98d6bb51c7ccadb2f72a1498db713088ec7c3f449b3c810d95dbca6ba7511ba 50.33MB / 51.84MB 19.0s
+#7 sha256:e98d6bb51c7ccadb2f72a1498db713088ec7c3f449b3c810d95dbca6ba7511ba 51.84MB / 51.84MB 19.7s done
+#7 sha256:fa245e9d6fa24e336e24ebad66ab9deecc60d54ff39a48b91ffb8e48aca0d9e2 0B / 4.20kB 19.8s
+#7 sha256:b281ebec60d2630a225601bd58a4681375a31b7316263b64d3b149f49694c3fe 34.60MB / 50.44MB 20.1s
+#7 sha256:b281ebec60d2630a225601bd58a4681375a31b7316263b64d3b149f49694c3fe 37.75MB / 50.44MB 20.9s
+#7 sha256:b281ebec60d2630a225601bd58a4681375a31b7316263b64d3b149f49694c3fe 40.89MB / 50.44MB 21.8s
+#7 sha256:b281ebec60d2630a225601bd58a4681375a31b7316263b64d3b149f49694c3fe 44.04MB / 50.44MB 22.8s
+#7 sha256:517ebafd9747d2829907c94c586a296ef74a55250cef7b8230a7f844e08a3659 23.07MB / 192.49MB 22.8s
+#7 sha256:b281ebec60d2630a225601bd58a4681375a31b7316263b64d3b149f49694c3fe 47.19MB / 50.44MB 23.8s
+#7 sha256:b281ebec60d2630a225601bd58a4681375a31b7316263b64d3b149f49694c3fe 50.44MB / 50.44MB 24.9s
+#7 sha256:fa245e9d6fa24e336e24ebad66ab9deecc60d54ff39a48b91ffb8e48aca0d9e2 0B / 4.20kB 24.9s
+#7 sha256:b281ebec60d2630a225601bd58a4681375a31b7316263b64d3b149f49694c3fe 50.44MB / 50.44MB 24.9s done
+#7 sha256:662bb10a8d17dedb89294768cd942e9c28dbb0f36f82f0ef9246585f68ce84a0 0B / 33.89MB 25.0s
+#7 sha256:517ebafd9747d2829907c94c586a296ef74a55250cef7b8230a7f844e08a3659 33.55MB / 192.49MB 25.5s
+#7 extracting sha256:b281ebec60d2630a225601bd58a4681375a31b7316263b64d3b149f49694c3fe
+#7 sha256:fa245e9d6fa24e336e24ebad66ab9deecc60d54ff39a48b91ffb8e48aca0d9e2 4.20kB / 4.20kB 26.2s done
+#7 sha256:fad28b720f14f213be583e94f81c9bb03761bf14ef2c276d97bf133ef8e0013a 0B / 2.28MB 26.3s
+#7 sha256:fad28b720f14f213be583e94f81c9bb03761bf14ef2c276d97bf133ef8e0013a 1.05MB / 2.28MB 27.0s
+#7 sha256:662bb10a8d17dedb89294768cd942e9c28dbb0f36f82f0ef9246585f68ce84a0 2.10MB / 33.89MB 27.3s
+#7 sha256:fad28b720f14f213be583e94f81c9bb03761bf14ef2c276d97bf133ef8e0013a 2.10MB / 2.28MB 27.3s
+#7 extracting sha256:b281ebec60d2630a225601bd58a4681375a31b7316263b64d3b149f49694c3fe 1.9s done
+#7 sha256:fad28b720f14f213be583e94f81c9bb03761bf14ef2c276d97bf133ef8e0013a 2.28MB / 2.28MB 27.3s done
+#7 sha256:512c94f3667ea609b39498128ac1f518463f78459cbde05aae6fb023436d9ea7 0B / 451B 27.4s
+#7 extracting sha256:74dae484504b039004d1f23b1777be24e9e8d0f126ee1f38b97544d6343fb9fa 0.1s
+#7 sha256:512c94f3667ea609b39498128ac1f518463f78459cbde05aae6fb023436d9ea7 451B / 451B 27.6s done
+#7 extracting sha256:74dae484504b039004d1f23b1777be24e9e8d0f126ee1f38b97544d6343fb9fa 0.2s done
+#7 extracting sha256:21739e3ef21a7c9983fdfc82d5a3837c633779965fb0b2cd7b746ec9c260664b
+#7 sha256:662bb10a8d17dedb89294768cd942e9c28dbb0f36f82f0ef9246585f68ce84a0 4.19MB / 33.89MB 28.2s
+#7 extracting sha256:21739e3ef21a7c9983fdfc82d5a3837c633779965fb0b2cd7b746ec9c260664b 0.2s done
+#7 extracting sha256:e98d6bb51c7ccadb2f72a1498db713088ec7c3f449b3c810d95dbca6ba7511ba
+#7 sha256:517ebafd9747d2829907c94c586a296ef74a55250cef7b8230a7f844e08a3659 44.04MB / 192.49MB 28.8s
+#7 sha256:662bb10a8d17dedb89294768cd942e9c28dbb0f36f82f0ef9246585f68ce84a0 6.29MB / 33.89MB 28.9s
+#7 sha256:662bb10a8d17dedb89294768cd942e9c28dbb0f36f82f0ef9246585f68ce84a0 8.39MB / 33.89MB 29.6s
+#7 extracting sha256:e98d6bb51c7ccadb2f72a1498db713088ec7c3f449b3c810d95dbca6ba7511ba 1.9s done
+#7 sha256:662bb10a8d17dedb89294768cd942e9c28dbb0f36f82f0ef9246585f68ce84a0 10.49MB / 33.89MB 30.2s
+#7 sha256:662bb10a8d17dedb89294768cd942e9c28dbb0f36f82f0ef9246585f68ce84a0 12.58MB / 33.89MB 30.9s
+#7 sha256:662bb10a8d17dedb89294768cd942e9c28dbb0f36f82f0ef9246585f68ce84a0 14.68MB / 33.89MB 31.7s
+#7 sha256:517ebafd9747d2829907c94c586a296ef74a55250cef7b8230a7f844e08a3659 54.53MB / 192.49MB 32.1s
+#7 sha256:662bb10a8d17dedb89294768cd942e9c28dbb0f36f82f0ef9246585f68ce84a0 16.78MB / 33.89MB 32.4s
+#7 sha256:662bb10a8d17dedb89294768cd942e9c28dbb0f36f82f0ef9246585f68ce84a0 18.87MB / 33.89MB 33.1s
+#7 sha256:662bb10a8d17dedb89294768cd942e9c28dbb0f36f82f0ef9246585f68ce84a0 20.97MB / 33.89MB 33.9s
+#7 sha256:662bb10a8d17dedb89294768cd942e9c28dbb0f36f82f0ef9246585f68ce84a0 23.07MB / 33.89MB 34.7s
+#7 sha256:517ebafd9747d2829907c94c586a296ef74a55250cef7b8230a7f844e08a3659 65.01MB / 192.49MB 35.4s
+#7 sha256:662bb10a8d17dedb89294768cd942e9c28dbb0f36f82f0ef9246585f68ce84a0 25.17MB / 33.89MB 35.5s
+#7 sha256:662bb10a8d17dedb89294768cd942e9c28dbb0f36f82f0ef9246585f68ce84a0 27.26MB / 33.89MB 36.2s
+#7 sha256:662bb10a8d17dedb89294768cd942e9c28dbb0f36f82f0ef9246585f68ce84a0 29.36MB / 33.89MB 37.1s
+#7 sha256:662bb10a8d17dedb89294768cd942e9c28dbb0f36f82f0ef9246585f68ce84a0 31.46MB / 33.89MB 38.1s
+#7 sha256:517ebafd9747d2829907c94c586a296ef74a55250cef7b8230a7f844e08a3659 75.50MB / 192.49MB 38.5s
+#7 sha256:662bb10a8d17dedb89294768cd942e9c28dbb0f36f82f0ef9246585f68ce84a0 33.55MB / 33.89MB 38.8s
+#7 sha256:662bb10a8d17dedb89294768cd942e9c28dbb0f36f82f0ef9246585f68ce84a0 33.89MB / 33.89MB 38.9s done
+#7 sha256:517ebafd9747d2829907c94c586a296ef74a55250cef7b8230a7f844e08a3659 85.98MB / 192.49MB 40.4s
+#7 sha256:517ebafd9747d2829907c94c586a296ef74a55250cef7b8230a7f844e08a3659 96.47MB / 192.49MB 42.2s
+#7 sha256:517ebafd9747d2829907c94c586a296ef74a55250cef7b8230a7f844e08a3659 106.95MB / 192.49MB 44.2s
+#7 sha256:517ebafd9747d2829907c94c586a296ef74a55250cef7b8230a7f844e08a3659 117.44MB / 192.49MB 46.0s
+#7 sha256:517ebafd9747d2829907c94c586a296ef74a55250cef7b8230a7f844e08a3659 127.93MB / 192.49MB 47.9s
+#7 sha256:517ebafd9747d2829907c94c586a296ef74a55250cef7b8230a7f844e08a3659 138.41MB / 192.49MB 49.7s
+#7 sha256:517ebafd9747d2829907c94c586a296ef74a55250cef7b8230a7f844e08a3659 148.90MB / 192.49MB 51.5s
+#7 sha256:517ebafd9747d2829907c94c586a296ef74a55250cef7b8230a7f844e08a3659 159.38MB / 192.49MB 53.4s
+#7 sha256:517ebafd9747d2829907c94c586a296ef74a55250cef7b8230a7f844e08a3659 169.87MB / 192.49MB 55.3s
+#7 sha256:517ebafd9747d2829907c94c586a296ef74a55250cef7b8230a7f844e08a3659 180.36MB / 192.49MB 57.4s
+#7 sha256:517ebafd9747d2829907c94c586a296ef74a55250cef7b8230a7f844e08a3659 190.84MB / 192.49MB 59.4s
+#7 sha256:517ebafd9747d2829907c94c586a296ef74a55250cef7b8230a7f844e08a3659 192.49MB / 192.49MB 59.8s done
+#7 extracting sha256:517ebafd9747d2829907c94c586a296ef74a55250cef7b8230a7f844e08a3659
+#7 extracting sha256:517ebafd9747d2829907c94c586a296ef74a55250cef7b8230a7f844e08a3659 5.0s
+#7 extracting sha256:517ebafd9747d2829907c94c586a296ef74a55250cef7b8230a7f844e08a3659 10.3s
+#7 extracting sha256:517ebafd9747d2829907c94c586a296ef74a55250cef7b8230a7f844e08a3659 11.5s done
+#7 extracting sha256:fa245e9d6fa24e336e24ebad66ab9deecc60d54ff39a48b91ffb8e48aca0d9e2
+#7 extracting sha256:fa245e9d6fa24e336e24ebad66ab9deecc60d54ff39a48b91ffb8e48aca0d9e2 0.4s done
+#7 extracting sha256:662bb10a8d17dedb89294768cd942e9c28dbb0f36f82f0ef9246585f68ce84a0
+#7 extracting sha256:662bb10a8d17dedb89294768cd942e9c28dbb0f36f82f0ef9246585f68ce84a0 1.7s done
+#7 extracting sha256:fad28b720f14f213be583e94f81c9bb03761bf14ef2c276d97bf133ef8e0013a
+#7 extracting sha256:fad28b720f14f213be583e94f81c9bb03761bf14ef2c276d97bf133ef8e0013a 0.4s done
+#7 extracting sha256:512c94f3667ea609b39498128ac1f518463f78459cbde05aae6fb023436d9ea7
+#7 extracting sha256:512c94f3667ea609b39498128ac1f518463f78459cbde05aae6fb023436d9ea7 done
+#7 DONE 74.9s
+
+#4 [2/3] COPY . .
+#4 sha256:b1d0f368cf041fec0fbc0cae5b5d7b5871b10098aedbaa33af7d5594ad42fae2
+#4 DONE 3.7s
+
+#5 [3/3] WORKDIR ./app
+#5 sha256:3ad31f382afa74329ed8f9fbc6d53c5649fb7d4696a0703113e547c2295ffe8b
+#5 DONE 0.1s
+
+#8 exporting to image
+#8 sha256:e8c613e07b0b7ff33893b694f7759a10d42e180f2b4dc349fb57dc6b71dcab00
+#8 exporting layers
+#8 exporting layers 1.6s done
+#8 writing image sha256:cd96ef1c1eea1398945088da769ef4327bf4ae10d045a787db49a5dbe193fec3 done
+#8 naming to gcr.io/hydrotek-286213/controller:v1 done
+#8 DONE 1.6s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
++ echo 'Docker Push gcr.io/hydrotek-286213/controller:v1'
+Docker Push gcr.io/hydrotek-286213/controller:v1
++ docker push gcr.io/hydrotek-286213/controller:v1
+The push refers to repository [gcr.io/hydrotek-286213/controller]
+5f70bf18a086: Preparing
+b9a13618cef6: Preparing
+c3ee875c63ae: Preparing
+01281c2cd1e4: Preparing
+a9ce14d4c51f: Preparing
+9e6164f16476: Preparing
+627d03f17169: Preparing
+6b9b07bf46f5: Preparing
+88139fe969ab: Preparing
+83f556e4c108: Preparing
+7362f7f77851: Preparing
+9e6164f16476: Waiting
+627d03f17169: Waiting
+6b9b07bf46f5: Waiting
+88139fe969ab: Waiting
+7362f7f77851: Waiting
+5f70bf18a086: Layer already exists
+01281c2cd1e4: Layer already exists
+c3ee875c63ae: Layer already exists
+a9ce14d4c51f: Layer already exists
+9e6164f16476: Layer already exists
+627d03f17169: Layer already exists
+6b9b07bf46f5: Layer already exists
+88139fe969ab: Layer already exists
+83f556e4c108: Layer already exists
+7362f7f77851: Layer already exists
+b9a13618cef6: Pushed
+v1: digest: sha256:e29703791a5ab0b84373a606065bbec5512e3c5b6fb2884e61d2c9276700140d size: 2632
++ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ '[' -z ControllerApp ']'
++ mainCD
++ echo 'MAIN CD'
+MAIN CD
++ a=(${SELECTED_APP_CD_ARRAY[0]})
++ echo ControllerApp
+ControllerApp
++ '[' ControllerApp == All ']'
++ IFS=', '
++ read -r -a arr
++ for i in "${arr[@]}"
++ temp=ControllerApp
++ temp=ControllerApp
++ echo ControllerApp
+ControllerApp
++ i=ControllerApp
++ case "$i" in
++ echo ControllerApp
+ControllerApp
++ SELECTED_APP_CI=ControllerApp
++ DEPLOYMENT=controller
++ NAMESPACE=dev
++ CONTAINERNAME=controller
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ PORTNUM=3000
++ genericCD ControllerApp controller dev controller gcr.io/hydrotek-286213 release 3000
++ SELECTED_APP_CD=ControllerApp
++ DEPLOYMENT=controller
++ NAMESPACE=dev
++ CONTAINERNAME=controller
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=v1
++ PORTNUM=3000
++ echo 'GENERIC CD'
+GENERIC CD
++ echo 'Begining Deployment of ControllerApp'
+Begining Deployment of ControllerApp
++ kubectl get deployments controller --namespace dev
++ grep -q controller
++ echo 'Updating the deployment with latest version'
+Updating the deployment with latest version
++ SELECTED_IMAGE=gcr.io/hydrotek-286213/controller:v1
++ echo 'Selected Image gcr.io/hydrotek-286213/controller:v1'
+Selected Image gcr.io/hydrotek-286213/controller:v1
++ echo 'kubectl set image deployment/controller controller=gcr.io/hydrotek-286213/controller:v1 --namespace dev'
+kubectl set image deployment/controller controller=gcr.io/hydrotek-286213/controller:v1 --namespace dev
++ kubectl set image deployment/controller controller=gcr.io/hydrotek-286213/controller:v1 --namespace dev
+deployment.apps/controller image updated
++ echo 'kubectl rollout restart deployment controller --namespace dev'
+kubectl rollout restart deployment controller --namespace dev
++ kubectl rollout restart deployment controller --namespace dev
+deployment.apps/controller restarted
++ echo 'Updated Deployment'
+Updated Deployment
++ echo 'kubectl set env -n dev --from=secret/mongocredentialsdevcloud deployment/controller'
+kubectl set env -n dev --from=secret/mongocredentialsdevcloud deployment/controller
++ kubectl set env -n dev --from=secret/mongocredentialsdevcloud deployment/controller
++ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
+Finished: SUCCESS

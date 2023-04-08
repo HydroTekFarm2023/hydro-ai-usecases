@@ -1,0 +1,114 @@
+Started by user [8mha:////4CA5kL0r8XoTT3PdnVI1PoGEnxCwKlCoPhe73Uyy/FdkAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgZu/dLi1CL9xLzSrEQAtdxjnMAAAAA=[0manuja somthankar
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\Hydrotek-CICD-Pipeline
+[Hydrotek-CICD-Pipeline] $ "C:\Program Files\Git\bin\sh.exe" -xe C:\Users\anuja\AppData\Local\Temp\jenkins17835736109773685067.sh
++ echo 'Hydrotek CICD'
+Hydrotek CICD
++ echo 'CI selected '
+CI selected 
++ echo 'CD selected pest-training-automation'
+CD selected pest-training-automation
++ echo 'Tag selected v1'
+Tag selected v1
++ BRANCH=pestclassification-tcet
++ IMAGE_TAG=v1
++ SELECTED_APP_CI_ARRAY=
++ SELECTED_APP_CD_ARRAY=pest-training-automation
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ NAMESPACE=dev
++ NETWORKTYPE=LoadBalancer
++ PORTNUM=5000
++ DIR=/c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ echo 'CI/CD Pipeline Started'
+CI/CD Pipeline Started
++ '[' -z devcloud ']'
++ setenv
++ echo devcloud
+devcloud
++ [[ devcloud == \d\e\v ]]
++ [[ devcloud == \d\e\v\c\l\o\u\d ]]
++ echo 'dev cloud'
+dev cloud
++ gcloud container clusters get-credentials autopilot-cluster-1 --region us-central1 --project hydrotek-286213
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+Fetching cluster endpoint and auth data.
+kubeconfig entry generated for autopilot-cluster-1.
++ echo 'Cluster Name: kt-ai-autopilot-cluster1'
+Cluster Name: kt-ai-autopilot-cluster1
++ NETWORKTYPE=LoadBalancer
++ '[' -z '' ']'
++ echo 'No project was selected for integration'
+No project was selected for integration
++ '[' -z pest-training-automation ']'
++ mainCD
++ echo 'MAIN CD'
+MAIN CD
++ a=(${SELECTED_APP_CD_ARRAY[0]})
++ echo pest-training-automation
+pest-training-automation
++ '[' pest-training-automation == All ']'
++ IFS=', '
++ read -r -a arr
++ for i in "${arr[@]}"
++ temp=pest-training-automation
++ temp=pest-training-automation
++ echo pest-training-automation
+pest-training-automation
++ i=pest-training-automation
++ case "$i" in
++ echo pest-training-automation
+pest-training-automation
++ SELECTED_APP_CI=Hydrotek-22-PestDetection/training-automation/training-automation
++ DEPLOYMENT=pesttrainingautomation
++ NAMESPACE=dev
++ CONTAINERNAME=pesttrainingautomation
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ PORTNUM=5001
++ genericCD Hydrotek-22-PestDetection/training-automation/training-automation pesttrainingautomation dev pesttrainingautomation gcr.io/hydrotek-286213 release 5001
++ SELECTED_APP_CD=Hydrotek-22-PestDetection/training-automation/training-automation
++ DEPLOYMENT=pesttrainingautomation
++ NAMESPACE=dev
++ CONTAINERNAME=pesttrainingautomation
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=v1
++ PORTNUM=5001
++ echo 'GENERIC CD'
+GENERIC CD
++ echo 'Begining Deployment of Hydrotek-22-PestDetection/training-automation/training-automation'
+Begining Deployment of Hydrotek-22-PestDetection/training-automation/training-automation
++ kubectl get deployments pesttrainingautomation --namespace dev
++ grep -q pesttrainingautomation
+Error from server (NotFound): deployments.apps "pesttrainingautomation" not found
++ echo 'New deployemnt'
+New deployemnt
++ echo 'kubectl create deployment pesttrainingautomation --image=gcr.io/hydrotek-286213/pesttrainingautomation:v1 --namespace dev'
+kubectl create deployment pesttrainingautomation --image=gcr.io/hydrotek-286213/pesttrainingautomation:v1 --namespace dev
++ kubectl create deployment pesttrainingautomation --image=gcr.io/hydrotek-286213/pesttrainingautomation:v1 --namespace dev
+Warning: Autopilot set default resource requests for Deployment dev/pesttrainingautomation, as resource requests were not specified. See http://g.co/gke/autopilot-defaults.
+deployment.apps/pesttrainingautomation created
++ echo 'kubectl expose deployment pesttrainingautomation --type=LoadBalancer --port 5001 --namespace dev'
+kubectl expose deployment pesttrainingautomation --type=LoadBalancer --port 5001 --namespace dev
++ kubectl expose deployment pesttrainingautomation --type=LoadBalancer --port 5001 --namespace dev
+service/pesttrainingautomation exposed
++ [[ pesttrainingautomation == \f\u\n\g\a\l\t\r\a\i\n\i\n\g\a\u\t\o\m\a\t\i\o\n ]]
++ [[ pesttrainingautomation == \p\e\s\t\t\r\a\i\n\i\n\g\a\u\t\o\m\a\t\i\o\n ]]
++ echo 'Updated memory configs'
+Updated memory configs
++ cd ./hydrotek/cicdbuild/
++ cd hydro-ai-usecases
++ cd Hydrotek-22-PestDetection/training-automation/training-automation
++ echo /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline/hydrotek/cicdbuild/hydro-ai-usecases/Hydrotek-22-PestDetection/training-automation/training-automation
+/c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline/hydrotek/cicdbuild/hydro-ai-usecases/Hydrotek-22-PestDetection/training-automation/training-automation
++ kubectl apply -f PestTrainingMemoryConfig.yaml -n dev
+Warning: resource deployments/pesttrainingautomation is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by kubectl apply. kubectl apply should only be used on resources created declaratively by either kubectl create --save-config or kubectl apply. The missing annotation will be patched automatically.
+deployment.apps/pesttrainingautomation configured
++ sleep 15
++ echo 'kubectl set env -n dev --from=secret/mongocredentialsdevcloud deployment/pesttrainingautomation'
+kubectl set env -n dev --from=secret/mongocredentialsdevcloud deployment/pesttrainingautomation
++ kubectl set env -n dev --from=secret/mongocredentialsdevcloud deployment/pesttrainingautomation
+deployment.apps/pesttrainingautomation env updated
++ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
+Finished: SUCCESS

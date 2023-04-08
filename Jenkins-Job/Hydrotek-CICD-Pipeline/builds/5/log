@@ -1,0 +1,79 @@
+Started by user [8mha:////4CA5kL0r8XoTT3PdnVI1PoGEnxCwKlCoPhe73Uyy/FdkAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgZu/dLi1CL9xLzSrEQAtdxjnMAAAAA=[0manuja somthankar
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\Hydrotek-CICD-Pipeline
+[Hydrotek-CICD-Pipeline] $ "C:\Program Files\Git\bin\sh.exe" -xe C:\Users\anuja\AppData\Local\Temp\jenkins15902217060227352114.sh
++ BRANCH=master
++ IMAGE_TAG=release
++ SELECTED_APP_CI=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ SELECTED_APP_CD=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ DEPLOYMENT=hydrotekapp-deployment
++ NAMESPACE=dev
++ NETWORKTYPE=LoadBalancer
++ PORTNUM=5000
++ echo 'CI/CD Pipeline Started'
+CI/CD Pipeline Started
++ '[' -z Hydrotek-22-PestDetection/pest-detection/pest-detection ']'
++ continous_integration_server
++ echo 'Beginning Integration of Hydrotek-22-PestDetection/pest-detection/pest-detection'
+Beginning Integration of Hydrotek-22-PestDetection/pest-detection/pest-detection
++ mkdir -p ./hydrotek/cicdbuild/
++ cd ./hydrotek/cicdbuild/
++ '[' -d hydro-ai-usecases ']'
++ cd hydro-ai-usecases
++ git pull
+Already up to date.
++ gcloud auth print-access-token
++ docker login -u oauth2accesstoken --password-stdin https://gcr.io
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+[040:16:46:31.165][E] (779747f4) e17b12a2-CredentialHelperPKG C<-S NoResponse POST /registry/credstore-updated (10.0292644s): Post "http://ipc/registry/credstore-updated": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+[common/pkg/backend.(*backendClient).NotifyCredstoreUpdated(0xe58751)
+[	common/pkg/backend/client.go:358 +0x42
+[main.addCredentialsHelperCommand.func1.1()
+[	common/cmd/docker-credential-desktop/main.go:21 +0x31
+[common/pkg/docker-credential-desktop.Helper.Add({0xc00020e180, 0xe8ddc0}, 0xc000228480)
+[	common/pkg/docker-credential-desktop/helper.go:59 +0xf4
+[github.com/docker/docker-credential-helpers/credentials.Store({0xf45710, 0xc00020c0f0}, {0xf35180, 0xc000006010})
+[	vendor/github.com/docker/docker-credential-helpers/credentials/credentials.go:107 +0x229
+[github.com/docker/docker-credential-helpers/credentials.HandleCommand({0xf45710, 0xc00020c0f0}, {0xc00002e0c0, 0xf45710}, {0xf35180, 0xc000006010}, {0xf351c0, 0xc000006018})
+[	vendor/github.com/docker/docker-credential-helpers/credentials/credentials.go:71 +0xf3
+[github.com/docker/docker-credential-helpers/credentials.Serve({0xf45710, 0xc00020c0f0})
+[	vendor/github.com/docker/docker-credential-helpers/credentials/credentials.go:58 +0xf4
+[main.addCredentialsHelperCommand.func1(0xc00047a280, {0xe4cfd4, 0x0, 0x0})
+[	common/cmd/docker-credential-desktop/main.go:23 +0x2a
+[github.com/spf13/cobra.(*Command).execute(0xc00047a280, {0x142f420, 0x0, 0x0})
+[	vendor/github.com/spf13/cobra/command.go:860 +0x5f8
+[github.com/spf13/cobra.(*Command).ExecuteC(0xc00047a000)
+[	vendor/github.com/spf13/cobra/command.go:974 +0x3bc
+[github.com/spf13/cobra.(*Command).Execute(...)
+[	vendor/github.com/spf13/cobra/command.go:902
+[main.main()
+[	common/cmd/docker-credential-desktop/main.go:45 +0x107
+[040:16:46:41.178][E] (779747f4-2) e17b12a2-CredentialHelperPKG C<-S NoResponse POST /registry/credstore-updated (10.0088682s): Post "http://ipc/registry/credstore-updated": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+[common/pkg/backend.(*backendClient).NotifyCredstoreUpdated(0xe58751)
+[	common/pkg/backend/client.go:358 +0x42
+[main.addCredentialsHelperCommand.func1.1()
+[	common/cmd/docker-credential-desktop/main.go:21 +0x31
+[common/pkg/docker-credential-desktop.Helper.Add({0xc00020e180, 0xe8ddc0}, 0xc000228480)
+[	common/pkg/docker-credential-desktop/helper.go:59 +0xf4
+[github.com/docker/docker-credential-helpers/credentials.Store({0xf45710, 0xc00020c0f0}, {0xf35180, 0xc000006010})
+[	vendor/github.com/docker/docker-credential-helpers/credentials/credentials.go:107 +0x229
+[github.com/docker/docker-credential-helpers/credentials.HandleCommand({0xf45710, 0xc00020c0f0}, {0xc00002e0c0, 0xf45710}, {0xf35180, 0xc000006010}, {0xf351c0, 0xc000006018})
+[	vendor/github.com/docker/docker-credential-helpers/credentials/credentials.go:71 +0xf3
+[github.com/docker/docker-credential-helpers/credentials.Serve({0xf45710, 0xc00020c0f0})
+[	vendor/github.com/docker/docker-credential-helpers/credentials/credentials.go:58 +0xf4
+[main.addCredentialsHelperCommand.func1(0xc00047a280, {0xe4cfd4, 0x0, 0x0})
+[	common/cmd/docker-credential-desktop/main.go:23 +0x2a
+[github.com/spf13/cobra.(*Command).execute(0xc00047a280, {0x142f420, 0x0, 0x0})
+[	vendor/github.com/spf13/cobra/command.go:860 +0x5f8
+[github.com/spf13/cobra.(*Command).ExecuteC(0xc00047a000)
+[	vendor/github.com/spf13/cobra/command.go:974 +0x3bc
+[github.com/spf13/cobra.(*Command).Execute(...)
+[	vendor/github.com/spf13/cobra/command.go:902
+[main.main()
+[	common/cmd/docker-credential-desktop/main.go:45 +0x107
+Error saving credentials: error storing credentials - err: exit status 1, out: `Post "http://ipc/registry/credstore-updated": context deadline exceeded (Client.Timeout exceeded while awaiting headers)`
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

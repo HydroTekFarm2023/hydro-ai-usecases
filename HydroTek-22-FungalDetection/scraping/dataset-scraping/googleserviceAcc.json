@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "hydrotek-internship",
+  "private_key_id": "ecadf299b05cc1bbafb0cf3548516f960d639a10",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC17eLXmN8ltE1A\nzTd2WMLsC2k4HxPWZ6mtlejw1dICCgjHS1VLayfKxsWDdb45KnN5C4ndyWFZbCbv\nnBdo7wAtJoHrhX8992ZzK7+cMrySelpEcc3+gBMwMujQwGexALiVW6hy0O/iVq7+\nbmSgtv+LVY5ILwcxh44NLOWYkhsXIO/0NxIuCShRNLZM9qgLC2H3R71T04UOhoj2\niF54G9/gnFASNKeJucanP7MxkHXVhvq/Ox0csscmGyec1RT3GJtWLLJ3PvipnKAu\ny5lZ6//IIyjMHHTrWqrbBjcpmIqgv9zcRhmXzSadbal8tB4FCfc2EWrocWLa82hm\nKzGayFJpAgMBAAECggEAGf3v0/PxeaO4tSKR+HS2UIlRfI+lbWiSYOGojfP2f40V\nyPy10G3G7x0WmJwIqTEr8ztsny+yGq0CzmaOH6ikbU7xmTJm8KBOgPOF+hfI7OJ8\nerKJsYEfJ1qL/FBo4BclcqKi6S3O/+wjhJKatNgVoBSr8cXU8MTC95XrrYW+R2o8\n3Sf2SQ6s/2XJrijQxY3wSsf+ChDA2eCHELmhK7x7iQDZmf7QEppLkDLwBRbBG/8n\nRJHw/TpaQI74kPFna2+rn2c1+yqi7O9q7jwsbSaZLUPkIG8sb9rKvnRMWCHPWsD4\nnvBOyJGkxxh7lAG5rsBqAAkrU1DMcCaRxi68cm/S4wKBgQD/+GfjEmehRRFSdWTc\nP9NXP9uj1N46aGFu/rbWB9aLA36sl+NQXshnm5MjVzsMGdH20IG6V3h4foadaNAy\nPiYWUDJKd3fAQxHvxjQblcZIPQQbKTA6qlx4Oyf8X6xRZOaSaS9n+C5nOUcHmv2G\nk+2DUaZxZ1JEyP9jeZ7mzq/EiwKBgQC180ibl7ckzv2ytF9W/cavWsAsj22DVl3f\nVkuPOjaPUc52+/jRKEMxvvkR+ljjmFkHIT/e8w0lDF83csgVJgSYV6oak6sAb44R\nxC1jsSwAQ/3KhxhLwrT4iAssyGouIIDWH9rdgm0gqPdReLlUYjiic3sCbC3rmrDW\n5uSF7nX/WwKBgQDsbQ/fv98yKS5fwIjhmp5lZ1lDENoWjtT4BZLxTBoRGrBFUKGo\nWXO3pw4XxXmHqs2xsFMyv5pJiWxjNi2fSqI5V+erun9EeW62zpbQp92WWa1SPRAM\nD9ELSHCdfe0W3SDPORKNcMHDnDcMQk9Ln5TxB1i6RFnLqO+jfPGVdHELEwKBgGGI\nCXGt/7QxaHi0iy6cVjaFFOJN98whLaycG2CpObnVhjDtnFCxnmM6FVT3t1I4xfA2\neIBQFMm5OgkE9A+yE2B+DWa1pUJUifkoCZSY0hdKWu6HQBTMSCm48xSMUa5sKeOd\nq7p1QX3yVLBNYDrFc8pQ0K1Zw7u5bfWkSvcn/gRlAoGBAJ17ij+ip6u+2huuVaGd\nQJYI6pb+8NfDbrSyST2N5g3eQwyloeJrQs55uw0NxdGsyxY4g4eG/7gYFKQnR9yn\n/T5itiB1iNLO2SktvYxNqbcUNQ3dUIswsOdkUWJkZakV29M1iybCo1Rk+IrVgqW3\nY73P9hXVRaN5r4tX58JMJw9J\n-----END PRIVATE KEY-----\n",
+  "client_email": "gsutil-image-access@hydrotek-internship.iam.gserviceaccount.com",
+  "client_id": "117657286263726383077",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/gsutil-image-access%40hydrotek-internship.iam.gserviceaccount.com"
+}

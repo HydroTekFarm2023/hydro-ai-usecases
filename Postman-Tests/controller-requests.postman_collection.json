@@ -1,0 +1,297 @@
+{
+	"info": {
+		"_postman_id": "6fb9403a-dcea-4a53-bfc6-fcaf1dd52b6d",
+		"name": "controller-requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "gcp-controller-detect",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status code is 200', function() {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"var schema = {\r",
+							"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+							"  \"type\": \"object\",\r",
+							"  \"properties\": {\r",
+							"    \"class\": {\r",
+							"      \"type\": \"array\"\r",
+							"    },\r",
+							"    \"confidence\": {\r",
+							"        \"type\": \"array\"\r",
+							"      },\r",
+							"    \"image\": {\r",
+							"        \"type\": \"string\"\r",
+							"    },\r",
+							"    \"name\": {\r",
+							"    \"type\": \"array\"\r",
+							"    },\r",
+							"    \"pest\": {\r",
+							"    \"type\": \"array\"\r",
+							"    },\r",
+							"    \r",
+							"    \"treatment\" : {\r",
+							"        \"type\" : \"array\"\r",
+							"    },\r",
+							"    \"xmax\": {\r",
+							"    \"type\": \"array\"\r",
+							"    },\r",
+							"    \"xmin\": {\r",
+							"        \"type\": \"array\"\r",
+							"        },\r",
+							"    \"ymax\": {\r",
+							"        \"type\": \"array\"\r",
+							"        },\r",
+							"    \"ymin\": {\r",
+							"        \"type\": \"array\"\r",
+							"        }\r",
+							"      ,\r",
+							"  \"required\": [\r",
+							"    \"class\",\r",
+							"    \"confidence\",\r",
+							"    \"image\",\r",
+							"    \"pest\",\r",
+							"    \"treatment\",\r",
+							"    \"xmax\",\r",
+							"    \"xmin\",\r",
+							"    \"ymax\",\r",
+							"    \"ymin\"\r",
+							"  ]\r",
+							"}}\r",
+							"var json = pm.response.json()\r",
+							"pm.test('Schema is valid', function() {\r",
+							"    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{controller-detect-host}}:{{controller-detect-port}}/v1/pestdetect/",
+					"protocol": "http",
+					"host": [
+						"{{controller-detect-host}}"
+					],
+					"port": "{{controller-detect-port}}",
+					"path": [
+						"v1",
+						"pestdetect",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "gcp-controller-classify",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status code is 200', function() {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"var schema = {\r",
+							"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+							"  \"type\": \"object\",\r",
+							"  \"properties\": {\r",
+							"    \"class\": {\r",
+							"      \"type\": \"string\"\r",
+							"    },\r",
+							"    \"confidence\": {\r",
+							"        \"type\": \"number\"\r",
+							"      },\r",
+							"    \"image\": {\r",
+							"        \"type\": \"string\"\r",
+							"    },    \r",
+							"    \"treatment\" : {\r",
+							"        \"type\" : \"array\"\r",
+							"    },\r",
+							"  \"required\": [\r",
+							"    \"class\",\r",
+							"    \"confidence\",\r",
+							"    \"image\",\r",
+							"    \"treatment\"\r",
+							"  ]\r",
+							"}}\r",
+							"var json = pm.response.json()\r",
+							"pm.test('Schema is valid', function() {\r",
+							"    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{controller-classify-host}}:{{controller-classify-port}}/v1/fungalclassify/",
+					"protocol": "http",
+					"host": [
+						"{{controller-classify-host}}"
+					],
+					"port": "{{controller-classify-port}}",
+					"path": [
+						"v1",
+						"fungalclassify",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "gcp-controller-plant-growth",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status code is 200', function() {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"var schema = {\r",
+							"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+							"  \"type\": \"object\",\r",
+							"  \"properties\": {\r",
+							"    \"height\": {\r",
+							"      \"type\": \"number\"\r",
+							"    },\r",
+							"    \"width\": {\r",
+							"        \"type\": \"number\"\r",
+							"      },\r",
+							"    \"status\": {\r",
+							"        \"type\": \"string\"\r",
+							"    },    \r",
+							"    \"treatment\" : {\r",
+							"        \"type\" : \"string\"\r",
+							"    },\r",
+							"    \"state\": {\r",
+							"        \"type\": \"string\"\r",
+							"    },\r",
+							"    \"image\" : {\r",
+							"        \"type\": \"string\"\r",
+							"    },\r",
+							"  \"required\": [\r",
+							"    \"height\",\r",
+							"    \"width\",\r",
+							"    \"status\",\r",
+							"    \"treatment\",\r",
+							"    \"image\"\r",
+							"  ]\r",
+							"}}\r",
+							"var json = pm.response.json()\r",
+							"pm.test('Schema is valid', function() {\r",
+							"    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{controller-plant-host}}:{{controller-plant-port}}/v1/growth/",
+					"protocol": "http",
+					"host": [
+						"{{controller-plant-host}}"
+					],
+					"port": "{{controller-plant-port}}",
+					"path": [
+						"v1",
+						"growth",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "gcp-controller-thermal",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status code is 200', function() {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"var schema = {\r",
+							"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+							"  \"type\": \"object\",\r",
+							"  \"properties\": {\r",
+							"    \"output_file_path\": {\r",
+							"      \"type\": \"string\"\r",
+							"    },\r",
+							"    \"mean_temperature\": {\r",
+							"        \"type\": \"number\"\r",
+							"      },\r",
+							"    \"health_status\": {\r",
+							"        \"type\": \"string\"\r",
+							"    },    \r",
+							"    \"treatment\" : {\r",
+							"        \"type\" : \"string\"\r",
+							"    },\r",
+							"    \"status\": {\r",
+							"        \"type\": \"string\"\r",
+							"    },\r",
+							"    \"image\" : {\r",
+							"        \"type\": \"string\"\r",
+							"    },\r",
+							"    \"timestamp\": {\r",
+							"        \"type\": \"string\"\r",
+							"    },\r",
+							"  \"required\": [\r",
+							"    \"output_file_path\",\r",
+							"    \"mean_temperature\",\r",
+							"    \"health_status\",\r",
+							"    \"treatment\",\r",
+							"    \"status\",\r",
+							"    \"image\",\r",
+							"    \"timestamp\"\r",
+							"  ]\r",
+							"}}\r",
+							"var json = pm.response.json()\r",
+							"pm.test('Schema is valid', function() {\r",
+							"    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{controller-thermal-host}}:{{controller-thermal-port}}/v1/thermal/",
+					"protocol": "http",
+					"host": [
+						"{{controller-thermal-host}}"
+					],
+					"port": "{{controller-thermal-port}}",
+					"path": [
+						"v1",
+						"thermal",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

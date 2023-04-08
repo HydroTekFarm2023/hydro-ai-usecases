@@ -1,0 +1,228 @@
+Started by user [8mha:////4CA5kL0r8XoTT3PdnVI1PoGEnxCwKlCoPhe73Uyy/FdkAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgZu/dLi1CL9xLzSrEQAtdxjnMAAAAA=[0manuja somthankar
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\Hydrotek-CICD-Pipeline
+[Hydrotek-CICD-Pipeline] $ "C:\Program Files\Git\bin\sh.exe" -xe C:\Users\anuja\AppData\Local\Temp\jenkins13537508290975314097.sh
++ echo 'Hydrotek CICD'
+Hydrotek CICD
++ echo 'CI selected ControllerApp'
+CI selected ControllerApp
++ echo 'CD selected ControllerApp'
+CD selected ControllerApp
++ BRANCH=pestclassification-tcet
++ IMAGE_TAG=release
++ SELECTED_APP_CI_ARRAY=ControllerApp
++ SELECTED_APP_CD_ARRAY=ControllerApp
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ DEPLOYMENT=hydrotekapp-deployment
++ NAMESPACE=dev
++ NETWORKTYPE=LoadBalancer
++ PORTNUM=5000
++ DIR=/c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ echo 'CI/CD Pipeline Started'
+CI/CD Pipeline Started
++ '[' -z devcloud ']'
++ setenv
++ echo devcloud
+devcloud
++ [[ devcloud == \d\e\v ]]
++ [[ devcloud == \d\e\v\c\l\o\u\d ]]
++ echo 'dev cloud'
+dev cloud
++ gcloud container clusters get-credentials autopilot-cluster-1 --region us-central1 --project hydrotek-286213
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+Fetching cluster endpoint and auth data.
+kubeconfig entry generated for autopilot-cluster-1.
++ echo 'Cluster Name: kt-ai-autopilot-cluster1'
+Cluster Name: kt-ai-autopilot-cluster1
++ NETWORKTYPE=LoadBalancer
++ '[' -z ControllerApp ']'
++ mainCI
++ echo 'MAIN CI'
+MAIN CI
++ a=(${SELECTED_APP_CI_ARRAY[0]})
++ echo ControllerApp
+ControllerApp
++ '[' ControllerApp == All ']'
++ IFS=', '
++ read -r -a arr
++ for i in "${arr[@]}"
++ temp=ControllerApp
++ temp=ControllerApp
++ echo ControllerApp
+ControllerApp
++ i=ControllerApp
++ case "$i" in
++ SELECTED_APP_CI=ControllerApp
++ CI_DIR=ControllerApp
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=controller
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ genericCI ControllerApp ControllerApp hydro-ai-usecases controller ./hydrotek/cicdbuild/ gcr.io/hydrotek-286213 release
++ SELECTED_APP_CI=ControllerApp
++ CI_DIR=ControllerApp
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=controller
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ echo 'GENERIC CI'
+GENERIC CI
++ echo 'Begining Integration of ControllerApp'
+Begining Integration of ControllerApp
++ mkdir -p ./hydrotek/cicdbuild/
++ cd ./hydrotek/cicdbuild/
++ '[' -d hydro-ai-usecases ']'
++ git clone -b pestclassification-tcet git@gitlab.com:hydrotek-ai-grp/hydro-ai-usecases.git
+Cloning into 'hydro-ai-usecases'...
+Updating files:  11% (1526/13665)Updating files:  12% (1640/13665)Updating files:  13% (1777/13665)Updating files:  14% (1914/13665)Updating files:  15% (2050/13665)Updating files:  16% (2187/13665)Updating files:  17% (2324/13665)Updating files:  18% (2460/13665)Updating files:  19% (2597/13665)Updating files:  20% (2733/13665)Updating files:  21% (2870/13665)Updating files:  22% (3007/13665)Updating files:  22% (3025/13665)Updating files:  23% (3143/13665)Updating files:  24% (3280/13665)Updating files:  25% (3417/13665)Updating files:  26% (3553/13665)Updating files:  27% (3690/13665)Updating files:  28% (3827/13665)Updating files:  29% (3963/13665)Updating files:  30% (4100/13665)Updating files:  31% (4237/13665)Updating files:  32% (4373/13665)Updating files:  32% (4485/13665)Updating files:  33% (4510/13665)Updating files:  34% (4647/13665)Updating files:  35% (4783/13665)Updating files:  36% (4920/13665)Updating files:  37% (5057/13665)Updating files:  38% (5193/13665)Updating files:  39% (5330/13665)Updating files:  40% (5466/13665)Updating files:  41% (5603/13665)Updating files:  42% (5740/13665)Updating files:  43% (5876/13665)Updating files:  44% (6013/13665)Updating files:  44% (6107/13665)Updating files:  45% (6150/13665)Updating files:  46% (6286/13665)Updating files:  47% (6423/13665)Updating files:  48% (6560/13665)Updating files:  49% (6696/13665)Updating files:  50% (6833/13665)Updating files:  51% (6970/13665)Updating files:  52% (7106/13665)Updating files:  53% (7243/13665)Updating files:  54% (7380/13665)Updating files:  55% (7516/13665)Updating files:  56% (7653/13665)Updating files:  57% (7790/13665)Updating files:  58% (7926/13665)Updating files:  59% (8063/13665)Updating files:  60% (8199/13665)Updating files:  61% (8336/13665)Updating files:  61% (8457/13665)Updating files:  62% (8473/13665)Updating files:  63% (8609/13665)Updating files:  64% (8746/13665)Updating files:  65% (8883/13665)Updating files:  66% (9019/13665)Updating files:  67% (9156/13665)Updating files:  68% (9293/13665)Updating files:  69% (9429/13665)Updating files:  70% (9566/13665)Updating files:  70% (9666/13665)Updating files:  71% (9703/13665)Updating files:  72% (9839/13665)Updating files:  73% (9976/13665)Updating files:  74% (10113/13665)Updating files:  75% (10249/13665)Updating files:  76% (10386/13665)Updating files:  77% (10523/13665)Updating files:  78% (10659/13665)Updating files:  79% (10796/13665)Updating files:  80% (10932/13665)Updating files:  81% (11069/13665)Updating files:  82% (11206/13665)Updating files:  83% (11342/13665)Updating files:  83% (11413/13665)Updating files:  84% (11479/13665)Updating files:  85% (11616/13665)Updating files:  86% (11752/13665)Updating files:  87% (11889/13665)Updating files:  88% (12026/13665)Updating files:  89% (12162/13665)Updating files:  90% (12299/13665)Updating files:  91% (12436/13665)Updating files:  92% (12572/13665)Updating files:  93% (12709/13665)Updating files:  94% (12846/13665)Updating files:  95% (12982/13665)Updating files:  96% (13119/13665)Updating files:  96% (13138/13665)Updating files:  97% (13256/13665)Updating files:  98% (13392/13665)Updating files:  99% (13529/13665)Updating files:  99% (13535/13665)Updating files:  99% (13605/13665)Updating files:  99% (13643/13665)Updating files: 100% (13665/13665)Updating files: 100% (13665/13665), done.
++ cd hydro-ai-usecases
++ gcloud auth print-access-token
++ docker login -u oauth2accesstoken --password-stdin https://gcr.io
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+Login Succeeded
++ cd ControllerApp
++ echo 'Docker Build gcr.io/hydrotek-286213/controller:release '
+Docker Build gcr.io/hydrotek-286213/controller:release 
++ docker build -t gcr.io/hydrotek-286213/controller:release .
+#1 [internal] load build definition from Dockerfile
+#1 sha256:07800cac7d80c5af3ff8a43967b542b93f1fad21fb8ffef481b78aa423e6a564
+#1 transferring dockerfile: 417B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load .dockerignore
+#2 sha256:fc1821fe589d1efe56da335da0b1a2bdf58dfdae6e2730ca232700a2529596ce
+#2 transferring context: 2B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/node:16
+#3 sha256:fcebe6595ccabc9db4d2477733f2265fb18ca302607dd9a9e445f4ebdfd1189a
+#3 DONE 2.2s
+
+#4 [1/3] FROM docker.io/library/node:16@sha256:68e34cfcd8276ad531b12b3454af5c24cd028752dfccacce4e19efef6f7cdbe0
+#4 sha256:5a6e7225f307eecc5191d4f2f0ebe64c8b3c5b59ba31a8d8acd752bac691bad4
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 sha256:ffdc6d20f914512b9eb1fbbbd994510feddcd4107b62efc5bcbded5f4c39ee8d
+#5 transferring context: 86.65MB 2.7s
+#5 transferring context: 138.72MB 3.8s done
+#5 DONE 3.8s
+
+#4 [1/3] FROM docker.io/library/node:16@sha256:68e34cfcd8276ad531b12b3454af5c24cd028752dfccacce4e19efef6f7cdbe0
+#4 sha256:5a6e7225f307eecc5191d4f2f0ebe64c8b3c5b59ba31a8d8acd752bac691bad4
+#4 CACHED
+
+#6 [2/3] COPY . .
+#6 sha256:dd09bc539ea8a8f96e178a81cdc72b2cf96ab14daa5cbf2dfaad9594ca4ea9ca
+#6 DONE 2.3s
+
+#7 [3/3] WORKDIR ./app
+#7 sha256:fe621c36782b6578222b3aef9417402e1f67d40b37bee34532c5230987ec293f
+#7 DONE 0.0s
+
+#8 exporting to image
+#8 sha256:e8c613e07b0b7ff33893b694f7759a10d42e180f2b4dc349fb57dc6b71dcab00
+#8 exporting layers
+#8 exporting layers 1.3s done
+#8 writing image sha256:34e7a86eeab32e5f29e37f60656e9aee2099cccdcc0cb7733bb923b8cb04d7bf done
+#8 naming to gcr.io/hydrotek-286213/controller:release done
+#8 DONE 1.3s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
++ echo 'Docker Push gcr.io/hydrotek-286213/controller:release'
+Docker Push gcr.io/hydrotek-286213/controller:release
++ docker push gcr.io/hydrotek-286213/controller:release
+The push refers to repository [gcr.io/hydrotek-286213/controller]
+5f70bf18a086: Preparing
+70b018d79785: Preparing
+29b084c6c0fb: Preparing
+c4c1c7e1b593: Preparing
+ffa412e341ec: Preparing
+609caaacd3c7: Preparing
+19414f2bac52: Preparing
+dfab2047e46f: Preparing
+f467c8b30ad7: Preparing
+3b197f32f66b: Preparing
+3f65e6373268: Preparing
+609caaacd3c7: Waiting
+19414f2bac52: Waiting
+dfab2047e46f: Waiting
+f467c8b30ad7: Waiting
+3b197f32f66b: Waiting
+3f65e6373268: Waiting
+ffa412e341ec: Layer already exists
+5f70bf18a086: Layer already exists
+c4c1c7e1b593: Layer already exists
+29b084c6c0fb: Layer already exists
+609caaacd3c7: Layer already exists
+19414f2bac52: Layer already exists
+f467c8b30ad7: Layer already exists
+dfab2047e46f: Layer already exists
+3b197f32f66b: Layer already exists
+3f65e6373268: Layer already exists
+70b018d79785: Pushed
+release: digest: sha256:c656c348dbcae26dca44273b8a0df472c183e1ffae766dccee5a584825b72e5a size: 2632
++ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ '[' -z ControllerApp ']'
++ mainCD
++ echo 'MAIN CD'
+MAIN CD
++ a=(${SELECTED_APP_CD_ARRAY[0]})
++ echo ControllerApp
+ControllerApp
++ '[' ControllerApp == All ']'
++ IFS=', '
++ read -r -a arr
++ for i in "${arr[@]}"
++ temp=ControllerApp
++ temp=ControllerApp
++ echo ControllerApp
+ControllerApp
++ i=ControllerApp
++ case "$i" in
++ echo ControllerApp
+ControllerApp
++ SELECTED_APP_CI=ControllerApp
++ DEPLOYMENT=controller
++ NAMESPACE=dev
++ CONTAINERNAME=controller
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ PORTNUM=3000
++ genericCD ControllerApp controller dev controller gcr.io/hydrotek-286213 release 3000
++ SELECTED_APP_CD=ControllerApp
++ DEPLOYMENT=controller
++ NAMESPACE=dev
++ CONTAINERNAME=controller
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ PORTNUM=3000
++ echo 'GENERIC CD'
+GENERIC CD
++ echo 'Begining Deployment of ControllerApp'
+Begining Deployment of ControllerApp
++ kubectl get deployments controller --namespace dev
++ grep -q controller
+Error from server (NotFound): deployments.apps "controller" not found
++ echo 'New deployemnt'
+New deployemnt
++ echo 'kubectl create deployment controller --image=gcr.io/hydrotek-286213/controller:release --namespace dev'
+kubectl create deployment controller --image=gcr.io/hydrotek-286213/controller:release --namespace dev
++ kubectl create deployment controller --image=gcr.io/hydrotek-286213/controller:release --namespace dev
+Warning: Autopilot set default resource requests for Deployment dev/controller, as resource requests were not specified. See http://g.co/gke/autopilot-defaults.
+deployment.apps/controller created
++ echo 'kubectl expose deployment controller --type=LoadBalancer --port 3000 --namespace dev'
+kubectl expose deployment controller --type=LoadBalancer --port 3000 --namespace dev
++ kubectl expose deployment controller --type=LoadBalancer --port 3000 --namespace dev
+service/controller exposed
++ sleep 15
++ echo 'kubectl set env -n dev --from=secret/mongocredentialsdevcloud deployment/controller'
+kubectl set env -n dev --from=secret/mongocredentialsdevcloud deployment/controller
++ kubectl set env -n dev --from=secret/mongocredentialsdevcloud deployment/controller
+deployment.apps/controller env updated
++ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
+Finished: SUCCESS

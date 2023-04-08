@@ -1,0 +1,17 @@
+{
+  "main": "app/controller.js",
+  "scripts": {
+    "serverstart": "nodemon controller.js",
+    "prod": "nodemon controller.js --prod",
+    "start": "node controller.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "firebase": "^9.6.9",
+    "firebase-admin": "^10.0.2",
+    "mongodb": "^4.4.1",
+    "nodemon": "^2.0.15",
+    "request": "^2.88.2"
+  }
+}

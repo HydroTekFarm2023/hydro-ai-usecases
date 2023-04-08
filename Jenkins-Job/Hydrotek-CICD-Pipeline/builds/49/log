@@ -1,0 +1,74 @@
+Started by user [8mha:////4CA5kL0r8XoTT3PdnVI1PoGEnxCwKlCoPhe73Uyy/FdkAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgZu/dLi1CL9xLzSrEQAtdxjnMAAAAA=[0manuja somthankar
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\Hydrotek-CICD-Pipeline
+[Hydrotek-CICD-Pipeline] $ "C:\Program Files\Git\bin\sh.exe" -xe C:\Users\anuja\AppData\Local\Temp\jenkins1536413687433526631.sh
++ echo 'Hydrotek CICD'
+Hydrotek CICD
++ echo 'CI selected Hydrotek-22-PestDetection/pest-detection/pest-detection'
+CI selected Hydrotek-22-PestDetection/pest-detection/pest-detection
++ echo 'CD selected Hydrotek-22-PestDetection/pest-detection/pest-detection'
+CD selected Hydrotek-22-PestDetection/pest-detection/pest-detection
++ BRANCH=pestclassification-tcet
++ IMAGE_TAG=release
++ SELECTED_APP_CI_ARRAY=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ SELECTED_APP_CD_ARRAY=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ DEPLOYMENT=hydrotekapp-deployment
++ NAMESPACE=dev
++ NETWORKTYPE=LoadBalancer
++ PORTNUM=5000
++ DIR=/c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ echo 'CI/CD Pipeline Started'
+CI/CD Pipeline Started
++ '[' -z Hydrotek-22-PestDetection/pest-detection/pest-detection ']'
++ mainCI
++ echo 'MAIN CI'
+MAIN CI
++ a=(${SELECTED_APP_CI_ARRAY[0]})
++ echo Hydrotek-22-PestDetection/pest-detection/pest-detection
+Hydrotek-22-PestDetection/pest-detection/pest-detection
++ '[' Hydrotek-22-PestDetection/pest-detection/pest-detection == All ']'
++ IFS=', '
++ read -r -a arr
++ for i in "${arr[@]}"
++ temp=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ temp=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ echo Hydrotek-22-PestDetection/pest-detection/pest-detection
+Hydrotek-22-PestDetection/pest-detection/pest-detection
++ i=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ case "$i" in
++ echo Hydrotek-22-PestDetection/pest-detection/pest-detection
+Hydrotek-22-PestDetection/pest-detection/pest-detection
++ SELECTED_APP_CI=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ CI_DIR=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=pestdetection2022
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ genericCI Hydrotek-22-PestDetection/pest-detection/pest-detection Hydrotek-22-PestDetection/pest-detection/pest-detection hydro-ai-usecases pestdetection2022 ./hydrotek/cicdbuild/ gcr.io/hydrotek-286213 release
++ SELECTED_APP_CI=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ CI_DIR=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=pestdetection2022
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ echo 'GENERIC CI'
+GENERIC CI
++ echo 'Begining Integration of Hydrotek-22-PestDetection/pest-detection/pest-detection'
+Begining Integration of Hydrotek-22-PestDetection/pest-detection/pest-detection
++ mkdir -p ./hydrotek/cicdbuild/
++ cd ./hydrotek/cicdbuild/
++ '[' -d hydro-ai-usecases ']'
++ cd hydro-ai-usecases
++ git pull
+ssh: Could not resolve hostname gitlab.com: Name or service not known
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

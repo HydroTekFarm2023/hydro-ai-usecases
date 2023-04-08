@@ -1,0 +1,76 @@
+Started by user [8mha:////4CA5kL0r8XoTT3PdnVI1PoGEnxCwKlCoPhe73Uyy/FdkAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgZu/dLi1CL9xLzSrEQAtdxjnMAAAAA=[0manuja somthankar
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\Hydrotek-CICD-Pipeline
+[Hydrotek-CICD-Pipeline] $ "C:\Program Files\Git\bin\sh.exe" -xe C:\Users\anuja\AppData\Local\Temp\jenkins3843300201873470162.sh
++ echo 'Hydrotek CICD'
+Hydrotek CICD
++ echo 'CI selected Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation'
+CI selected Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation
++ echo 'CD selected Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation'
+CD selected Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation
++ BRANCH=master
++ IMAGE_TAG=release
++ SELECTED_APP_CI_ARRAY=Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation
++ SELECTED_APP_CD_ARRAY=Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ DEPLOYMENT=hydrotekapp-deployment
++ NAMESPACE=dev
++ NETWORKTYPE=LoadBalancer
++ PORTNUM=5000
++ DIR=/c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ echo 'CI/CD Pipeline Started'
+CI/CD Pipeline Started
++ '[' -z Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation ']'
++ mainCI
++ echo 'MAIN CI'
+MAIN CI
++ a=(${SELECTED_APP_CI_ARRAY[0]})
++ echo Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation
+Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation
++ '[' Hydrotek-22-PestDetection/pest-detection/pest-detection,Hydrotek-22-PestDetection/training-automation/training-automation == All ']'
++ IFS=', '
++ read -r -a arr
++ for i in "${arr[@]}"
++ temp=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ temp=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ echo Hydrotek-22-PestDetection/pest-detection/pest-detection
+Hydrotek-22-PestDetection/pest-detection/pest-detection
++ i=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ case "$i" in
++ echo Hydrotek-22-PestDetection/pest-detection/pest-detection
+Hydrotek-22-PestDetection/pest-detection/pest-detection
++ SELECTED_APP_CI=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ CI_DIR=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=pestdetection2022
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ genericCI Hydrotek-22-PestDetection/pest-detection/pest-detection Hydrotek-22-PestDetection/pest-detection/pest-detection hydro-ai-usecases pestdetection2022 ./hydrotek/cicdbuild/ gcr.io/hydrotek-286213 release
++ SELECTED_APP_CI=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ CI_DIR=Hydrotek-22-PestDetection/pest-detection/pest-detection
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=pestdetection2022
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ echo 'GENERIC CI'
+GENERIC CI
++ echo 'Begining Integration of Hydrotek-22-PestDetection/pest-detection/pest-detection'
+Begining Integration of Hydrotek-22-PestDetection/pest-detection/pest-detection
++ mkdir -p ./hydrotek/cicdbuild/
++ cd ./hydrotek/cicdbuild/
++ '[' -d hydro-ai-usecases ']'
++ cd hydro-ai-usecases
++ git pull
+From gitlab.com:hydrotek-ai-grp/hydro-ai-usecases
+   426ddc8..f6abeef  pestclassification-tcet -> origin/pestclassification-tcet
+Already up to date.
++ gcloud auth print-access-token
++ docker login -u oauth2accesstoken --password-stdin https://gcr.io
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+error during connect: In the default daemon configuration on Windows, the docker client must be run with elevated privileges to connect.: Post "http://%2F%2F.%2Fpipe%2Fdocker_engine/v1.24/auth": open //./pipe/docker_engine: The system cannot find the file specified.
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

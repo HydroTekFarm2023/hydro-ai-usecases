@@ -1,0 +1,2676 @@
+Started by user [8mha:////4CA5kL0r8XoTT3PdnVI1PoGEnxCwKlCoPhe73Uyy/FdkAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgZu/dLi1CL9xLzSrEQAtdxjnMAAAAA=[0manuja somthankar
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\Hydrotek-CICD-Pipeline
+[Hydrotek-CICD-Pipeline] $ "C:\Program Files\Git\bin\sh.exe" -xe C:\Users\anuja\AppData\Local\Temp\jenkins2985274978498200913.sh
++ echo 'Hydrotek CICD'
+Hydrotek CICD
++ echo 'CI selected ThermalLeafDetection-New,plant-growth'
+CI selected ThermalLeafDetection-New,plant-growth
++ echo 'CD selected ThermalLeafDetection-New,plant-growth'
+CD selected ThermalLeafDetection-New,plant-growth
++ echo 'Tag selected v2'
+Tag selected v2
++ BRANCH=pestclassification-tcet
++ IMAGE_TAG=v2
++ SELECTED_APP_CI_ARRAY=ThermalLeafDetection-New,plant-growth
++ SELECTED_APP_CD_ARRAY=ThermalLeafDetection-New,plant-growth
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ TEST_DIR=Postman-Tests
++ NAMESPACE=dev
++ NETWORKTYPE=LoadBalancer
++ PORTNUM=5000
++ DIR=/c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ echo 'CI/CD Pipeline Started'
+CI/CD Pipeline Started
++ '[' -z devcloud ']'
++ setenv
++ echo devcloud
+devcloud
++ [[ devcloud == \d\e\v\c\l\o\u\d ]]
++ echo 'Dev Cloud'
+Dev Cloud
++ ENVFILE=hydroTek-Dev-Cloud.postman_environment.json
++ echo 'dev cloud'
+dev cloud
++ gcloud container clusters get-credentials autopilot-cluster-1 --region us-central1 --project hydrotek-286213
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+Fetching cluster endpoint and auth data.
+kubeconfig entry generated for autopilot-cluster-1.
++ echo 'Cluster Name: kt-ai-autopilot-cluster1'
+Cluster Name: kt-ai-autopilot-cluster1
++ NETWORKTYPE=LoadBalancer
++ '[' -z ThermalLeafDetection-New,plant-growth ']'
++ mainCI
++ echo 'MAIN CI'
+MAIN CI
++ a=(${SELECTED_APP_CI_ARRAY[0]})
++ echo ThermalLeafDetection-New,plant-growth
+ThermalLeafDetection-New,plant-growth
++ '[' ThermalLeafDetection-New,plant-growth == All ']'
++ IFS=', '
++ read -r -a arr
++ for i in "${arr[@]}"
++ temp=ThermalLeafDetection-New
++ temp=ThermalLeafDetection-New
++ echo ThermalLeafDetection-New
+ThermalLeafDetection-New
++ i=ThermalLeafDetection-New
++ case "$i" in
++ SELECTED_APP_CI=ThermalLeafDetection-New
++ CI_DIR=ThermalLeafDetection-New
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=thermaldetectionnew
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ genericCI ThermalLeafDetection-New ThermalLeafDetection-New hydro-ai-usecases thermaldetectionnew ./hydrotek/cicdbuild/ gcr.io/hydrotek-286213 release
++ SELECTED_APP_CI=ThermalLeafDetection-New
++ CI_DIR=ThermalLeafDetection-New
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=thermaldetectionnew
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=v2
++ echo 'GENERIC CI'
+GENERIC CI
++ echo 'Beginning Integration of ThermalLeafDetection-New'
+Beginning Integration of ThermalLeafDetection-New
++ mkdir -p ./hydrotek/cicdbuild/
++ cd ./hydrotek/cicdbuild/
++ '[' -d hydro-ai-usecases ']'
++ cd hydro-ai-usecases
++ git pull
+Already up to date.
++ gcloud auth print-access-token
++ docker login -u oauth2accesstoken --password-stdin https://gcr.io
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+Login Succeeded
++ cd ThermalLeafDetection-New
++ echo 'Docker Build gcr.io/hydrotek-286213/thermaldetectionnew:v2 '
+Docker Build gcr.io/hydrotek-286213/thermaldetectionnew:v2 
++ docker build --no-cache -t gcr.io/hydrotek-286213/thermaldetectionnew:v2 .
+#1 [internal] load build definition from Dockerfile
+#1 sha256:aef8f8af5bc8db2ed32a55da75013f732bb32c6a937b572c62f8c43cca3cef83
+#1 transferring dockerfile: 381B done
+#1 DONE 0.0s
+
+#2 [internal] load .dockerignore
+#2 sha256:638d158ca2cef94e7f681cf1c3c31b1760a864eae8b324fa1d37f66019eb4df0
+#2 transferring context: 2B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.7-slim
+#3 sha256:576eff89510cc9dab877be3284ab0265a765bba7f64805aeb347711cab5ba2e4
+#3 DONE 2.0s
+
+#4 [1/8] FROM docker.io/library/python:3.7-slim@sha256:ce125c0b5b4014a3688244a26aa3cd6c82b38a2369db0ff902de18813cd06d36
+#4 sha256:80b49f5170441667f8232c80fde03bc15deaeb58cbc2e58f0eb2a002d2b46b4e
+#4 DONE 0.0s
+
+#5 [2/8] WORKDIR /PlantCV
+#5 sha256:f78742bdac6f362e2744b60d88e07cdbd96a18d7e87f2aa799f4499502cb4997
+#5 CACHED
+
+#8 [internal] load build context
+#8 sha256:1dd0fe7082db91085e18408c122dd92f75845dc41fcee1debde9adeb8e752c15
+#8 transferring context: 130.78kB done
+#8 DONE 0.0s
+
+#6 [3/8] RUN apt-get update
+#6 sha256:2ebfba4b4bd53661249f6b9dd4f075b392ad54692fbac66dac5e22a497ae77ef
+#6 0.553 Get:1 http://security.debian.org/debian-security bullseye-security InRelease [44.1 kB]
+#6 0.653 Get:2 http://security.debian.org/debian-security bullseye-security/main amd64 Packages [124 kB]
+#6 1.533 Get:3 http://deb.debian.org/debian bullseye InRelease [116 kB]
+#6 1.601 Get:4 http://deb.debian.org/debian bullseye-updates InRelease [39.4 kB]
+#6 1.671 Get:5 http://deb.debian.org/debian bullseye/main amd64 Packages [8182 kB]
+#6 2.795 Get:6 http://deb.debian.org/debian bullseye-updates/main amd64 Packages [2596 B]
+#6 3.597 Fetched 8508 kB in 3s (2771 kB/s)
+#6 3.597 Reading package lists...
+#6 DONE 4.0s
+
+#7 [4/8] RUN apt-get install ffmpeg libsm6 libxext6  -y
+#7 sha256:1bde8fa683d48c92dfaee04678bea41e82774760155c68d4f1b43eb8ef7f95bd
+#7 0.546 Reading package lists...
+#7 0.898 Building dependency tree...
+#7 0.979 Reading state information...
+#7 1.064 The following additional packages will be installed:
+#7 1.064   alsa-topology-conf alsa-ucm-conf dbus fontconfig fontconfig-config
+#7 1.064   fonts-dejavu-core i965-va-driver intel-media-va-driver libaacs0 libaom0
+#7 1.064   libapparmor1 libasound2 libasound2-data libass9 libasyncns0 libavc1394-0
+#7 1.064   libavcodec58 libavdevice58 libavfilter7 libavformat58 libavresample4
+#7 1.064   libavutil56 libbdplus0 libblas3 libbluray2 libbrotli1 libbs2b0 libbsd0
+#7 1.064   libcaca0 libcairo-gobject2 libcairo2 libcdio-cdda2 libcdio-paranoia2
+#7 1.064   libcdio19 libchromaprint1 libcodec2-0.9 libdatrie1 libdav1d4 libdbus-1-3
+#7 1.064   libdc1394-25 libdeflate0 libdrm-amdgpu1 libdrm-common libdrm-intel1
+#7 1.064   libdrm-nouveau2 libdrm-radeon1 libdrm2 libedit2 libelf1 libfftw3-double3
+#7 1.064   libflac8 libflite1 libfontconfig1 libfreetype6 libfribidi0 libgbm1
+#7 1.064   libgdk-pixbuf-2.0-0 libgdk-pixbuf2.0-bin libgdk-pixbuf2.0-common
+#7 1.064   libgfortran5 libgl1 libgl1-mesa-dri libglapi-mesa libglib2.0-0
+#7 1.064   libglib2.0-data libglvnd0 libglx-mesa0 libglx0 libgme0 libgomp1
+#7 1.064   libgraphite2-3 libgsm1 libharfbuzz0b libice6 libicu67 libiec61883-0
+#7 1.064   libigdgmm11 libjack-jackd2-0 libjbig0 libjpeg62-turbo liblapack3 liblilv-0-0
+#7 1.064   libllvm11 libmd0 libmfx1 libmp3lame0 libmpg123-0 libmysofa1 libnorm1
+#7 1.064   libnuma1 libogg0 libopenal-data libopenal1 libopenjp2-7 libopenmpt0 libopus0
+#7 1.064   libpango-1.0-0 libpangocairo-1.0-0 libpangoft2-1.0-0 libpciaccess0
+#7 1.064   libpgm-5.3-0 libpixman-1-0 libpng16-16 libpocketsphinx3 libpostproc55
+#7 1.064   libpulse0 libquadmath0 librabbitmq4 libraw1394-11 librsvg2-2 librsvg2-common
+#7 1.065   librubberband2 libsamplerate0 libsdl2-2.0-0 libsensors-config libsensors5
+#7 1.065   libserd-0-0 libshine3 libslang2 libsnappy1v5 libsndfile1 libsndio7.0
+#7 1.065   libsodium23 libsord-0-0 libsoxr0 libspeex1 libsphinxbase3 libsratom-0-0
+#7 1.065   libsrt1.4-gnutls libssh-gcrypt-4 libswresample3 libswscale5 libthai-data
+#7 1.065   libthai0 libtheora0 libtiff5 libtwolame0 libudfread0 libusb-1.0-0 libva-drm2
+#7 1.065   libva-x11-2 libva2 libvdpau-va-gl1 libvdpau1 libvidstab1.1 libvorbis0a
+#7 1.065   libvorbisenc2 libvorbisfile3 libvpx6 libvulkan1 libwavpack1
+#7 1.065   libwayland-client0 libwayland-cursor0 libwayland-egl1 libwayland-server0
+#7 1.065   libwebp6 libwebpmux3 libwrap0 libx11-6 libx11-data libx11-xcb1 libx264-160
+#7 1.065   libx265-192 libxau6 libxcb-dri2-0 libxcb-dri3-0 libxcb-glx0 libxcb-present0
+#7 1.065   libxcb-randr0 libxcb-render0 libxcb-shape0 libxcb-shm0 libxcb-sync1
+#7 1.065   libxcb-xfixes0 libxcb1 libxcursor1 libxdamage1 libxdmcp6 libxfixes3 libxi6
+#7 1.065   libxinerama1 libxkbcommon0 libxml2 libxrandr2 libxrender1 libxshmfence1
+#7 1.065   libxss1 libxv1 libxvidcore4 libxxf86vm1 libz3-4 libzmq5 libzvbi-common
+#7 1.065   libzvbi0 mesa-va-drivers mesa-vdpau-drivers mesa-vulkan-drivers
+#7 1.065   ocl-icd-libopencl1 pocketsphinx-en-us sensible-utils shared-mime-info ucf
+#7 1.065   va-driver-all vdpau-driver-all x11-common xdg-user-dirs xkb-data
+#7 1.066 Suggested packages:
+#7 1.066   default-dbus-session-bus | dbus-session-bus ffmpeg-doc
+#7 1.066   i965-va-driver-shaders libasound2-plugins alsa-utils libbluray-bdj
+#7 1.066   libfftw3-bin libfftw3-dev jackd2 libportaudio2 opus-tools pciutils
+#7 1.066   pulseaudio libraw1394-doc librsvg2-bin xdg-utils lm-sensors serdi sndiod
+#7 1.066   sordi speex opencl-icd nvidia-vdpau-driver nvidia-tesla-440-vdpau-driver
+#7 1.066   nvidia-tesla-418-vdpau-driver nvidia-legacy-390xx-vdpau-driver
+#7 1.066   nvidia-legacy-340xx-vdpau-driver
+#7 1.714 The following NEW packages will be installed:
+#7 1.714   alsa-topology-conf alsa-ucm-conf dbus ffmpeg fontconfig fontconfig-config
+#7 1.714   fonts-dejavu-core i965-va-driver intel-media-va-driver libaacs0 libaom0
+#7 1.714   libapparmor1 libasound2 libasound2-data libass9 libasyncns0 libavc1394-0
+#7 1.714   libavcodec58 libavdevice58 libavfilter7 libavformat58 libavresample4
+#7 1.714   libavutil56 libbdplus0 libblas3 libbluray2 libbrotli1 libbs2b0 libbsd0
+#7 1.714   libcaca0 libcairo-gobject2 libcairo2 libcdio-cdda2 libcdio-paranoia2
+#7 1.714   libcdio19 libchromaprint1 libcodec2-0.9 libdatrie1 libdav1d4 libdbus-1-3
+#7 1.714   libdc1394-25 libdeflate0 libdrm-amdgpu1 libdrm-common libdrm-intel1
+#7 1.714   libdrm-nouveau2 libdrm-radeon1 libdrm2 libedit2 libelf1 libfftw3-double3
+#7 1.714   libflac8 libflite1 libfontconfig1 libfreetype6 libfribidi0 libgbm1
+#7 1.714   libgdk-pixbuf-2.0-0 libgdk-pixbuf2.0-bin libgdk-pixbuf2.0-common
+#7 1.714   libgfortran5 libgl1 libgl1-mesa-dri libglapi-mesa libglib2.0-0
+#7 1.714   libglib2.0-data libglvnd0 libglx-mesa0 libglx0 libgme0 libgomp1
+#7 1.714   libgraphite2-3 libgsm1 libharfbuzz0b libice6 libicu67 libiec61883-0
+#7 1.714   libigdgmm11 libjack-jackd2-0 libjbig0 libjpeg62-turbo liblapack3 liblilv-0-0
+#7 1.714   libllvm11 libmd0 libmfx1 libmp3lame0 libmpg123-0 libmysofa1 libnorm1
+#7 1.714   libnuma1 libogg0 libopenal-data libopenal1 libopenjp2-7 libopenmpt0 libopus0
+#7 1.714   libpango-1.0-0 libpangocairo-1.0-0 libpangoft2-1.0-0 libpciaccess0
+#7 1.714   libpgm-5.3-0 libpixman-1-0 libpng16-16 libpocketsphinx3 libpostproc55
+#7 1.714   libpulse0 libquadmath0 librabbitmq4 libraw1394-11 librsvg2-2 librsvg2-common
+#7 1.714   librubberband2 libsamplerate0 libsdl2-2.0-0 libsensors-config libsensors5
+#7 1.714   libserd-0-0 libshine3 libslang2 libsm6 libsnappy1v5 libsndfile1 libsndio7.0
+#7 1.714   libsodium23 libsord-0-0 libsoxr0 libspeex1 libsphinxbase3 libsratom-0-0
+#7 1.714   libsrt1.4-gnutls libssh-gcrypt-4 libswresample3 libswscale5 libthai-data
+#7 1.714   libthai0 libtheora0 libtiff5 libtwolame0 libudfread0 libusb-1.0-0 libva-drm2
+#7 1.714   libva-x11-2 libva2 libvdpau-va-gl1 libvdpau1 libvidstab1.1 libvorbis0a
+#7 1.714   libvorbisenc2 libvorbisfile3 libvpx6 libvulkan1 libwavpack1
+#7 1.714   libwayland-client0 libwayland-cursor0 libwayland-egl1 libwayland-server0
+#7 1.714   libwebp6 libwebpmux3 libwrap0 libx11-6 libx11-data libx11-xcb1 libx264-160
+#7 1.714   libx265-192 libxau6 libxcb-dri2-0 libxcb-dri3-0 libxcb-glx0 libxcb-present0
+#7 1.714   libxcb-randr0 libxcb-render0 libxcb-shape0 libxcb-shm0 libxcb-sync1
+#7 1.715   libxcb-xfixes0 libxcb1 libxcursor1 libxdamage1 libxdmcp6 libxext6 libxfixes3
+#7 1.715   libxi6 libxinerama1 libxkbcommon0 libxml2 libxrandr2 libxrender1
+#7 1.715   libxshmfence1 libxss1 libxv1 libxvidcore4 libxxf86vm1 libz3-4 libzmq5
+#7 1.715   libzvbi-common libzvbi0 mesa-va-drivers mesa-vdpau-drivers
+#7 1.715   mesa-vulkan-drivers ocl-icd-libopencl1 pocketsphinx-en-us sensible-utils
+#7 1.715   shared-mime-info ucf va-driver-all vdpau-driver-all x11-common xdg-user-dirs
+#7 1.715   xkb-data
+#7 1.753 0 upgraded, 210 newly installed, 0 to remove and 0 not upgraded.
+#7 1.753 Need to get 153 MB of archives.
+#7 1.753 After this operation, 501 MB of additional disk space will be used.
+#7 1.753 Get:1 http://security.debian.org/debian-security bullseye-security/main amd64 libtiff5 amd64 4.2.0-1+deb11u1 [289 kB]
+#7 1.759 Get:2 http://deb.debian.org/debian bullseye/main amd64 libapparmor1 amd64 2.13.6-10 [99.3 kB]
+#7 1.791 Get:3 http://deb.debian.org/debian bullseye/main amd64 libdbus-1-3 amd64 1.12.20-2 [219 kB]
+#7 1.815 Get:4 http://deb.debian.org/debian bullseye/main amd64 dbus amd64 1.12.20-2 [239 kB]
+#7 1.842 Get:5 http://deb.debian.org/debian bullseye/main amd64 sensible-utils all 0.0.14 [14.8 kB]
+#7 1.842 Get:6 http://deb.debian.org/debian bullseye/main amd64 ucf all 3.0043 [74.0 kB]
+#7 1.852 Get:7 http://deb.debian.org/debian bullseye/main amd64 alsa-topology-conf all 1.2.4-1 [12.8 kB]
+#7 1.852 Get:8 http://deb.debian.org/debian bullseye/main amd64 libasound2-data all 1.2.4-1.1 [38.2 kB]
+#7 1.857 Get:9 http://deb.debian.org/debian bullseye/main amd64 libasound2 amd64 1.2.4-1.1 [356 kB]
+#7 1.887 Get:10 http://deb.debian.org/debian bullseye/main amd64 alsa-ucm-conf all 1.2.4-2 [28.1 kB]
+#7 1.887 Get:11 http://deb.debian.org/debian bullseye/main amd64 libaom0 amd64 1.0.0.errata1-3 [1158 kB]
+#7 2.008 Get:12 http://deb.debian.org/debian bullseye/main amd64 libdrm-common all 2.4.104-1 [14.9 kB]
+#7 2.012 Get:13 http://deb.debian.org/debian bullseye/main amd64 libdrm2 amd64 2.4.104-1 [41.5 kB]
+#7 2.016 Get:14 http://deb.debian.org/debian bullseye/main amd64 libva2 amd64 2.10.0-1 [68.7 kB]
+#7 2.025 Get:15 http://deb.debian.org/debian bullseye/main amd64 libmfx1 amd64 21.1.0-1 [3289 kB]
+#7 2.348 Get:16 http://deb.debian.org/debian bullseye/main amd64 libva-drm2 amd64 2.10.0-1 [19.0 kB]
+#7 2.348 Get:17 http://deb.debian.org/debian bullseye/main amd64 libxau6 amd64 1:1.0.9-1 [19.7 kB]
+#7 2.348 Get:18 http://deb.debian.org/debian bullseye/main amd64 libmd0 amd64 1.0.3-3 [28.0 kB]
+#7 2.356 Get:19 http://deb.debian.org/debian bullseye/main amd64 libbsd0 amd64 0.11.3-1 [108 kB]
+#7 2.368 Get:20 http://deb.debian.org/debian bullseye/main amd64 libxdmcp6 amd64 1:1.1.2-3 [26.3 kB]
+#7 2.368 Get:21 http://deb.debian.org/debian bullseye/main amd64 libxcb1 amd64 1.14-3 [140 kB]
+#7 2.383 Get:22 http://deb.debian.org/debian bullseye/main amd64 libx11-data all 2:1.7.2-1 [311 kB]
+#7 2.411 Get:23 http://deb.debian.org/debian bullseye/main amd64 libx11-6 amd64 2:1.7.2-1 [772 kB]
+#7 2.482 Get:24 http://deb.debian.org/debian bullseye/main amd64 libxext6 amd64 2:1.3.3-1.1 [52.7 kB]
+#7 2.487 Get:25 http://deb.debian.org/debian bullseye/main amd64 libxfixes3 amd64 1:5.0.3-2 [22.1 kB]
+#7 2.488 Get:26 http://deb.debian.org/debian bullseye/main amd64 libva-x11-2 amd64 2.10.0-1 [24.0 kB]
+#7 2.492 Get:27 http://deb.debian.org/debian bullseye/main amd64 libvdpau1 amd64 1.4-3 [29.4 kB]
+#7 2.492 Get:28 http://deb.debian.org/debian bullseye/main amd64 ocl-icd-libopencl1 amd64 2.2.14-2 [42.5 kB]
+#7 2.497 Get:29 http://deb.debian.org/debian bullseye/main amd64 libavutil56 amd64 7:4.3.3-0+deb11u1 [309 kB]
+#7 2.532 Get:30 http://deb.debian.org/debian bullseye/main amd64 libbrotli1 amd64 1.0.9-2+b2 [279 kB]
+#7 2.557 Get:31 http://deb.debian.org/debian bullseye/main amd64 libpng16-16 amd64 1.6.37-3 [294 kB]
+#7 2.586 Get:32 http://deb.debian.org/debian bullseye/main amd64 libfreetype6 amd64 2.10.4+dfsg-1 [418 kB]
+#7 2.623 Get:33 http://deb.debian.org/debian bullseye/main amd64 fonts-dejavu-core all 2.37-2 [1069 kB]
+#7 2.750 Get:34 http://deb.debian.org/debian bullseye/main amd64 fontconfig-config all 2.13.1-4.2 [281 kB]
+#7 2.781 Get:35 http://deb.debian.org/debian bullseye/main amd64 libfontconfig1 amd64 2.13.1-4.2 [347 kB]
+#7 2.811 Get:36 http://deb.debian.org/debian bullseye/main amd64 libpixman-1-0 amd64 0.40.0-1 [543 kB]
+#7 2.867 Get:37 http://deb.debian.org/debian bullseye/main amd64 libxcb-render0 amd64 1.14-3 [111 kB]
+#7 2.883 Get:38 http://deb.debian.org/debian bullseye/main amd64 libxcb-shm0 amd64 1.14-3 [101 kB]
+#7 2.894 Get:39 http://deb.debian.org/debian bullseye/main amd64 libxrender1 amd64 1:0.9.10-1 [33.0 kB]
+#7 2.898 Get:40 http://deb.debian.org/debian bullseye/main amd64 libcairo2 amd64 1.16.0-5 [694 kB]
+#7 2.967 Get:41 http://deb.debian.org/debian bullseye/main amd64 libcodec2-0.9 amd64 0.9.2-4 [7890 kB]
+#7 3.732 Get:42 http://deb.debian.org/debian bullseye/main amd64 libdav1d4 amd64 0.7.1-3 [333 kB]
+#7 3.770 Get:43 http://deb.debian.org/debian bullseye/main amd64 libglib2.0-0 amd64 2.66.8-1 [1370 kB]
+#7 3.968 Get:44 http://deb.debian.org/debian bullseye/main amd64 libgsm1 amd64 1.0.18-2 [27.7 kB]
+#7 3.968 Get:45 http://deb.debian.org/debian bullseye/main amd64 libmp3lame0 amd64 3.100-3 [364 kB]
+#7 4.008 Get:46 http://deb.debian.org/debian bullseye/main amd64 libopenjp2-7 amd64 2.4.0-3 [172 kB]
+#7 4.022 Get:47 http://deb.debian.org/debian bullseye/main amd64 libopus0 amd64 1.3.1-0.1 [190 kB]
+#7 4.041 Get:48 http://deb.debian.org/debian bullseye/main amd64 libcairo-gobject2 amd64 1.16.0-5 [125 kB]
+#7 4.052 Get:49 http://deb.debian.org/debian bullseye/main amd64 libgdk-pixbuf2.0-common all 2.42.2+dfsg-1 [320 kB]
+#7 4.090 Get:50 http://deb.debian.org/debian bullseye/main amd64 libicu67 amd64 67.1-7 [8622 kB]
+#7 4.960 Get:51 http://deb.debian.org/debian bullseye/main amd64 libxml2 amd64 2.9.10+dfsg-6.7+deb11u1 [693 kB]
+#7 5.029 Get:52 http://deb.debian.org/debian bullseye/main amd64 shared-mime-info amd64 2.0-1 [701 kB]
+#7 5.101 Get:53 http://deb.debian.org/debian bullseye/main amd64 libjpeg62-turbo amd64 1:2.0.6-4 [151 kB]
+#7 5.116 Get:54 http://deb.debian.org/debian bullseye/main amd64 libdeflate0 amd64 1.7-1 [53.1 kB]
+#7 5.128 Get:55 http://deb.debian.org/debian bullseye/main amd64 libjbig0 amd64 2.1-3.1+b2 [31.0 kB]
+#7 5.129 Get:56 http://deb.debian.org/debian bullseye/main amd64 libwebp6 amd64 0.6.1-2.1 [258 kB]
+#7 5.150 Get:57 http://deb.debian.org/debian bullseye/main amd64 libgdk-pixbuf-2.0-0 amd64 2.42.2+dfsg-1 [146 kB]
+#7 5.163 Get:58 http://deb.debian.org/debian bullseye/main amd64 fontconfig amd64 2.13.1-4.2 [417 kB]
+#7 5.200 Get:59 http://deb.debian.org/debian bullseye/main amd64 libfribidi0 amd64 1.0.8-2 [64.8 kB]
+#7 5.210 Get:60 http://deb.debian.org/debian bullseye/main amd64 libgraphite2-3 amd64 1.3.14-1 [81.2 kB]
+#7 5.216 Get:61 http://deb.debian.org/debian bullseye/main amd64 libharfbuzz0b amd64 2.7.4-1 [1471 kB]
+#7 5.345 Get:62 http://deb.debian.org/debian bullseye/main amd64 libthai-data all 0.1.28-3 [170 kB]
+#7 5.360 Get:63 http://deb.debian.org/debian bullseye/main amd64 libdatrie1 amd64 0.2.13-1 [42.7 kB]
+#7 5.363 Get:64 http://deb.debian.org/debian bullseye/main amd64 libthai0 amd64 0.1.28-3 [54.2 kB]
+#7 5.367 Get:65 http://deb.debian.org/debian bullseye/main amd64 libpango-1.0-0 amd64 1.46.2-3 [191 kB]
+#7 5.384 Get:66 http://deb.debian.org/debian bullseye/main amd64 libpangoft2-1.0-0 amd64 1.46.2-3 [62.2 kB]
+#7 5.396 Get:67 http://deb.debian.org/debian bullseye/main amd64 libpangocairo-1.0-0 amd64 1.46.2-3 [50.6 kB]
+#7 5.406 Get:68 http://deb.debian.org/debian bullseye/main amd64 librsvg2-2 amd64 2.50.3+dfsg-1 [2460 kB]
+#7 5.661 Get:69 http://deb.debian.org/debian bullseye/main amd64 libshine3 amd64 3.1.1-2 [23.6 kB]
+#7 5.662 Get:70 http://deb.debian.org/debian bullseye/main amd64 libsnappy1v5 amd64 1.1.8-1 [17.9 kB]
+#7 5.664 Get:71 http://deb.debian.org/debian bullseye/main amd64 libspeex1 amd64 1.2~rc1.2-1.1 [55.4 kB]
+#7 5.673 Get:72 http://deb.debian.org/debian bullseye/main amd64 libgomp1 amd64 10.2.1-6 [99.9 kB]
+#7 5.680 Get:73 http://deb.debian.org/debian bullseye/main amd64 libsoxr0 amd64 0.1.3-4 [77.8 kB]
+#7 5.688 Get:74 http://deb.debian.org/debian bullseye/main amd64 libswresample3 amd64 7:4.3.3-0+deb11u1 [107 kB]
+#7 5.702 Get:75 http://deb.debian.org/debian bullseye/main amd64 libogg0 amd64 1.3.4-0.1 [27.3 kB]
+#7 5.713 Get:76 http://deb.debian.org/debian bullseye/main amd64 libtheora0 amd64 1.1.1+dfsg.1-15 [169 kB]
+#7 5.734 Get:77 http://deb.debian.org/debian bullseye/main amd64 libtwolame0 amd64 0.4.0-2 [51.1 kB]
+#7 5.738 Get:78 http://deb.debian.org/debian bullseye/main amd64 libvorbis0a amd64 1.3.7-1 [93.0 kB]
+#7 5.749 Get:79 http://deb.debian.org/debian bullseye/main amd64 libvorbisenc2 amd64 1.3.7-1 [80.6 kB]
+#7 5.758 Get:80 http://deb.debian.org/debian bullseye/main amd64 libvpx6 amd64 1.9.0-1 [829 kB]
+#7 5.861 Get:81 http://deb.debian.org/debian bullseye/main amd64 libwavpack1 amd64 5.4.0-1 [87.8 kB]
+#7 5.872 Get:82 http://deb.debian.org/debian bullseye/main amd64 libwebpmux3 amd64 0.6.1-2.1 [97.6 kB]
+#7 5.882 Get:83 http://deb.debian.org/debian bullseye/main amd64 libx264-160 amd64 2:0.160.3011+gitcde9a93-2.1 [539 kB]
+#7 5.949 Get:84 http://deb.debian.org/debian bullseye/main amd64 libnuma1 amd64 2.0.12-1+b1 [26.3 kB]
+#7 5.950 Get:85 http://deb.debian.org/debian bullseye/main amd64 libx265-192 amd64 3.4-2 [1095 kB]
+#7 6.069 Get:86 http://deb.debian.org/debian bullseye/main amd64 libxvidcore4 amd64 2:1.3.7-1 [242 kB]
+#7 6.103 Get:87 http://deb.debian.org/debian bullseye/main amd64 libzvbi-common all 0.2.35-18 [64.6 kB]
+#7 6.118 Get:88 http://deb.debian.org/debian bullseye/main amd64 libzvbi0 amd64 0.2.35-18 [271 kB]
+#7 6.154 Get:89 http://deb.debian.org/debian bullseye/main amd64 libavcodec58 amd64 7:4.3.3-0+deb11u1 [4956 kB]
+#7 6.695 Get:90 http://deb.debian.org/debian bullseye/main amd64 libraw1394-11 amd64 2.1.2-2 [41.1 kB]
+#7 6.699 Get:91 http://deb.debian.org/debian bullseye/main amd64 libavc1394-0 amd64 0.5.4-5 [19.9 kB]
+#7 6.701 Get:92 http://deb.debian.org/debian bullseye/main amd64 libass9 amd64 1:0.15.0-2 [100.0 kB]
+#7 6.710 Get:93 http://deb.debian.org/debian bullseye/main amd64 libudfread0 amd64 1.1.1-1 [16.4 kB]
+#7 6.712 Get:94 http://deb.debian.org/debian bullseye/main amd64 libbluray2 amd64 1:1.2.1-4+deb11u1 [139 kB]
+#7 6.738 Get:95 http://deb.debian.org/debian bullseye/main amd64 libchromaprint1 amd64 1.5.0-2 [40.8 kB]
+#7 6.745 Get:96 http://deb.debian.org/debian bullseye/main amd64 libgme0 amd64 0.6.3-2 [128 kB]
+#7 6.763 Get:97 http://deb.debian.org/debian bullseye/main amd64 libmpg123-0 amd64 1.26.4-1 [142 kB]
+#7 6.780 Get:98 http://deb.debian.org/debian bullseye/main amd64 libvorbisfile3 amd64 1.3.7-1 [26.1 kB]
+#7 6.783 Get:99 http://deb.debian.org/debian bullseye/main amd64 libopenmpt0 amd64 0.4.11-1 [616 kB]
+#7 6.853 Get:100 http://deb.debian.org/debian bullseye/main amd64 librabbitmq4 amd64 0.10.0-1 [41.0 kB]
+#7 6.857 Get:101 http://deb.debian.org/debian bullseye/main amd64 libsrt1.4-gnutls amd64 1.4.2-1.3 [271 kB]
+#7 6.885 Get:102 http://deb.debian.org/debian bullseye/main amd64 libssh-gcrypt-4 amd64 0.9.5-1+deb11u1 [218 kB]
+#7 6.902 Get:103 http://deb.debian.org/debian bullseye/main amd64 libnorm1 amd64 1.5.9+dfsg-2 [221 kB]
+#7 6.921 Get:104 http://deb.debian.org/debian bullseye/main amd64 libpgm-5.3-0 amd64 5.3.128~dfsg-2 [161 kB]
+#7 6.942 Get:105 http://deb.debian.org/debian bullseye/main amd64 libsodium23 amd64 1.0.18-1 [161 kB]
+#7 6.958 Get:106 http://deb.debian.org/debian bullseye/main amd64 libzmq5 amd64 4.3.4-1 [275 kB]
+#7 6.986 Get:107 http://deb.debian.org/debian bullseye/main amd64 libavformat58 amd64 7:4.3.3-0+deb11u1 [1053 kB]
+#7 7.087 Get:108 http://deb.debian.org/debian bullseye/main amd64 libbs2b0 amd64 3.1.0+dfsg-2.2+b1 [12.2 kB]
+#7 7.087 Get:109 http://deb.debian.org/debian bullseye/main amd64 libflite1 amd64 2.2-2 [12.8 MB]
+#7 8.403 Get:110 http://deb.debian.org/debian bullseye/main amd64 libserd-0-0 amd64 0.30.10-2 [46.0 kB]
+#7 8.413 Get:111 http://deb.debian.org/debian bullseye/main amd64 libsord-0-0 amd64 0.16.8-2 [24.2 kB]
+#7 8.418 Get:112 http://deb.debian.org/debian bullseye/main amd64 libsratom-0-0 amd64 0.6.8-1 [17.9 kB]
+#7 8.424 Get:113 http://deb.debian.org/debian bullseye/main amd64 liblilv-0-0 amd64 0.24.12-2 [49.2 kB]
+#7 8.425 Get:114 http://deb.debian.org/debian bullseye/main amd64 libmysofa1 amd64 1.2~dfsg0-1 [1157 kB]
+#7 8.537 Get:115 http://deb.debian.org/debian bullseye/main amd64 libblas3 amd64 3.9.0-3 [153 kB]
+#7 8.553 Get:116 http://deb.debian.org/debian bullseye/main amd64 libquadmath0 amd64 10.2.1-6 [145 kB]
+#7 8.568 Get:117 http://deb.debian.org/debian bullseye/main amd64 libgfortran5 amd64 10.2.1-6 [727 kB]
+#7 8.640 Get:118 http://deb.debian.org/debian bullseye/main amd64 liblapack3 amd64 3.9.0-3 [2166 kB]
+#7 8.876 Get:119 http://deb.debian.org/debian bullseye/main amd64 libasyncns0 amd64 0.8-6+b2 [12.9 kB]
+#7 8.877 Get:120 http://deb.debian.org/debian bullseye/main amd64 libflac8 amd64 1.3.3-2+deb11u1 [112 kB]
+#7 8.889 Get:121 http://deb.debian.org/debian bullseye/main amd64 libsndfile1 amd64 1.0.31-2 [188 kB]
+#7 8.908 Get:122 http://deb.debian.org/debian bullseye/main amd64 libwrap0 amd64 7.6.q-31 [59.0 kB]
+#7 8.914 Get:123 http://deb.debian.org/debian bullseye/main amd64 libpulse0 amd64 14.2-2 [285 kB]
+#7 8.938 Get:124 http://deb.debian.org/debian bullseye/main amd64 libsphinxbase3 amd64 0.8+5prealpha+1-12 [120 kB]
+#7 8.948 Get:125 http://deb.debian.org/debian bullseye/main amd64 libpocketsphinx3 amd64 0.8+5prealpha+1-13 [124 kB]
+#7 8.960 Get:126 http://deb.debian.org/debian bullseye/main amd64 libpostproc55 amd64 7:4.3.3-0+deb11u1 [105 kB]
+#7 8.971 Get:127 http://deb.debian.org/debian bullseye/main amd64 libfftw3-double3 amd64 3.3.8-2 [733 kB]
+#7 9.042 Get:128 http://deb.debian.org/debian bullseye/main amd64 libsamplerate0 amd64 0.2.1+ds0-1 [954 kB]
+#7 9.141 Get:129 http://deb.debian.org/debian bullseye/main amd64 librubberband2 amd64 1.9.0-1 [86.0 kB]
+#7 9.149 Get:130 http://deb.debian.org/debian bullseye/main amd64 libswscale5 amd64 7:4.3.3-0+deb11u1 [208 kB]
+#7 9.168 Get:131 http://deb.debian.org/debian bullseye/main amd64 libvidstab1.1 amd64 1.1.0-2+b1 [37.8 kB]
+#7 9.170 Get:132 http://deb.debian.org/debian bullseye/main amd64 libavfilter7 amd64 7:4.3.3-0+deb11u1 [1298 kB]
+#7 9.307 Get:133 http://deb.debian.org/debian bullseye/main amd64 libslang2 amd64 2.3.2-5 [509 kB]
+#7 9.355 Get:134 http://deb.debian.org/debian bullseye/main amd64 libcaca0 amd64 0.99.beta19-2.2 [348 kB]
+#7 9.389 Get:135 http://deb.debian.org/debian bullseye/main amd64 libcdio19 amd64 2.1.0-2 [204 kB]
+#7 9.411 Get:136 http://deb.debian.org/debian bullseye/main amd64 libcdio-cdda2 amd64 10.2+2.0.0-1+b2 [20.7 kB]
+#7 9.414 Get:137 http://deb.debian.org/debian bullseye/main amd64 libcdio-paranoia2 amd64 10.2+2.0.0-1+b2 [20.5 kB]
+#7 9.416 Get:138 http://deb.debian.org/debian bullseye/main amd64 libusb-1.0-0 amd64 2:1.0.24-3 [60.2 kB]
+#7 9.420 Get:139 http://deb.debian.org/debian bullseye/main amd64 libdc1394-25 amd64 2.2.6-3 [108 kB]
+#7 9.431 Get:140 http://deb.debian.org/debian bullseye/main amd64 libglvnd0 amd64 1.3.2-1 [53.6 kB]
+#7 9.435 Get:141 http://deb.debian.org/debian bullseye/main amd64 libglapi-mesa amd64 20.3.5-1 [71.7 kB]
+#7 9.442 Get:142 http://deb.debian.org/debian bullseye/main amd64 libx11-xcb1 amd64 2:1.7.2-1 [203 kB]
+#7 9.460 Get:143 http://deb.debian.org/debian bullseye/main amd64 libxcb-dri2-0 amd64 1.14-3 [103 kB]
+#7 9.470 Get:144 http://deb.debian.org/debian bullseye/main amd64 libxcb-dri3-0 amd64 1.14-3 [102 kB]
+#7 9.480 Get:145 http://deb.debian.org/debian bullseye/main amd64 libxcb-glx0 amd64 1.14-3 [118 kB]
+#7 9.496 Get:146 http://deb.debian.org/debian bullseye/main amd64 libxcb-present0 amd64 1.14-3 [101 kB]
+#7 9.504 Get:147 http://deb.debian.org/debian bullseye/main amd64 libxcb-sync1 amd64 1.14-3 [105 kB]
+#7 9.519 Get:148 http://deb.debian.org/debian bullseye/main amd64 libxcb-xfixes0 amd64 1.14-3 [105 kB]
+#7 9.526 Get:149 http://deb.debian.org/debian bullseye/main amd64 libxdamage1 amd64 1:1.1.5-2 [15.7 kB]
+#7 9.527 Get:150 http://deb.debian.org/debian bullseye/main amd64 libxshmfence1 amd64 1.3-1 [8820 B]
+#7 9.530 Get:151 http://deb.debian.org/debian bullseye/main amd64 libxxf86vm1 amd64 1:1.1.4-1+b2 [20.8 kB]
+#7 9.530 Get:152 http://deb.debian.org/debian bullseye/main amd64 libdrm-amdgpu1 amd64 2.4.104-1 [28.5 kB]
+#7 9.534 Get:153 http://deb.debian.org/debian bullseye/main amd64 libpciaccess0 amd64 0.16-1 [53.6 kB]
+#7 9.537 Get:154 http://deb.debian.org/debian bullseye/main amd64 libdrm-intel1 amd64 2.4.104-1 [71.8 kB]
+#7 9.545 Get:155 http://deb.debian.org/debian bullseye/main amd64 libdrm-nouveau2 amd64 2.4.104-1 [26.8 kB]
+#7 9.546 Get:156 http://deb.debian.org/debian bullseye/main amd64 libdrm-radeon1 amd64 2.4.104-1 [30.2 kB]
+#7 9.549 Get:157 http://deb.debian.org/debian bullseye/main amd64 libelf1 amd64 0.183-1 [165 kB]
+#7 9.564 Get:158 http://deb.debian.org/debian bullseye/main amd64 libedit2 amd64 3.1-20191231-2+b1 [96.7 kB]
+#7 9.572 Get:159 http://deb.debian.org/debian bullseye/main amd64 libz3-4 amd64 4.8.10-1 [6949 kB]
+#7 10.27 Get:160 http://deb.debian.org/debian bullseye/main amd64 libllvm11 amd64 1:11.0.1-2 [17.9 MB]
+#7 12.05 Get:161 http://deb.debian.org/debian bullseye/main amd64 libsensors-config all 1:3.6.0-7 [32.3 kB]
+#7 12.06 Get:162 http://deb.debian.org/debian bullseye/main amd64 libsensors5 amd64 1:3.6.0-7 [52.3 kB]
+#7 12.07 Get:163 http://deb.debian.org/debian bullseye/main amd64 libvulkan1 amd64 1.2.162.0-1 [103 kB]
+#7 12.08 Get:164 http://deb.debian.org/debian bullseye/main amd64 libgl1-mesa-dri amd64 20.3.5-1 [9633 kB]
+#7 13.03 Get:165 http://deb.debian.org/debian bullseye/main amd64 libglx-mesa0 amd64 20.3.5-1 [186 kB]
+#7 13.06 Get:166 http://deb.debian.org/debian bullseye/main amd64 libglx0 amd64 1.3.2-1 [35.7 kB]
+#7 13.06 Get:167 http://deb.debian.org/debian bullseye/main amd64 libgl1 amd64 1.3.2-1 [89.5 kB]
+#7 13.07 Get:168 http://deb.debian.org/debian bullseye/main amd64 libiec61883-0 amd64 1.2.0-4 [31.4 kB]
+#7 13.07 Get:169 http://deb.debian.org/debian bullseye/main amd64 libjack-jackd2-0 amd64 1.9.17~dfsg-1 [289 kB]
+#7 13.10 Get:170 http://deb.debian.org/debian bullseye/main amd64 libopenal-data all 1:1.19.1-2 [170 kB]
+#7 13.12 Get:171 http://deb.debian.org/debian bullseye/main amd64 libsndio7.0 amd64 1.5.0-3 [24.7 kB]
+#7 13.12 Get:172 http://deb.debian.org/debian bullseye/main amd64 libopenal1 amd64 1:1.19.1-2 [501 kB]
+#7 13.17 Get:173 http://deb.debian.org/debian bullseye/main amd64 libwayland-server0 amd64 1.18.0-2~exp1.1 [34.4 kB]
+#7 13.18 Get:174 http://deb.debian.org/debian bullseye/main amd64 libgbm1 amd64 20.3.5-1 [73.5 kB]
+#7 13.18 Get:175 http://deb.debian.org/debian bullseye/main amd64 libwayland-client0 amd64 1.18.0-2~exp1.1 [26.9 kB]
+#7 13.18 Get:176 http://deb.debian.org/debian bullseye/main amd64 libwayland-cursor0 amd64 1.18.0-2~exp1.1 [14.6 kB]
+#7 13.19 Get:177 http://deb.debian.org/debian bullseye/main amd64 libwayland-egl1 amd64 1.18.0-2~exp1.1 [8448 B]
+#7 13.19 Get:178 http://deb.debian.org/debian bullseye/main amd64 libxcursor1 amd64 1:1.2.0-2 [37.3 kB]
+#7 13.20 Get:179 http://deb.debian.org/debian bullseye/main amd64 libxi6 amd64 2:1.7.10-1 [83.4 kB]
+#7 13.20 Get:180 http://deb.debian.org/debian bullseye/main amd64 libxinerama1 amd64 2:1.1.4-2 [17.7 kB]
+#7 13.21 Get:181 http://deb.debian.org/debian bullseye/main amd64 xkb-data all 2.29-2 [655 kB]
+#7 13.28 Get:182 http://deb.debian.org/debian bullseye/main amd64 libxkbcommon0 amd64 1.0.3-2 [101 kB]
+#7 13.29 Get:183 http://deb.debian.org/debian bullseye/main amd64 libxrandr2 amd64 2:1.5.1-1 [37.5 kB]
+#7 13.30 Get:184 http://deb.debian.org/debian bullseye/main amd64 x11-common all 1:7.7+22 [252 kB]
+#7 13.32 Get:185 http://deb.debian.org/debian bullseye/main amd64 libxss1 amd64 1:1.2.3-1 [17.8 kB]
+#7 13.32 Get:186 http://deb.debian.org/debian bullseye/main amd64 libsdl2-2.0-0 amd64 2.0.14+dfsg2-3 [506 kB]
+#7 13.37 Get:187 http://deb.debian.org/debian bullseye/main amd64 libxcb-shape0 amd64 1.14-3 [102 kB]
+#7 13.38 Get:188 http://deb.debian.org/debian bullseye/main amd64 libxv1 amd64 2:1.0.11-1 [24.6 kB]
+#7 13.38 Get:189 http://deb.debian.org/debian bullseye/main amd64 libavdevice58 amd64 7:4.3.3-0+deb11u1 [124 kB]
+#7 13.40 Get:190 http://deb.debian.org/debian bullseye/main amd64 libavresample4 amd64 7:4.3.3-0+deb11u1 [103 kB]
+#7 13.41 Get:191 http://deb.debian.org/debian bullseye/main amd64 ffmpeg amd64 7:4.3.3-0+deb11u1 [1595 kB]
+#7 13.56 Get:192 http://deb.debian.org/debian bullseye/main amd64 i965-va-driver amd64 2.4.1+dfsg1-1 [309 kB]
+#7 13.59 Get:193 http://deb.debian.org/debian bullseye/main amd64 libigdgmm11 amd64 20.4.1+ds1-1 [112 kB]
+#7 13.61 Get:194 http://deb.debian.org/debian bullseye/main amd64 intel-media-va-driver amd64 21.1.1+dfsg1-1 [1915 kB]
+#7 13.79 Get:195 http://deb.debian.org/debian bullseye/main amd64 libaacs0 amd64 0.9.0-2 [52.4 kB]
+#7 13.80 Get:196 http://deb.debian.org/debian bullseye/main amd64 libbdplus0 amd64 0.1.2-3 [47.5 kB]
+#7 13.80 Get:197 http://deb.debian.org/debian bullseye/main amd64 libgdk-pixbuf2.0-bin amd64 2.42.2+dfsg-1 [25.5 kB]
+#7 13.81 Get:198 http://deb.debian.org/debian bullseye/main amd64 libglib2.0-data all 2.66.8-1 [1164 kB]
+#7 13.94 Get:199 http://deb.debian.org/debian bullseye/main amd64 libice6 amd64 2:1.0.10-1 [58.5 kB]
+#7 13.95 Get:200 http://deb.debian.org/debian bullseye/main amd64 librsvg2-common amd64 2.50.3+dfsg-1 [31.0 kB]
+#7 13.95 Get:201 http://deb.debian.org/debian bullseye/main amd64 libsm6 amd64 2:1.2.3-1 [35.1 kB]
+#7 13.96 Get:202 http://deb.debian.org/debian bullseye/main amd64 libvdpau-va-gl1 amd64 0.4.2-1+b1 [71.3 kB]
+#7 13.97 Get:203 http://deb.debian.org/debian bullseye/main amd64 libxcb-randr0 amd64 1.14-3 [113 kB]
+#7 13.98 Get:204 http://deb.debian.org/debian bullseye/main amd64 mesa-va-drivers amd64 20.3.5-1 [2623 kB]
+#7 14.26 Get:205 http://deb.debian.org/debian bullseye/main amd64 mesa-vdpau-drivers amd64 20.3.5-1 [2744 kB]
+#7 14.55 Get:206 http://deb.debian.org/debian bullseye/main amd64 mesa-vulkan-drivers amd64 20.3.5-1 [4086 kB]
+#7 14.96 Get:207 http://deb.debian.org/debian bullseye/main amd64 pocketsphinx-en-us all 0.8+5prealpha+1-13 [24.3 MB]
+#7 17.43 Get:208 http://deb.debian.org/debian bullseye/main amd64 va-driver-all amd64 2.10.0-1 [15.3 kB]
+#7 17.43 Get:209 http://deb.debian.org/debian bullseye/main amd64 vdpau-driver-all amd64 1.4-3 [8540 B]
+#7 17.43 Get:210 http://deb.debian.org/debian bullseye/main amd64 xdg-user-dirs amd64 0.17-2 [53.8 kB]
+#7 17.62 debconf: delaying package configuration, since apt-utils is not installed
+#7 17.65 Fetched 153 MB in 16s (9752 kB/s)
+#7 17.68 Selecting previously unselected package libapparmor1:amd64.
+#7 17.68 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 7023 files and directories currently installed.)
+#7 17.70 Preparing to unpack .../000-libapparmor1_2.13.6-10_amd64.deb ...
+#7 17.71 Unpacking libapparmor1:amd64 (2.13.6-10) ...
+#7 17.75 Selecting previously unselected package libdbus-1-3:amd64.
+#7 17.75 Preparing to unpack .../001-libdbus-1-3_1.12.20-2_amd64.deb ...
+#7 17.76 Unpacking libdbus-1-3:amd64 (1.12.20-2) ...
+#7 17.81 Selecting previously unselected package dbus.
+#7 17.81 Preparing to unpack .../002-dbus_1.12.20-2_amd64.deb ...
+#7 17.83 Unpacking dbus (1.12.20-2) ...
+#7 17.88 Selecting previously unselected package sensible-utils.
+#7 17.88 Preparing to unpack .../003-sensible-utils_0.0.14_all.deb ...
+#7 17.88 Unpacking sensible-utils (0.0.14) ...
+#7 17.93 Selecting previously unselected package ucf.
+#7 17.93 Preparing to unpack .../004-ucf_3.0043_all.deb ...
+#7 17.93 Moving old data out of the way
+#7 17.93 Unpacking ucf (3.0043) ...
+#7 17.97 Selecting previously unselected package alsa-topology-conf.
+#7 17.97 Preparing to unpack .../005-alsa-topology-conf_1.2.4-1_all.deb ...
+#7 17.97 Unpacking alsa-topology-conf (1.2.4-1) ...
+#7 18.01 Selecting previously unselected package libasound2-data.
+#7 18.01 Preparing to unpack .../006-libasound2-data_1.2.4-1.1_all.deb ...
+#7 18.01 Unpacking libasound2-data (1.2.4-1.1) ...
+#7 18.05 Selecting previously unselected package libasound2:amd64.
+#7 18.05 Preparing to unpack .../007-libasound2_1.2.4-1.1_amd64.deb ...
+#7 18.06 Unpacking libasound2:amd64 (1.2.4-1.1) ...
+#7 18.12 Selecting previously unselected package alsa-ucm-conf.
+#7 18.12 Preparing to unpack .../008-alsa-ucm-conf_1.2.4-2_all.deb ...
+#7 18.12 Unpacking alsa-ucm-conf (1.2.4-2) ...
+#7 18.18 Selecting previously unselected package libaom0:amd64.
+#7 18.18 Preparing to unpack .../009-libaom0_1.0.0.errata1-3_amd64.deb ...
+#7 18.19 Unpacking libaom0:amd64 (1.0.0.errata1-3) ...
+#7 18.31 Selecting previously unselected package libdrm-common.
+#7 18.31 Preparing to unpack .../010-libdrm-common_2.4.104-1_all.deb ...
+#7 18.31 Unpacking libdrm-common (2.4.104-1) ...
+#7 18.35 Selecting previously unselected package libdrm2:amd64.
+#7 18.35 Preparing to unpack .../011-libdrm2_2.4.104-1_amd64.deb ...
+#7 18.35 Unpacking libdrm2:amd64 (2.4.104-1) ...
+#7 18.39 Selecting previously unselected package libva2:amd64.
+#7 18.39 Preparing to unpack .../012-libva2_2.10.0-1_amd64.deb ...
+#7 18.40 Unpacking libva2:amd64 (2.10.0-1) ...
+#7 18.44 Selecting previously unselected package libmfx1:amd64.
+#7 18.44 Preparing to unpack .../013-libmfx1_21.1.0-1_amd64.deb ...
+#7 18.44 Unpacking libmfx1:amd64 (21.1.0-1) ...
+#7 18.84 Selecting previously unselected package libva-drm2:amd64.
+#7 18.84 Preparing to unpack .../014-libva-drm2_2.10.0-1_amd64.deb ...
+#7 18.85 Unpacking libva-drm2:amd64 (2.10.0-1) ...
+#7 18.88 Selecting previously unselected package libxau6:amd64.
+#7 18.89 Preparing to unpack .../015-libxau6_1%3a1.0.9-1_amd64.deb ...
+#7 18.89 Unpacking libxau6:amd64 (1:1.0.9-1) ...
+#7 18.92 Selecting previously unselected package libmd0:amd64.
+#7 18.93 Preparing to unpack .../016-libmd0_1.0.3-3_amd64.deb ...
+#7 18.93 Unpacking libmd0:amd64 (1.0.3-3) ...
+#7 18.97 Selecting previously unselected package libbsd0:amd64.
+#7 18.97 Preparing to unpack .../017-libbsd0_0.11.3-1_amd64.deb ...
+#7 18.97 Unpacking libbsd0:amd64 (0.11.3-1) ...
+#7 19.01 Selecting previously unselected package libxdmcp6:amd64.
+#7 19.01 Preparing to unpack .../018-libxdmcp6_1%3a1.1.2-3_amd64.deb ...
+#7 19.02 Unpacking libxdmcp6:amd64 (1:1.1.2-3) ...
+#7 19.05 Selecting previously unselected package libxcb1:amd64.
+#7 19.05 Preparing to unpack .../019-libxcb1_1.14-3_amd64.deb ...
+#7 19.06 Unpacking libxcb1:amd64 (1.14-3) ...
+#7 19.09 Selecting previously unselected package libx11-data.
+#7 19.09 Preparing to unpack .../020-libx11-data_2%3a1.7.2-1_all.deb ...
+#7 19.10 Unpacking libx11-data (2:1.7.2-1) ...
+#7 19.16 Selecting previously unselected package libx11-6:amd64.
+#7 19.16 Preparing to unpack .../021-libx11-6_2%3a1.7.2-1_amd64.deb ...
+#7 19.17 Unpacking libx11-6:amd64 (2:1.7.2-1) ...
+#7 19.25 Selecting previously unselected package libxext6:amd64.
+#7 19.25 Preparing to unpack .../022-libxext6_2%3a1.3.3-1.1_amd64.deb ...
+#7 19.26 Unpacking libxext6:amd64 (2:1.3.3-1.1) ...
+#7 19.29 Selecting previously unselected package libxfixes3:amd64.
+#7 19.29 Preparing to unpack .../023-libxfixes3_1%3a5.0.3-2_amd64.deb ...
+#7 19.30 Unpacking libxfixes3:amd64 (1:5.0.3-2) ...
+#7 19.33 Selecting previously unselected package libva-x11-2:amd64.
+#7 19.33 Preparing to unpack .../024-libva-x11-2_2.10.0-1_amd64.deb ...
+#7 19.34 Unpacking libva-x11-2:amd64 (2.10.0-1) ...
+#7 19.38 Selecting previously unselected package libvdpau1:amd64.
+#7 19.38 Preparing to unpack .../025-libvdpau1_1.4-3_amd64.deb ...
+#7 19.38 Unpacking libvdpau1:amd64 (1.4-3) ...
+#7 19.42 Selecting previously unselected package ocl-icd-libopencl1:amd64.
+#7 19.42 Preparing to unpack .../026-ocl-icd-libopencl1_2.2.14-2_amd64.deb ...
+#7 19.42 Unpacking ocl-icd-libopencl1:amd64 (2.2.14-2) ...
+#7 19.46 Selecting previously unselected package libavutil56:amd64.
+#7 19.46 Preparing to unpack .../027-libavutil56_7%3a4.3.3-0+deb11u1_amd64.deb ...
+#7 19.46 Unpacking libavutil56:amd64 (7:4.3.3-0+deb11u1) ...
+#7 19.52 Selecting previously unselected package libbrotli1:amd64.
+#7 19.52 Preparing to unpack .../028-libbrotli1_1.0.9-2+b2_amd64.deb ...
+#7 19.53 Unpacking libbrotli1:amd64 (1.0.9-2+b2) ...
+#7 19.58 Selecting previously unselected package libpng16-16:amd64.
+#7 19.59 Preparing to unpack .../029-libpng16-16_1.6.37-3_amd64.deb ...
+#7 19.59 Unpacking libpng16-16:amd64 (1.6.37-3) ...
+#7 19.64 Selecting previously unselected package libfreetype6:amd64.
+#7 19.64 Preparing to unpack .../030-libfreetype6_2.10.4+dfsg-1_amd64.deb ...
+#7 19.65 Unpacking libfreetype6:amd64 (2.10.4+dfsg-1) ...
+#7 19.71 Selecting previously unselected package fonts-dejavu-core.
+#7 19.71 Preparing to unpack .../031-fonts-dejavu-core_2.37-2_all.deb ...
+#7 19.71 Unpacking fonts-dejavu-core (2.37-2) ...
+#7 19.85 Selecting previously unselected package fontconfig-config.
+#7 19.85 Preparing to unpack .../032-fontconfig-config_2.13.1-4.2_all.deb ...
+#7 19.93 Unpacking fontconfig-config (2.13.1-4.2) ...
+#7 19.97 Selecting previously unselected package libfontconfig1:amd64.
+#7 19.97 Preparing to unpack .../033-libfontconfig1_2.13.1-4.2_amd64.deb ...
+#7 19.98 Unpacking libfontconfig1:amd64 (2.13.1-4.2) ...
+#7 20.03 Selecting previously unselected package libpixman-1-0:amd64.
+#7 20.03 Preparing to unpack .../034-libpixman-1-0_0.40.0-1_amd64.deb ...
+#7 20.04 Unpacking libpixman-1-0:amd64 (0.40.0-1) ...
+#7 20.10 Selecting previously unselected package libxcb-render0:amd64.
+#7 20.10 Preparing to unpack .../035-libxcb-render0_1.14-3_amd64.deb ...
+#7 20.11 Unpacking libxcb-render0:amd64 (1.14-3) ...
+#7 20.15 Selecting previously unselected package libxcb-shm0:amd64.
+#7 20.15 Preparing to unpack .../036-libxcb-shm0_1.14-3_amd64.deb ...
+#7 20.15 Unpacking libxcb-shm0:amd64 (1.14-3) ...
+#7 20.19 Selecting previously unselected package libxrender1:amd64.
+#7 20.19 Preparing to unpack .../037-libxrender1_1%3a0.9.10-1_amd64.deb ...
+#7 20.19 Unpacking libxrender1:amd64 (1:0.9.10-1) ...
+#7 20.23 Selecting previously unselected package libcairo2:amd64.
+#7 20.23 Preparing to unpack .../038-libcairo2_1.16.0-5_amd64.deb ...
+#7 20.24 Unpacking libcairo2:amd64 (1.16.0-5) ...
+#7 20.32 Selecting previously unselected package libcodec2-0.9:amd64.
+#7 20.32 Preparing to unpack .../039-libcodec2-0.9_0.9.2-4_amd64.deb ...
+#7 20.33 Unpacking libcodec2-0.9:amd64 (0.9.2-4) ...
+#7 20.92 Selecting previously unselected package libdav1d4:amd64.
+#7 20.92 Preparing to unpack .../040-libdav1d4_0.7.1-3_amd64.deb ...
+#7 20.92 Unpacking libdav1d4:amd64 (0.7.1-3) ...
+#7 20.99 Selecting previously unselected package libglib2.0-0:amd64.
+#7 20.99 Preparing to unpack .../041-libglib2.0-0_2.66.8-1_amd64.deb ...
+#7 21.00 Unpacking libglib2.0-0:amd64 (2.66.8-1) ...
+#7 21.14 Selecting previously unselected package libgsm1:amd64.
+#7 21.14 Preparing to unpack .../042-libgsm1_1.0.18-2_amd64.deb ...
+#7 21.14 Unpacking libgsm1:amd64 (1.0.18-2) ...
+#7 21.18 Selecting previously unselected package libmp3lame0:amd64.
+#7 21.18 Preparing to unpack .../043-libmp3lame0_3.100-3_amd64.deb ...
+#7 21.18 Unpacking libmp3lame0:amd64 (3.100-3) ...
+#7 21.23 Selecting previously unselected package libopenjp2-7:amd64.
+#7 21.23 Preparing to unpack .../044-libopenjp2-7_2.4.0-3_amd64.deb ...
+#7 21.24 Unpacking libopenjp2-7:amd64 (2.4.0-3) ...
+#7 21.29 Selecting previously unselected package libopus0:amd64.
+#7 21.29 Preparing to unpack .../045-libopus0_1.3.1-0.1_amd64.deb ...
+#7 21.29 Unpacking libopus0:amd64 (1.3.1-0.1) ...
+#7 21.34 Selecting previously unselected package libcairo-gobject2:amd64.
+#7 21.34 Preparing to unpack .../046-libcairo-gobject2_1.16.0-5_amd64.deb ...
+#7 21.35 Unpacking libcairo-gobject2:amd64 (1.16.0-5) ...
+#7 21.38 Selecting previously unselected package libgdk-pixbuf2.0-common.
+#7 21.38 Preparing to unpack .../047-libgdk-pixbuf2.0-common_2.42.2+dfsg-1_all.deb ...
+#7 21.39 Unpacking libgdk-pixbuf2.0-common (2.42.2+dfsg-1) ...
+#7 21.45 Selecting previously unselected package libicu67:amd64.
+#7 21.45 Preparing to unpack .../048-libicu67_67.1-7_amd64.deb ...
+#7 21.46 Unpacking libicu67:amd64 (67.1-7) ...
+#7 22.17 Selecting previously unselected package libxml2:amd64.
+#7 22.17 Preparing to unpack .../049-libxml2_2.9.10+dfsg-6.7+deb11u1_amd64.deb ...
+#7 22.17 Unpacking libxml2:amd64 (2.9.10+dfsg-6.7+deb11u1) ...
+#7 22.25 Selecting previously unselected package shared-mime-info.
+#7 22.25 Preparing to unpack .../050-shared-mime-info_2.0-1_amd64.deb ...
+#7 22.26 Unpacking shared-mime-info (2.0-1) ...
+#7 22.38 Selecting previously unselected package libjpeg62-turbo:amd64.
+#7 22.38 Preparing to unpack .../051-libjpeg62-turbo_1%3a2.0.6-4_amd64.deb ...
+#7 22.38 Unpacking libjpeg62-turbo:amd64 (1:2.0.6-4) ...
+#7 22.43 Selecting previously unselected package libdeflate0:amd64.
+#7 22.43 Preparing to unpack .../052-libdeflate0_1.7-1_amd64.deb ...
+#7 22.43 Unpacking libdeflate0:amd64 (1.7-1) ...
+#7 22.47 Selecting previously unselected package libjbig0:amd64.
+#7 22.47 Preparing to unpack .../053-libjbig0_2.1-3.1+b2_amd64.deb ...
+#7 22.48 Unpacking libjbig0:amd64 (2.1-3.1+b2) ...
+#7 22.51 Selecting previously unselected package libwebp6:amd64.
+#7 22.51 Preparing to unpack .../054-libwebp6_0.6.1-2.1_amd64.deb ...
+#7 22.52 Unpacking libwebp6:amd64 (0.6.1-2.1) ...
+#7 22.57 Selecting previously unselected package libtiff5:amd64.
+#7 22.57 Preparing to unpack .../055-libtiff5_4.2.0-1+deb11u1_amd64.deb ...
+#7 22.57 Unpacking libtiff5:amd64 (4.2.0-1+deb11u1) ...
+#7 22.63 Selecting previously unselected package libgdk-pixbuf-2.0-0:amd64.
+#7 22.63 Preparing to unpack .../056-libgdk-pixbuf-2.0-0_2.42.2+dfsg-1_amd64.deb ...
+#7 22.63 Unpacking libgdk-pixbuf-2.0-0:amd64 (2.42.2+dfsg-1) ...
+#7 22.68 Selecting previously unselected package fontconfig.
+#7 22.68 Preparing to unpack .../057-fontconfig_2.13.1-4.2_amd64.deb ...
+#7 22.69 Unpacking fontconfig (2.13.1-4.2) ...
+#7 22.75 Selecting previously unselected package libfribidi0:amd64.
+#7 22.75 Preparing to unpack .../058-libfribidi0_1.0.8-2_amd64.deb ...
+#7 22.75 Unpacking libfribidi0:amd64 (1.0.8-2) ...
+#7 22.79 Selecting previously unselected package libgraphite2-3:amd64.
+#7 22.79 Preparing to unpack .../059-libgraphite2-3_1.3.14-1_amd64.deb ...
+#7 22.79 Unpacking libgraphite2-3:amd64 (1.3.14-1) ...
+#7 22.83 Selecting previously unselected package libharfbuzz0b:amd64.
+#7 22.83 Preparing to unpack .../060-libharfbuzz0b_2.7.4-1_amd64.deb ...
+#7 22.84 Unpacking libharfbuzz0b:amd64 (2.7.4-1) ...
+#7 22.90 Selecting previously unselected package libthai-data.
+#7 22.90 Preparing to unpack .../061-libthai-data_0.1.28-3_all.deb ...
+#7 22.90 Unpacking libthai-data (0.1.28-3) ...
+#7 22.95 Selecting previously unselected package libdatrie1:amd64.
+#7 22.95 Preparing to unpack .../062-libdatrie1_0.2.13-1_amd64.deb ...
+#7 22.96 Unpacking libdatrie1:amd64 (0.2.13-1) ...
+#7 23.00 Selecting previously unselected package libthai0:amd64.
+#7 23.00 Preparing to unpack .../063-libthai0_0.1.28-3_amd64.deb ...
+#7 23.00 Unpacking libthai0:amd64 (0.1.28-3) ...
+#7 23.04 Selecting previously unselected package libpango-1.0-0:amd64.
+#7 23.04 Preparing to unpack .../064-libpango-1.0-0_1.46.2-3_amd64.deb ...
+#7 23.05 Unpacking libpango-1.0-0:amd64 (1.46.2-3) ...
+#7 23.10 Selecting previously unselected package libpangoft2-1.0-0:amd64.
+#7 23.10 Preparing to unpack .../065-libpangoft2-1.0-0_1.46.2-3_amd64.deb ...
+#7 23.10 Unpacking libpangoft2-1.0-0:amd64 (1.46.2-3) ...
+#7 23.14 Selecting previously unselected package libpangocairo-1.0-0:amd64.
+#7 23.14 Preparing to unpack .../066-libpangocairo-1.0-0_1.46.2-3_amd64.deb ...
+#7 23.15 Unpacking libpangocairo-1.0-0:amd64 (1.46.2-3) ...
+#7 23.18 Selecting previously unselected package librsvg2-2:amd64.
+#7 23.18 Preparing to unpack .../067-librsvg2-2_2.50.3+dfsg-1_amd64.deb ...
+#7 23.19 Unpacking librsvg2-2:amd64 (2.50.3+dfsg-1) ...
+#7 23.45 Selecting previously unselected package libshine3:amd64.
+#7 23.45 Preparing to unpack .../068-libshine3_3.1.1-2_amd64.deb ...
+#7 23.45 Unpacking libshine3:amd64 (3.1.1-2) ...
+#7 23.49 Selecting previously unselected package libsnappy1v5:amd64.
+#7 23.49 Preparing to unpack .../069-libsnappy1v5_1.1.8-1_amd64.deb ...
+#7 23.49 Unpacking libsnappy1v5:amd64 (1.1.8-1) ...
+#7 23.53 Selecting previously unselected package libspeex1:amd64.
+#7 23.53 Preparing to unpack .../070-libspeex1_1.2~rc1.2-1.1_amd64.deb ...
+#7 23.53 Unpacking libspeex1:amd64 (1.2~rc1.2-1.1) ...
+#7 23.57 Selecting previously unselected package libgomp1:amd64.
+#7 23.57 Preparing to unpack .../071-libgomp1_10.2.1-6_amd64.deb ...
+#7 23.57 Unpacking libgomp1:amd64 (10.2.1-6) ...
+#7 23.62 Selecting previously unselected package libsoxr0:amd64.
+#7 23.62 Preparing to unpack .../072-libsoxr0_0.1.3-4_amd64.deb ...
+#7 23.62 Unpacking libsoxr0:amd64 (0.1.3-4) ...
+#7 23.66 Selecting previously unselected package libswresample3:amd64.
+#7 23.66 Preparing to unpack .../073-libswresample3_7%3a4.3.3-0+deb11u1_amd64.deb ...
+#7 23.67 Unpacking libswresample3:amd64 (7:4.3.3-0+deb11u1) ...
+#7 23.71 Selecting previously unselected package libogg0:amd64.
+#7 23.71 Preparing to unpack .../074-libogg0_1.3.4-0.1_amd64.deb ...
+#7 23.71 Unpacking libogg0:amd64 (1.3.4-0.1) ...
+#7 23.75 Selecting previously unselected package libtheora0:amd64.
+#7 23.75 Preparing to unpack .../075-libtheora0_1.1.1+dfsg.1-15_amd64.deb ...
+#7 23.75 Unpacking libtheora0:amd64 (1.1.1+dfsg.1-15) ...
+#7 23.80 Selecting previously unselected package libtwolame0:amd64.
+#7 23.80 Preparing to unpack .../076-libtwolame0_0.4.0-2_amd64.deb ...
+#7 23.81 Unpacking libtwolame0:amd64 (0.4.0-2) ...
+#7 23.85 Selecting previously unselected package libvorbis0a:amd64.
+#7 23.85 Preparing to unpack .../077-libvorbis0a_1.3.7-1_amd64.deb ...
+#7 23.85 Unpacking libvorbis0a:amd64 (1.3.7-1) ...
+#7 23.89 Selecting previously unselected package libvorbisenc2:amd64.
+#7 23.89 Preparing to unpack .../078-libvorbisenc2_1.3.7-1_amd64.deb ...
+#7 23.90 Unpacking libvorbisenc2:amd64 (1.3.7-1) ...
+#7 23.94 Selecting previously unselected package libvpx6:amd64.
+#7 23.94 Preparing to unpack .../079-libvpx6_1.9.0-1_amd64.deb ...
+#7 23.95 Unpacking libvpx6:amd64 (1.9.0-1) ...
+#7 24.05 Selecting previously unselected package libwavpack1:amd64.
+#7 24.05 Preparing to unpack .../080-libwavpack1_5.4.0-1_amd64.deb ...
+#7 24.05 Unpacking libwavpack1:amd64 (5.4.0-1) ...
+#7 24.09 Selecting previously unselected package libwebpmux3:amd64.
+#7 24.09 Preparing to unpack .../081-libwebpmux3_0.6.1-2.1_amd64.deb ...
+#7 24.10 Unpacking libwebpmux3:amd64 (0.6.1-2.1) ...
+#7 24.14 Selecting previously unselected package libx264-160:amd64.
+#7 24.14 Preparing to unpack .../082-libx264-160_2%3a0.160.3011+gitcde9a93-2.1_amd64.deb ...
+#7 24.14 Unpacking libx264-160:amd64 (2:0.160.3011+gitcde9a93-2.1) ...
+#7 24.22 Selecting previously unselected package libnuma1:amd64.
+#7 24.22 Preparing to unpack .../083-libnuma1_2.0.12-1+b1_amd64.deb ...
+#7 24.24 Unpacking libnuma1:amd64 (2.0.12-1+b1) ...
+#7 24.28 Selecting previously unselected package libx265-192:amd64.
+#7 24.28 Preparing to unpack .../084-libx265-192_3.4-2_amd64.deb ...
+#7 24.29 Unpacking libx265-192:amd64 (3.4-2) ...
+#7 24.53 Selecting previously unselected package libxvidcore4:amd64.
+#7 24.53 Preparing to unpack .../085-libxvidcore4_2%3a1.3.7-1_amd64.deb ...
+#7 24.53 Unpacking libxvidcore4:amd64 (2:1.3.7-1) ...
+#7 24.58 Selecting previously unselected package libzvbi-common.
+#7 24.58 Preparing to unpack .../086-libzvbi-common_0.2.35-18_all.deb ...
+#7 24.58 Unpacking libzvbi-common (0.2.35-18) ...
+#7 24.62 Selecting previously unselected package libzvbi0:amd64.
+#7 24.62 Preparing to unpack .../087-libzvbi0_0.2.35-18_amd64.deb ...
+#7 24.63 Unpacking libzvbi0:amd64 (0.2.35-18) ...
+#7 24.68 Selecting previously unselected package libavcodec58:amd64.
+#7 24.68 Preparing to unpack .../088-libavcodec58_7%3a4.3.3-0+deb11u1_amd64.deb ...
+#7 24.69 Unpacking libavcodec58:amd64 (7:4.3.3-0+deb11u1) ...
+#7 25.10 Selecting previously unselected package libraw1394-11:amd64.
+#7 25.10 Preparing to unpack .../089-libraw1394-11_2.1.2-2_amd64.deb ...
+#7 25.10 Unpacking libraw1394-11:amd64 (2.1.2-2) ...
+#7 25.14 Selecting previously unselected package libavc1394-0:amd64.
+#7 25.14 Preparing to unpack .../090-libavc1394-0_0.5.4-5_amd64.deb ...
+#7 25.15 Unpacking libavc1394-0:amd64 (0.5.4-5) ...
+#7 25.18 Selecting previously unselected package libass9:amd64.
+#7 25.18 Preparing to unpack .../091-libass9_1%3a0.15.0-2_amd64.deb ...
+#7 25.19 Unpacking libass9:amd64 (1:0.15.0-2) ...
+#7 25.23 Selecting previously unselected package libudfread0:amd64.
+#7 25.23 Preparing to unpack .../092-libudfread0_1.1.1-1_amd64.deb ...
+#7 25.24 Unpacking libudfread0:amd64 (1.1.1-1) ...
+#7 25.27 Selecting previously unselected package libbluray2:amd64.
+#7 25.27 Preparing to unpack .../093-libbluray2_1%3a1.2.1-4+deb11u1_amd64.deb ...
+#7 25.28 Unpacking libbluray2:amd64 (1:1.2.1-4+deb11u1) ...
+#7 25.32 Selecting previously unselected package libchromaprint1:amd64.
+#7 25.32 Preparing to unpack .../094-libchromaprint1_1.5.0-2_amd64.deb ...
+#7 25.33 Unpacking libchromaprint1:amd64 (1.5.0-2) ...
+#7 25.36 Selecting previously unselected package libgme0:amd64.
+#7 25.37 Preparing to unpack .../095-libgme0_0.6.3-2_amd64.deb ...
+#7 25.37 Unpacking libgme0:amd64 (0.6.3-2) ...
+#7 25.41 Selecting previously unselected package libmpg123-0:amd64.
+#7 25.41 Preparing to unpack .../096-libmpg123-0_1.26.4-1_amd64.deb ...
+#7 25.42 Unpacking libmpg123-0:amd64 (1.26.4-1) ...
+#7 25.46 Selecting previously unselected package libvorbisfile3:amd64.
+#7 25.46 Preparing to unpack .../097-libvorbisfile3_1.3.7-1_amd64.deb ...
+#7 25.47 Unpacking libvorbisfile3:amd64 (1.3.7-1) ...
+#7 25.51 Selecting previously unselected package libopenmpt0:amd64.
+#7 25.51 Preparing to unpack .../098-libopenmpt0_0.4.11-1_amd64.deb ...
+#7 25.51 Unpacking libopenmpt0:amd64 (0.4.11-1) ...
+#7 25.60 Selecting previously unselected package librabbitmq4:amd64.
+#7 25.60 Preparing to unpack .../099-librabbitmq4_0.10.0-1_amd64.deb ...
+#7 25.61 Unpacking librabbitmq4:amd64 (0.10.0-1) ...
+#7 25.65 Selecting previously unselected package libsrt1.4-gnutls:amd64.
+#7 25.65 Preparing to unpack .../100-libsrt1.4-gnutls_1.4.2-1.3_amd64.deb ...
+#7 25.65 Unpacking libsrt1.4-gnutls:amd64 (1.4.2-1.3) ...
+#7 25.72 Selecting previously unselected package libssh-gcrypt-4:amd64.
+#7 25.72 Preparing to unpack .../101-libssh-gcrypt-4_0.9.5-1+deb11u1_amd64.deb ...
+#7 25.73 Unpacking libssh-gcrypt-4:amd64 (0.9.5-1+deb11u1) ...
+#7 25.78 Selecting previously unselected package libnorm1:amd64.
+#7 25.78 Preparing to unpack .../102-libnorm1_1.5.9+dfsg-2_amd64.deb ...
+#7 25.79 Unpacking libnorm1:amd64 (1.5.9+dfsg-2) ...
+#7 25.85 Selecting previously unselected package libpgm-5.3-0:amd64.
+#7 25.85 Preparing to unpack .../103-libpgm-5.3-0_5.3.128~dfsg-2_amd64.deb ...
+#7 25.85 Unpacking libpgm-5.3-0:amd64 (5.3.128~dfsg-2) ...
+#7 25.90 Selecting previously unselected package libsodium23:amd64.
+#7 25.90 Preparing to unpack .../104-libsodium23_1.0.18-1_amd64.deb ...
+#7 25.90 Unpacking libsodium23:amd64 (1.0.18-1) ...
+#7 25.95 Selecting previously unselected package libzmq5:amd64.
+#7 25.95 Preparing to unpack .../105-libzmq5_4.3.4-1_amd64.deb ...
+#7 25.96 Unpacking libzmq5:amd64 (4.3.4-1) ...
+#7 26.02 Selecting previously unselected package libavformat58:amd64.
+#7 26.02 Preparing to unpack .../106-libavformat58_7%3a4.3.3-0+deb11u1_amd64.deb ...
+#7 26.02 Unpacking libavformat58:amd64 (7:4.3.3-0+deb11u1) ...
+#7 26.13 Selecting previously unselected package libbs2b0:amd64.
+#7 26.13 Preparing to unpack .../107-libbs2b0_3.1.0+dfsg-2.2+b1_amd64.deb ...
+#7 26.14 Unpacking libbs2b0:amd64 (3.1.0+dfsg-2.2+b1) ...
+#7 26.18 Selecting previously unselected package libflite1:amd64.
+#7 26.18 Preparing to unpack .../108-libflite1_2.2-2_amd64.deb ...
+#7 26.19 Unpacking libflite1:amd64 (2.2-2) ...
+#7 27.12 Selecting previously unselected package libserd-0-0:amd64.
+#7 27.13 Preparing to unpack .../109-libserd-0-0_0.30.10-2_amd64.deb ...
+#7 27.13 Unpacking libserd-0-0:amd64 (0.30.10-2) ...
+#7 27.17 Selecting previously unselected package libsord-0-0:amd64.
+#7 27.17 Preparing to unpack .../110-libsord-0-0_0.16.8-2_amd64.deb ...
+#7 27.17 Unpacking libsord-0-0:amd64 (0.16.8-2) ...
+#7 27.21 Selecting previously unselected package libsratom-0-0:amd64.
+#7 27.21 Preparing to unpack .../111-libsratom-0-0_0.6.8-1_amd64.deb ...
+#7 27.21 Unpacking libsratom-0-0:amd64 (0.6.8-1) ...
+#7 27.25 Selecting previously unselected package liblilv-0-0:amd64.
+#7 27.25 Preparing to unpack .../112-liblilv-0-0_0.24.12-2_amd64.deb ...
+#7 27.25 Unpacking liblilv-0-0:amd64 (0.24.12-2) ...
+#7 27.29 Selecting previously unselected package libmysofa1:amd64.
+#7 27.29 Preparing to unpack .../113-libmysofa1_1.2~dfsg0-1_amd64.deb ...
+#7 27.30 Unpacking libmysofa1:amd64 (1.2~dfsg0-1) ...
+#7 27.38 Selecting previously unselected package libblas3:amd64.
+#7 27.39 Preparing to unpack .../114-libblas3_3.9.0-3_amd64.deb ...
+#7 27.39 Unpacking libblas3:amd64 (3.9.0-3) ...
+#7 27.44 Selecting previously unselected package libquadmath0:amd64.
+#7 27.44 Preparing to unpack .../115-libquadmath0_10.2.1-6_amd64.deb ...
+#7 27.44 Unpacking libquadmath0:amd64 (10.2.1-6) ...
+#7 27.49 Selecting previously unselected package libgfortran5:amd64.
+#7 27.49 Preparing to unpack .../116-libgfortran5_10.2.1-6_amd64.deb ...
+#7 27.49 Unpacking libgfortran5:amd64 (10.2.1-6) ...
+#7 27.59 Selecting previously unselected package liblapack3:amd64.
+#7 27.60 Preparing to unpack .../117-liblapack3_3.9.0-3_amd64.deb ...
+#7 27.60 Unpacking liblapack3:amd64 (3.9.0-3) ...
+#7 27.81 Selecting previously unselected package libasyncns0:amd64.
+#7 27.81 Preparing to unpack .../118-libasyncns0_0.8-6+b2_amd64.deb ...
+#7 27.81 Unpacking libasyncns0:amd64 (0.8-6+b2) ...
+#7 27.85 Selecting previously unselected package libflac8:amd64.
+#7 27.85 Preparing to unpack .../119-libflac8_1.3.3-2+deb11u1_amd64.deb ...
+#7 27.85 Unpacking libflac8:amd64 (1.3.3-2+deb11u1) ...
+#7 27.90 Selecting previously unselected package libsndfile1:amd64.
+#7 27.90 Preparing to unpack .../120-libsndfile1_1.0.31-2_amd64.deb ...
+#7 27.90 Unpacking libsndfile1:amd64 (1.0.31-2) ...
+#7 27.95 Selecting previously unselected package libwrap0:amd64.
+#7 27.96 Preparing to unpack .../121-libwrap0_7.6.q-31_amd64.deb ...
+#7 27.96 Unpacking libwrap0:amd64 (7.6.q-31) ...
+#7 28.01 Selecting previously unselected package libpulse0:amd64.
+#7 28.01 Preparing to unpack .../122-libpulse0_14.2-2_amd64.deb ...
+#7 28.02 Unpacking libpulse0:amd64 (14.2-2) ...
+#7 28.08 Selecting previously unselected package libsphinxbase3:amd64.
+#7 28.08 Preparing to unpack .../123-libsphinxbase3_0.8+5prealpha+1-12_amd64.deb ...
+#7 28.08 Unpacking libsphinxbase3:amd64 (0.8+5prealpha+1-12) ...
+#7 28.12 Selecting previously unselected package libpocketsphinx3:amd64.
+#7 28.12 Preparing to unpack .../124-libpocketsphinx3_0.8+5prealpha+1-13_amd64.deb ...
+#7 28.13 Unpacking libpocketsphinx3:amd64 (0.8+5prealpha+1-13) ...
+#7 28.17 Selecting previously unselected package libpostproc55:amd64.
+#7 28.17 Preparing to unpack .../125-libpostproc55_7%3a4.3.3-0+deb11u1_amd64.deb ...
+#7 28.18 Unpacking libpostproc55:amd64 (7:4.3.3-0+deb11u1) ...
+#7 28.22 Selecting previously unselected package libfftw3-double3:amd64.
+#7 28.22 Preparing to unpack .../126-libfftw3-double3_3.3.8-2_amd64.deb ...
+#7 28.22 Unpacking libfftw3-double3:amd64 (3.3.8-2) ...
+#7 28.31 Selecting previously unselected package libsamplerate0:amd64.
+#7 28.31 Preparing to unpack .../127-libsamplerate0_0.2.1+ds0-1_amd64.deb ...
+#7 28.31 Unpacking libsamplerate0:amd64 (0.2.1+ds0-1) ...
+#7 28.42 Selecting previously unselected package librubberband2:amd64.
+#7 28.42 Preparing to unpack .../128-librubberband2_1.9.0-1_amd64.deb ...
+#7 28.43 Unpacking librubberband2:amd64 (1.9.0-1) ...
+#7 28.47 Selecting previously unselected package libswscale5:amd64.
+#7 28.47 Preparing to unpack .../129-libswscale5_7%3a4.3.3-0+deb11u1_amd64.deb ...
+#7 28.47 Unpacking libswscale5:amd64 (7:4.3.3-0+deb11u1) ...
+#7 28.52 Selecting previously unselected package libvidstab1.1:amd64.
+#7 28.52 Preparing to unpack .../130-libvidstab1.1_1.1.0-2+b1_amd64.deb ...
+#7 28.53 Unpacking libvidstab1.1:amd64 (1.1.0-2+b1) ...
+#7 28.57 Selecting previously unselected package libavfilter7:amd64.
+#7 28.57 Preparing to unpack .../131-libavfilter7_7%3a4.3.3-0+deb11u1_amd64.deb ...
+#7 28.57 Unpacking libavfilter7:amd64 (7:4.3.3-0+deb11u1) ...
+#7 28.71 Selecting previously unselected package libslang2:amd64.
+#7 28.71 Preparing to unpack .../132-libslang2_2.3.2-5_amd64.deb ...
+#7 28.71 Unpacking libslang2:amd64 (2.3.2-5) ...
+#7 28.79 Selecting previously unselected package libcaca0:amd64.
+#7 28.79 Preparing to unpack .../133-libcaca0_0.99.beta19-2.2_amd64.deb ...
+#7 28.79 Unpacking libcaca0:amd64 (0.99.beta19-2.2) ...
+#7 28.86 Selecting previously unselected package libcdio19:amd64.
+#7 28.86 Preparing to unpack .../134-libcdio19_2.1.0-2_amd64.deb ...
+#7 28.87 Unpacking libcdio19:amd64 (2.1.0-2) ...
+#7 28.91 Selecting previously unselected package libcdio-cdda2:amd64.
+#7 28.91 Preparing to unpack .../135-libcdio-cdda2_10.2+2.0.0-1+b2_amd64.deb ...
+#7 28.92 Unpacking libcdio-cdda2:amd64 (10.2+2.0.0-1+b2) ...
+#7 28.95 Selecting previously unselected package libcdio-paranoia2:amd64.
+#7 28.95 Preparing to unpack .../136-libcdio-paranoia2_10.2+2.0.0-1+b2_amd64.deb ...
+#7 28.96 Unpacking libcdio-paranoia2:amd64 (10.2+2.0.0-1+b2) ...
+#7 28.99 Selecting previously unselected package libusb-1.0-0:amd64.
+#7 28.99 Preparing to unpack .../137-libusb-1.0-0_2%3a1.0.24-3_amd64.deb ...
+#7 29.00 Unpacking libusb-1.0-0:amd64 (2:1.0.24-3) ...
+#7 29.03 Selecting previously unselected package libdc1394-25:amd64.
+#7 29.03 Preparing to unpack .../138-libdc1394-25_2.2.6-3_amd64.deb ...
+#7 29.04 Unpacking libdc1394-25:amd64 (2.2.6-3) ...
+#7 29.08 Selecting previously unselected package libglvnd0:amd64.
+#7 29.08 Preparing to unpack .../139-libglvnd0_1.3.2-1_amd64.deb ...
+#7 29.09 Unpacking libglvnd0:amd64 (1.3.2-1) ...
+#7 29.13 Selecting previously unselected package libglapi-mesa:amd64.
+#7 29.13 Preparing to unpack .../140-libglapi-mesa_20.3.5-1_amd64.deb ...
+#7 29.13 Unpacking libglapi-mesa:amd64 (20.3.5-1) ...
+#7 29.18 Selecting previously unselected package libx11-xcb1:amd64.
+#7 29.18 Preparing to unpack .../141-libx11-xcb1_2%3a1.7.2-1_amd64.deb ...
+#7 29.18 Unpacking libx11-xcb1:amd64 (2:1.7.2-1) ...
+#7 29.22 Selecting previously unselected package libxcb-dri2-0:amd64.
+#7 29.22 Preparing to unpack .../142-libxcb-dri2-0_1.14-3_amd64.deb ...
+#7 29.23 Unpacking libxcb-dri2-0:amd64 (1.14-3) ...
+#7 29.27 Selecting previously unselected package libxcb-dri3-0:amd64.
+#7 29.27 Preparing to unpack .../143-libxcb-dri3-0_1.14-3_amd64.deb ...
+#7 29.27 Unpacking libxcb-dri3-0:amd64 (1.14-3) ...
+#7 29.32 Selecting previously unselected package libxcb-glx0:amd64.
+#7 29.32 Preparing to unpack .../144-libxcb-glx0_1.14-3_amd64.deb ...
+#7 29.32 Unpacking libxcb-glx0:amd64 (1.14-3) ...
+#7 29.37 Selecting previously unselected package libxcb-present0:amd64.
+#7 29.37 Preparing to unpack .../145-libxcb-present0_1.14-3_amd64.deb ...
+#7 29.37 Unpacking libxcb-present0:amd64 (1.14-3) ...
+#7 29.41 Selecting previously unselected package libxcb-sync1:amd64.
+#7 29.42 Preparing to unpack .../146-libxcb-sync1_1.14-3_amd64.deb ...
+#7 29.42 Unpacking libxcb-sync1:amd64 (1.14-3) ...
+#7 29.46 Selecting previously unselected package libxcb-xfixes0:amd64.
+#7 29.46 Preparing to unpack .../147-libxcb-xfixes0_1.14-3_amd64.deb ...
+#7 29.47 Unpacking libxcb-xfixes0:amd64 (1.14-3) ...
+#7 29.51 Selecting previously unselected package libxdamage1:amd64.
+#7 29.51 Preparing to unpack .../148-libxdamage1_1%3a1.1.5-2_amd64.deb ...
+#7 29.51 Unpacking libxdamage1:amd64 (1:1.1.5-2) ...
+#7 29.55 Selecting previously unselected package libxshmfence1:amd64.
+#7 29.55 Preparing to unpack .../149-libxshmfence1_1.3-1_amd64.deb ...
+#7 29.55 Unpacking libxshmfence1:amd64 (1.3-1) ...
+#7 29.59 Selecting previously unselected package libxxf86vm1:amd64.
+#7 29.59 Preparing to unpack .../150-libxxf86vm1_1%3a1.1.4-1+b2_amd64.deb ...
+#7 29.59 Unpacking libxxf86vm1:amd64 (1:1.1.4-1+b2) ...
+#7 29.63 Selecting previously unselected package libdrm-amdgpu1:amd64.
+#7 29.63 Preparing to unpack .../151-libdrm-amdgpu1_2.4.104-1_amd64.deb ...
+#7 29.63 Unpacking libdrm-amdgpu1:amd64 (2.4.104-1) ...
+#7 29.67 Selecting previously unselected package libpciaccess0:amd64.
+#7 29.67 Preparing to unpack .../152-libpciaccess0_0.16-1_amd64.deb ...
+#7 29.67 Unpacking libpciaccess0:amd64 (0.16-1) ...
+#7 29.71 Selecting previously unselected package libdrm-intel1:amd64.
+#7 29.71 Preparing to unpack .../153-libdrm-intel1_2.4.104-1_amd64.deb ...
+#7 29.72 Unpacking libdrm-intel1:amd64 (2.4.104-1) ...
+#7 29.76 Selecting previously unselected package libdrm-nouveau2:amd64.
+#7 29.76 Preparing to unpack .../154-libdrm-nouveau2_2.4.104-1_amd64.deb ...
+#7 29.76 Unpacking libdrm-nouveau2:amd64 (2.4.104-1) ...
+#7 29.80 Selecting previously unselected package libdrm-radeon1:amd64.
+#7 29.80 Preparing to unpack .../155-libdrm-radeon1_2.4.104-1_amd64.deb ...
+#7 29.81 Unpacking libdrm-radeon1:amd64 (2.4.104-1) ...
+#7 29.85 Selecting previously unselected package libelf1:amd64.
+#7 29.85 Preparing to unpack .../156-libelf1_0.183-1_amd64.deb ...
+#7 29.85 Unpacking libelf1:amd64 (0.183-1) ...
+#7 29.91 Selecting previously unselected package libedit2:amd64.
+#7 29.91 Preparing to unpack .../157-libedit2_3.1-20191231-2+b1_amd64.deb ...
+#7 29.91 Unpacking libedit2:amd64 (3.1-20191231-2+b1) ...
+#7 29.95 Selecting previously unselected package libz3-4:amd64.
+#7 29.95 Preparing to unpack .../158-libz3-4_4.8.10-1_amd64.deb ...
+#7 29.96 Unpacking libz3-4:amd64 (4.8.10-1) ...
+#7 30.51 Selecting previously unselected package libllvm11:amd64.
+#7 30.51 Preparing to unpack .../159-libllvm11_1%3a11.0.1-2_amd64.deb ...
+#7 30.51 Unpacking libllvm11:amd64 (1:11.0.1-2) ...
+#7 31.96 Selecting previously unselected package libsensors-config.
+#7 31.96 Preparing to unpack .../160-libsensors-config_1%3a3.6.0-7_all.deb ...
+#7 31.97 Unpacking libsensors-config (1:3.6.0-7) ...
+#7 32.01 Selecting previously unselected package libsensors5:amd64.
+#7 32.01 Preparing to unpack .../161-libsensors5_1%3a3.6.0-7_amd64.deb ...
+#7 32.03 Unpacking libsensors5:amd64 (1:3.6.0-7) ...
+#7 32.07 Selecting previously unselected package libvulkan1:amd64.
+#7 32.07 Preparing to unpack .../162-libvulkan1_1.2.162.0-1_amd64.deb ...
+#7 32.08 Unpacking libvulkan1:amd64 (1.2.162.0-1) ...
+#7 32.12 Selecting previously unselected package libgl1-mesa-dri:amd64.
+#7 32.12 Preparing to unpack .../163-libgl1-mesa-dri_20.3.5-1_amd64.deb ...
+#7 32.13 Unpacking libgl1-mesa-dri:amd64 (20.3.5-1) ...
+#7 32.85 Selecting previously unselected package libglx-mesa0:amd64.
+#7 32.85 Preparing to unpack .../164-libglx-mesa0_20.3.5-1_amd64.deb ...
+#7 32.85 Unpacking libglx-mesa0:amd64 (20.3.5-1) ...
+#7 32.90 Selecting previously unselected package libglx0:amd64.
+#7 32.90 Preparing to unpack .../165-libglx0_1.3.2-1_amd64.deb ...
+#7 32.91 Unpacking libglx0:amd64 (1.3.2-1) ...
+#7 32.95 Selecting previously unselected package libgl1:amd64.
+#7 32.95 Preparing to unpack .../166-libgl1_1.3.2-1_amd64.deb ...
+#7 32.95 Unpacking libgl1:amd64 (1.3.2-1) ...
+#7 33.01 Selecting previously unselected package libiec61883-0:amd64.
+#7 33.01 Preparing to unpack .../167-libiec61883-0_1.2.0-4_amd64.deb ...
+#7 33.02 Unpacking libiec61883-0:amd64 (1.2.0-4) ...
+#7 33.05 Selecting previously unselected package libjack-jackd2-0:amd64.
+#7 33.05 Preparing to unpack .../168-libjack-jackd2-0_1.9.17~dfsg-1_amd64.deb ...
+#7 33.06 Unpacking libjack-jackd2-0:amd64 (1.9.17~dfsg-1) ...
+#7 33.11 Selecting previously unselected package libopenal-data.
+#7 33.11 Preparing to unpack .../169-libopenal-data_1%3a1.19.1-2_all.deb ...
+#7 33.11 Unpacking libopenal-data (1:1.19.1-2) ...
+#7 33.16 Selecting previously unselected package libsndio7.0:amd64.
+#7 33.16 Preparing to unpack .../170-libsndio7.0_1.5.0-3_amd64.deb ...
+#7 33.17 Unpacking libsndio7.0:amd64 (1.5.0-3) ...
+#7 33.20 Selecting previously unselected package libopenal1:amd64.
+#7 33.20 Preparing to unpack .../171-libopenal1_1%3a1.19.1-2_amd64.deb ...
+#7 33.21 Unpacking libopenal1:amd64 (1:1.19.1-2) ...
+#7 33.28 Selecting previously unselected package libwayland-server0:amd64.
+#7 33.28 Preparing to unpack .../172-libwayland-server0_1.18.0-2~exp1.1_amd64.deb ...
+#7 33.28 Unpacking libwayland-server0:amd64 (1.18.0-2~exp1.1) ...
+#7 33.32 Selecting previously unselected package libgbm1:amd64.
+#7 33.32 Preparing to unpack .../173-libgbm1_20.3.5-1_amd64.deb ...
+#7 33.33 Unpacking libgbm1:amd64 (20.3.5-1) ...
+#7 33.36 Selecting previously unselected package libwayland-client0:amd64.
+#7 33.36 Preparing to unpack .../174-libwayland-client0_1.18.0-2~exp1.1_amd64.deb ...
+#7 33.37 Unpacking libwayland-client0:amd64 (1.18.0-2~exp1.1) ...
+#7 33.41 Selecting previously unselected package libwayland-cursor0:amd64.
+#7 33.41 Preparing to unpack .../175-libwayland-cursor0_1.18.0-2~exp1.1_amd64.deb ...
+#7 33.41 Unpacking libwayland-cursor0:amd64 (1.18.0-2~exp1.1) ...
+#7 33.45 Selecting previously unselected package libwayland-egl1:amd64.
+#7 33.45 Preparing to unpack .../176-libwayland-egl1_1.18.0-2~exp1.1_amd64.deb ...
+#7 33.45 Unpacking libwayland-egl1:amd64 (1.18.0-2~exp1.1) ...
+#7 33.49 Selecting previously unselected package libxcursor1:amd64.
+#7 33.49 Preparing to unpack .../177-libxcursor1_1%3a1.2.0-2_amd64.deb ...
+#7 33.49 Unpacking libxcursor1:amd64 (1:1.2.0-2) ...
+#7 33.53 Selecting previously unselected package libxi6:amd64.
+#7 33.53 Preparing to unpack .../178-libxi6_2%3a1.7.10-1_amd64.deb ...
+#7 33.54 Unpacking libxi6:amd64 (2:1.7.10-1) ...
+#7 33.57 Selecting previously unselected package libxinerama1:amd64.
+#7 33.57 Preparing to unpack .../179-libxinerama1_2%3a1.1.4-2_amd64.deb ...
+#7 33.58 Unpacking libxinerama1:amd64 (2:1.1.4-2) ...
+#7 33.61 Selecting previously unselected package xkb-data.
+#7 33.61 Preparing to unpack .../180-xkb-data_2.29-2_all.deb ...
+#7 33.61 Unpacking xkb-data (2.29-2) ...
+#7 33.73 Selecting previously unselected package libxkbcommon0:amd64.
+#7 33.73 Preparing to unpack .../181-libxkbcommon0_1.0.3-2_amd64.deb ...
+#7 33.73 Unpacking libxkbcommon0:amd64 (1.0.3-2) ...
+#7 33.77 Selecting previously unselected package libxrandr2:amd64.
+#7 33.77 Preparing to unpack .../182-libxrandr2_2%3a1.5.1-1_amd64.deb ...
+#7 33.78 Unpacking libxrandr2:amd64 (2:1.5.1-1) ...
+#7 33.82 Selecting previously unselected package x11-common.
+#7 33.82 Preparing to unpack .../183-x11-common_1%3a7.7+22_all.deb ...
+#7 33.82 Unpacking x11-common (1:7.7+22) ...
+#7 33.87 Selecting previously unselected package libxss1:amd64.
+#7 33.87 Preparing to unpack .../184-libxss1_1%3a1.2.3-1_amd64.deb ...
+#7 33.87 Unpacking libxss1:amd64 (1:1.2.3-1) ...
+#7 33.91 Selecting previously unselected package libsdl2-2.0-0:amd64.
+#7 33.91 Preparing to unpack .../185-libsdl2-2.0-0_2.0.14+dfsg2-3_amd64.deb ...
+#7 33.91 Unpacking libsdl2-2.0-0:amd64 (2.0.14+dfsg2-3) ...
+#7 33.98 Selecting previously unselected package libxcb-shape0:amd64.
+#7 33.99 Preparing to unpack .../186-libxcb-shape0_1.14-3_amd64.deb ...
+#7 33.99 Unpacking libxcb-shape0:amd64 (1.14-3) ...
+#7 34.03 Selecting previously unselected package libxv1:amd64.
+#7 34.03 Preparing to unpack .../187-libxv1_2%3a1.0.11-1_amd64.deb ...
+#7 34.03 Unpacking libxv1:amd64 (2:1.0.11-1) ...
+#7 34.07 Selecting previously unselected package libavdevice58:amd64.
+#7 34.07 Preparing to unpack .../188-libavdevice58_7%3a4.3.3-0+deb11u1_amd64.deb ...
+#7 34.08 Unpacking libavdevice58:amd64 (7:4.3.3-0+deb11u1) ...
+#7 34.12 Selecting previously unselected package libavresample4:amd64.
+#7 34.12 Preparing to unpack .../189-libavresample4_7%3a4.3.3-0+deb11u1_amd64.deb ...
+#7 34.12 Unpacking libavresample4:amd64 (7:4.3.3-0+deb11u1) ...
+#7 34.17 Selecting previously unselected package ffmpeg.
+#7 34.17 Preparing to unpack .../190-ffmpeg_7%3a4.3.3-0+deb11u1_amd64.deb ...
+#7 34.18 Unpacking ffmpeg (7:4.3.3-0+deb11u1) ...
+#7 34.30 Selecting previously unselected package i965-va-driver:amd64.
+#7 34.30 Preparing to unpack .../191-i965-va-driver_2.4.1+dfsg1-1_amd64.deb ...
+#7 34.30 Unpacking i965-va-driver:amd64 (2.4.1+dfsg1-1) ...
+#7 34.36 Selecting previously unselected package libigdgmm11:amd64.
+#7 34.36 Preparing to unpack .../192-libigdgmm11_20.4.1+ds1-1_amd64.deb ...
+#7 34.37 Unpacking libigdgmm11:amd64 (20.4.1+ds1-1) ...
+#7 34.40 Selecting previously unselected package intel-media-va-driver:amd64.
+#7 34.41 Preparing to unpack .../193-intel-media-va-driver_21.1.1+dfsg1-1_amd64.deb ...
+#7 34.41 Unpacking intel-media-va-driver:amd64 (21.1.1+dfsg1-1) ...
+#7 34.59 Selecting previously unselected package libaacs0:amd64.
+#7 34.60 Preparing to unpack .../194-libaacs0_0.9.0-2_amd64.deb ...
+#7 34.60 Unpacking libaacs0:amd64 (0.9.0-2) ...
+#7 34.64 Selecting previously unselected package libbdplus0:amd64.
+#7 34.64 Preparing to unpack .../195-libbdplus0_0.1.2-3_amd64.deb ...
+#7 34.64 Unpacking libbdplus0:amd64 (0.1.2-3) ...
+#7 34.67 Selecting previously unselected package libgdk-pixbuf2.0-bin.
+#7 34.67 Preparing to unpack .../196-libgdk-pixbuf2.0-bin_2.42.2+dfsg-1_amd64.deb ...
+#7 34.68 Unpacking libgdk-pixbuf2.0-bin (2.42.2+dfsg-1) ...
+#7 34.71 Selecting previously unselected package libglib2.0-data.
+#7 34.71 Preparing to unpack .../197-libglib2.0-data_2.66.8-1_all.deb ...
+#7 34.71 Unpacking libglib2.0-data (2.66.8-1) ...
+#7 34.85 Selecting previously unselected package libice6:amd64.
+#7 34.85 Preparing to unpack .../198-libice6_2%3a1.0.10-1_amd64.deb ...
+#7 34.86 Unpacking libice6:amd64 (2:1.0.10-1) ...
+#7 34.89 Selecting previously unselected package librsvg2-common:amd64.
+#7 34.89 Preparing to unpack .../199-librsvg2-common_2.50.3+dfsg-1_amd64.deb ...
+#7 34.89 Unpacking librsvg2-common:amd64 (2.50.3+dfsg-1) ...
+#7 34.93 Selecting previously unselected package libsm6:amd64.
+#7 34.93 Preparing to unpack .../200-libsm6_2%3a1.2.3-1_amd64.deb ...
+#7 34.93 Unpacking libsm6:amd64 (2:1.2.3-1) ...
+#7 34.97 Selecting previously unselected package libvdpau-va-gl1:amd64.
+#7 34.97 Preparing to unpack .../201-libvdpau-va-gl1_0.4.2-1+b1_amd64.deb ...
+#7 34.97 Unpacking libvdpau-va-gl1:amd64 (0.4.2-1+b1) ...
+#7 35.01 Selecting previously unselected package libxcb-randr0:amd64.
+#7 35.01 Preparing to unpack .../202-libxcb-randr0_1.14-3_amd64.deb ...
+#7 35.02 Unpacking libxcb-randr0:amd64 (1.14-3) ...
+#7 35.05 Selecting previously unselected package mesa-va-drivers:amd64.
+#7 35.05 Preparing to unpack .../203-mesa-va-drivers_20.3.5-1_amd64.deb ...
+#7 35.06 Unpacking mesa-va-drivers:amd64 (20.3.5-1) ...
+#7 35.29 Selecting previously unselected package mesa-vdpau-drivers:amd64.
+#7 35.29 Preparing to unpack .../204-mesa-vdpau-drivers_20.3.5-1_amd64.deb ...
+#7 35.30 Unpacking mesa-vdpau-drivers:amd64 (20.3.5-1) ...
+#7 35.55 Selecting previously unselected package mesa-vulkan-drivers:amd64.
+#7 35.55 Preparing to unpack .../205-mesa-vulkan-drivers_20.3.5-1_amd64.deb ...
+#7 35.55 Unpacking mesa-vulkan-drivers:amd64 (20.3.5-1) ...
+#7 35.90 Selecting previously unselected package pocketsphinx-en-us.
+#7 35.90 Preparing to unpack .../206-pocketsphinx-en-us_0.8+5prealpha+1-13_all.deb ...
+#7 35.90 Unpacking pocketsphinx-en-us (0.8+5prealpha+1-13) ...
+#7 37.51 Selecting previously unselected package va-driver-all:amd64.
+#7 37.51 Preparing to unpack .../207-va-driver-all_2.10.0-1_amd64.deb ...
+#7 37.51 Unpacking va-driver-all:amd64 (2.10.0-1) ...
+#7 37.54 Selecting previously unselected package vdpau-driver-all:amd64.
+#7 37.54 Preparing to unpack .../208-vdpau-driver-all_1.4-3_amd64.deb ...
+#7 37.55 Unpacking vdpau-driver-all:amd64 (1.4-3) ...
+#7 37.59 Selecting previously unselected package xdg-user-dirs.
+#7 37.59 Preparing to unpack .../209-xdg-user-dirs_0.17-2_amd64.deb ...
+#7 37.59 Unpacking xdg-user-dirs (0.17-2) ...
+#7 37.64 Setting up libgme0:amd64 (0.6.3-2) ...
+#7 37.66 Setting up libssh-gcrypt-4:amd64 (0.9.5-1+deb11u1) ...
+#7 37.69 Setting up libgraphite2-3:amd64 (1.3.14-1) ...
+#7 37.72 Setting up libsrt1.4-gnutls:amd64 (1.4.2-1.3) ...
+#7 37.73 Setting up libpixman-1-0:amd64 (0.40.0-1) ...
+#7 37.75 Setting up libudfread0:amd64 (1.1.1-1) ...
+#7 37.77 Setting up libwayland-server0:amd64 (1.18.0-2~exp1.1) ...
+#7 37.78 Setting up libpciaccess0:amd64 (0.16-1) ...
+#7 37.80 Setting up librabbitmq4:amd64 (0.10.0-1) ...
+#7 37.82 Setting up libxau6:amd64 (1:1.0.9-1) ...
+#7 37.83 Setting up libraw1394-11:amd64 (2.1.2-2) ...
+#7 37.85 Setting up libapparmor1:amd64 (2.13.6-10) ...
+#7 37.86 Setting up libsodium23:amd64 (1.0.18-1) ...
+#7 37.88 Setting up libmpg123-0:amd64 (1.26.4-1) ...
+#7 37.90 Setting up libogg0:amd64 (1.3.4-0.1) ...
+#7 37.92 Setting up libspeex1:amd64 (1.2~rc1.2-1.1) ...
+#7 37.93 Setting up libshine3:amd64 (3.1.1-2) ...
+#7 37.95 Setting up libtwolame0:amd64 (0.4.0-2) ...
+#7 37.97 Setting up libicu67:amd64 (67.1-7) ...
+#7 37.98 Setting up libdatrie1:amd64 (0.2.13-1) ...
+#7 38.00 Setting up xdg-user-dirs (0.17-2) ...
+#7 38.03 Setting up libgsm1:amd64 (1.0.18-2) ...
+#7 38.04 Setting up libglib2.0-0:amd64 (2.66.8-1) ...
+#7 38.07 No schema files found: doing nothing.
+#7 38.08 Setting up libglvnd0:amd64 (1.3.2-1) ...
+#7 38.09 Setting up libpgm-5.3-0:amd64 (5.3.128~dfsg-2) ...
+#7 38.10 Setting up libaom0:amd64 (1.0.0.errata1-3) ...
+#7 38.12 Setting up libbrotli1:amd64 (1.0.9-2+b2) ...
+#7 38.13 Setting up libgdk-pixbuf2.0-common (2.42.2+dfsg-1) ...
+#7 38.14 Setting up libnorm1:amd64 (1.5.9+dfsg-2) ...
+#7 38.16 Setting up libmysofa1:amd64 (1.2~dfsg0-1) ...
+#7 38.17 Setting up x11-common (1:7.7+22) ...
+#7 38.32 debconf: unable to initialize frontend: Dialog
+#7 38.32 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#7 38.32 debconf: falling back to frontend: Readline
+#7 38.32 debconf: unable to initialize frontend: Readline
+#7 38.32 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.32.1 /usr/local/share/perl/5.32.1 /usr/lib/x86_64-linux-gnu/perl5/5.32 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.32 /usr/share/perl/5.32 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+#7 38.32 debconf: falling back to frontend: Teletype
+#7 38.34 invoke-rc.d: could not determine current runlevel
+#7 38.34 invoke-rc.d: policy-rc.d denied execution of start.
+#7 38.35 Setting up libsensors-config (1:3.6.0-7) ...
+#7 38.37 Setting up libdeflate0:amd64 (1.7-1) ...
+#7 38.39 Setting up xkb-data (2.29-2) ...
+#7 38.40 Setting up libgomp1:amd64 (10.2.1-6) ...
+#7 38.41 Setting up libcdio19:amd64 (2.1.0-2) ...
+#7 38.42 Setting up libxvidcore4:amd64 (2:1.3.7-1) ...
+#7 38.44 Setting up libx264-160:amd64 (2:0.160.3011+gitcde9a93-2.1) ...
+#7 38.45 Setting up libjbig0:amd64 (2.1-3.1+b2) ...
+#7 38.46 Setting up libsnappy1v5:amd64 (1.1.8-1) ...
+#7 38.48 Setting up libflac8:amd64 (1.3.3-2+deb11u1) ...
+#7 38.49 Setting up libasound2-data (1.2.4-1.1) ...
+#7 38.50 Setting up libz3-4:amd64 (4.8.10-1) ...
+#7 38.51 Setting up libblas3:amd64 (3.9.0-3) ...
+#7 38.53 update-alternatives: using /usr/lib/x86_64-linux-gnu/blas/libblas.so.3 to provide /usr/lib/x86_64-linux-gnu/libblas.so.3 (libblas.so.3-x86_64-linux-gnu) in auto mode
+#7 38.54 Setting up libglib2.0-data (2.66.8-1) ...
+#7 38.55 Setting up libjpeg62-turbo:amd64 (1:2.0.6-4) ...
+#7 38.56 Setting up libslang2:amd64 (2.3.2-5) ...
+#7 38.58 Setting up libva2:amd64 (2.10.0-1) ...
+#7 38.59 Setting up libwrap0:amd64 (7.6.q-31) ...
+#7 38.60 Setting up libigdgmm11:amd64 (20.4.1+ds1-1) ...
+#7 38.62 Setting up libx11-data (2:1.7.2-1) ...
+#7 38.63 Setting up libcodec2-0.9:amd64 (0.9.2-4) ...
+#7 38.64 Setting up libdbus-1-3:amd64 (1.12.20-2) ...
+#7 38.66 Setting up dbus (1.12.20-2) ...
+#7 38.79 invoke-rc.d: could not determine current runlevel
+#7 38.79 invoke-rc.d: policy-rc.d denied execution of start.
+#7 38.80 Setting up libfribidi0:amd64 (1.0.8-2) ...
+#7 38.81 Setting up libopus0:amd64 (1.3.1-0.1) ...
+#7 38.82 Setting up libquadmath0:amd64 (10.2.1-6) ...
+#7 38.84 Setting up intel-media-va-driver:amd64 (21.1.1+dfsg1-1) ...
+#7 38.85 Setting up libpng16-16:amd64 (1.6.37-3) ...
+#7 38.86 Setting up libvorbis0a:amd64 (1.3.7-1) ...
+#7 38.88 Setting up libwebp6:amd64 (0.6.1-2.1) ...
+#7 38.89 Setting up fonts-dejavu-core (2.37-2) ...
+#7 38.95 Setting up libsensors5:amd64 (1:3.6.0-7) ...
+#7 38.97 Setting up libaacs0:amd64 (0.9.0-2) ...
+#7 38.98 Setting up pocketsphinx-en-us (0.8+5prealpha+1-13) ...
+#7 38.99 Setting up libfftw3-double3:amd64 (3.3.8-2) ...
+#7 39.00 Setting up libglapi-mesa:amd64 (20.3.5-1) ...
+#7 39.02 Setting up libgfortran5:amd64 (10.2.1-6) ...
+#7 39.03 Setting up libvulkan1:amd64 (1.2.162.0-1) ...
+#7 39.04 Setting up libbdplus0:amd64 (0.1.2-3) ...
+#7 39.06 Setting up libnuma1:amd64 (2.0.12-1+b1) ...
+#7 39.07 Setting up libvidstab1.1:amd64 (1.1.0-2+b1) ...
+#7 39.08 Setting up libmd0:amd64 (1.0.3-3) ...
+#7 39.11 Setting up alsa-topology-conf (1.2.4-1) ...
+#7 39.12 Setting up sensible-utils (0.0.14) ...
+#7 39.13 Setting up ocl-icd-libopencl1:amd64 (2.2.14-2) ...
+#7 39.15 Setting up libasyncns0:amd64 (0.8-6+b2) ...
+#7 39.16 Setting up libxshmfence1:amd64 (1.3-1) ...
+#7 39.17 Setting up libvpx6:amd64 (1.9.0-1) ...
+#7 39.19 Setting up libwavpack1:amd64 (5.4.0-1) ...
+#7 39.20 Setting up libbs2b0:amd64 (3.1.0+dfsg-2.2+b1) ...
+#7 39.21 Setting up libasound2:amd64 (1.2.4-1.1) ...
+#7 39.22 Setting up libdav1d4:amd64 (0.7.1-3) ...
+#7 39.24 Setting up libopenjp2-7:amd64 (2.4.0-3) ...
+#7 39.25 Setting up libopenal-data (1:1.19.1-2) ...
+#7 39.27 Setting up libthai-data (0.1.28-3) ...
+#7 39.28 Setting up libtiff5:amd64 (4.2.0-1+deb11u1) ...
+#7 39.29 Setting up libwayland-egl1:amd64 (1.18.0-2~exp1.1) ...
+#7 39.31 Setting up libusb-1.0-0:amd64 (2:1.0.24-3) ...
+#7 39.32 Setting up libmfx1:amd64 (21.1.0-1) ...
+#7 39.33 Setting up libsamplerate0:amd64 (0.2.1+ds0-1) ...
+#7 39.34 Setting up libwebpmux3:amd64 (0.6.1-2.1) ...
+#7 39.36 Setting up libbsd0:amd64 (0.11.3-1) ...
+#7 39.37 Setting up libdrm-common (2.4.104-1) ...
+#7 39.38 Setting up libelf1:amd64 (0.183-1) ...
+#7 39.39 Setting up libxml2:amd64 (2.9.10+dfsg-6.7+deb11u1) ...
+#7 39.41 Setting up libzvbi-common (0.2.35-18) ...
+#7 39.42 Setting up libmp3lame0:amd64 (3.100-3) ...
+#7 39.43 Setting up libvorbisenc2:amd64 (1.3.7-1) ...
+#7 39.44 Setting up libiec61883-0:amd64 (1.2.0-4) ...
+#7 39.46 Setting up libserd-0-0:amd64 (0.30.10-2) ...
+#7 39.47 Setting up libxkbcommon0:amd64 (1.0.3-2) ...
+#7 39.48 Setting up libwayland-client0:amd64 (1.18.0-2~exp1.1) ...
+#7 39.49 Setting up libavc1394-0:amd64 (0.5.4-5) ...
+#7 39.51 Setting up libzvbi0:amd64 (0.2.35-18) ...
+#7 39.52 Setting up libice6:amd64 (2:1.0.10-1) ...
+#7 39.53 Setting up libxdmcp6:amd64 (1:1.1.2-3) ...
+#7 39.55 Setting up liblapack3:amd64 (3.9.0-3) ...
+#7 39.56 update-alternatives: using /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3 to provide /usr/lib/x86_64-linux-gnu/liblapack.so.3 (liblapack.so.3-x86_64-linux-gnu) in auto mode
+#7 39.56 Setting up libxcb1:amd64 (1.14-3) ...
+#7 39.58 Setting up libxcb-xfixes0:amd64 (1.14-3) ...
+#7 39.59 Setting up libzmq5:amd64 (4.3.4-1) ...
+#7 39.60 Setting up libcaca0:amd64 (0.99.beta19-2.2) ...
+#7 39.61 Setting up alsa-ucm-conf (1.2.4-2) ...
+#7 39.63 Setting up libxcb-render0:amd64 (1.14-3) ...
+#7 39.64 Setting up libsoxr0:amd64 (0.1.3-4) ...
+#7 39.65 Setting up libcdio-cdda2:amd64 (10.2+2.0.0-1+b2) ...
+#7 39.66 Setting up libcdio-paranoia2:amd64 (10.2+2.0.0-1+b2) ...
+#7 39.68 Setting up libxcb-glx0:amd64 (1.14-3) ...
+#7 39.69 Setting up libedit2:amd64 (3.1-20191231-2+b1) ...
+#7 39.70 Setting up libxcb-shape0:amd64 (1.14-3) ...
+#7 39.71 Setting up libx265-192:amd64 (3.4-2) ...
+#7 39.73 Setting up libxcb-shm0:amd64 (1.14-3) ...
+#7 39.74 Setting up libxcb-present0:amd64 (1.14-3) ...
+#7 39.75 Setting up libthai0:amd64 (0.1.28-3) ...
+#7 39.76 Setting up libvorbisfile3:amd64 (1.3.7-1) ...
+#7 39.78 Setting up libllvm11:amd64 (1:11.0.1-2) ...
+#7 39.79 Setting up libfreetype6:amd64 (2.10.4+dfsg-1) ...
+#7 39.80 Setting up libxcb-sync1:amd64 (1.14-3) ...
+#7 39.81 Setting up shared-mime-info (2.0-1) ...
+#7 42.20 Setting up libdc1394-25:amd64 (2.2.6-3) ...
+#7 42.21 Setting up ucf (3.0043) ...
+#7 42.27 debconf: unable to initialize frontend: Dialog
+#7 42.27 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#7 42.27 debconf: falling back to frontend: Readline
+#7 42.27 debconf: unable to initialize frontend: Readline
+#7 42.27 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.32.1 /usr/local/share/perl/5.32.1 /usr/lib/x86_64-linux-gnu/perl5/5.32 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.32 /usr/share/perl/5.32 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+#7 42.27 debconf: falling back to frontend: Teletype
+#7 42.31 Setting up librubberband2:amd64 (1.9.0-1) ...
+#7 42.32 Setting up libsndio7.0:amd64 (1.5.0-3) ...
+#7 42.33 Setting up libxcb-dri2-0:amd64 (1.14-3) ...
+#7 42.35 Setting up libjack-jackd2-0:amd64 (1.9.17~dfsg-1) ...
+#7 42.36 Setting up libdrm2:amd64 (2.4.104-1) ...
+#7 42.37 Setting up libflite1:amd64 (2.2-2) ...
+#7 42.38 Setting up libva-drm2:amd64 (2.10.0-1) ...
+#7 42.40 Setting up libsord-0-0:amd64 (0.16.8-2) ...
+#7 42.41 Setting up libwayland-cursor0:amd64 (1.18.0-2~exp1.1) ...
+#7 42.42 Setting up libxcb-randr0:amd64 (1.14-3) ...
+#7 42.44 Setting up libsratom-0-0:amd64 (0.6.8-1) ...
+#7 42.45 Setting up libx11-6:amd64 (2:1.7.2-1) ...
+#7 42.46 Setting up libharfbuzz0b:amd64 (2.7.4-1) ...
+#7 42.47 Setting up libgdk-pixbuf-2.0-0:amd64 (2.42.2+dfsg-1) ...
+#7 42.50 Setting up libsndfile1:amd64 (1.0.31-2) ...
+#7 42.52 Setting up libsm6:amd64 (2:1.2.3-1) ...
+#7 42.53 Setting up liblilv-0-0:amd64 (0.24.12-2) ...
+#7 42.54 Setting up libopenmpt0:amd64 (0.4.11-1) ...
+#7 42.56 Setting up libdrm-amdgpu1:amd64 (2.4.104-1) ...
+#7 42.57 Setting up libxcb-dri3-0:amd64 (1.14-3) ...
+#7 42.58 Setting up libx11-xcb1:amd64 (2:1.7.2-1) ...
+#7 42.60 Setting up libdrm-nouveau2:amd64 (2.4.104-1) ...
+#7 42.61 Setting up libxdamage1:amd64 (1:1.1.5-2) ...
+#7 42.62 Setting up libxrender1:amd64 (1:0.9.10-1) ...
+#7 42.63 Setting up libgbm1:amd64 (20.3.5-1) ...
+#7 42.66 Setting up libpulse0:amd64 (14.2-2) ...
+#7 42.68 Setting up libdrm-radeon1:amd64 (2.4.104-1) ...
+#7 42.69 Setting up fontconfig-config (2.13.1-4.2) ...
+#7 42.76 debconf: unable to initialize frontend: Dialog
+#7 42.76 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#7 42.76 debconf: falling back to frontend: Readline
+#7 42.76 debconf: unable to initialize frontend: Readline
+#7 42.76 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.32.1 /usr/local/share/perl/5.32.1 /usr/lib/x86_64-linux-gnu/perl5/5.32 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.32 /usr/share/perl/5.32 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+#7 42.76 debconf: falling back to frontend: Teletype
+#7 42.86 Setting up libdrm-intel1:amd64 (2.4.104-1) ...
+#7 42.88 Setting up libgl1-mesa-dri:amd64 (20.3.5-1) ...
+#7 42.89 Setting up libxext6:amd64 (2:1.3.3-1.1) ...
+#7 42.91 Setting up libopenal1:amd64 (1:1.19.1-2) ...
+#7 42.92 Setting up libxxf86vm1:amd64 (1:1.1.4-1+b2) ...
+#7 42.94 Setting up libxfixes3:amd64 (1:5.0.3-2) ...
+#7 42.95 Setting up libxinerama1:amd64 (2:1.1.4-2) ...
+#7 42.96 Setting up libxv1:amd64 (2:1.0.11-1) ...
+#7 42.98 Setting up libxrandr2:amd64 (2:1.5.1-1) ...
+#7 42.99 Setting up libgdk-pixbuf2.0-bin (2.42.2+dfsg-1) ...
+#7 43.00 Setting up libvdpau1:amd64 (1.4-3) ...
+#7 43.02 Setting up libxss1:amd64 (1:1.2.3-1) ...
+#7 43.03 Setting up libfontconfig1:amd64 (2.13.1-4.2) ...
+#7 43.05 Setting up mesa-va-drivers:amd64 (20.3.5-1) ...
+#7 43.06 Setting up libbluray2:amd64 (1:1.2.1-4+deb11u1) ...
+#7 43.07 Setting up libva-x11-2:amd64 (2.10.0-1) ...
+#7 43.08 Setting up i965-va-driver:amd64 (2.4.1+dfsg1-1) ...
+#7 43.10 Setting up mesa-vulkan-drivers:amd64 (20.3.5-1) ...
+#7 43.11 Setting up mesa-vdpau-drivers:amd64 (20.3.5-1) ...
+#7 43.12 Setting up fontconfig (2.13.1-4.2) ...
+#7 43.13 Regenerating fonts cache... done.
+#7 45.15 Setting up libglx-mesa0:amd64 (20.3.5-1) ...
+#7 45.16 Setting up libxi6:amd64 (2:1.7.10-1) ...
+#7 45.18 Setting up libglx0:amd64 (1.3.2-1) ...
+#7 45.19 Setting up libsphinxbase3:amd64 (0.8+5prealpha+1-12) ...
+#7 45.21 Setting up libxcursor1:amd64 (1:1.2.0-2) ...
+#7 45.22 Setting up libpango-1.0-0:amd64 (1.46.2-3) ...
+#7 45.23 Setting up libcairo2:amd64 (1.16.0-5) ...
+#7 45.24 Setting up libavutil56:amd64 (7:4.3.3-0+deb11u1) ...
+#7 45.26 Setting up libpocketsphinx3:amd64 (0.8+5prealpha+1-13) ...
+#7 45.27 Setting up libgl1:amd64 (1.3.2-1) ...
+#7 45.28 Setting up libass9:amd64 (1:0.15.0-2) ...
+#7 45.30 Setting up va-driver-all:amd64 (2.10.0-1) ...
+#7 45.31 Setting up libpostproc55:amd64 (7:4.3.3-0+deb11u1) ...
+#7 45.33 Setting up libtheora0:amd64 (1.1.1+dfsg.1-15) ...
+#7 45.34 Setting up libswscale5:amd64 (7:4.3.3-0+deb11u1) ...
+#7 45.35 Setting up libcairo-gobject2:amd64 (1.16.0-5) ...
+#7 45.37 Setting up libpangoft2-1.0-0:amd64 (1.46.2-3) ...
+#7 45.38 Setting up libsdl2-2.0-0:amd64 (2.0.14+dfsg2-3) ...
+#7 45.39 Setting up libvdpau-va-gl1:amd64 (0.4.2-1+b1) ...
+#7 45.41 Setting up libpangocairo-1.0-0:amd64 (1.46.2-3) ...
+#7 45.42 Setting up libswresample3:amd64 (7:4.3.3-0+deb11u1) ...
+#7 45.44 Setting up libavresample4:amd64 (7:4.3.3-0+deb11u1) ...
+#7 45.45 Setting up librsvg2-2:amd64 (2.50.3+dfsg-1) ...
+#7 45.46 Setting up librsvg2-common:amd64 (2.50.3+dfsg-1) ...
+#7 45.49 Setting up vdpau-driver-all:amd64 (1.4-3) ...
+#7 45.50 Setting up libavcodec58:amd64 (7:4.3.3-0+deb11u1) ...
+#7 45.51 Setting up libchromaprint1:amd64 (1.5.0-2) ...
+#7 45.53 Setting up libavformat58:amd64 (7:4.3.3-0+deb11u1) ...
+#7 45.54 Setting up libavfilter7:amd64 (7:4.3.3-0+deb11u1) ...
+#7 45.55 Setting up libavdevice58:amd64 (7:4.3.3-0+deb11u1) ...
+#7 45.57 Setting up ffmpeg (7:4.3.3-0+deb11u1) ...
+#7 45.59 Processing triggers for libc-bin (2.31-13+deb11u3) ...
+#7 45.63 Processing triggers for libgdk-pixbuf-2.0-0:amd64 (2.42.2+dfsg-1) ...
+#7 DONE 46.0s
+
+#9 [5/8] COPY boto-hydrotek.txt /root/.boto
+#9 sha256:255ad0fc7eb4a2758c35d556dceb9fa913db374bedf8ac90438e709870ae7ac7
+#9 DONE 0.0s
+
+#10 [6/8] COPY hydrotek-serviceAcc.json /root
+#10 sha256:f2f25eeb371bde3f3e233b6504b65788db05e8502b524536cad366ed420a61cf
+#10 DONE 0.0s
+
+#11 [7/8] COPY . /PlantCV
+#11 sha256:34d9325eee74333fa8fbb9db0bbba6daf87b0a041a8a0a40dc8e64764a02a71c
+#11 DONE 0.0s
+
+#12 [8/8] RUN pip install -r requirements.txt
+#12 sha256:2e71f8a0e177de8e3d164da942735031efa05e0c11e07ef362a2033bba0c1319
+#12 2.083 Collecting pandas
+#12 2.134   Downloading pandas-1.3.5-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.3 MB)
+#12 3.275      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.3/11.3 MB 10.0 MB/s eta 0:00:00
+#12 3.585 Collecting plantcv
+#12 3.596   Downloading plantcv-3.13.4-py3-none-any.whl (230 kB)
+#12 3.619      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 230.7/230.7 KB 11.1 MB/s eta 0:00:00
+#12 3.666 Collecting flask
+#12 3.676   Downloading Flask-2.1.1-py3-none-any.whl (95 kB)
+#12 3.689      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 95.2/95.2 KB 7.8 MB/s eta 0:00:00
+#12 3.727 Collecting flask_restful
+#12 3.740   Downloading Flask_RESTful-0.3.9-py2.py3-none-any.whl (25 kB)
+#12 3.788 Collecting gsutil
+#12 3.804   Downloading gsutil-5.9.tar.gz (2.9 MB)
+#12 4.089      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 MB 10.2 MB/s eta 0:00:00
+#12 4.375   Preparing metadata (setup.py): started
+#12 4.660   Preparing metadata (setup.py): finished with status 'done'
+#12 4.850 Collecting opencv-python
+#12 4.861   Downloading opencv_python-4.5.5.64-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (60.5 MB)
+#12 11.04      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.5/60.5 MB 6.9 MB/s eta 0:00:00
+#12 11.12 Collecting uuid
+#12 11.13   Downloading uuid-1.30.tar.gz (5.8 kB)
+#12 11.14   Preparing metadata (setup.py): started
+#12 11.32   Preparing metadata (setup.py): finished with status 'done'
+#12 11.35 Collecting dnspython
+#12 11.36   Downloading dnspython-2.2.1-py3-none-any.whl (269 kB)
+#12 11.42      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 269.1/269.1 KB 5.4 MB/s eta 0:00:00
+#12 11.84 Collecting pymongo[srv]
+#12 11.85   Downloading pymongo-4.1.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (462 kB)
+#12 11.90      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 462.8/462.8 KB 9.7 MB/s eta 0:00:00
+#12 12.23 Collecting numpy>=1.17.3
+#12 12.24   Downloading numpy-1.21.5-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.7 MB)
+#12 13.79      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.7/15.7 MB 10.1 MB/s eta 0:00:00
+#12 13.84 Collecting python-dateutil>=2.7.3
+#12 13.85   Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
+#12 13.89      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 247.7/247.7 KB 7.4 MB/s eta 0:00:00
+#12 13.97 Collecting pytz>=2017.3
+#12 13.98   Downloading pytz-2022.1-py2.py3-none-any.whl (503 kB)
+#12 14.03      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 503.5/503.5 KB 10.7 MB/s eta 0:00:00
+#12 14.20 Collecting scikit-learn
+#12 14.26   Downloading scikit_learn-1.0.2-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (24.8 MB)
+#12 17.66      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 24.8/24.8 MB 7.3 MB/s eta 0:00:00
+#12 17.77 Collecting dask
+#12 17.78   Downloading dask-2022.2.0-py3-none-any.whl (1.1 MB)
+#12 17.89      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 9.6 MB/s eta 0:00:00
+#12 18.08 Collecting scipy
+#12 18.09   Downloading scipy-1.7.3-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (38.1 MB)
+#12 22.98      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 38.1/38.1 MB 5.8 MB/s eta 0:00:00
+#12 23.11 Collecting scikit-image>=0.13
+#12 23.13   Downloading scikit_image-0.19.2-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (13.5 MB)
+#12 24.41      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.5/13.5 MB 10.5 MB/s eta 0:00:00
+#12 24.61 Collecting matplotlib>=1.5
+#12 24.62   Downloading matplotlib-3.5.1-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (11.2 MB)
+#12 25.71      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.2/11.2 MB 10.4 MB/s eta 0:00:00
+#12 25.75 Collecting dask-jobqueue
+#12 25.76   Downloading dask_jobqueue-0.7.3-py2.py3-none-any.whl (40 kB)
+#12 25.77      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.1/40.1 KB 3.3 MB/s eta 0:00:00
+#12 25.79 Collecting plotnine
+#12 25.81   Downloading plotnine-0.8.0-py3-none-any.whl (4.7 MB)
+#12 26.25      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 10.8 MB/s eta 0:00:00
+#12 26.33 Collecting statsmodels
+#12 26.34   Downloading statsmodels-0.13.2-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (9.8 MB)
+#12 27.41      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.8/9.8 MB 9.2 MB/s eta 0:00:00
+#12 27.48 Collecting Werkzeug>=2.0
+#12 27.49   Downloading Werkzeug-2.1.1-py3-none-any.whl (224 kB)
+#12 27.52      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 224.7/224.7 KB 7.2 MB/s eta 0:00:00
+#12 27.56 Collecting Jinja2>=3.0
+#12 27.57   Downloading Jinja2-3.1.1-py3-none-any.whl (132 kB)
+#12 27.59      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 132.6/132.6 KB 6.6 MB/s eta 0:00:00
+#12 27.66 Collecting importlib-metadata>=3.6.0
+#12 27.68   Downloading importlib_metadata-4.11.3-py3-none-any.whl (18 kB)
+#12 27.72 Collecting click>=8.0
+#12 27.73   Downloading click-8.1.2-py3-none-any.whl (96 kB)
+#12 27.74      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.6/96.6 KB 9.7 MB/s eta 0:00:00
+#12 27.77 Collecting itsdangerous>=2.0
+#12 27.78   Downloading itsdangerous-2.1.2-py3-none-any.whl (15 kB)
+#12 27.82 Collecting aniso8601>=0.82
+#12 27.83   Downloading aniso8601-9.0.1-py2.py3-none-any.whl (52 kB)
+#12 27.84      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 52.8/52.8 KB 4.1 MB/s eta 0:00:00
+#12 27.87 Collecting six>=1.3.0
+#12 27.89   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+#12 27.95 Collecting argcomplete>=1.9.4
+#12 27.96   Downloading argcomplete-2.0.0-py2.py3-none-any.whl (37 kB)
+#12 27.98 Collecting crcmod>=1.7
+#12 28.00   Downloading crcmod-1.7.tar.gz (89 kB)
+#12 28.01      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 89.7/89.7 KB 11.3 MB/s eta 0:00:00
+#12 28.02   Preparing metadata (setup.py): started
+#12 28.21   Preparing metadata (setup.py): finished with status 'done'
+#12 28.24 Collecting fasteners>=0.14.1
+#12 28.25   Downloading fasteners-0.17.3-py3-none-any.whl (18 kB)
+#12 28.28 Collecting gcs-oauth2-boto-plugin>=3.0
+#12 28.29   Downloading gcs-oauth2-boto-plugin-3.0.tar.gz (20 kB)
+#12 28.30   Preparing metadata (setup.py): started
+#12 28.48   Preparing metadata (setup.py): finished with status 'done'
+#12 28.52 Collecting google-apitools>=0.5.32
+#12 28.53   Downloading google_apitools-0.5.32-py3-none-any.whl (135 kB)
+#12 28.54      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 135.7/135.7 KB 10.1 MB/s eta 0:00:00
+#12 28.57 Collecting httplib2>=0.20.4
+#12 28.59   Downloading httplib2-0.20.4-py3-none-any.whl (96 kB)
+#12 28.61      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.6/96.6 KB 4.9 MB/s eta 0:00:00
+#12 28.63 Collecting google-reauth>=0.1.0
+#12 28.64   Downloading google_reauth-0.1.1-py2.py3-none-any.whl (17 kB)
+#12 28.67 Collecting monotonic>=1.4
+#12 28.68   Downloading monotonic-1.6-py2.py3-none-any.whl (8.2 kB)
+#12 28.74 Collecting pyOpenSSL>=0.13
+#12 28.75   Downloading pyOpenSSL-22.0.0-py2.py3-none-any.whl (55 kB)
+#12 28.76      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 55.8/55.8 KB 7.2 MB/s eta 0:00:00
+#12 28.78 Collecting retry_decorator>=1.0.0
+#12 28.79   Downloading retry_decorator-1.1.1.tar.gz (3.9 kB)
+#12 28.80   Preparing metadata (setup.py): started
+#12 28.95   Preparing metadata (setup.py): finished with status 'done'
+#12 29.03 Collecting google-auth[aiohttp]>=2.5.0
+#12 29.05   Downloading google_auth-2.6.3-py2.py3-none-any.whl (156 kB)
+#12 29.06      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 156.6/156.6 KB 12.4 MB/s eta 0:00:00
+#12 29.18 Collecting rsa==4.7.2
+#12 29.19   Downloading rsa-4.7.2-py3-none-any.whl (34 kB)
+#12 29.23 Collecting boto>=2.29.1
+#12 29.25   Downloading boto-2.49.0-py2.py3-none-any.whl (1.4 MB)
+#12 29.40      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 9.4 MB/s eta 0:00:00
+#12 29.43 Collecting oauth2client>=2.2.0
+#12 29.44   Downloading oauth2client-4.1.3-py2.py3-none-any.whl (98 kB)
+#12 29.46      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.2/98.2 KB 7.4 MB/s eta 0:00:00
+#12 29.50 Collecting pyasn1>=0.1.3
+#12 29.51   Downloading pyasn1-0.4.8-py2.py3-none-any.whl (77 kB)
+#12 29.53      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 77.1/77.1 KB 4.6 MB/s eta 0:00:00
+#12 29.62 Collecting pyasn1-modules>=0.2.1
+#12 29.64   Downloading pyasn1_modules-0.2.8-py2.py3-none-any.whl (155 kB)
+#12 29.66      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 155.3/155.3 KB 6.7 MB/s eta 0:00:00
+#12 29.69 Collecting cachetools<6.0,>=2.0.0
+#12 29.71   Downloading cachetools-5.0.0-py3-none-any.whl (9.1 kB)
+#12 29.77 Collecting requests<3.0.0dev,>=2.20.0
+#12 29.78   Downloading requests-2.27.1-py2.py3-none-any.whl (63 kB)
+#12 29.79      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.1/63.1 KB 5.4 MB/s eta 0:00:00
+#12 30.15 Collecting aiohttp<4.0.0dev,>=3.6.2
+#12 30.16   Downloading aiohttp-3.8.1-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (1.1 MB)
+#12 30.28      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 10.0 MB/s eta 0:00:00
+#12 30.30 Collecting pyu2f
+#12 30.31   Downloading pyu2f-0.1.5.tar.gz (27 kB)
+#12 30.32   Preparing metadata (setup.py): started
+#12 30.51   Preparing metadata (setup.py): finished with status 'done'
+#12 30.58 Collecting pyparsing!=3.0.0,!=3.0.1,!=3.0.2,!=3.0.3,<4,>=2.4.2
+#12 30.59   Downloading pyparsing-3.0.8-py3-none-any.whl (98 kB)
+#12 30.61      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.5/98.5 KB 8.1 MB/s eta 0:00:00
+#12 30.67 Collecting zipp>=0.5
+#12 30.68   Downloading zipp-3.8.0-py3-none-any.whl (5.4 kB)
+#12 30.71 Collecting typing-extensions>=3.6.4
+#12 30.72   Downloading typing_extensions-4.1.1-py3-none-any.whl (26 kB)
+#12 30.80 Collecting MarkupSafe>=2.0
+#12 30.82   Downloading MarkupSafe-2.1.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (25 kB)
+#12 31.12 Collecting pillow>=6.2.0
+#12 31.13   Downloading Pillow-9.1.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.3 MB)
+#12 31.54      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 10.5 MB/s eta 0:00:00
+#12 31.63 Collecting kiwisolver>=1.0.1
+#12 31.64   Downloading kiwisolver-1.4.2-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.1 MB)
+#12 31.79      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 7.8 MB/s eta 0:00:00
+#12 31.83 Collecting packaging>=20.0
+#12 31.84   Downloading packaging-21.3-py3-none-any.whl (40 kB)
+#12 31.85      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.8/40.8 KB 5.6 MB/s eta 0:00:00
+#12 31.93 Collecting fonttools>=4.22.0
+#12 31.94   Downloading fonttools-4.32.0-py3-none-any.whl (900 kB)
+#12 32.08      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 900.8/900.8 KB 6.7 MB/s eta 0:00:00
+#12 32.10 Collecting cycler>=0.10
+#12 32.11   Downloading cycler-0.11.0-py3-none-any.whl (6.4 kB)
+#12 32.41 Collecting cryptography>=35.0
+#12 32.43   Downloading cryptography-36.0.2-cp36-abi3-manylinux_2_24_x86_64.whl (3.6 MB)
+#12 32.83      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.6/3.6 MB 8.9 MB/s eta 0:00:00
+#12 32.96 Collecting PyWavelets>=1.1.1
+#12 32.97   Downloading PyWavelets-1.3.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (6.4 MB)
+#12 33.61      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.4/6.4 MB 10.0 MB/s eta 0:00:00
+#12 33.66 Collecting networkx>=2.2
+#12 33.67   Downloading networkx-2.6.3-py3-none-any.whl (1.9 MB)
+#12 33.88      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 9.5 MB/s eta 0:00:00
+#12 33.94 Collecting tifffile>=2019.7.26
+#12 33.95   Downloading tifffile-2021.11.2-py3-none-any.whl (178 kB)
+#12 33.98      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 178.9/178.9 KB 7.7 MB/s eta 0:00:00
+#12 34.01 Collecting imageio>=2.4.1
+#12 34.03   Downloading imageio-2.16.1-py3-none-any.whl (3.3 MB)
+#12 34.37      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 9.9 MB/s eta 0:00:00
+#12 34.47 Collecting toolz>=0.8.2
+#12 34.48   Downloading toolz-0.11.2-py3-none-any.whl (55 kB)
+#12 34.49      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 55.8/55.8 KB 6.1 MB/s eta 0:00:00
+#12 34.51 Collecting cloudpickle>=1.1.1
+#12 34.53   Downloading cloudpickle-2.0.0-py3-none-any.whl (25 kB)
+#12 34.57 Collecting fsspec>=0.6.0
+#12 34.58   Downloading fsspec-2022.3.0-py3-none-any.whl (136 kB)
+#12 34.59      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 136.1/136.1 KB 9.6 MB/s eta 0:00:00
+#12 34.66 Collecting pyyaml>=5.3.1
+#12 34.67   Downloading PyYAML-6.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (596 kB)
+#12 34.75      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 596.3/596.3 KB 7.9 MB/s eta 0:00:00
+#12 34.78 Collecting partd>=0.3.10
+#12 34.79   Downloading partd-1.2.0-py3-none-any.whl (19 kB)
+#12 34.90 Collecting distributed>=2.19
+#12 34.91   Downloading distributed-2022.2.0-py3-none-any.whl (837 kB)
+#12 35.00      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 837.0/837.0 KB 9.2 MB/s eta 0:00:00
+#12 35.07 Collecting patsy>=0.5.1
+#12 35.08   Downloading patsy-0.5.2-py2.py3-none-any.whl (233 kB)
+#12 35.11      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 233.7/233.7 KB 10.4 MB/s eta 0:00:00
+#12 35.14 Collecting descartes>=1.1.0
+#12 35.14   Downloading descartes-1.1.0-py3-none-any.whl (5.8 kB)
+#12 35.18 Collecting mizani>=0.7.3
+#12 35.19   Downloading mizani-0.7.3-py3-none-any.whl (63 kB)
+#12 35.19      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.1/63.1 KB 7.7 MB/s eta 0:00:00
+#12 35.31 Collecting joblib>=0.11
+#12 35.32   Downloading joblib-1.1.0-py2.py3-none-any.whl (306 kB)
+#12 35.35      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 307.0/307.0 KB 10.2 MB/s eta 0:00:00
+#12 35.40 Collecting threadpoolctl>=2.0.0
+#12 35.41   Downloading threadpoolctl-3.1.0-py3-none-any.whl (14 kB)
+#12 35.79 Collecting multidict<7.0,>=4.5
+#12 35.81   Downloading multidict-6.0.2-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (94 kB)
+#12 35.82      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 94.8/94.8 KB 8.8 MB/s eta 0:00:00
+#12 35.85 Collecting asynctest==0.13.0
+#12 35.88   Downloading asynctest-0.13.0-py3-none-any.whl (26 kB)
+#12 35.91 Collecting attrs>=17.3.0
+#12 35.92   Downloading attrs-21.4.0-py2.py3-none-any.whl (60 kB)
+#12 35.93      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.6/60.6 KB 6.8 MB/s eta 0:00:00
+#12 35.96 Collecting async-timeout<5.0,>=4.0.0a3
+#12 35.97   Downloading async_timeout-4.0.2-py3-none-any.whl (5.8 kB)
+#12 36.04 Collecting frozenlist>=1.1.1
+#12 36.05   Downloading frozenlist-1.3.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (144 kB)
+#12 36.07      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 144.8/144.8 KB 9.4 MB/s eta 0:00:00
+#12 36.10 Collecting charset-normalizer<3.0,>=2.0
+#12 36.11   Downloading charset_normalizer-2.0.12-py3-none-any.whl (39 kB)
+#12 36.14 Collecting aiosignal>=1.1.2
+#12 36.17   Downloading aiosignal-1.2.0-py3-none-any.whl (8.2 kB)
+#12 36.35 Collecting yarl<2.0,>=1.0
+#12 36.37   Downloading yarl-1.7.2-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (271 kB)
+#12 36.40      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 271.8/271.8 KB 8.6 MB/s eta 0:00:00
+#12 36.64 Collecting cffi>=1.12
+#12 36.65   Downloading cffi-1.15.0-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (427 kB)
+#12 36.70      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 427.1/427.1 KB 8.3 MB/s eta 0:00:00
+#12 36.77 Collecting sortedcontainers!=2.0.0,!=2.0.1
+#12 36.78   Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl (29 kB)
+#12 36.85 Collecting zict>=0.1.3
+#12 36.87   Downloading zict-2.1.0-py3-none-any.whl (11 kB)
+#12 36.93 Collecting msgpack>=0.6.0
+#12 36.94   Downloading msgpack-1.0.3-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (299 kB)
+#12 36.98      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 299.4/299.4 KB 8.5 MB/s eta 0:00:00
+#12 36.98 Requirement already satisfied: setuptools in /usr/local/lib/python3.7/site-packages (from distributed>=2.19->dask-jobqueue->plantcv->-r requirements.txt (line 2)) (57.5.0)
+#12 37.15 Collecting psutil>=5.0
+#12 37.16   Downloading psutil-5.9.0-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (280 kB)
+#12 37.19      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 280.7/280.7 KB 7.8 MB/s eta 0:00:00
+#12 37.22 Collecting tblib>=1.6.0
+#12 37.23   Downloading tblib-1.7.0-py2.py3-none-any.whl (12 kB)
+#12 37.29 Collecting tornado>=5
+#12 37.32   Downloading tornado-6.1-cp37-cp37m-manylinux2010_x86_64.whl (428 kB)
+#12 37.47      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 428.5/428.5 KB 2.8 MB/s eta 0:00:00
+#12 37.68 Collecting palettable
+#12 37.69   Downloading palettable-3.3.0-py2.py3-none-any.whl (111 kB)
+#12 37.72      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 111.8/111.8 KB 4.1 MB/s eta 0:00:00
+#12 37.83 Collecting locket
+#12 37.87   Downloading locket-0.2.1-py2.py3-none-any.whl (4.1 kB)
+#12 38.05 Collecting certifi>=2017.4.17
+#12 38.07   Downloading certifi-2021.10.8-py2.py3-none-any.whl (149 kB)
+#12 38.11      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 149.2/149.2 KB 3.6 MB/s eta 0:00:00
+#12 38.13 Collecting idna<4,>=2.5
+#12 38.15   Downloading idna-3.3-py3-none-any.whl (61 kB)
+#12 38.19      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.2/61.2 KB 1.5 MB/s eta 0:00:00
+#12 38.26 Collecting urllib3<1.27,>=1.21.1
+#12 38.33   Downloading urllib3-1.26.9-py2.py3-none-any.whl (138 kB)
+#12 38.37      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 139.0/139.0 KB 3.6 MB/s eta 0:00:00
+#12 38.67 Collecting pycparser
+#12 38.71   Downloading pycparser-2.21-py2.py3-none-any.whl (118 kB)
+#12 38.77      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 118.7/118.7 KB 2.7 MB/s eta 0:00:00
+#12 38.96 Collecting heapdict
+#12 38.97   Downloading HeapDict-1.0.1-py3-none-any.whl (3.9 kB)
+#12 39.05 Building wheels for collected packages: gsutil, uuid, crcmod, gcs-oauth2-boto-plugin, retry_decorator, pyu2f
+#12 39.05   Building wheel for gsutil (setup.py): started
+#12 40.64   Building wheel for gsutil (setup.py): finished with status 'done'
+#12 40.64   Created wheel for gsutil: filename=gsutil-5.9-py3-none-any.whl size=3744804 sha256=0eea498f663d0cc0f576b6d5520b16e81dca3b6006a847173d6ac9f0567492d4
+#12 40.64   Stored in directory: /root/.cache/pip/wheels/3f/48/ef/e11e9eb34daf175bf09b270aeeff31cc37ca0e5086fa34ccf1
+#12 40.65   Building wheel for uuid (setup.py): started
+#12 40.85   Building wheel for uuid (setup.py): finished with status 'done'
+#12 40.85   Created wheel for uuid: filename=uuid-1.30-py3-none-any.whl size=6503 sha256=959b17a776777a637bafabd8a65f9d02c168735cdc394c5b97e1092985596317
+#12 40.85   Stored in directory: /root/.cache/pip/wheels/2a/ea/87/dd57f1ecb4f0752f3e1dbf958ebf8b36d920d190425bcdc24d
+#12 40.86   Building wheel for crcmod (setup.py): started
+#12 41.06   Building wheel for crcmod (setup.py): finished with status 'done'
+#12 41.06   Created wheel for crcmod: filename=crcmod-1.7-py3-none-any.whl size=18850 sha256=3582eccd7f45b435cce51e4d827497be1df196d18c9d2cb000bb1c998ec47dc8
+#12 41.06   Stored in directory: /root/.cache/pip/wheels/dc/9a/e9/49e627353476cec8484343c4ab656f1e0d783ee77b9dde2d1f
+#12 41.06   Building wheel for gcs-oauth2-boto-plugin (setup.py): started
+#12 41.26   Building wheel for gcs-oauth2-boto-plugin (setup.py): finished with status 'done'
+#12 41.26   Created wheel for gcs-oauth2-boto-plugin: filename=gcs_oauth2_boto_plugin-3.0-py3-none-any.whl size=23221 sha256=9de9a5f51559984b2c7a4e80b534dcfbe59ff1b657fb7aef6bdc9cc663a3da68
+#12 41.26   Stored in directory: /root/.cache/pip/wheels/2a/93/86/cb2140365b10150dbdba338da385c7c18c7cbd9e592e3421db
+#12 41.26   Building wheel for retry_decorator (setup.py): started
+#12 41.44   Building wheel for retry_decorator (setup.py): finished with status 'done'
+#12 41.44   Created wheel for retry_decorator: filename=retry_decorator-1.1.1-py2.py3-none-any.whl size=3658 sha256=bde5e3ae6c22e848c8db89c0bc3fbc0d9cef8709bd7ebcf8e9689ba7ab68bc0b
+#12 41.44   Stored in directory: /root/.cache/pip/wheels/91/39/dc/7359c639e34d9c388a1b3e1dc444363905194afc70f57eb9a5
+#12 41.44   Building wheel for pyu2f (setup.py): started
+#12 41.64   Building wheel for pyu2f (setup.py): finished with status 'done'
+#12 41.64   Created wheel for pyu2f: filename=pyu2f-0.1.5-py3-none-any.whl size=39404 sha256=4a3908078c154eedd7d1440c95801ea87b490552a70c15f7cf0193556268ddbd
+#12 41.64   Stored in directory: /root/.cache/pip/wheels/b3/84/c6/ee8093bf96e2224aca3a9bfa074aa3c86c39208f91055fd60f
+#12 41.65 Successfully built gsutil uuid crcmod gcs-oauth2-boto-plugin retry_decorator pyu2f
+#12 42.23 Installing collected packages: uuid, sortedcontainers, retry_decorator, pytz, pyasn1, palettable, msgpack, monotonic, heapdict, crcmod, certifi, boto, aniso8601, zipp, zict, Werkzeug, urllib3, typing-extensions, tornado, toolz, threadpoolctl, tblib, six, rsa, pyyaml, pyparsing, pymongo, pycparser, pyasn1-modules, psutil, pillow, numpy, networkx, multidict, MarkupSafe, locket, joblib, itsdangerous, idna, fsspec, frozenlist, fonttools, fasteners, dnspython, cycler, cloudpickle, charset-normalizer, cachetools, attrs, asynctest, yarl, tifffile, scipy, requests, PyWavelets, pyu2f, python-dateutil, patsy, partd, packaging, opencv-python, kiwisolver, Jinja2, importlib-metadata, imageio, httplib2, google-auth, cffi, async-timeout, aiosignal, scikit-learn, scikit-image, pandas, oauth2client, matplotlib, google-reauth, dask, cryptography, click, argcomplete, aiohttp, statsmodels, pyOpenSSL, mizani, google-apitools, flask, distributed, descartes, plotnine, gcs-oauth2-boto-plugin, flask_restful, dask-jobqueue, plantcv, gsutil
+#12 66.79 Successfully installed Jinja2-3.1.1 MarkupSafe-2.1.1 PyWavelets-1.3.0 Werkzeug-2.1.1 aiohttp-3.8.1 aiosignal-1.2.0 aniso8601-9.0.1 argcomplete-2.0.0 async-timeout-4.0.2 asynctest-0.13.0 attrs-21.4.0 boto-2.49.0 cachetools-5.0.0 certifi-2021.10.8 cffi-1.15.0 charset-normalizer-2.0.12 click-8.1.2 cloudpickle-2.0.0 crcmod-1.7 cryptography-36.0.2 cycler-0.11.0 dask-2022.2.0 dask-jobqueue-0.7.3 descartes-1.1.0 distributed-2022.2.0 dnspython-2.2.1 fasteners-0.17.3 flask-2.1.1 flask_restful-0.3.9 fonttools-4.32.0 frozenlist-1.3.0 fsspec-2022.3.0 gcs-oauth2-boto-plugin-3.0 google-apitools-0.5.32 google-auth-2.6.3 google-reauth-0.1.1 gsutil-5.9 heapdict-1.0.1 httplib2-0.20.4 idna-3.3 imageio-2.16.1 importlib-metadata-4.11.3 itsdangerous-2.1.2 joblib-1.1.0 kiwisolver-1.4.2 locket-0.2.1 matplotlib-3.5.1 mizani-0.7.3 monotonic-1.6 msgpack-1.0.3 multidict-6.0.2 networkx-2.6.3 numpy-1.21.5 oauth2client-4.1.3 opencv-python-4.5.5.64 packaging-21.3 palettable-3.3.0 pandas-1.3.5 partd-1.2.0 patsy-0.5.2 pillow-9.1.0 plantcv-3.13.4 plotnine-0.8.0 psutil-5.9.0 pyOpenSSL-22.0.0 pyasn1-0.4.8 pyasn1-modules-0.2.8 pycparser-2.21 pymongo-4.1.0 pyparsing-3.0.8 python-dateutil-2.8.2 pytz-2022.1 pyu2f-0.1.5 pyyaml-6.0 requests-2.27.1 retry_decorator-1.1.1 rsa-4.7.2 scikit-image-0.19.2 scikit-learn-1.0.2 scipy-1.7.3 six-1.16.0 sortedcontainers-2.4.0 statsmodels-0.13.2 tblib-1.7.0 threadpoolctl-3.1.0 tifffile-2021.11.2 toolz-0.11.2 tornado-6.1 typing-extensions-4.1.1 urllib3-1.26.9 uuid-1.30 yarl-1.7.2 zict-2.1.0 zipp-3.8.0
+#12 66.79 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#12 DONE 67.7s
+
+#13 exporting to image
+#13 sha256:e8c613e07b0b7ff33893b694f7759a10d42e180f2b4dc349fb57dc6b71dcab00
+#13 exporting layers
+#13 exporting layers 4.8s done
+#13 writing image sha256:a390810c3ecfd7581e6f1d0e54bbaa289187d544294a9a77021243bb426bb0a5 done
+#13 naming to gcr.io/hydrotek-286213/thermaldetectionnew:v2 done
+#13 DONE 4.8s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
++ echo 'Docker Push gcr.io/hydrotek-286213/thermaldetectionnew:v2'
+Docker Push gcr.io/hydrotek-286213/thermaldetectionnew:v2
++ docker push gcr.io/hydrotek-286213/thermaldetectionnew:v2
+The push refers to repository [gcr.io/hydrotek-286213/thermaldetectionnew]
+71b344e39ec5: Preparing
+6b3874b365d4: Preparing
+cb25ee093927: Preparing
+098e8eab975f: Preparing
+8e6db34ae989: Preparing
+4ba61370069c: Preparing
+8f2050dc2a97: Preparing
+23082294d405: Preparing
+de08555149f7: Preparing
+b8a74ae2f7f6: Preparing
+43140e0754dc: Preparing
+608f3a074261: Preparing
+de08555149f7: Waiting
+43140e0754dc: Waiting
+8f2050dc2a97: Waiting
+23082294d405: Waiting
+608f3a074261: Waiting
+6b3874b365d4: Pushed
+cb25ee093927: Pushed
+098e8eab975f: Pushed
+23082294d405: Layer already exists
+8f2050dc2a97: Layer already exists
+b8a74ae2f7f6: Layer already exists
+de08555149f7: Layer already exists
+43140e0754dc: Layer already exists
+608f3a074261: Layer already exists
+4ba61370069c: Pushed
+8e6db34ae989: Pushed
+71b344e39ec5: Pushed
+v2: digest: sha256:0cb03adee4722e7ae0e9ce8b241ef26b6e8fe3020388c726e142b81568dffbbc size: 2839
++ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ for i in "${arr[@]}"
++ temp=plant-growth
++ temp=plant-growth
++ echo plant-growth
+plant-growth
++ i=plant-growth
++ case "$i" in
++ SELECTED_APP_CI=plant-growth/src
++ CI_DIR=plant-growth
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=plantgrowth
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ genericCI plant-growth/src plant-growth hydro-ai-usecases plantgrowth ./hydrotek/cicdbuild/ gcr.io/hydrotek-286213 release
++ SELECTED_APP_CI=plant-growth/src
++ CI_DIR=plant-growth
++ REPOSITORY_DIR=hydro-ai-usecases
++ CONTAINERNAME=plantgrowth
++ CI_WORK_DIR=./hydrotek/cicdbuild/
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=v2
++ echo 'GENERIC CI'
+GENERIC CI
++ echo 'Beginning Integration of plant-growth/src'
+Beginning Integration of plant-growth/src
++ mkdir -p ./hydrotek/cicdbuild/
++ cd ./hydrotek/cicdbuild/
++ '[' -d hydro-ai-usecases ']'
++ cd hydro-ai-usecases
++ git pull
+Already up to date.
++ gcloud auth print-access-token
++ docker login -u oauth2accesstoken --password-stdin https://gcr.io
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+Login Succeeded
++ cd plant-growth/src
++ echo 'Docker Build gcr.io/hydrotek-286213/plantgrowth:v2 '
+Docker Build gcr.io/hydrotek-286213/plantgrowth:v2 
++ docker build --no-cache -t gcr.io/hydrotek-286213/plantgrowth:v2 .
+#1 [internal] load build definition from Dockerfile
+#1 sha256:7a3a249ec02bd33f67de61efe5e67c3fff97c1d1c885ed0f62157195ee8fe1f5
+#1 DONE 0.0s
+
+#1 [internal] load build definition from Dockerfile
+#1 sha256:7a3a249ec02bd33f67de61efe5e67c3fff97c1d1c885ed0f62157195ee8fe1f5
+#1 transferring dockerfile: 727B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load .dockerignore
+#2 sha256:d97934b3e7cd9bbbbe8054b3d4706291e8f0dcdf12dd132b446599a19429ee6c
+#2 transferring context: 2B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.7-slim
+#3 sha256:576eff89510cc9dab877be3284ab0265a765bba7f64805aeb347711cab5ba2e4
+#3 DONE 2.0s
+
+#4 [ 1/20] FROM docker.io/library/python:3.7-slim@sha256:ce125c0b5b4014a3688244a26aa3cd6c82b38a2369db0ff902de18813cd06d36
+#4 sha256:80b49f5170441667f8232c80fde03bc15deaeb58cbc2e58f0eb2a002d2b46b4e
+#4 DONE 0.0s
+
+#5 [ 2/20] WORKDIR /Plant_Growth
+#5 sha256:ca65f5137fcd58084cd8921526c15f323c977558c42673e9f29f01372d93b1e0
+#5 CACHED
+
+#21 [internal] load build context
+#21 sha256:0ddb6bbe52732b3dcf467c8559d5ae971193f30a6c4211bc9c279ed42da52c9e
+#21 transferring context: 608.90kB done
+#21 DONE 0.0s
+
+#6 [ 3/20] RUN apt-get update
+#6 sha256:40bf1d00afd153761223b8f3aba34bd3994a15ad24958b54edc7b4750859dc09
+#6 0.862 Get:1 http://security.debian.org/debian-security bullseye-security InRelease [44.1 kB]
+#6 0.870 Get:2 http://deb.debian.org/debian bullseye InRelease [116 kB]
+#6 0.899 Get:3 http://deb.debian.org/debian bullseye-updates InRelease [39.4 kB]
+#6 0.961 Get:4 http://security.debian.org/debian-security bullseye-security/main amd64 Packages [124 kB]
+#6 1.040 Get:5 http://deb.debian.org/debian bullseye/main amd64 Packages [8182 kB]
+#6 2.348 Get:6 http://deb.debian.org/debian bullseye-updates/main amd64 Packages [2596 B]
+#6 3.107 Fetched 8508 kB in 3s (3141 kB/s)
+#6 3.107 Reading package lists...
+#6 DONE 3.5s
+
+#7 [ 4/20] RUN apt-get install -y libglib2.0-0
+#7 sha256:555f32e3934043d5d7690df1ffd64c1b9ece3ecceded26cc991d54e384b62e0a
+#7 0.470 Reading package lists...
+#7 0.796 Building dependency tree...
+#7 0.875 Reading state information...
+#7 0.949 The following additional packages will be installed:
+#7 0.949   libglib2.0-data libicu67 libxml2 shared-mime-info xdg-user-dirs
+#7 0.975 The following NEW packages will be installed:
+#7 0.975   libglib2.0-0 libglib2.0-data libicu67 libxml2 shared-mime-info xdg-user-dirs
+#7 1.000 0 upgraded, 6 newly installed, 0 to remove and 0 not upgraded.
+#7 1.000 Need to get 12.6 MB of archives.
+#7 1.000 After this operation, 54.6 MB of additional disk space will be used.
+#7 1.000 Get:1 http://deb.debian.org/debian bullseye/main amd64 libglib2.0-0 amd64 2.66.8-1 [1370 kB]
+#7 1.226 Get:2 http://deb.debian.org/debian bullseye/main amd64 libglib2.0-data all 2.66.8-1 [1164 kB]
+#7 1.408 Get:3 http://deb.debian.org/debian bullseye/main amd64 libicu67 amd64 67.1-7 [8622 kB]
+#7 2.735 Get:4 http://deb.debian.org/debian bullseye/main amd64 libxml2 amd64 2.9.10+dfsg-6.7+deb11u1 [693 kB]
+#7 2.843 Get:5 http://deb.debian.org/debian bullseye/main amd64 shared-mime-info amd64 2.0-1 [701 kB]
+#7 2.951 Get:6 http://deb.debian.org/debian bullseye/main amd64 xdg-user-dirs amd64 0.17-2 [53.8 kB]
+#7 3.041 debconf: delaying package configuration, since apt-utils is not installed
+#7 3.067 Fetched 12.6 MB in 2s (6360 kB/s)
+#7 3.101 Selecting previously unselected package libglib2.0-0:amd64.
+#7 3.101 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 7023 files and directories currently installed.)
+#7 3.105 Preparing to unpack .../0-libglib2.0-0_2.66.8-1_amd64.deb ...
+#7 3.116 Unpacking libglib2.0-0:amd64 (2.66.8-1) ...
+#7 3.243 Selecting previously unselected package libglib2.0-data.
+#7 3.244 Preparing to unpack .../1-libglib2.0-data_2.66.8-1_all.deb ...
+#7 3.249 Unpacking libglib2.0-data (2.66.8-1) ...
+#7 3.393 Selecting previously unselected package libicu67:amd64.
+#7 3.394 Preparing to unpack .../2-libicu67_67.1-7_amd64.deb ...
+#7 3.399 Unpacking libicu67:amd64 (67.1-7) ...
+#7 4.092 Selecting previously unselected package libxml2:amd64.
+#7 4.093 Preparing to unpack .../3-libxml2_2.9.10+dfsg-6.7+deb11u1_amd64.deb ...
+#7 4.100 Unpacking libxml2:amd64 (2.9.10+dfsg-6.7+deb11u1) ...
+#7 4.187 Selecting previously unselected package shared-mime-info.
+#7 4.187 Preparing to unpack .../4-shared-mime-info_2.0-1_amd64.deb ...
+#7 4.193 Unpacking shared-mime-info (2.0-1) ...
+#7 4.299 Selecting previously unselected package xdg-user-dirs.
+#7 4.300 Preparing to unpack .../5-xdg-user-dirs_0.17-2_amd64.deb ...
+#7 4.307 Unpacking xdg-user-dirs (0.17-2) ...
+#7 4.354 Setting up libicu67:amd64 (67.1-7) ...
+#7 4.371 Setting up xdg-user-dirs (0.17-2) ...
+#7 4.405 Setting up libglib2.0-0:amd64 (2.66.8-1) ...
+#7 4.424 No schema files found: doing nothing.
+#7 4.431 Setting up libglib2.0-data (2.66.8-1) ...
+#7 4.448 Setting up libxml2:amd64 (2.9.10+dfsg-6.7+deb11u1) ...
+#7 4.463 Setting up shared-mime-info (2.0-1) ...
+#7 7.274 Processing triggers for libc-bin (2.31-13+deb11u3) ...
+#7 DONE 7.4s
+
+#8 [ 5/20] RUN apt install -y libgl1-mesa-glx
+#8 sha256:87a583e4524fc349faeaad504d41bc821676a8ac1cd9bb2b072c7e2a32d6ce23
+#8 0.457 
+#8 0.457 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+#8 0.457 
+#8 0.462 Reading package lists...
+#8 0.805 Building dependency tree...
+#8 0.884 Reading state information...
+#8 0.957 The following additional packages will be installed:
+#8 0.957   libbsd0 libdrm-amdgpu1 libdrm-common libdrm-intel1 libdrm-nouveau2
+#8 0.957   libdrm-radeon1 libdrm2 libedit2 libelf1 libgl1 libgl1-mesa-dri libglapi-mesa
+#8 0.957   libglvnd0 libglx-mesa0 libglx0 libllvm11 libmd0 libpciaccess0
+#8 0.957   libsensors-config libsensors5 libvulkan1 libwayland-client0 libx11-6
+#8 0.957   libx11-data libx11-xcb1 libxau6 libxcb-dri2-0 libxcb-dri3-0 libxcb-glx0
+#8 0.957   libxcb-present0 libxcb-randr0 libxcb-shm0 libxcb-sync1 libxcb-xfixes0
+#8 0.957   libxcb1 libxdamage1 libxdmcp6 libxext6 libxfixes3 libxshmfence1 libxxf86vm1
+#8 0.958   libz3-4 mesa-vulkan-drivers
+#8 0.958 Suggested packages:
+#8 0.958   pciutils lm-sensors
+#8 1.084 The following NEW packages will be installed:
+#8 1.084   libbsd0 libdrm-amdgpu1 libdrm-common libdrm-intel1 libdrm-nouveau2
+#8 1.084   libdrm-radeon1 libdrm2 libedit2 libelf1 libgl1 libgl1-mesa-dri
+#8 1.084   libgl1-mesa-glx libglapi-mesa libglvnd0 libglx-mesa0 libglx0 libllvm11
+#8 1.084   libmd0 libpciaccess0 libsensors-config libsensors5 libvulkan1
+#8 1.084   libwayland-client0 libx11-6 libx11-data libx11-xcb1 libxau6 libxcb-dri2-0
+#8 1.084   libxcb-dri3-0 libxcb-glx0 libxcb-present0 libxcb-randr0 libxcb-shm0
+#8 1.084   libxcb-sync1 libxcb-xfixes0 libxcb1 libxdamage1 libxdmcp6 libxext6
+#8 1.084   libxfixes3 libxshmfence1 libxxf86vm1 libz3-4 mesa-vulkan-drivers
+#8 1.120 0 upgraded, 44 newly installed, 0 to remove and 0 not upgraded.
+#8 1.120 Need to get 42.4 MB of archives.
+#8 1.120 After this operation, 173 MB of additional disk space will be used.
+#8 1.120 Get:1 http://deb.debian.org/debian bullseye/main amd64 libmd0 amd64 1.0.3-3 [28.0 kB]
+#8 1.130 Get:2 http://deb.debian.org/debian bullseye/main amd64 libbsd0 amd64 0.11.3-1 [108 kB]
+#8 1.146 Get:3 http://deb.debian.org/debian bullseye/main amd64 libdrm-common all 2.4.104-1 [14.9 kB]
+#8 1.148 Get:4 http://deb.debian.org/debian bullseye/main amd64 libdrm2 amd64 2.4.104-1 [41.5 kB]
+#8 1.162 Get:5 http://deb.debian.org/debian bullseye/main amd64 libdrm-amdgpu1 amd64 2.4.104-1 [28.5 kB]
+#8 1.166 Get:6 http://deb.debian.org/debian bullseye/main amd64 libpciaccess0 amd64 0.16-1 [53.6 kB]
+#8 1.179 Get:7 http://deb.debian.org/debian bullseye/main amd64 libdrm-intel1 amd64 2.4.104-1 [71.8 kB]
+#8 1.189 Get:8 http://deb.debian.org/debian bullseye/main amd64 libdrm-nouveau2 amd64 2.4.104-1 [26.8 kB]
+#8 1.194 Get:9 http://deb.debian.org/debian bullseye/main amd64 libdrm-radeon1 amd64 2.4.104-1 [30.2 kB]
+#8 1.201 Get:10 http://deb.debian.org/debian bullseye/main amd64 libedit2 amd64 3.1-20191231-2+b1 [96.7 kB]
+#8 1.219 Get:11 http://deb.debian.org/debian bullseye/main amd64 libelf1 amd64 0.183-1 [165 kB]
+#8 1.242 Get:12 http://deb.debian.org/debian bullseye/main amd64 libglapi-mesa amd64 20.3.5-1 [71.7 kB]
+#8 1.253 Get:13 http://deb.debian.org/debian bullseye/main amd64 libz3-4 amd64 4.8.10-1 [6949 kB]
+#8 2.360 Get:14 http://deb.debian.org/debian bullseye/main amd64 libllvm11 amd64 1:11.0.1-2 [17.9 MB]
+#8 5.353 Get:15 http://deb.debian.org/debian bullseye/main amd64 libsensors-config all 1:3.6.0-7 [32.3 kB]
+#8 5.360 Get:16 http://deb.debian.org/debian bullseye/main amd64 libsensors5 amd64 1:3.6.0-7 [52.3 kB]
+#8 5.372 Get:17 http://deb.debian.org/debian bullseye/main amd64 libvulkan1 amd64 1.2.162.0-1 [103 kB]
+#8 5.386 Get:18 http://deb.debian.org/debian bullseye/main amd64 libgl1-mesa-dri amd64 20.3.5-1 [9633 kB]
+#8 6.876 Get:19 http://deb.debian.org/debian bullseye/main amd64 libglvnd0 amd64 1.3.2-1 [53.6 kB]
+#8 6.883 Get:20 http://deb.debian.org/debian bullseye/main amd64 libxau6 amd64 1:1.0.9-1 [19.7 kB]
+#8 6.884 Get:21 http://deb.debian.org/debian bullseye/main amd64 libxdmcp6 amd64 1:1.1.2-3 [26.3 kB]
+#8 6.896 Get:22 http://deb.debian.org/debian bullseye/main amd64 libxcb1 amd64 1.14-3 [140 kB]
+#8 6.911 Get:23 http://deb.debian.org/debian bullseye/main amd64 libx11-data all 2:1.7.2-1 [311 kB]
+#8 6.961 Get:24 http://deb.debian.org/debian bullseye/main amd64 libx11-6 amd64 2:1.7.2-1 [772 kB]
+#8 7.079 Get:25 http://deb.debian.org/debian bullseye/main amd64 libx11-xcb1 amd64 2:1.7.2-1 [203 kB]
+#8 7.109 Get:26 http://deb.debian.org/debian bullseye/main amd64 libxcb-dri2-0 amd64 1.14-3 [103 kB]
+#8 7.122 Get:27 http://deb.debian.org/debian bullseye/main amd64 libxcb-dri3-0 amd64 1.14-3 [102 kB]
+#8 7.144 Get:28 http://deb.debian.org/debian bullseye/main amd64 libxcb-glx0 amd64 1.14-3 [118 kB]
+#8 7.163 Get:29 http://deb.debian.org/debian bullseye/main amd64 libxcb-present0 amd64 1.14-3 [101 kB]
+#8 7.176 Get:30 http://deb.debian.org/debian bullseye/main amd64 libxcb-shm0 amd64 1.14-3 [101 kB]
+#8 7.194 Get:31 http://deb.debian.org/debian bullseye/main amd64 libxcb-sync1 amd64 1.14-3 [105 kB]
+#8 7.209 Get:32 http://deb.debian.org/debian bullseye/main amd64 libxcb-xfixes0 amd64 1.14-3 [105 kB]
+#8 7.231 Get:33 http://deb.debian.org/debian bullseye/main amd64 libxdamage1 amd64 1:1.1.5-2 [15.7 kB]
+#8 7.231 Get:34 http://deb.debian.org/debian bullseye/main amd64 libxext6 amd64 2:1.3.3-1.1 [52.7 kB]
+#8 7.242 Get:35 http://deb.debian.org/debian bullseye/main amd64 libxfixes3 amd64 1:5.0.3-2 [22.1 kB]
+#8 7.245 Get:36 http://deb.debian.org/debian bullseye/main amd64 libxshmfence1 amd64 1.3-1 [8820 B]
+#8 7.245 Get:37 http://deb.debian.org/debian bullseye/main amd64 libxxf86vm1 amd64 1:1.1.4-1+b2 [20.8 kB]
+#8 7.249 Get:38 http://deb.debian.org/debian bullseye/main amd64 libglx-mesa0 amd64 20.3.5-1 [186 kB]
+#8 7.277 Get:39 http://deb.debian.org/debian bullseye/main amd64 libglx0 amd64 1.3.2-1 [35.7 kB]
+#8 7.281 Get:40 http://deb.debian.org/debian bullseye/main amd64 libgl1 amd64 1.3.2-1 [89.5 kB]
+#8 7.294 Get:41 http://deb.debian.org/debian bullseye/main amd64 libgl1-mesa-glx amd64 20.3.5-1 [51.1 kB]
+#8 7.301 Get:42 http://deb.debian.org/debian bullseye/main amd64 libwayland-client0 amd64 1.18.0-2~exp1.1 [26.9 kB]
+#8 7.304 Get:43 http://deb.debian.org/debian bullseye/main amd64 libxcb-randr0 amd64 1.14-3 [113 kB]
+#8 7.321 Get:44 http://deb.debian.org/debian bullseye/main amd64 mesa-vulkan-drivers amd64 20.3.5-1 [4086 kB]
+#8 8.028 debconf: delaying package configuration, since apt-utils is not installed
+#8 8.054 Fetched 42.4 MB in 7s (6181 kB/s)
+#8 8.080 Selecting previously unselected package libmd0:amd64.
+#8 8.080 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 7414 files and directories currently installed.)
+#8 8.083 Preparing to unpack .../00-libmd0_1.0.3-3_amd64.deb ...
+#8 8.095 Unpacking libmd0:amd64 (1.0.3-3) ...
+#8 8.137 Selecting previously unselected package libbsd0:amd64.
+#8 8.138 Preparing to unpack .../01-libbsd0_0.11.3-1_amd64.deb ...
+#8 8.144 Unpacking libbsd0:amd64 (0.11.3-1) ...
+#8 8.182 Selecting previously unselected package libdrm-common.
+#8 8.183 Preparing to unpack .../02-libdrm-common_2.4.104-1_all.deb ...
+#8 8.189 Unpacking libdrm-common (2.4.104-1) ...
+#8 8.230 Selecting previously unselected package libdrm2:amd64.
+#8 8.231 Preparing to unpack .../03-libdrm2_2.4.104-1_amd64.deb ...
+#8 8.236 Unpacking libdrm2:amd64 (2.4.104-1) ...
+#8 8.278 Selecting previously unselected package libdrm-amdgpu1:amd64.
+#8 8.279 Preparing to unpack .../04-libdrm-amdgpu1_2.4.104-1_amd64.deb ...
+#8 8.286 Unpacking libdrm-amdgpu1:amd64 (2.4.104-1) ...
+#8 8.330 Selecting previously unselected package libpciaccess0:amd64.
+#8 8.331 Preparing to unpack .../05-libpciaccess0_0.16-1_amd64.deb ...
+#8 8.336 Unpacking libpciaccess0:amd64 (0.16-1) ...
+#8 8.380 Selecting previously unselected package libdrm-intel1:amd64.
+#8 8.381 Preparing to unpack .../06-libdrm-intel1_2.4.104-1_amd64.deb ...
+#8 8.385 Unpacking libdrm-intel1:amd64 (2.4.104-1) ...
+#8 8.429 Selecting previously unselected package libdrm-nouveau2:amd64.
+#8 8.429 Preparing to unpack .../07-libdrm-nouveau2_2.4.104-1_amd64.deb ...
+#8 8.435 Unpacking libdrm-nouveau2:amd64 (2.4.104-1) ...
+#8 8.478 Selecting previously unselected package libdrm-radeon1:amd64.
+#8 8.478 Preparing to unpack .../08-libdrm-radeon1_2.4.104-1_amd64.deb ...
+#8 8.483 Unpacking libdrm-radeon1:amd64 (2.4.104-1) ...
+#8 8.527 Selecting previously unselected package libedit2:amd64.
+#8 8.528 Preparing to unpack .../09-libedit2_3.1-20191231-2+b1_amd64.deb ...
+#8 8.532 Unpacking libedit2:amd64 (3.1-20191231-2+b1) ...
+#8 8.579 Selecting previously unselected package libelf1:amd64.
+#8 8.580 Preparing to unpack .../10-libelf1_0.183-1_amd64.deb ...
+#8 8.588 Unpacking libelf1:amd64 (0.183-1) ...
+#8 8.640 Selecting previously unselected package libglapi-mesa:amd64.
+#8 8.641 Preparing to unpack .../11-libglapi-mesa_20.3.5-1_amd64.deb ...
+#8 8.647 Unpacking libglapi-mesa:amd64 (20.3.5-1) ...
+#8 8.688 Selecting previously unselected package libz3-4:amd64.
+#8 8.689 Preparing to unpack .../12-libz3-4_4.8.10-1_amd64.deb ...
+#8 8.694 Unpacking libz3-4:amd64 (4.8.10-1) ...
+#8 9.221 Selecting previously unselected package libllvm11:amd64.
+#8 9.222 Preparing to unpack .../13-libllvm11_1%3a11.0.1-2_amd64.deb ...
+#8 9.228 Unpacking libllvm11:amd64 (1:11.0.1-2) ...
+#8 10.62 Selecting previously unselected package libsensors-config.
+#8 10.62 Preparing to unpack .../14-libsensors-config_1%3a3.6.0-7_all.deb ...
+#8 10.62 Unpacking libsensors-config (1:3.6.0-7) ...
+#8 10.67 Selecting previously unselected package libsensors5:amd64.
+#8 10.67 Preparing to unpack .../15-libsensors5_1%3a3.6.0-7_amd64.deb ...
+#8 10.67 Unpacking libsensors5:amd64 (1:3.6.0-7) ...
+#8 10.72 Selecting previously unselected package libvulkan1:amd64.
+#8 10.72 Preparing to unpack .../16-libvulkan1_1.2.162.0-1_amd64.deb ...
+#8 10.72 Unpacking libvulkan1:amd64 (1.2.162.0-1) ...
+#8 10.77 Selecting previously unselected package libgl1-mesa-dri:amd64.
+#8 10.77 Preparing to unpack .../17-libgl1-mesa-dri_20.3.5-1_amd64.deb ...
+#8 10.78 Unpacking libgl1-mesa-dri:amd64 (20.3.5-1) ...
+#8 11.52 Selecting previously unselected package libglvnd0:amd64.
+#8 11.52 Preparing to unpack .../18-libglvnd0_1.3.2-1_amd64.deb ...
+#8 11.52 Unpacking libglvnd0:amd64 (1.3.2-1) ...
+#8 11.58 Selecting previously unselected package libxau6:amd64.
+#8 11.58 Preparing to unpack .../19-libxau6_1%3a1.0.9-1_amd64.deb ...
+#8 11.58 Unpacking libxau6:amd64 (1:1.0.9-1) ...
+#8 11.62 Selecting previously unselected package libxdmcp6:amd64.
+#8 11.62 Preparing to unpack .../20-libxdmcp6_1%3a1.1.2-3_amd64.deb ...
+#8 11.63 Unpacking libxdmcp6:amd64 (1:1.1.2-3) ...
+#8 11.67 Selecting previously unselected package libxcb1:amd64.
+#8 11.67 Preparing to unpack .../21-libxcb1_1.14-3_amd64.deb ...
+#8 11.68 Unpacking libxcb1:amd64 (1.14-3) ...
+#8 11.72 Selecting previously unselected package libx11-data.
+#8 11.72 Preparing to unpack .../22-libx11-data_2%3a1.7.2-1_all.deb ...
+#8 11.73 Unpacking libx11-data (2:1.7.2-1) ...
+#8 11.81 Selecting previously unselected package libx11-6:amd64.
+#8 11.81 Preparing to unpack .../23-libx11-6_2%3a1.7.2-1_amd64.deb ...
+#8 11.82 Unpacking libx11-6:amd64 (2:1.7.2-1) ...
+#8 11.92 Selecting previously unselected package libx11-xcb1:amd64.
+#8 11.92 Preparing to unpack .../24-libx11-xcb1_2%3a1.7.2-1_amd64.deb ...
+#8 11.92 Unpacking libx11-xcb1:amd64 (2:1.7.2-1) ...
+#8 11.98 Selecting previously unselected package libxcb-dri2-0:amd64.
+#8 11.98 Preparing to unpack .../25-libxcb-dri2-0_1.14-3_amd64.deb ...
+#8 11.98 Unpacking libxcb-dri2-0:amd64 (1.14-3) ...
+#8 12.03 Selecting previously unselected package libxcb-dri3-0:amd64.
+#8 12.03 Preparing to unpack .../26-libxcb-dri3-0_1.14-3_amd64.deb ...
+#8 12.04 Unpacking libxcb-dri3-0:amd64 (1.14-3) ...
+#8 12.09 Selecting previously unselected package libxcb-glx0:amd64.
+#8 12.09 Preparing to unpack .../27-libxcb-glx0_1.14-3_amd64.deb ...
+#8 12.10 Unpacking libxcb-glx0:amd64 (1.14-3) ...
+#8 12.14 Selecting previously unselected package libxcb-present0:amd64.
+#8 12.15 Preparing to unpack .../28-libxcb-present0_1.14-3_amd64.deb ...
+#8 12.15 Unpacking libxcb-present0:amd64 (1.14-3) ...
+#8 12.20 Selecting previously unselected package libxcb-shm0:amd64.
+#8 12.20 Preparing to unpack .../29-libxcb-shm0_1.14-3_amd64.deb ...
+#8 12.21 Unpacking libxcb-shm0:amd64 (1.14-3) ...
+#8 12.25 Selecting previously unselected package libxcb-sync1:amd64.
+#8 12.25 Preparing to unpack .../30-libxcb-sync1_1.14-3_amd64.deb ...
+#8 12.26 Unpacking libxcb-sync1:amd64 (1.14-3) ...
+#8 12.31 Selecting previously unselected package libxcb-xfixes0:amd64.
+#8 12.31 Preparing to unpack .../31-libxcb-xfixes0_1.14-3_amd64.deb ...
+#8 12.32 Unpacking libxcb-xfixes0:amd64 (1.14-3) ...
+#8 12.36 Selecting previously unselected package libxdamage1:amd64.
+#8 12.36 Preparing to unpack .../32-libxdamage1_1%3a1.1.5-2_amd64.deb ...
+#8 12.37 Unpacking libxdamage1:amd64 (1:1.1.5-2) ...
+#8 12.41 Selecting previously unselected package libxext6:amd64.
+#8 12.41 Preparing to unpack .../33-libxext6_2%3a1.3.3-1.1_amd64.deb ...
+#8 12.42 Unpacking libxext6:amd64 (2:1.3.3-1.1) ...
+#8 12.46 Selecting previously unselected package libxfixes3:amd64.
+#8 12.46 Preparing to unpack .../34-libxfixes3_1%3a5.0.3-2_amd64.deb ...
+#8 12.47 Unpacking libxfixes3:amd64 (1:5.0.3-2) ...
+#8 12.51 Selecting previously unselected package libxshmfence1:amd64.
+#8 12.51 Preparing to unpack .../35-libxshmfence1_1.3-1_amd64.deb ...
+#8 12.52 Unpacking libxshmfence1:amd64 (1.3-1) ...
+#8 12.56 Selecting previously unselected package libxxf86vm1:amd64.
+#8 12.56 Preparing to unpack .../36-libxxf86vm1_1%3a1.1.4-1+b2_amd64.deb ...
+#8 12.56 Unpacking libxxf86vm1:amd64 (1:1.1.4-1+b2) ...
+#8 12.61 Selecting previously unselected package libglx-mesa0:amd64.
+#8 12.61 Preparing to unpack .../37-libglx-mesa0_20.3.5-1_amd64.deb ...
+#8 12.61 Unpacking libglx-mesa0:amd64 (20.3.5-1) ...
+#8 12.67 Selecting previously unselected package libglx0:amd64.
+#8 12.67 Preparing to unpack .../38-libglx0_1.3.2-1_amd64.deb ...
+#8 12.68 Unpacking libglx0:amd64 (1.3.2-1) ...
+#8 12.72 Selecting previously unselected package libgl1:amd64.
+#8 12.72 Preparing to unpack .../39-libgl1_1.3.2-1_amd64.deb ...
+#8 12.73 Unpacking libgl1:amd64 (1.3.2-1) ...
+#8 12.77 Selecting previously unselected package libgl1-mesa-glx:amd64.
+#8 12.77 Preparing to unpack .../40-libgl1-mesa-glx_20.3.5-1_amd64.deb ...
+#8 12.78 Unpacking libgl1-mesa-glx:amd64 (20.3.5-1) ...
+#8 12.82 Selecting previously unselected package libwayland-client0:amd64.
+#8 12.82 Preparing to unpack .../41-libwayland-client0_1.18.0-2~exp1.1_amd64.deb ...
+#8 12.83 Unpacking libwayland-client0:amd64 (1.18.0-2~exp1.1) ...
+#8 12.87 Selecting previously unselected package libxcb-randr0:amd64.
+#8 12.88 Preparing to unpack .../42-libxcb-randr0_1.14-3_amd64.deb ...
+#8 12.88 Unpacking libxcb-randr0:amd64 (1.14-3) ...
+#8 12.93 Selecting previously unselected package mesa-vulkan-drivers:amd64.
+#8 12.93 Preparing to unpack .../43-mesa-vulkan-drivers_20.3.5-1_amd64.deb ...
+#8 12.93 Unpacking mesa-vulkan-drivers:amd64 (20.3.5-1) ...
+#8 13.31 Setting up libpciaccess0:amd64 (0.16-1) ...
+#8 13.33 Setting up libxau6:amd64 (1:1.0.9-1) ...
+#8 13.34 Setting up libglvnd0:amd64 (1.3.2-1) ...
+#8 13.36 Setting up libsensors-config (1:3.6.0-7) ...
+#8 13.39 Setting up libz3-4:amd64 (4.8.10-1) ...
+#8 13.40 Setting up libx11-data (2:1.7.2-1) ...
+#8 13.42 Setting up libsensors5:amd64 (1:3.6.0-7) ...
+#8 13.43 Setting up libglapi-mesa:amd64 (20.3.5-1) ...
+#8 13.45 Setting up libvulkan1:amd64 (1.2.162.0-1) ...
+#8 13.46 Setting up libmd0:amd64 (1.0.3-3) ...
+#8 13.48 Setting up libxshmfence1:amd64 (1.3-1) ...
+#8 13.50 Setting up libbsd0:amd64 (0.11.3-1) ...
+#8 13.51 Setting up libdrm-common (2.4.104-1) ...
+#8 13.53 Setting up libelf1:amd64 (0.183-1) ...
+#8 13.55 Setting up libwayland-client0:amd64 (1.18.0-2~exp1.1) ...
+#8 13.56 Setting up libxdmcp6:amd64 (1:1.1.2-3) ...
+#8 13.57 Setting up libxcb1:amd64 (1.14-3) ...
+#8 13.59 Setting up libxcb-xfixes0:amd64 (1.14-3) ...
+#8 13.61 Setting up libxcb-glx0:amd64 (1.14-3) ...
+#8 13.62 Setting up libedit2:amd64 (3.1-20191231-2+b1) ...
+#8 13.64 Setting up libxcb-shm0:amd64 (1.14-3) ...
+#8 13.66 Setting up libxcb-present0:amd64 (1.14-3) ...
+#8 13.67 Setting up libllvm11:amd64 (1:11.0.1-2) ...
+#8 13.69 Setting up libxcb-sync1:amd64 (1.14-3) ...
+#8 13.70 Setting up libxcb-dri2-0:amd64 (1.14-3) ...
+#8 13.72 Setting up libdrm2:amd64 (2.4.104-1) ...
+#8 13.73 Setting up libxcb-randr0:amd64 (1.14-3) ...
+#8 13.75 Setting up libx11-6:amd64 (2:1.7.2-1) ...
+#8 13.76 Setting up libdrm-amdgpu1:amd64 (2.4.104-1) ...
+#8 13.78 Setting up libxcb-dri3-0:amd64 (1.14-3) ...
+#8 13.80 Setting up libx11-xcb1:amd64 (2:1.7.2-1) ...
+#8 13.81 Setting up libdrm-nouveau2:amd64 (2.4.104-1) ...
+#8 13.83 Setting up libxdamage1:amd64 (1:1.1.5-2) ...
+#8 13.84 Setting up libdrm-radeon1:amd64 (2.4.104-1) ...
+#8 13.86 Setting up libdrm-intel1:amd64 (2.4.104-1) ...
+#8 13.88 Setting up libgl1-mesa-dri:amd64 (20.3.5-1) ...
+#8 13.89 Setting up libxext6:amd64 (2:1.3.3-1.1) ...
+#8 13.91 Setting up libxxf86vm1:amd64 (1:1.1.4-1+b2) ...
+#8 13.93 Setting up libxfixes3:amd64 (1:5.0.3-2) ...
+#8 13.94 Setting up mesa-vulkan-drivers:amd64 (20.3.5-1) ...
+#8 13.96 Setting up libglx-mesa0:amd64 (20.3.5-1) ...
+#8 13.98 Setting up libglx0:amd64 (1.3.2-1) ...
+#8 13.99 Setting up libgl1:amd64 (1.3.2-1) ...
+#8 14.01 Setting up libgl1-mesa-glx:amd64 (20.3.5-1) ...
+#8 14.03 Processing triggers for libc-bin (2.31-13+deb11u3) ...
+#8 DONE 14.3s
+
+#9 [ 6/20] RUN pip install datetime
+#9 sha256:9e4172c2a704e3e29c163dda032576702a29c94a4897205acf615b7c1ca803a6
+#9 1.871 Collecting datetime
+#9 2.009   Downloading DateTime-4.4-py2.py3-none-any.whl (51 kB)
+#9 2.022      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 51.7/51.7 KB 4.3 MB/s eta 0:00:00
+#9 2.122 Collecting pytz
+#9 2.134   Downloading pytz-2022.1-py2.py3-none-any.whl (503 kB)
+#9 2.222      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 503.5/503.5 KB 5.9 MB/s eta 0:00:00
+#9 2.411 Collecting zope.interface
+#9 2.423   Downloading zope.interface-5.4.0-cp37-cp37m-manylinux2010_x86_64.whl (251 kB)
+#9 2.467      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 252.0/252.0 KB 6.1 MB/s eta 0:00:00
+#9 2.479 Requirement already satisfied: setuptools in /usr/local/lib/python3.7/site-packages (from zope.interface->datetime) (57.5.0)
+#9 2.520 Installing collected packages: pytz, zope.interface, datetime
+#9 2.790 Successfully installed datetime-4.4 pytz-2022.1 zope.interface-5.4.0
+#9 2.790 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#9 DONE 3.0s
+
+#10 [ 7/20] RUN pip install uuid
+#10 sha256:6e3c20ac52dd40d22c9a671414f3731b0f901641bc9b6430636f5a3b5e46e105
+#10 0.777 Collecting uuid
+#10 0.817   Downloading uuid-1.30.tar.gz (5.8 kB)
+#10 0.824   Preparing metadata (setup.py): started
+#10 1.120   Preparing metadata (setup.py): finished with status 'done'
+#10 1.124 Building wheels for collected packages: uuid
+#10 1.125   Building wheel for uuid (setup.py): started
+#10 1.336   Building wheel for uuid (setup.py): finished with status 'done'
+#10 1.337   Created wheel for uuid: filename=uuid-1.30-py3-none-any.whl size=6503 sha256=060f2e156b2b0e5baf5a3f5c8339788b25b19df363bf1a1f31da19bb7665ab8b
+#10 1.337   Stored in directory: /root/.cache/pip/wheels/2a/ea/87/dd57f1ecb4f0752f3e1dbf958ebf8b36d920d190425bcdc24d
+#10 1.340 Successfully built uuid
+#10 1.375 Installing collected packages: uuid
+#10 1.391 Successfully installed uuid-1.30
+#10 1.391 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#10 DONE 1.5s
+
+#11 [ 8/20] RUN pip install numpy
+#11 sha256:dbc91e9b3b21e738018676fe8fdc100fae7fa42d27b9164b8a7ef959967575b8
+#11 1.205 Collecting numpy
+#11 1.239   Downloading numpy-1.21.5-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.7 MB)
+#11 4.042      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.7/15.7 MB 5.7 MB/s eta 0:00:00
+#11 4.127 Installing collected packages: numpy
+#11 6.098 Successfully installed numpy-1.21.5
+#11 6.098 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#11 DONE 6.3s
+
+#12 [ 9/20] RUN pip install scipy
+#12 sha256:4ef3236ddfe2b77c16262dfca337fdb6d5f6c4586706ed392b4a39cea8e55e86
+#12 1.033 Collecting scipy
+#12 1.098   Downloading scipy-1.7.3-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (38.1 MB)
+#12 7.663      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 38.1/38.1 MB 5.0 MB/s eta 0:00:00
+#12 7.712 Requirement already satisfied: numpy<1.23.0,>=1.16.5 in /usr/local/lib/python3.7/site-packages (from scipy) (1.21.5)
+#12 7.754 Installing collected packages: scipy
+#12 10.47 Successfully installed scipy-1.7.3
+#12 10.47 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#12 DONE 10.6s
+
+#13 [10/20] RUN pip install opencv-python
+#13 sha256:5e1194103934015e45492a27136a3f11fc57203446297f115fefc1c78c773496
+#13 1.220 Collecting opencv-python
+#13 1.270   Downloading opencv_python-4.5.5.64-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (60.5 MB)
+#13 11.81      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.5/60.5 MB 4.2 MB/s eta 0:00:00
+#13 11.88 Requirement already satisfied: numpy>=1.14.5 in /usr/local/lib/python3.7/site-packages (from opencv-python) (1.21.5)
+#13 11.92 Installing collected packages: opencv-python
+#13 13.18 Successfully installed opencv-python-4.5.5.64
+#13 13.18 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#13 DONE 13.3s
+
+#14 [11/20] RUN pip install plantcv
+#14 sha256:db2a23b5c82eaccef721ab55805911a9a86ad9b1151b946c5ee466434d12389f
+#14 0.972 Collecting plantcv
+#14 1.023   Downloading plantcv-3.13.4-py3-none-any.whl (230 kB)
+#14 1.072      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 230.7/230.7 KB 4.8 MB/s eta 0:00:00
+#14 1.171 Collecting scikit-image>=0.13
+#14 1.184   Downloading scikit_image-0.19.2-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (13.5 MB)
+#14 3.362      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.5/13.5 MB 6.2 MB/s eta 0:00:00
+#14 3.408 Collecting dask-jobqueue
+#14 3.419   Downloading dask_jobqueue-0.7.3-py2.py3-none-any.whl (40 kB)
+#14 3.432      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.1/40.1 KB 3.3 MB/s eta 0:00:00
+#14 3.607 Collecting matplotlib>=1.5
+#14 3.618   Downloading matplotlib-3.5.1-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (11.2 MB)
+#14 5.415      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.2/11.2 MB 6.2 MB/s eta 0:00:00
+#14 5.457 Collecting plotnine
+#14 5.472   Downloading plotnine-0.8.0-py3-none-any.whl (4.7 MB)
+#14 6.242      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 6.1 MB/s eta 0:00:00
+#14 6.252 Requirement already satisfied: scipy in /usr/local/lib/python3.7/site-packages (from plantcv) (1.7.3)
+#14 6.590 Collecting statsmodels
+#14 6.603   Downloading statsmodels-0.13.2-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (9.8 MB)
+#14 8.397      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.8/9.8 MB 5.5 MB/s eta 0:00:00
+#14 8.419 Requirement already satisfied: opencv-python in /usr/local/lib/python3.7/site-packages (from plantcv) (4.5.5.64)
+#14 8.453 Collecting python-dateutil
+#14 8.463   Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
+#14 8.507      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 247.7/247.7 KB 6.3 MB/s eta 0:00:00
+#14 8.590 Collecting dask
+#14 8.600   Downloading dask-2022.2.0-py3-none-any.whl (1.1 MB)
+#14 8.794      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 5.5 MB/s eta 0:00:00
+#14 8.972 Collecting scikit-learn
+#14 8.983   Downloading scikit_learn-1.0.2-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (24.8 MB)
+#14 12.94      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 24.8/24.8 MB 5.9 MB/s eta 0:00:00
+#14 13.16 Collecting pandas
+#14 13.18   Downloading pandas-1.3.5-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.3 MB)
+#14 14.96      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.3/11.3 MB 6.3 MB/s eta 0:00:00
+#14 14.99 Requirement already satisfied: numpy>=1.11 in /usr/local/lib/python3.7/site-packages (from plantcv) (1.21.5)
+#14 15.08 Collecting fonttools>=4.22.0
+#14 15.10   Downloading fonttools-4.32.0-py3-none-any.whl (900 kB)
+#14 15.25      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 900.8/900.8 KB 6.2 MB/s eta 0:00:00
+#14 15.32 Collecting pyparsing>=2.2.1
+#14 15.33   Downloading pyparsing-3.0.8-py3-none-any.whl (98 kB)
+#14 15.35      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.5/98.5 KB 5.1 MB/s eta 0:00:00
+#14 15.39 Collecting cycler>=0.10
+#14 15.40   Downloading cycler-0.11.0-py3-none-any.whl (6.4 kB)
+#14 15.45 Collecting packaging>=20.0
+#14 15.46   Downloading packaging-21.3-py3-none-any.whl (40 kB)
+#14 15.47      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.8/40.8 KB 3.5 MB/s eta 0:00:00
+#14 15.77 Collecting pillow>=6.2.0
+#14 15.78   Downloading Pillow-9.1.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.3 MB)
+#14 16.47      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 6.3 MB/s eta 0:00:00
+#14 16.55 Collecting kiwisolver>=1.0.1
+#14 16.56   Downloading kiwisolver-1.4.2-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.1 MB)
+#14 16.75      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 6.1 MB/s eta 0:00:00
+#14 16.78 Collecting six>=1.5
+#14 16.80   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+#14 16.88 Collecting networkx>=2.2
+#14 16.90   Downloading networkx-2.6.3-py3-none-any.whl (1.9 MB)
+#14 17.21      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 6.2 MB/s eta 0:00:00
+#14 17.28 Collecting PyWavelets>=1.1.1
+#14 17.29   Downloading PyWavelets-1.3.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (6.4 MB)
+#14 18.31      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.4/6.4 MB 6.3 MB/s eta 0:00:00
+#14 18.37 Collecting imageio>=2.4.1
+#14 18.38   Downloading imageio-2.16.1-py3-none-any.whl (3.3 MB)
+#14 18.93      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 6.1 MB/s eta 0:00:00
+#14 19.01 Collecting tifffile>=2019.7.26
+#14 19.02   Downloading tifffile-2021.11.2-py3-none-any.whl (178 kB)
+#14 19.06      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 178.9/178.9 KB 5.0 MB/s eta 0:00:00
+#14 19.11 Collecting partd>=0.3.10
+#14 19.12   Downloading partd-1.2.0-py3-none-any.whl (19 kB)
+#14 19.20 Collecting pyyaml>=5.3.1
+#14 19.21   Downloading PyYAML-6.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (596 kB)
+#14 19.32      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 596.3/596.3 KB 6.0 MB/s eta 0:00:00
+#14 19.35 Collecting cloudpickle>=1.1.1
+#14 19.36   Downloading cloudpickle-2.0.0-py3-none-any.whl (25 kB)
+#14 19.40 Collecting toolz>=0.8.2
+#14 19.41   Downloading toolz-0.11.2-py3-none-any.whl (55 kB)
+#14 19.42      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 55.8/55.8 KB 5.5 MB/s eta 0:00:00
+#14 19.46 Collecting fsspec>=0.6.0
+#14 19.47   Downloading fsspec-2022.3.0-py3-none-any.whl (136 kB)
+#14 19.50      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 136.1/136.1 KB 5.7 MB/s eta 0:00:00
+#14 19.60 Collecting distributed>=2.19
+#14 19.61   Downloading distributed-2022.2.0-py3-none-any.whl (837 kB)
+#14 19.75      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 837.0/837.0 KB 6.1 MB/s eta 0:00:00
+#14 19.78 Requirement already satisfied: pytz>=2017.3 in /usr/local/lib/python3.7/site-packages (from pandas->plantcv) (2022.1)
+#14 19.82 Collecting mizani>=0.7.3
+#14 19.83   Downloading mizani-0.7.3-py3-none-any.whl (63 kB)
+#14 19.85      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.1/63.1 KB 4.9 MB/s eta 0:00:00
+#14 19.87 Collecting descartes>=1.1.0
+#14 19.88   Downloading descartes-1.1.0-py3-none-any.whl (5.8 kB)
+#14 20.17 Collecting patsy>=0.5.1
+#14 20.19   Downloading patsy-0.5.2-py2.py3-none-any.whl (233 kB)
+#14 20.23      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 233.7/233.7 KB 6.4 MB/s eta 0:00:00
+#14 20.31 Collecting threadpoolctl>=2.0.0
+#14 20.32   Downloading threadpoolctl-3.1.0-py3-none-any.whl (14 kB)
+#14 20.37 Collecting joblib>=0.11
+#14 20.39   Downloading joblib-1.1.0-py2.py3-none-any.whl (306 kB)
+#14 20.44      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 307.0/307.0 KB 6.0 MB/s eta 0:00:00
+#14 20.49 Collecting jinja2
+#14 20.51   Downloading Jinja2-3.1.1-py3-none-any.whl (132 kB)
+#14 20.53      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 132.6/132.6 KB 6.1 MB/s eta 0:00:00
+#14 20.68 Collecting psutil>=5.0
+#14 20.70   Downloading psutil-5.9.0-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (280 kB)
+#14 20.75      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 280.7/280.7 KB 5.8 MB/s eta 0:00:00
+#14 20.78 Collecting zict>=0.1.3
+#14 20.79   Downloading zict-2.1.0-py3-none-any.whl (11 kB)
+#14 20.83 Collecting sortedcontainers!=2.0.0,!=2.0.1
+#14 20.84   Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl (29 kB)
+#14 20.85 Requirement already satisfied: setuptools in /usr/local/lib/python3.7/site-packages (from distributed>=2.19->dask-jobqueue->plantcv) (57.5.0)
+#14 20.87 Collecting tblib>=1.6.0
+#14 20.89   Downloading tblib-1.7.0-py2.py3-none-any.whl (12 kB)
+#14 20.96 Collecting tornado>=5
+#14 20.97   Downloading tornado-6.1-cp37-cp37m-manylinux2010_x86_64.whl (428 kB)
+#14 21.04      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 428.5/428.5 KB 6.2 MB/s eta 0:00:00
+#14 21.08 Collecting click>=6.6
+#14 21.09   Downloading click-8.1.2-py3-none-any.whl (96 kB)
+#14 21.11      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.6/96.6 KB 5.1 MB/s eta 0:00:00
+#14 21.18 Collecting msgpack>=0.6.0
+#14 21.20   Downloading msgpack-1.0.3-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (299 kB)
+#14 21.25      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 299.4/299.4 KB 6.0 MB/s eta 0:00:00
+#14 21.43 Collecting typing-extensions
+#14 21.45   Downloading typing_extensions-4.1.1-py3-none-any.whl (26 kB)
+#14 21.48 Collecting palettable
+#14 21.49   Downloading palettable-3.3.0-py2.py3-none-any.whl (111 kB)
+#14 21.51      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 111.8/111.8 KB 6.4 MB/s eta 0:00:00
+#14 21.58 Collecting locket
+#14 21.58   Downloading locket-0.2.1-py2.py3-none-any.whl (4.1 kB)
+#14 21.73 Collecting importlib-metadata
+#14 21.74   Downloading importlib_metadata-4.11.3-py3-none-any.whl (18 kB)
+#14 21.81 Collecting heapdict
+#14 21.82   Downloading HeapDict-1.0.1-py3-none-any.whl (3.9 kB)
+#14 21.90 Collecting MarkupSafe>=2.0
+#14 21.92   Downloading MarkupSafe-2.1.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (25 kB)
+#14 22.01 Collecting zipp>=0.5
+#14 22.02   Downloading zipp-3.8.0-py3-none-any.whl (5.4 kB)
+#14 22.42 Installing collected packages: sortedcontainers, palettable, msgpack, heapdict, zipp, zict, typing-extensions, tornado, toolz, tifffile, threadpoolctl, tblib, six, pyyaml, PyWavelets, pyparsing, psutil, pillow, networkx, MarkupSafe, locket, joblib, fsspec, fonttools, cycler, cloudpickle, scikit-learn, python-dateutil, patsy, partd, packaging, kiwisolver, jinja2, importlib-metadata, imageio, scikit-image, pandas, matplotlib, dask, click, statsmodels, mizani, distributed, descartes, plotnine, dask-jobqueue, plantcv
+#14 34.40 Successfully installed MarkupSafe-2.1.1 PyWavelets-1.3.0 click-8.1.2 cloudpickle-2.0.0 cycler-0.11.0 dask-2022.2.0 dask-jobqueue-0.7.3 descartes-1.1.0 distributed-2022.2.0 fonttools-4.32.0 fsspec-2022.3.0 heapdict-1.0.1 imageio-2.16.1 importlib-metadata-4.11.3 jinja2-3.1.1 joblib-1.1.0 kiwisolver-1.4.2 locket-0.2.1 matplotlib-3.5.1 mizani-0.7.3 msgpack-1.0.3 networkx-2.6.3 packaging-21.3 palettable-3.3.0 pandas-1.3.5 partd-1.2.0 patsy-0.5.2 pillow-9.1.0 plantcv-3.13.4 plotnine-0.8.0 psutil-5.9.0 pyparsing-3.0.8 python-dateutil-2.8.2 pyyaml-6.0 scikit-image-0.19.2 scikit-learn-1.0.2 six-1.16.0 sortedcontainers-2.4.0 statsmodels-0.13.2 tblib-1.7.0 threadpoolctl-3.1.0 tifffile-2021.11.2 toolz-0.11.2 tornado-6.1 typing-extensions-4.1.1 zict-2.1.0 zipp-3.8.0
+#14 34.40 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#14 DONE 35.4s
+
+#15 [12/20] RUN pip install imutils
+#15 sha256:5ee1129272ea9c0b7066a19cae3bcf3045490ee2e5e849eb13ed6605fabbf66b
+#15 0.843 Collecting imutils
+#15 0.894   Downloading imutils-0.5.4.tar.gz (17 kB)
+#15 0.909   Preparing metadata (setup.py): started
+#15 1.104   Preparing metadata (setup.py): finished with status 'done'
+#15 1.108 Building wheels for collected packages: imutils
+#15 1.109   Building wheel for imutils (setup.py): started
+#15 1.313   Building wheel for imutils (setup.py): finished with status 'done'
+#15 1.314   Created wheel for imutils: filename=imutils-0.5.4-py3-none-any.whl size=25858 sha256=c7ff2f519d465267bca22e8d5387122e8252ccdf2f282c41e79e0154462e570d
+#15 1.314   Stored in directory: /root/.cache/pip/wheels/86/d7/0a/4923351ed1cec5d5e24c1eaf8905567b02a0343b24aa873df2
+#15 1.317 Successfully built imutils
+#15 1.630 Installing collected packages: imutils
+#15 1.663 Successfully installed imutils-0.5.4
+#15 1.663 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#15 DONE 1.7s
+
+#16 [13/20] RUN pip install flask
+#16 sha256:ef563d4c05acc892f8944e64a09ff2073974e2a39a7cc213790a2706963ab31f
+#16 0.809 Collecting flask
+#16 0.864   Downloading Flask-2.1.1-py3-none-any.whl (95 kB)
+#16 0.886      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 95.2/95.2 KB 4.4 MB/s eta 0:00:00
+#16 0.896 Requirement already satisfied: importlib-metadata>=3.6.0 in /usr/local/lib/python3.7/site-packages (from flask) (4.11.3)
+#16 0.897 Requirement already satisfied: Jinja2>=3.0 in /usr/local/lib/python3.7/site-packages (from flask) (3.1.1)
+#16 0.943 Collecting Werkzeug>=2.0
+#16 0.964   Downloading Werkzeug-2.1.1-py3-none-any.whl (224 kB)
+#16 1.004      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 224.7/224.7 KB 5.7 MB/s eta 0:00:00
+#16 1.031 Collecting itsdangerous>=2.0
+#16 1.045   Downloading itsdangerous-2.1.2-py3-none-any.whl (15 kB)
+#16 1.052 Requirement already satisfied: click>=8.0 in /usr/local/lib/python3.7/site-packages (from flask) (8.1.2)
+#16 1.073 Requirement already satisfied: zipp>=0.5 in /usr/local/lib/python3.7/site-packages (from importlib-metadata>=3.6.0->flask) (3.8.0)
+#16 1.075 Requirement already satisfied: typing-extensions>=3.6.4 in /usr/local/lib/python3.7/site-packages (from importlib-metadata>=3.6.0->flask) (4.1.1)
+#16 1.078 Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.7/site-packages (from Jinja2>=3.0->flask) (2.1.1)
+#16 1.382 Installing collected packages: Werkzeug, itsdangerous, flask
+#16 1.546 Successfully installed Werkzeug-2.1.1 flask-2.1.1 itsdangerous-2.1.2
+#16 1.546 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#16 DONE 1.6s
+
+#17 [14/20] RUN pip install flask_restful
+#17 sha256:a8d716499d6bc28204a755894a2a725ca04e70a29a54d0e3e487b81a4fbfc7ec
+#17 0.840 Collecting flask_restful
+#17 0.878   Downloading Flask_RESTful-0.3.9-py2.py3-none-any.whl (25 kB)
+#17 0.924 Collecting aniso8601>=0.82
+#17 0.936   Downloading aniso8601-9.0.1-py2.py3-none-any.whl (52 kB)
+#17 0.950      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 52.8/52.8 KB 3.8 MB/s eta 0:00:00
+#17 0.952 Requirement already satisfied: Flask>=0.8 in /usr/local/lib/python3.7/site-packages (from flask_restful) (2.1.1)
+#17 0.953 Requirement already satisfied: six>=1.3.0 in /usr/local/lib/python3.7/site-packages (from flask_restful) (1.16.0)
+#17 0.953 Requirement already satisfied: pytz in /usr/local/lib/python3.7/site-packages (from flask_restful) (2022.1)
+#17 0.966 Requirement already satisfied: itsdangerous>=2.0 in /usr/local/lib/python3.7/site-packages (from Flask>=0.8->flask_restful) (2.1.2)
+#17 0.968 Requirement already satisfied: importlib-metadata>=3.6.0 in /usr/local/lib/python3.7/site-packages (from Flask>=0.8->flask_restful) (4.11.3)
+#17 0.968 Requirement already satisfied: Jinja2>=3.0 in /usr/local/lib/python3.7/site-packages (from Flask>=0.8->flask_restful) (3.1.1)
+#17 0.969 Requirement already satisfied: Werkzeug>=2.0 in /usr/local/lib/python3.7/site-packages (from Flask>=0.8->flask_restful) (2.1.1)
+#17 0.970 Requirement already satisfied: click>=8.0 in /usr/local/lib/python3.7/site-packages (from Flask>=0.8->flask_restful) (8.1.2)
+#17 0.992 Requirement already satisfied: zipp>=0.5 in /usr/local/lib/python3.7/site-packages (from importlib-metadata>=3.6.0->Flask>=0.8->flask_restful) (3.8.0)
+#17 0.993 Requirement already satisfied: typing-extensions>=3.6.4 in /usr/local/lib/python3.7/site-packages (from importlib-metadata>=3.6.0->Flask>=0.8->flask_restful) (4.1.1)
+#17 0.997 Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.7/site-packages (from Jinja2>=3.0->Flask>=0.8->flask_restful) (2.1.1)
+#17 1.312 Installing collected packages: aniso8601, flask_restful
+#17 1.392 Successfully installed aniso8601-9.0.1 flask_restful-0.3.9
+#17 1.392 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#17 DONE 1.5s
+
+#18 [15/20] RUN pip install gsutil
+#18 sha256:10810230d04174143d03305a48746ba64165b1505b2fa1af6ea55910b4985af0
+#18 0.821 Collecting gsutil
+#18 0.871   Downloading gsutil-5.9.tar.gz (2.9 MB)
+#18 1.380      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 MB 5.7 MB/s eta 0:00:00
+#18 1.642   Preparing metadata (setup.py): started
+#18 1.857   Preparing metadata (setup.py): finished with status 'done'
+#18 1.912 Collecting argcomplete>=1.9.4
+#18 1.928   Downloading argcomplete-2.0.0-py2.py3-none-any.whl (37 kB)
+#18 1.961 Collecting crcmod>=1.7
+#18 1.974   Downloading crcmod-1.7.tar.gz (89 kB)
+#18 1.993      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 89.7/89.7 KB 4.7 MB/s eta 0:00:00
+#18 2.006   Preparing metadata (setup.py): started
+#18 2.161   Preparing metadata (setup.py): finished with status 'done'
+#18 2.438 Collecting fasteners>=0.14.1
+#18 2.451   Downloading fasteners-0.17.3-py3-none-any.whl (18 kB)
+#18 2.478 Collecting gcs-oauth2-boto-plugin>=3.0
+#18 2.490   Downloading gcs-oauth2-boto-plugin-3.0.tar.gz (20 kB)
+#18 2.501   Preparing metadata (setup.py): started
+#18 2.664   Preparing metadata (setup.py): finished with status 'done'
+#18 2.703 Collecting google-apitools>=0.5.32
+#18 2.721   Downloading google_apitools-0.5.32-py3-none-any.whl (135 kB)
+#18 2.749      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 135.7/135.7 KB 5.1 MB/s eta 0:00:00
+#18 2.782 Collecting httplib2>=0.20.4
+#18 2.795   Downloading httplib2-0.20.4-py3-none-any.whl (96 kB)
+#18 2.811      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.6/96.6 KB 6.3 MB/s eta 0:00:00
+#18 2.833 Collecting google-reauth>=0.1.0
+#18 2.845   Downloading google_reauth-0.1.1-py2.py3-none-any.whl (17 kB)
+#18 2.874 Collecting monotonic>=1.4
+#18 2.885   Downloading monotonic-1.6-py2.py3-none-any.whl (8.2 kB)
+#18 2.925 Collecting pyOpenSSL>=0.13
+#18 2.937   Downloading pyOpenSSL-22.0.0-py2.py3-none-any.whl (55 kB)
+#18 2.951      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 55.8/55.8 KB 5.5 MB/s eta 0:00:00
+#18 2.971 Collecting retry_decorator>=1.0.0
+#18 2.982   Downloading retry_decorator-1.1.1.tar.gz (3.9 kB)
+#18 2.991   Preparing metadata (setup.py): started
+#18 3.144   Preparing metadata (setup.py): finished with status 'done'
+#18 3.146 Requirement already satisfied: six>=1.12.0 in /usr/local/lib/python3.7/site-packages (from gsutil) (1.16.0)
+#18 3.231 Collecting google-auth[aiohttp]>=2.5.0
+#18 3.246   Downloading google_auth-2.6.3-py2.py3-none-any.whl (156 kB)
+#18 3.275      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 156.6/156.6 KB 5.6 MB/s eta 0:00:00
+#18 3.287 Requirement already satisfied: importlib-metadata<5,>=0.23 in /usr/local/lib/python3.7/site-packages (from argcomplete>=1.9.4->gsutil) (4.11.3)
+#18 3.326 Collecting rsa==4.7.2
+#18 3.340   Downloading rsa-4.7.2-py3-none-any.whl (34 kB)
+#18 3.388 Collecting boto>=2.29.1
+#18 3.400   Downloading boto-2.49.0-py2.py3-none-any.whl (1.4 MB)
+#18 3.626      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 6.1 MB/s eta 0:00:00
+#18 3.666 Collecting oauth2client>=2.2.0
+#18 3.678   Downloading oauth2client-4.1.3-py2.py3-none-any.whl (98 kB)
+#18 3.710      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.2/98.2 KB 3.5 MB/s eta 0:00:00
+#18 3.764 Collecting pyasn1>=0.1.3
+#18 3.776   Downloading pyasn1-0.4.8-py2.py3-none-any.whl (77 kB)
+#18 3.793      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 77.1/77.1 KB 4.9 MB/s eta 0:00:00
+#18 3.867 Collecting pyasn1-modules>=0.2.1
+#18 3.879   Downloading pyasn1_modules-0.2.8-py2.py3-none-any.whl (155 kB)
+#18 3.911      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 155.3/155.3 KB 5.3 MB/s eta 0:00:00
+#18 3.951 Collecting cachetools<6.0,>=2.0.0
+#18 3.962   Downloading cachetools-5.0.0-py3-none-any.whl (9.1 kB)
+#18 4.347 Collecting aiohttp<4.0.0dev,>=3.6.2
+#18 4.361   Downloading aiohttp-3.8.1-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (1.1 MB)
+#18 4.663      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 3.8 MB/s eta 0:00:00
+#18 4.720 Collecting requests<3.0.0dev,>=2.20.0
+#18 4.730   Downloading requests-2.27.1-py2.py3-none-any.whl (63 kB)
+#18 4.748      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.1/63.1 KB 3.6 MB/s eta 0:00:00
+#18 4.820 Collecting pyu2f
+#18 4.832   Downloading pyu2f-0.1.5.tar.gz (27 kB)
+#18 4.847   Preparing metadata (setup.py): started
+#18 5.007   Preparing metadata (setup.py): finished with status 'done'
+#18 5.033 Requirement already satisfied: pyparsing!=3.0.0,!=3.0.1,!=3.0.2,!=3.0.3,<4,>=2.4.2 in /usr/local/lib/python3.7/site-packages (from httplib2>=0.20.4->gsutil) (3.0.8)
+#18 5.457 Collecting cryptography>=35.0
+#18 5.478   Downloading cryptography-36.0.2-cp36-abi3-manylinux_2_24_x86_64.whl (3.6 MB)
+#18 6.422      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.6/3.6 MB 3.8 MB/s eta 0:00:00
+#18 6.594 Collecting charset-normalizer<3.0,>=2.0
+#18 6.607   Downloading charset_normalizer-2.0.12-py3-none-any.whl (39 kB)
+#18 6.646 Collecting attrs>=17.3.0
+#18 6.658   Downloading attrs-21.4.0-py2.py3-none-any.whl (60 kB)
+#18 6.671      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.6/60.6 KB 4.9 MB/s eta 0:00:00
+#18 6.815 Collecting aiosignal>=1.1.2
+#18 6.828   Downloading aiosignal-1.2.0-py3-none-any.whl (8.2 kB)
+#18 6.836 Requirement already satisfied: typing-extensions>=3.7.4 in /usr/local/lib/python3.7/site-packages (from aiohttp<4.0.0dev,>=3.6.2->google-auth[aiohttp]>=2.5.0->gsutil) (4.1.1)
+#18 6.910 Collecting frozenlist>=1.1.1
+#18 7.035   Downloading frozenlist-1.3.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (144 kB)
+#18 7.065      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 144.8/144.8 KB 5.3 MB/s eta 0:00:00
+#18 7.248 Collecting yarl<2.0,>=1.0
+#18 7.261   Downloading yarl-1.7.2-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (271 kB)
+#18 7.438      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 271.8/271.8 KB 1.6 MB/s eta 0:00:00
+#18 7.465 Collecting async-timeout<5.0,>=4.0.0a3
+#18 7.477   Downloading async_timeout-4.0.2-py3-none-any.whl (5.8 kB)
+#18 7.941 Collecting multidict<7.0,>=4.5
+#18 7.953   Downloading multidict-6.0.2-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (94 kB)
+#18 7.976      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 94.8/94.8 KB 5.0 MB/s eta 0:00:00
+#18 8.007 Collecting asynctest==0.13.0
+#18 8.020   Downloading asynctest-0.13.0-py3-none-any.whl (26 kB)
+#18 8.261 Collecting cffi>=1.12
+#18 8.274   Downloading cffi-1.15.0-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (427 kB)
+#18 8.463      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 427.1/427.1 KB 2.3 MB/s eta 0:00:00
+#18 8.485 Requirement already satisfied: zipp>=0.5 in /usr/local/lib/python3.7/site-packages (from importlib-metadata<5,>=0.23->argcomplete>=1.9.4->gsutil) (3.8.0)
+#18 8.556 Collecting idna<4,>=2.5
+#18 8.684   Downloading idna-3.3-py3-none-any.whl (61 kB)
+#18 8.705      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.2/61.2 KB 3.2 MB/s eta 0:00:00
+#18 8.745 Collecting certifi>=2017.4.17
+#18 8.756   Downloading certifi-2021.10.8-py2.py3-none-any.whl (149 kB)
+#18 8.784      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 149.2/149.2 KB 5.9 MB/s eta 0:00:00
+#18 8.836 Collecting urllib3<1.27,>=1.21.1
+#18 8.848   Downloading urllib3-1.26.9-py2.py3-none-any.whl (138 kB)
+#18 8.874      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 139.0/139.0 KB 5.7 MB/s eta 0:00:00
+#18 9.045 Collecting pycparser
+#18 9.058   Downloading pycparser-2.21-py2.py3-none-any.whl (118 kB)
+#18 9.078      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 118.7/118.7 KB 6.4 MB/s eta 0:00:00
+#18 9.170 Building wheels for collected packages: gsutil, crcmod, gcs-oauth2-boto-plugin, retry_decorator, pyu2f
+#18 9.171   Building wheel for gsutil (setup.py): started
+#18 10.24   Building wheel for gsutil (setup.py): finished with status 'done'
+#18 10.25   Created wheel for gsutil: filename=gsutil-5.9-py3-none-any.whl size=3744804 sha256=0c832bd3a6af2642acc28614858b65eb940640ad40fa4fc84205ee6bc3381ac6
+#18 10.25   Stored in directory: /root/.cache/pip/wheels/3f/48/ef/e11e9eb34daf175bf09b270aeeff31cc37ca0e5086fa34ccf1
+#18 10.26   Building wheel for crcmod (setup.py): started
+#18 10.45   Building wheel for crcmod (setup.py): finished with status 'done'
+#18 10.45   Created wheel for crcmod: filename=crcmod-1.7-py3-none-any.whl size=18850 sha256=40f5cd130586a99050b8ba6a685a78733d75ca09c7dfdfaf46c07a92e29b46ef
+#18 10.45   Stored in directory: /root/.cache/pip/wheels/dc/9a/e9/49e627353476cec8484343c4ab656f1e0d783ee77b9dde2d1f
+#18 10.46   Building wheel for gcs-oauth2-boto-plugin (setup.py): started
+#18 10.66   Building wheel for gcs-oauth2-boto-plugin (setup.py): finished with status 'done'
+#18 10.66   Created wheel for gcs-oauth2-boto-plugin: filename=gcs_oauth2_boto_plugin-3.0-py3-none-any.whl size=23221 sha256=50d3bdd0cfdc093aa4fa6179c7600e190ab0f4a18d9db2b422fd01adc349e298
+#18 10.66   Stored in directory: /root/.cache/pip/wheels/2a/93/86/cb2140365b10150dbdba338da385c7c18c7cbd9e592e3421db
+#18 10.66   Building wheel for retry_decorator (setup.py): started
+#18 10.84   Building wheel for retry_decorator (setup.py): finished with status 'done'
+#18 10.84   Created wheel for retry_decorator: filename=retry_decorator-1.1.1-py2.py3-none-any.whl size=3658 sha256=e026d6819490fc6c05fc23b5a71fde2e48304ea500f47e9e563d1ff987673960
+#18 10.84   Stored in directory: /root/.cache/pip/wheels/91/39/dc/7359c639e34d9c388a1b3e1dc444363905194afc70f57eb9a5
+#18 10.85   Building wheel for pyu2f (setup.py): started
+#18 11.04   Building wheel for pyu2f (setup.py): finished with status 'done'
+#18 11.04   Created wheel for pyu2f: filename=pyu2f-0.1.5-py3-none-any.whl size=39404 sha256=a4dfaaf5455111e29ce343fb10d2ddc37517de8e5b1c7c743ee7e56a691850da
+#18 11.04   Stored in directory: /root/.cache/pip/wheels/b3/84/c6/ee8093bf96e2224aca3a9bfa074aa3c86c39208f91055fd60f
+#18 11.05 Successfully built gsutil crcmod gcs-oauth2-boto-plugin retry_decorator pyu2f
+#18 11.49 Installing collected packages: retry_decorator, pyasn1, monotonic, crcmod, certifi, boto, urllib3, rsa, pyu2f, pycparser, pyasn1-modules, multidict, idna, httplib2, frozenlist, fasteners, charset-normalizer, cachetools, attrs, asynctest, async-timeout, yarl, requests, oauth2client, google-reauth, google-auth, cffi, argcomplete, aiosignal, google-apitools, cryptography, aiohttp, pyOpenSSL, gcs-oauth2-boto-plugin, gsutil
+#18 14.39 Successfully installed aiohttp-3.8.1 aiosignal-1.2.0 argcomplete-2.0.0 async-timeout-4.0.2 asynctest-0.13.0 attrs-21.4.0 boto-2.49.0 cachetools-5.0.0 certifi-2021.10.8 cffi-1.15.0 charset-normalizer-2.0.12 crcmod-1.7 cryptography-36.0.2 fasteners-0.17.3 frozenlist-1.3.0 gcs-oauth2-boto-plugin-3.0 google-apitools-0.5.32 google-auth-2.6.3 google-reauth-0.1.1 gsutil-5.9 httplib2-0.20.4 idna-3.3 monotonic-1.6 multidict-6.0.2 oauth2client-4.1.3 pyOpenSSL-22.0.0 pyasn1-0.4.8 pyasn1-modules-0.2.8 pycparser-2.21 pyu2f-0.1.5 requests-2.27.1 retry_decorator-1.1.1 rsa-4.7.2 urllib3-1.26.9 yarl-1.7.2
+#18 14.39 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#18 DONE 14.8s
+
+#19 [16/20] RUN pip install 'pymongo[srv]'
+#19 sha256:750984c8bd1e4a20d55cc18d32e48e9a38834352c71c74fc823d347ca64a79da
+#19 1.265 Collecting pymongo[srv]
+#19 1.309   Downloading pymongo-4.1.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (462 kB)
+#19 1.396      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 462.8/462.8 KB 5.6 MB/s eta 0:00:00
+#19 1.434 Collecting dnspython<3.0.0,>=1.16.0
+#19 1.448   Downloading dnspython-2.2.1-py3-none-any.whl (269 kB)
+#19 1.494      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 269.1/269.1 KB 6.0 MB/s eta 0:00:00
+#19 1.968 Installing collected packages: pymongo, dnspython
+#19 2.243 Successfully installed dnspython-2.2.1 pymongo-4.1.0
+#19 2.243 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#19 DONE 2.3s
+
+#20 [17/20] RUN pip install dnspython
+#20 sha256:7695975ebf6ee5a0c883878ba93b4196a490895ae2a343d565c91886afd2499c
+#20 0.787 Requirement already satisfied: dnspython in /usr/local/lib/python3.7/site-packages (2.2.1)
+#20 1.245 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#20 DONE 1.3s
+
+#22 [18/20] COPY boto-hydrotek.txt /root/.boto
+#22 sha256:9396d6376439db11baa3cc43855338764819110d0c9949753154a91bdbe720da
+#22 DONE 0.0s
+
+#23 [19/20] COPY hydrotek-serviceAcc.json /root
+#23 sha256:034b0ed8ba17d4a8135bfcd1fc69e2203997b07d65c4ef1303e29f822c4d7a5c
+#23 DONE 0.0s
+
+#24 [20/20] COPY . /Plant_Growth
+#24 sha256:7d587f242214a24152390447bb0fffad807cd724b5936a59fec45bcf778a17a2
+#24 DONE 0.1s
+
+#25 exporting to image
+#25 sha256:e8c613e07b0b7ff33893b694f7759a10d42e180f2b4dc349fb57dc6b71dcab00
+#25 exporting layers
+#25 exporting layers 2.6s done
+#25 writing image sha256:51c0a89de478546dbaedc4d87871d1cb6d461cd6874081c18184c661c865a129 done
+#25 naming to gcr.io/hydrotek-286213/plantgrowth:v2 done
+#25 DONE 2.6s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
++ echo 'Docker Push gcr.io/hydrotek-286213/plantgrowth:v2'
+Docker Push gcr.io/hydrotek-286213/plantgrowth:v2
++ docker push gcr.io/hydrotek-286213/plantgrowth:v2
+The push refers to repository [gcr.io/hydrotek-286213/plantgrowth]
+1071543057fc: Preparing
+48d27bd9807b: Preparing
+99089d995f1b: Preparing
+4900ca208a0c: Preparing
+880a233c8c8c: Preparing
+f9bc603721a8: Preparing
+29d2a7b82501: Preparing
+0e6588a49b36: Preparing
+393f1f093be0: Preparing
+6a3caadaab27: Preparing
+6331ab1ae2c5: Preparing
+ff5c6a618895: Preparing
+0d05b85a6a98: Preparing
+07290be645da: Preparing
+37d860448a54: Preparing
+390a1153d455: Preparing
+c99dd824996b: Preparing
+393f1f093be0: Waiting
+6a3caadaab27: Waiting
+6331ab1ae2c5: Waiting
+ff5c6a618895: Waiting
+0d05b85a6a98: Waiting
+07290be645da: Waiting
+f9bc603721a8: Waiting
+37d860448a54: Waiting
+390a1153d455: Waiting
+29d2a7b82501: Waiting
+0e6588a49b36: Waiting
+1a15afd55a7c: Preparing
+0ab41d0c2b9d: Preparing
+23082294d405: Preparing
+de08555149f7: Preparing
+b8a74ae2f7f6: Preparing
+c99dd824996b: Waiting
+43140e0754dc: Preparing
+1a15afd55a7c: Waiting
+608f3a074261: Preparing
+0ab41d0c2b9d: Waiting
+b8a74ae2f7f6: Waiting
+23082294d405: Waiting
+de08555149f7: Waiting
+608f3a074261: Waiting
+99089d995f1b: Pushed
+48d27bd9807b: Pushed
+4900ca208a0c: Pushed
+880a233c8c8c: Pushed
+1071543057fc: Pushed
+393f1f093be0: Pushed
+29d2a7b82501: Pushed
+0e6588a49b36: Pushed
+f9bc603721a8: Pushed
+07290be645da: Pushed
+0d05b85a6a98: Pushed
+ff5c6a618895: Pushed
+37d860448a54: Pushed
+6a3caadaab27: Pushed
+0ab41d0c2b9d: Layer already exists
+23082294d405: Layer already exists
+6331ab1ae2c5: Pushed
+de08555149f7: Layer already exists
+b8a74ae2f7f6: Layer already exists
+43140e0754dc: Layer already exists
+608f3a074261: Layer already exists
+1a15afd55a7c: Pushed
+390a1153d455: Pushed
+c99dd824996b: Pushed
+v2: digest: sha256:1c7081dedc852895cf436be2cfcd7ee3fd1df5f0414fa501d72e48b09d6155b8 size: 5370
++ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ '[' -z ThermalLeafDetection-New,plant-growth ']'
++ mainCD
++ echo 'MAIN CD'
+MAIN CD
++ a=(${SELECTED_APP_CD_ARRAY[0]})
++ echo ThermalLeafDetection-New,plant-growth
+ThermalLeafDetection-New,plant-growth
++ '[' ThermalLeafDetection-New,plant-growth == All ']'
++ IFS=', '
++ read -r -a arr
++ for i in "${arr[@]}"
++ temp=ThermalLeafDetection-New
++ temp=ThermalLeafDetection-New
++ echo ThermalLeafDetection-New
+ThermalLeafDetection-New
++ i=ThermalLeafDetection-New
++ case "$i" in
++ echo ThermalLeafDetection-New
+ThermalLeafDetection-New
++ SELECTED_APP_CI=ThermalLeafDetection-New
++ DEPLOYMENT=thermaldetectionnew
++ NAMESPACE=dev
++ CONTAINERNAME=thermaldetectionnew
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ PORTNUM=6005
++ genericCD ThermalLeafDetection-New thermaldetectionnew dev thermaldetectionnew gcr.io/hydrotek-286213 release 6005
++ SELECTED_APP_CD=ThermalLeafDetection-New
++ DEPLOYMENT=thermaldetectionnew
++ NAMESPACE=dev
++ CONTAINERNAME=thermaldetectionnew
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=v2
++ PORTNUM=6005
++ echo 'GENERIC CD'
+GENERIC CD
++ echo 'Begining Deployment of ThermalLeafDetection-New'
+Begining Deployment of ThermalLeafDetection-New
++ kubectl get deployments thermaldetectionnew --namespace dev
++ grep -q thermaldetectionnew
++ echo 'Updating the deployment with latest version'
+Updating the deployment with latest version
++ SELECTED_IMAGE=gcr.io/hydrotek-286213/thermaldetectionnew:v2
++ echo 'Selected Image gcr.io/hydrotek-286213/thermaldetectionnew:v2'
+Selected Image gcr.io/hydrotek-286213/thermaldetectionnew:v2
++ echo 'kubectl set image deployment/thermaldetectionnew thermaldetectionnew=gcr.io/hydrotek-286213/thermaldetectionnew:v2 --namespace dev'
+kubectl set image deployment/thermaldetectionnew thermaldetectionnew=gcr.io/hydrotek-286213/thermaldetectionnew:v2 --namespace dev
++ kubectl set image deployment/thermaldetectionnew thermaldetectionnew=gcr.io/hydrotek-286213/thermaldetectionnew:v2 --namespace dev
+deployment.apps/thermaldetectionnew image updated
++ echo 'kubectl rollout restart deployment thermaldetectionnew --namespace dev'
+kubectl rollout restart deployment thermaldetectionnew --namespace dev
++ kubectl rollout restart deployment thermaldetectionnew --namespace dev
+deployment.apps/thermaldetectionnew restarted
++ echo 'Updated Deployment'
+Updated Deployment
++ echo 'kubectl set env -n dev --from=secret/mongocredentialsdevcloud deployment/thermaldetectionnew'
+kubectl set env -n dev --from=secret/mongocredentialsdevcloud deployment/thermaldetectionnew
++ kubectl set env -n dev --from=secret/mongocredentialsdevcloud deployment/thermaldetectionnew
++ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ for i in "${arr[@]}"
++ temp=plant-growth
++ temp=plant-growth
++ echo plant-growth
+plant-growth
++ i=plant-growth
++ case "$i" in
++ echo plant-growth
+plant-growth
++ SELECTED_APP_CI=plant-growth/src
++ DEPLOYMENT=plantgrowth
++ NAMESPACE=dev
++ CONTAINERNAME=plantgrowth
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=release
++ PORTNUM=6003
++ genericCD plant-growth/src plantgrowth dev plantgrowth gcr.io/hydrotek-286213 release 6003
++ SELECTED_APP_CD=plant-growth/src
++ DEPLOYMENT=plantgrowth
++ NAMESPACE=dev
++ CONTAINERNAME=plantgrowth
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ IMAGE_TAG=v2
++ PORTNUM=6003
++ echo 'GENERIC CD'
+GENERIC CD
++ echo 'Begining Deployment of plant-growth/src'
+Begining Deployment of plant-growth/src
++ kubectl get deployments plantgrowth --namespace dev
++ grep -q plantgrowth
++ echo 'Updating the deployment with latest version'
+Updating the deployment with latest version
++ SELECTED_IMAGE=gcr.io/hydrotek-286213/plantgrowth:v2
++ echo 'Selected Image gcr.io/hydrotek-286213/plantgrowth:v2'
+Selected Image gcr.io/hydrotek-286213/plantgrowth:v2
++ echo 'kubectl set image deployment/plantgrowth plantgrowth=gcr.io/hydrotek-286213/plantgrowth:v2 --namespace dev'
+kubectl set image deployment/plantgrowth plantgrowth=gcr.io/hydrotek-286213/plantgrowth:v2 --namespace dev
++ kubectl set image deployment/plantgrowth plantgrowth=gcr.io/hydrotek-286213/plantgrowth:v2 --namespace dev
+deployment.apps/plantgrowth image updated
++ echo 'kubectl rollout restart deployment plantgrowth --namespace dev'
+kubectl rollout restart deployment plantgrowth --namespace dev
++ kubectl rollout restart deployment plantgrowth --namespace dev
+deployment.apps/plantgrowth restarted
++ echo 'Updated Deployment'
+Updated Deployment
++ echo 'kubectl set env -n dev --from=secret/mongocredentialsdevcloud deployment/plantgrowth'
+kubectl set env -n dev --from=secret/mongocredentialsdevcloud deployment/plantgrowth
++ kubectl set env -n dev --from=secret/mongocredentialsdevcloud deployment/plantgrowth
++ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
++ '[' -z '' ']'
++ echo 'No project was selected for testing'
+No project was selected for testing
+Finished: SUCCESS
