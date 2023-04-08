@@ -1,116 +1,0 @@
-Started by user [8mha:////4CA5kL0r8XoTT3PdnVI1PoGEnxCwKlCoPhe73Uyy/FdkAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgZu/dLi1CL9xLzSrEQAtdxjnMAAAAA=[0manuja somthankar
-Running as SYSTEM
-Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\Hydrotek-CICD-Pipeline
-[Hydrotek-CICD-Pipeline] $ "C:\Program Files\Git\bin\sh.exe" -xe C:\Users\anuja\AppData\Local\Temp\jenkins2659327750906613339.sh
-+ echo 'Hydrotek CICD'
-Hydrotek CICD
-+ echo 'CI selected '
-CI selected 
-+ echo 'CD selected '
-CD selected 
-+ echo 'Tag selected v1'
-Tag selected v1
-+ BRANCH=pestclassification-tcet
-+ IMAGE_TAG=v1
-+ SELECTED_APP_CI_ARRAY=
-+ SELECTED_APP_CD_ARRAY=
-+ REPOSITORY_DIR=hydro-ai-usecases
-+ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
-+ CI_WORK_DIR=./hydrotek/cicdbuild/
-+ TEST_DIR=Postman-Tests
-+ NAMESPACE=dev
-+ NETWORKTYPE=LoadBalancer
-+ PORTNUM=5000
-+ DIR=/c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
-+ echo 'CI/CD Pipeline Started'
-CI/CD Pipeline Started
-+ '[' -z devcloud ']'
-+ setenv
-+ echo devcloud
-devcloud
-+ [[ devcloud == \d\e\v\c\l\o\u\d ]]
-+ echo 'Dev Cloud'
-Dev Cloud
-+ ENVFILE=hydroTek-Dev-Cloud.postman_environment.json
-+ echo 'dev cloud'
-dev cloud
-+ gcloud container clusters get-credentials autopilot-cluster-1 --region us-central1 --project hydrotek-286213
-Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
-Fetching cluster endpoint and auth data.
-kubeconfig entry generated for autopilot-cluster-1.
-+ echo 'Cluster Name: kt-ai-autopilot-cluster1'
-Cluster Name: kt-ai-autopilot-cluster1
-+ NETWORKTYPE=LoadBalancer
-+ '[' -z '' ']'
-+ echo 'No project was selected for integration'
-No project was selected for integration
-+ '[' -z '' ']'
-+ echo 'No project was selected for deployment'
-No project was selected for deployment
-+ '[' -z pest-detection ']'
-+ maintest
-+ echo 'MAIN Test'
-MAIN Test
-+ a=(${SELECTED_APP_TEST_ARRAY[0]})
-+ echo pest-detection
-pest-detection
-+ '[' pest-detection == All ']'
-+ IFS=', '
-+ read -r -a arr
-+ for i in "${arr[@]}"
-+ temp=pest-detection
-+ temp=pest-detection
-+ echo pest-detection
-pest-detection
-+ i=pest-detection
-+ case "$i" in
-+ echo pest-detection
-pest-detection
-+ json_name=detect-collection.postman_collection.json
-+ api=gcp-detect
-+ generictest detect-collection.postman_collection.json gcp-detect
-+ cd ./hydrotek/cicdbuild/
-+ '[' -d hydro-ai-usecases ']'
-+ git clone -b pestclassification-tcet git@gitlab.com:hydrotek-ai-grp/hydro-ai-usecases.git
-Cloning into 'hydro-ai-usecases'...
-Updating files:   4% (643/13729)Updating files:   5% (687/13729)Updating files:   6% (824/13729)Updating files:   7% (962/13729)Updating files:   8% (1099/13729)Updating files:   9% (1236/13729)Updating files:   9% (1255/13729)Updating files:  10% (1373/13729)Updating files:  11% (1511/13729)Updating files:  12% (1648/13729)Updating files:  13% (1785/13729)Updating files:  13% (1919/13729)Updating files:  14% (1923/13729)Updating files:  15% (2060/13729)Updating files:  16% (2197/13729)Updating files:  17% (2334/13729)Updating files:  17% (2469/13729)Updating files:  18% (2472/13729)Updating files:  19% (2609/13729)Updating files:  20% (2746/13729)Updating files:  21% (2884/13729)Updating files:  22% (3021/13729)Updating files:  22% (3096/13729)Updating files:  23% (3158/13729)Updating files:  24% (3295/13729)Updating files:  25% (3433/13729)Updating files:  26% (3570/13729)Updating files:  26% (3662/13729)Updating files:  27% (3707/13729)Updating files:  28% (3845/13729)Updating files:  29% (3982/13729)Updating files:  30% (4119/13729)Updating files:  31% (4256/13729)Updating files:  31% (4317/13729)Updating files:  32% (4394/13729)Updating files:  33% (4531/13729)Updating files:  34% (4668/13729)Updating files:  35% (4806/13729)Updating files:  35% (4922/13729)Updating files:  36% (4943/13729)Updating files:  37% (5080/13729)Updating files:  38% (5218/13729)Updating files:  39% (5355/13729)Updating files:  40% (5492/13729)Updating files:  40% (5542/13729)Updating files:  41% (5629/13729)Updating files:  42% (5767/13729)Updating files:  43% (5904/13729)Updating files:  44% (6041/13729)Updating files:  44% (6150/13729)Updating files:  45% (6179/13729)Updating files:  46% (6316/13729)Updating files:  47% (6453/13729)Updating files:  48% (6590/13729)Updating files:  49% (6728/13729)Updating files:  50% (6865/13729)Updating files:  50% (6908/13729)Updating files:  51% (7002/13729)Updating files:  52% (7140/13729)Updating files:  53% (7277/13729)Updating files:  54% (7414/13729)Updating files:  55% (7551/13729)Updating files:  55% (7663/13729)Updating files:  56% (7689/13729)Updating files:  57% (7826/13729)Updating files:  58% (7963/13729)Updating files:  59% (8101/13729)Updating files:  60% (8238/13729)Updating files:  61% (8375/13729)Updating files:  61% (8380/13729)Updating files:  62% (8512/13729)Updating files:  63% (8650/13729)Updating files:  64% (8787/13729)Updating files:  65% (8924/13729)Updating files:  65% (8942/13729)Updating files:  66% (9062/13729)Updating files:  67% (9199/13729)Updating files:  68% (9336/13729)Updating files:  68% (9440/13729)Updating files:  69% (9474/13729)Updating files:  70% (9611/13729)Updating files:  71% (9748/13729)Updating files:  72% (9885/13729)Updating files:  72% (9889/13729)Updating files:  73% (10023/13729)Updating files:  74% (10160/13729)Updating files:  75% (10297/13729)Updating files:  76% (10435/13729)Updating files:  76% (10449/13729)Updating files:  77% (10572/13729)Updating files:  78% (10709/13729)Updating files:  79% (10846/13729)Updating files:  80% (10984/13729)Updating files:  80% (11098/13729)Updating files:  81% (11121/13729)Updating files:  82% (11258/13729)Updating files:  83% (11396/13729)Updating files:  84% (11533/13729)Updating files:  85% (11670/13729)Updating files:  85% (11733/13729)Updating files:  86% (11807/13729)Updating files:  87% (11945/13729)Updating files:  88% (12082/13729)Updating files:  89% (12219/13729)Updating files:  89% (12334/13729)Updating files:  90% (12357/13729)Updating files:  91% (12494/13729)Updating files:  92% (12631/13729)Updating files:  93% (12768/13729)Updating files:  94% (12906/13729)Updating files:  94% (13003/13729)Updating files:  95% (13043/13729)Updating files:  96% (13180/13729)Updating files:  96% (13239/13729)Updating files:  96% (13264/13729)Updating files:  97% (13318/13729)Updating files:  97% (13422/13729)Updating files:  98% (13455/13729)Updating files:  98% (13571/13729)Updating files:  99% (13592/13729)Updating files:  99% (13669/13729)Updating files:  99% (13694/13729)Updating files:  99% (13707/13729)Updating files: 100% (13729/13729)Updating files: 100% (13729/13729), done.
-+ cd hydro-ai-usecases
-+ cd Postman-Tests
-+ COLLECTION=detect-collection.postman_collection.json
-+ TEST=gcp-detect
-+ echo detect-collection.postman_collection.json
-detect-collection.postman_collection.json
-+ echo gcp-detect
-gcp-detect
-+ newman run detect-collection.postman_collection.json --environment hydroTek-Dev-Cloud.postman_environment.json --folder gcp-detect
-newman
-
-detect-collection
-
-→ gcp-detect
-  POST http://35.193.229.177:5001/v1/pestdetection/predict?source=hydrotek-2022&imageName=t1.jpg&dest=hydrotek-2022 [200 OK, 449B, 5.6s]
-  √  Status code is 200
-  √  Schema is valid
-  √  Detection-Test
-
-┌─────────────────────────┬──────────────────┬──────────────────┐
-│                         │         executed │           failed │
-├─────────────────────────┼──────────────────┼──────────────────┤
-│              iterations │                1 │                0 │
-├─────────────────────────┼──────────────────┼──────────────────┤
-│                requests │                1 │                0 │
-├─────────────────────────┼──────────────────┼──────────────────┤
-│            test-scripts │                1 │                0 │
-├─────────────────────────┼──────────────────┼──────────────────┤
-│      prerequest-scripts │                0 │                0 │
-├─────────────────────────┼──────────────────┼──────────────────┤
-│              assertions │                3 │                0 │
-├─────────────────────────┴──────────────────┴──────────────────┤
-│ total run duration: 5.7s                                      │
-├───────────────────────────────────────────────────────────────┤
-│ total data received: 302B (approx)                            │
-├───────────────────────────────────────────────────────────────┤
-│ average response time: 5.6s [min: 5.6s, max: 5.6s, s.d.: 0µs] │
-└───────────────────────────────────────────────────────────────┘
-+ cd /c/ProgramData/Jenkins/.jenkins/workspace/Hydrotek-CICD-Pipeline
-Finished: SUCCESS
