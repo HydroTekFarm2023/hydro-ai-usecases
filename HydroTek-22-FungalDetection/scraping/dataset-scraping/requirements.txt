@@ -1,9 +1,0 @@
-numpy>=1.18.5
-Pillow>=7.1.2
-requests>=2.23.0
-flask==2.0.2
-pandas
-Flask-RESTful==0.3.9
-subprocess.run
-gsutil
-selenium
