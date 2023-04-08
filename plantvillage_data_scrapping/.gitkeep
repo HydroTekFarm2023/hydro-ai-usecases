@@ -1,0 +1,3 @@
+## Classification of different disease in lettuce.
+
+We have used fastai framework to train our dataset with Mobilenetv2 pre-trained model to get a accuracy of 98%
